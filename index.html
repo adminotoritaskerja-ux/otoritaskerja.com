@@ -1,485 +1,169 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OtoritasKerja - Pusat Template Administrasi & Excel Industri</title>
-    <meta name="description" content="Pusat download template gratis dan premium administrasi RT/RW, spreadsheet Excel manufaktur, dan panduan dunia kerja.">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        body {
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.6;
-        }
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OtoritasKerja — Operational Excellence & Systems</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; color: #1e293b; line-height: 1.6; }
+    
+    /* Header & Navigation */
+    header { background-color: #0f172a; padding: 12px 20px; border-bottom: 1px solid #1e293b; position: sticky; top: 0; z-index: 100; }
+    .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .logo-area { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    
+    nav a { color: #94a3b8; text-decoration: none; font-size: 0.9rem; font-weight: 500; margin-left: 20px; transition: 0.3s; }
+    nav a:hover { color: #ffffff; }
 
-        /* HEADER & NAVIGASI */
-        header {
-            background-color: #0d6efd;
-            color: white;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .nav-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            letter-spacing: 0.5px;
-        }
-        .logo span {
-            color: #ffc107;
-        }
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-        }
-        nav a {
-            color: white;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #ffc107;
-        }
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95)), 
+                  url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop') no-repeat center center/cover;
+      color: #ffffff;
+      padding: 80px 20px;
+      text-align: center;
+      border-bottom: 4px solid #0284c7;
+    }
+    .hero-content { max-width: 800px; margin: 0 auto; }
+    .author-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: #38bdf8;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .author-badge .dot { width: 8px; height: 8px; background-color: #10b981; border-radius: 50%; }
+    .hero h1 { font-size: 2.2rem; font-weight: 800; line-height: 1.25; margin-bottom: 16px; letter-spacing: -0.5px; }
+    .hero p { font-size: 1.05rem; color: #94a3b8; margin-bottom: 30px; line-height: 1.6; }
+    
+    .cta-group { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background-color: #0284c7; color: #ffffff; padding: 12px 26px; border-radius: 8px; font-weight: 700; text-decoration: none; transition: 0.3s; display: inline-block; }
+    .btn-primary:hover { background-color: #0369a1; }
+    .btn-secondary { background-color: rgba(255, 255, 255, 0.05); border: 1px solid #334155; color: #ffffff; padding: 12px 26px; border-radius: 8px; font-weight: 600; text-decoration: none; }
 
-        /* HERO BANNER (SAMPUL UTAMA MODERN) */
-        .hero {
-            background: linear-gradient(135deg, #0d6efd, #0a58ca);
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
-        }
-        .hero h1 {
-            font-size: 2.2rem;
-            margin-bottom: 12px;
-            font-weight: 700;
-        }
-        .hero p {
-            font-size: 1.1rem;
-            max-width: 650px;
-            margin: 0 auto 20px;
-            opacity: 0.95;
-        }
+    /* Content Section */
+    .container { max-width: 1100px; margin: 50px auto; padding: 0 20px; }
+    .section-title { font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-bottom: 25px; border-left: 4px solid #0284c7; padding-left: 12px; }
+    
+    /* Grid Cards */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .card { background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; transition: 0.3s; display: flex; flex-direction: column; justify-content: space-between; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 12px 20px -5px rgba(0,0,0,0.05); }
+    .card-tag { font-size: 0.75rem; font-weight: 700; color: #0284c7; text-transform: uppercase; margin-bottom: 10px; display: block; }
+    .card h3 { font-size: 1.15rem; color: #0f172a; margin-bottom: 10px; }
+    .card p { font-size: 0.9rem; color: #64748b; margin-bottom: 20px; }
 
-        /* KONTEN UTAMA */
-        .container {
-            max-width: 1100px;
-            margin: 30px auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 3fr 1fr;
-            gap: 30px;
-        }
+    /* Footer */
+    footer { background-color: #0f172a; color: #64748b; padding: 40px 20px; font-size: 0.85rem; border-top: 1px solid #1e293b; text-align: center; }
+    footer a { color: #94a3b8; text-decoration: none; margin: 0 10px; }
+    footer a:hover { color: #ffffff; }
 
-        .section-title {
-            font-size: 1.4rem;
-            color: #0d6efd;
-            border-bottom: 2px solid #0d6efd;
-            padding-bottom: 5px;
-            margin-bottom: 20px;
-        }
-
-        /* KATALOG PRODUK */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-        .product-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            transition: transform 0.2s;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            position: relative;
-        }
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
-        .product-badge {
-            font-size: 0.75rem;
-            font-weight: bold;
-            padding: 4px 10px;
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            border-radius: 4px;
-            z-index: 10;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-        .badge-free {
-            background: #198754;
-            color: white;
-        }
-        .badge-pro {
-            background: #ffc107;
-            color: #000;
-        }
-
-        /* VISUAL PREVIEW PRODUK (CSS NATIVE WITHOUT PHOTO UPLOAD) */
-        .product-preview {
-            height: 140px;
-            background: linear-gradient(135deg, #e9ecef, #dee2e6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #495057;
-            font-weight: bold;
-            font-size: 0.95rem;
-            text-align: center;
-            padding: 15px;
-            border-bottom: 1px solid #dee2e6;
-        }
-
-        .product-body {
-            padding: 15px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .product-title {
-            font-size: 1rem;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #212529;
-        }
-        .product-desc {
-            font-size: 0.85rem;
-            color: #6c757d;
-            margin-bottom: 15px;
-        }
-        .product-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: auto;
-        }
-        .price {
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-        .price-free {
-            color: #198754;
-        }
-        .price-pro {
-            color: #0d6efd;
-        }
-
-        .btn-action {
-            color: white;
-            padding: 6px 14px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            transition: opacity 0.2s;
-        }
-        .btn-free {
-            background: #198754;
-        }
-        .btn-pro {
-            background: #0d6efd;
-        }
-        .btn-action:hover {
-            opacity: 0.9;
-        }
-
-        /* SIDEBAR & ADSENSE */
-        .sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        .widget {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-        .ads-slot {
-            background-color: #e9ecef;
-            border: 1px dashed #adb5bd;
-            min-height: 250px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #6c757d;
-            font-size: 0.85rem;
-            text-align: center;
-            border-radius: 8px;
-            padding: 10px;
-        }
-
-        /* ARTIKEL / BLOG */
-        .article-list {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        .article-item {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        .article-item h3 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-        }
-        .article-item h3 a:hover {
-            color: #0d6efd;
-        }
-        .article-meta {
-            font-size: 0.75rem;
-            color: #6c757d;
-            margin-bottom: 8px;
-        }
-
-        /* FOOTER & LEGAL */
-        footer {
-            background-color: #212529;
-            color: white;
-            padding: 40px 0 20px;
-            margin-top: 50px;
-        }
-        .footer-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-        }
-        .footer-col h4 {
-            color: #ffc107;
-            margin-bottom: 15px;
-            font-size: 1rem;
-        }
-        .footer-col ul {
-            list-style: none;
-        }
-        .footer-col ul li {
-            margin-bottom: 8px;
-        }
-        .footer-col a {
-            color: #adb5bd;
-            font-size: 0.9rem;
-            transition: color 0.2s;
-        }
-        .footer-col a:hover {
-            color: white;
-        }
-        .copyright {
-            text-align: center;
-            border-top: 1px solid #343a40;
-            margin-top: 30px;
-            padding-top: 20px;
-            font-size: 0.85rem;
-            color: #6c757d;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
-            }
-            .nav-container {
-                flex-direction: column;
-                gap: 10px;
-            }
-            nav ul {
-                gap: 12px;
-                font-size: 0.9rem;
-            }
-        }
-    </style>
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 1.75rem; }
+      nav a { margin-left: 12px; font-size: 0.8rem; }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- HEADER & NAVIGASI -->
-    <header>
-        <div class="nav-container">
-            <div class="logo">Otoritas<span>Kerja</span></div>
-            <nav>
-                <ul>
-                    <li><a href="#">Beranda</a></li>
-                    <li><a href="#katalog">Katalog Template</a></li>
-                    <li><a href="#artikel">Panduan</a></li>
-                    <li><a href="#tentang">Tentang</a></li>
-                    <li><a href="#kontak">Kontak</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- HERO BANNER (SAMPUL UTAMA) -->
-    <section class="hero">
-        <h1>Pusat Template Administrasi & Excel Praktis</h1>
-        <p>Solusi dokumen gratis & premium siap pakai untuk pengurus RT/RW dan praktisi manufaktur.</p>
-    </section>
-
-    <!-- KONTEN UTAMA -->
-    <div class="container">
+  <!-- Header & Nav -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo-area">
+        <!-- Logo gambar dari GitHub -->
+        <img src="logo.jpeg" alt="Logo Otoritas Kerja" style="height: 38px; width: auto; border-radius: 4px;">
         
-        <main>
-            <!-- KATALOG PRODUK -->
-            <section id="katalog">
-                <h2 class="section-title">Katalog Template Digital</h2>
-                
-                <div class="product-grid">
-                    
-                    <!-- PRODUK 1: GRATIS -->
-                    <div class="product-card">
-                        <span class="product-badge badge-free">GRATIS</span>
-                        <div class="product-preview">
-                            📄 Format Word<br>Surat Pengantar RT
-                        </div>
-                        <div class="product-body">
-                            <div>
-                                <h3 class="product-title">Template Surat Pengantar RT Standar</h3>
-                                <p class="product-desc">Format Word surat pengantar warga sederhana siap edit & cetak gratis.</p>
-                            </div>
-                            <div class="product-footer">
-                                <span class="price price-free">Rp 0 (Free)</span>
-                                <a href="https://drive.google.com" target="_blank" class="btn-action btn-free">Download</a>
-                            </div>
-                        </div>
-                    </div>
+        <!-- Nama & Sub-judul proporsional dan elegan -->
+        <div>
+          <span style="display: block; font-size: 0.85rem; font-weight: 600; color: #f8fafc; letter-spacing: 0.3px;">
+            Sukardi
+          </span>
+          <span style="display: block; font-size: 0.62rem; color: #94a3b8; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">
+            Operational Excellence &amp; Systems
+          </span>
+        </div>
+      </a>
+      
+      <nav>
+        <a href="#modul">Modul &amp; Sistem</a>
+        <a href="#tools">Tools Excel</a>
+        <a href="#tentang">Tentang</a>
+      </nav>
+    </div>
+  </header>
 
-                    <!-- PRODUK 2: PREMIUM RT/RW -->
-                    <div class="product-card">
-                        <span class="product-badge badge-pro">PRO / PAKET</span>
-                        <div class="product-preview">
-                            📁 Bundel Word & Excel<br>Administrasi RT/RW
-                        </div>
-                        <div class="product-body">
-                            <div>
-                                <h3 class="product-title">Paket Lengkap Administrasi RT/RW</h3>
-                                <p class="product-desc">Bundel 10+ template surat domisili, kematian, undangan, dan rekap iuran.</p>
-                            </div>
-                            <div class="product-footer">
-                                <span class="price price-pro">Rp 25.000</span>
-                                <a href="https://lynk.id" target="_blank" class="btn-action btn-pro">Beli Paket</a>
-                            </div>
-                        </div>
-                    </div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="author-badge">
+        <span class="dot"></span>
+        Sukardi — Operational Excellence &amp; Systems
+      </div>
+      <h1>Platform Efisiensi Operasional &amp; Standar Kerja Industri</h1>
+      <p>Panduan praktis analisis manufaktur, pemecahan masalah lantai pabrik, serta kalkulator &amp; template Excel terstruktur untuk profesional.</p>
+      <div class="cta-group">
+        <a href="#modul" class="btn-primary">Eksplorasi Modul</a>
+        <a href="#tools" class="btn-secondary">Unduh Tools Excel</a>
+      </div>
+    </div>
+  </section>
 
-                    <!-- PRODUK 3: PREMIUM EXCEL INDUSTRI -->
-                    <div class="product-card">
-                        <span class="product-badge badge-pro">PRO / PAKET</span>
-                        <div class="product-preview">
-                            📊 Spreadsheet Excel<br>Rekap Produksi & OEE
-                        </div>
-                        <div class="product-body">
-                            <div>
-                                <h3 class="product-title">Spreadsheet Rekap Produksi & OEE</h3>
-                                <p class="product-desc">Template Excel rekap produksi harian otomatis, reject rate, dan grafik KPI.</p>
-                            </div>
-                            <div class="product-footer">
-                                <span class="price price-pro">Rp 35.000</span>
-                                <a href="https://lynk.id" target="_blank" class="btn-action btn-pro">Beli Paket</a>
-                            </div>
-                        </div>
-                    </div>
+  <!-- Content Section -->
+  <div class="container" id="modul">
+    <h2 class="section-title">Fokus Keahlian &amp; Sistem Kerja</h2>
+    <div class="grid">
+      
+      <div class="card">
+        <div>
+          <span class="card-tag">Quality &amp; Process Control</span>
+          <h3>Analisis Defek &amp; Root Cause Problem Solving</h3>
+          <p>Metode terstruktur menggunakan 5 Whys, Fishbone Diagram, dan FMEA untuk mengidentifikasi serta menekan cacat produksi di lapangan.</p>
+        </div>
+        <a href="#" class="btn-primary" style="padding: 8px 16px; font-size: 0.85rem; text-align: center;">Pelajari Modul &rarr;</a>
+      </div>
 
-                </div>
-            </section>
+      <div class="card">
+        <div>
+          <span class="card-tag">Standardization &amp; Systems</span>
+          <h3>Perancangan SOP &amp; Work Instruction (WI)</h3>
+          <p>Penyusunan instruksi kerja yang jelas dan mudah dipahami operator guna menjaga konsistensi kualitas dan keselamatan kerja.</p>
+        </div>
+        <a href="#" class="btn-primary" style="padding: 8px 16px; font-size: 0.85rem; text-align: center;">Pelajari Modul &rarr;</a>
+      </div>
 
-            <!-- ARTIKEL (PERSYARATAN ADSENSE) -->
-            <section id="artikel">
-                <h2 class="section-title">Panduan & Artikel Terkini</h2>
-                
-                <div class="article-list">
-                    <article class="article-item">
-                        <h3><a href="#">Cara Membuat Surat Pengantar RT/RW Yang Rapi dan Resmi</a></h3>
-                        <div class="article-meta">Dipublikasikan pada: 3 Oktober 2026 | Kategori: Administrasi RT</div>
-                        <p>Panduan langkah demi langkah cara menyusun format surat pengantar warga yang benar dan sesuai standar kelurahan...</p>
-                    </article>
-
-                    <article class="article-item">
-                        <h3><a href="#">5 Formula Penting Excel untuk Menghitung Hasil Produksi Pabrik</a></h3>
-                        <div class="article-meta">Dipublikasikan pada: 1 Oktober 2026 | Kategori: Manufaktur</div>
-                        <p>Memaksimalkan rumus Pivot Table dan formula matematika Excel untuk merekap laporan harian secara otomatis...</p>
-                    </article>
-                </div>
-            </section>
-        </main>
-
-        <!-- SIDEBAR -->
-        <aside class="sidebar">
-            <div class="widget">
-                <h3 style="font-size:1rem; margin-bottom:10px;">Tentang OtoritasKerja</h3>
-                <p style="font-size:0.85rem; color:#6c757d;">Platform penyedia template administrasi dan instrumen efisiensi kerja terpercaya.</p>
-            </div>
-
-            <!-- SLOT ADSENSE (MASA DEPAN) -->
-            <div class="ads-slot">
-                <span>[ Space Iklan AdSense / Banner Promosi ]</span>
-            </div>
-
-            <div class="widget" id="kontak">
-                <h3 style="font-size:1rem; margin-bottom:10px;">Layanan Pelanggan</h3>
-                <p style="font-size:0.85rem; color:#6c757d;">Ada kendala download? Hubungi kami via email/WhatsApp:</p>
-                <a href="mailto:admin@otoritaskerja.com" style="display:inline-block; margin-top:10px; background:#0d6efd; color:white; padding:6px 12px; border-radius:4px; font-size:0.85rem; font-weight:bold;">Email Support</a>
-            </div>
-        </aside>
+      <div class="card" id="tools">
+        <div>
+          <span class="card-tag">Automation &amp; Excel Tools</span>
+          <h3>Template Excel &amp; Kalkulator Analisis Operasional</h3>
+          <p>Lembar kerja siap pakai untuk memantau performa harian, kontrol varian material, dan rekapitulasi data kualitas secara praktis.</p>
+        </div>
+        <a href="#" class="btn-primary" style="padding: 8px 16px; font-size: 0.85rem; text-align: center;">Unduh Template &rarr;</a>
+      </div>
 
     </div>
+  </div>
 
-    <!-- FOOTER & LEGALITAS -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-col" id="tentang">
-                <h4>OtoritasKerja</h4>
-                <p style="font-size:0.85rem; color:#adb5bd;">Solusi praktis dokumen administrasi dan alat bantu efisiensi kerja industri di Indonesia.</p>
-            </div>
-
-            <div class="footer-col">
-                <h4>Navigasi</h4>
-                <ul>
-                    <li><a href="#">Beranda</a></li>
-                    <li><a href="#katalog">Katalog Template</a></li>
-                    <li><a href="#artikel">Artikel Panduan</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h4>Halaman Legalitas</h4>
-                <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Disclaimer</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="copyright">
-            &copy; 2026 OtoritasKerja.com - All Rights Reserved. Hosted securely on GitHub.
-        </div>
-    </footer>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 OtoritasKerja.com — Operational Excellence &amp; Systems by Sukardi.</p>
+    <p style="margin-top: 10px;">
+      <a href="#">Kebijakan Privasi</a> | 
+      <a href="#">Ketentuan Layanan</a> | 
+      <a href="#">Kontak</a>
+    </p>
+  </footer>
 
 </body>
 </html>
