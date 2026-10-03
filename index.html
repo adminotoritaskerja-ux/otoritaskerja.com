@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OtoritasKerja — Sukardi | Pusat Template Excel & Panduan Manufaktur</title>
     <meta name="description" content="Pusat download template Excel industri, analisis efisiensi operasional, problem solving lantai pabrik, dan panduan profesional dunia kerja oleh Sukardi.">
-    <!-- Google Fonts: Inter & JetBrains Mono untuk kesan industrial -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@700;800&display=swap" rel="stylesheet">
     <!-- FontAwesome untuk Icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -55,18 +55,28 @@
             align-items: center;
         }
 
-        .logo {
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 38px;
+            width: auto;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        .logo-text {
             font-family: 'JetBrains Mono', monospace;
             font-size: 1.25rem;
             font-weight: 700;
             color: var(--text-main);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
 
-        .logo span {
+        .logo-text span {
             color: var(--accent-blue);
         }
 
@@ -101,31 +111,34 @@
             color: var(--accent-blue) !important;
         }
 
-        /* RUNNING TEXT / TICKER */
+        /* RUNNING TEXT / TICKER (DI-BOLD MAKSIMAL & MENCOLOK) */
         .ticker-wrap {
-            background: #070d1d;
-            border-bottom: 1px solid var(--steel-border);
+            background: #050914;
+            border-bottom: 2px solid var(--accent-orange);
             overflow: hidden;
             white-space: nowrap;
-            padding: 12px 0;
+            padding: 14px 0;
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.9rem;
-            font-weight: 700;
+            font-size: 0.95rem;
+            font-weight: 800;
             color: #ffffff;
+            letter-spacing: 0.5px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
         }
 
         .ticker {
             display: inline-block;
-            animation: ticker 35s linear infinite;
+            animation: ticker 32s linear infinite;
         }
 
         .ticker span {
-            margin-right: 60px;
+            margin-right: 80px;
         }
 
         .ticker span i {
             color: var(--accent-orange);
-            margin-right: 8px;
+            margin-right: 10px;
+            font-size: 1.1rem;
         }
 
         @keyframes ticker {
@@ -451,9 +464,10 @@
     <!-- HEADER & NAV (Logo, Penulis, & Menu Navbar Lengkap) -->
     <header>
         <div class="nav-container">
-            <a href="#" class="logo" onclick="switchPage('beranda', event)">
-                <i class="fa-solid fa-industry" style="color: var(--accent-blue);"></i>
-                Otoritas<span>Kerja</span> <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 400; margin-left: 5px;">— Sukardi</span>
+            <a href="#" class="logo-area" onclick="switchPage('beranda', event)">
+                <!-- Pastikan file gambar logo Anda bernama logo.jpeg atau logo.png di folder yang sama -->
+                <img src="logo.jpeg" alt="Logo Otoritas Kerja" class="logo-img" onerror="this.onerror=null; this.src='logo.png';">
+                <div class="logo-text">Otoritas<span>Kerja</span> <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 400; margin-left: 5px;">— Sukardi</span></div>
             </a>
             <ul class="nav-links">
                 <li><button onclick="switchPage('beranda', event)" class="active" id="nav-beranda">Beranda</button></li>
@@ -465,7 +479,7 @@
         </div>
     </header>
 
-    <!-- RUNNING TEXT / TICKER (Ditebalkan & Jelas) -->
+    <!-- RUNNING TEXT / TICKER (DITEBALKAN & DI-BOLD MAKSIMAL) -->
     <div class="ticker-wrap">
         <div class="ticker">
             <span><i class="fa-solid fa-bullhorn"></i> SELAMAT DATANG DI OTORITASKERJA.COM — PUSAT TEMPLATE EXCEL & PANDUAN MANUFAKTUR PROFESIONAL.</span>
@@ -582,7 +596,7 @@
             </div>
             <div class="about-card">
                 <h3>Inisiator & Praktisi Manufaktur</h3>
-                <p><b>OtoritasKerja.com</b> dikembangkan oleh <b>Sukardi</b>, seorang praktisi dan Supervisor Produksi berpengalaman di industri manufaktur (PT Sanipak Indonesia). Platform ini didedikasikan untuk membagikan standarisasi kerja, perangkat analisis kualitas, dan edukasi praktis dunia industri modern.</p>
+                <p><b>OtoritasKerja.com</b> dikembangkan oleh <b>Sukardi</b>, seorang praktisi berpengalaman di industri manufaktur Platform ini didedikasikan untuk membagikan standarisasi kerja, perangkat analisis kualitas, dan edukasi praktis dunia industri modern.</p>
             </div>
         </div>
     </div>
@@ -636,26 +650,19 @@
         function switchPage(pageId, event) {
             if(event) event.preventDefault();
             
-            // Sembunyikan semua halaman
             document.querySelectorAll('.page-view').forEach(el => el.classList.remove('active'));
-            
-            // Matikan semua tombol nav aktif
             document.querySelectorAll('.nav-links button').forEach(el => el.classList.remove('active'));
             
-            // Tampilkan halaman yang dipilih
             document.getElementById('page-' + pageId).classList.add('active');
             
-            // Aktifkan tombol nav terkait
             const navBtn = document.getElementById('nav-' + pageId);
             if(navBtn) navBtn.classList.add('active');
 
             window.scrollTo(0, 0);
         }
 
-        // Fungsi Password Admin
         function checkAdminPassword() {
             const password = prompt("Masukkan Password Admin:");
-            // Password default diatur "sukardi2026", silakan ubah sesuai keinginan Bapak
             if(password === "sukardi2026") {
                 switchPage('admin');
                 document.getElementById('nav-admin').classList.add('active');
@@ -664,7 +671,6 @@
             }
         }
 
-        // Script Tambah Konten via CMS
         document.getElementById('cmsForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
