@@ -1,152 +1,453 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OtoritasKerja — Operational Excellence & Systems</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; color: #1e293b; line-height: 1.6; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OtoritasKerja — Pusat Template Excel & Panduan Manufaktur</title>
+    <meta name="description" content="Pusat download template Excel industri, analisis efisiensi operasional, problem solving lantai pabrik, dan panduan profesional dunia kerja.">
+    <!-- Google Fonts: Inter & JetBrains Mono untuk kesan industrial -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome untuk Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    /* Header & Navigation */
-    header { background-color: #0f172a; padding: 12px 20px; border-bottom: 1px solid #1e293b; position: sticky; top: 0; z-index: 100; }
-    .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-    .logo-area { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-    
-    nav a { color: #94a3b8; text-decoration: none; font-size: 0.9rem; font-weight: 500; margin-left: 20px; transition: 0.3s; }
-    nav a:hover { color: #ffffff; }
+    <style>
+        :root {
+            --navy-dark: #0b1329;
+            --navy-card: #131e38;
+            --steel-border: #233554;
+            --accent-blue: #38bdf8;
+            --accent-orange: #f97316;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --badge-free: #10b981;
+            --badge-pro: #f59e0b;
+        }
 
-    /* Hero Section */
-    .hero {
-      position: relative;
-      background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.95)), 
-                  url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop') no-repeat center center/cover;
-      color: #ffffff;
-      padding: 80px 20px;
-      text-align: center;
-      border-bottom: 4px solid #0284c7;
-    }
-    .hero-content { max-width: 800px; margin: 0 auto; }
-    .hero h1 { font-size: 2.2rem; font-weight: 800; line-height: 1.25; margin-bottom: 16px; letter-spacing: -0.5px; color: #ffffff; }
-    .hero p { font-size: 1.05rem; color: #94a3b8; margin-bottom: 30px; line-height: 1.6; }
-    
-    .cta-group { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-    .btn-primary { background-color: #0284c7; color: #ffffff; padding: 12px 26px; border-radius: 8px; font-weight: 700; text-decoration: none; transition: 0.3s; display: inline-block; }
-    .btn-primary:hover { background-color: #0369a1; }
-    .btn-secondary { background-color: rgba(255, 255, 255, 0.05); border: 1px solid #334155; color: #ffffff; padding: 12px 26px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block; }
-    .btn-secondary:hover { background-color: rgba(255, 255, 255, 0.1); }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    /* Content Section */
-    .container { max-width: 1100px; margin: 50px auto; padding: 0 20px; }
-    .section-title { font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-bottom: 25px; border-left: 4px solid #0284c7; padding-left: 12px; }
-    
-    /* Grid Cards */
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-    .card { background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 24px; transition: 0.3s; display: flex; flex-direction: column; justify-content: space-between; }
-    .card:hover { transform: translateY(-4px); box-shadow: 0 12px 20px -5px rgba(0,0,0,0.05); }
-    .card-tag { font-size: 0.75rem; font-weight: 700; color: #0284c7; text-transform: uppercase; margin-bottom: 10px; display: block; }
-    .card h3 { font-size: 1.15rem; color: #0f172a; margin-bottom: 10px; }
-    .card p { font-size: 0.9rem; color: #64748b; margin-bottom: 20px; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--navy-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
 
-    /* Footer */
-    footer { background-color: #0f172a; color: #64748b; padding: 40px 20px; font-size: 0.85rem; border-top: 1px solid #1e293b; text-align: center; }
-    footer a { color: #94a3b8; text-decoration: none; margin: 0 10px; }
-    footer a:hover { color: #ffffff; }
+        /* HEADER & NAVIGATION */
+        header {
+            background-color: rgba(11, 19, 41, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--steel-border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 1.75rem; }
-      nav a { margin-left: 12px; font-size: 0.8rem; }
-    }
-  </style>
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-blue);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-blue);
+        }
+
+        /* RUNNING TEXT / TICKER (DI BAWAH NAVIGASI) */
+        .ticker-wrap {
+            background: #070d1d;
+            border-bottom: 1px solid var(--steel-border);
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 10px 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--accent-blue);
+        }
+
+        .ticker {
+            display: inline-block;
+            animation: ticker 35s linear infinite;
+        }
+
+        .ticker span {
+            margin-right: 60px;
+        }
+
+        .ticker span i {
+            color: var(--accent-orange);
+            margin-right: 8px;
+        }
+
+        @keyframes ticker {
+            0% { transform: translate3d(100%, 0, 0); }
+            100% { transform: translate3d(-100%, 0, 0); }
+        }
+
+        /* HERO SECTION DENGAN LATAR MESIN PABRIK (OVERLAY 65% - JELAS & ELEGAN) */
+        .hero {
+            position: relative;
+            padding: 5rem 2rem 4rem 2rem;
+            text-align: center;
+            background: linear-gradient(rgba(11, 19, 41, 0.65), rgba(11, 19, 41, 0.70)), 
+                        url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            border-bottom: 1px solid var(--steel-border);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .hero h1 span {
+            color: var(--accent-blue);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent-blue);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* MAIN CONTAINER & GRID CARDS (FREEMIUM MODEL) */
+        .container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent-blue);
+            padding-left: 12px;
+        }
+
+        .section-title h2 {
+            font-size: 1.5rem;
+            font-weight: 650;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--navy-card);
+            border: 1px solid var(--steel-border);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.2s, border-color 0.2s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-blue);
+        }
+
+        /* DUKUNGAN GAMBAR DALAM KARTU / ARTIKEL */
+        .card-img-container {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            border-bottom: 1px solid var(--steel-border);
+            background: #070d1d;
+        }
+
+        .card-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .card:hover .card-img-container img {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+        }
+
+        .badge.free {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--badge-free);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+        }
+
+        .badge.pro {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--badge-pro);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+
+        .card-date {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .card h3 a {
+            color: var(--text-main);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .card h3 a:hover {
+            color: var(--accent-blue);
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-footer {
+            padding: 1rem 1.5rem;
+            background: rgba(7, 13, 29, 0.4);
+            border-top: 1px solid var(--steel-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-blue);
+            color: var(--navy-dark);
+        }
+
+        .btn-primary:hover {
+            background-color: #0ea5e9;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--steel-border);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #070d1d;
+            border-top: 1px solid var(--steel-border);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 5rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Header & Nav -->
-  <header>
-    <div class="nav-container">
-      <a href="#" class="logo-area">
-        <!-- Logo gambar dari GitHub -->
-        <img src="logo.jpeg" alt="Logo Otoritas Kerja" style="height: 38px; width: auto; border-radius: 4px;">
-        
-        <!-- Nama & Sub-judul proporsional dan elegan -->
-        <div>
-          <span style="display: block; font-size: 0.85rem; font-weight: 600; color: #f8fafc; letter-spacing: 0.3px;">
-            Sukardi
-          </span>
-          <span style="display: block; font-size: 0.62rem; color: #94a3b8; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">
-            Operational Excellence &amp; Systems
-          </span>
+    <!-- HEADER & NAV (Poin 4: Menu Kejelasan Halaman) -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-industry" style="color: var(--accent-blue);"></i>
+                Otoritas<span>Kerja</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Beranda</a></li>
+                <li><a href="#">Modul & Jurnal</a></li>
+                <li><a href="#">Tools Excel</a></li>
+                <li><a href="#">Tentang</a></li>
+            </ul>
         </div>
-      </a>
-      
-      <nav>
-        <a href="#modul">Modul &amp; Sistem</a>
-        <a href="#tools">Tools Excel</a>
-        <a href="#tentang">Tentang</a>
-      </nav>
+    </header>
+
+    <!-- RUNNING TEXT / TICKER (Poin 2: Info Dinamis Ala Ruang Kontrol) -->
+    <div class="ticker-wrap">
+        <div class="ticker">
+            <span><i class="fa-solid fa-bullhorn"></i> Selamat datang di OtoritasKerja.com — Pusat Template Excel & Panduan Manufaktur Profesional.</span>
+            <span><i class="fa-solid fa-circle-check"></i> Update Terbaru: Modul Analisis Defek Varian Material & Root Cause 5 Whys.</span>
+            <span><i class="fa-solid fa-bolt"></i> Download Template Standar Operasional & Kalkulator OEE Pabrik Sekarang!</span>
+        </div>
     </div>
-  </header>
 
-  <!-- Hero Section (Tanpa Badge Duplikat, Latar Belakang Elegan) -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Platform Efisiensi Operasional &amp; Standar Kerja Industri</h1>
-      <p>Panduan praktis analisis manufaktur, pemecahan masalah lantai pabrik, serta kalkulator &amp; template Excel terstruktur untuk profesional.</p>
-      <div class="cta-group">
-        <a href="#modul" class="btn-primary">Eksplorasi Modul</a>
-        <a href="#tools" class="btn-secondary">Unduh Tools Excel</a>
-      </div>
+    <!-- HERO SECTION (Poin 1: Industrial Navy & Steel dengan Latar Mesin Jelas) -->
+    <section class="hero">
+        <div class="hero-badge"><i class="fa-solid fa-shield-halved"></i> Operational Excellence & Systems</div>
+        <h1>Pusat Standar & Template <span>Manufaktur Modern</span></h1>
+        <p>Tingkatkan efisiensi lantai pabrik dan kualitas operasional Anda dengan panduan teknis, jurnal praktis, dan template Excel siap pakai.</p>
+    </section>
+
+    <!-- KONTEN UTAMA: KARTU ARTIKEL, JURNAL & TOOLS (Poin 3, 5: Grid & Freemium) -->
+    <div class="container">
+        <div class="section-title">
+            <h2>Modul, Artikel & Tools Terbaru</h2>
+        </div>
+
+        <div class="grid">
+            <!-- Kartu 1: Artikel/Jurnal Free + Gambar Ilustrasi -->
+            <div class="card">
+                <div class="card-img-container">
+                    <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80" alt="Ilustrasi FMEA Manufaktur">
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="badge free">Free Artikel</span>
+                        <span class="card-date">03 Okt 2026</span>
+                    </div>
+                    <h3><a href="#">Panduan Lengkap FMEA untuk Menekan Defek di Lantai Pabrik</a></h3>
+                    <p>Strategi sistematis menganalisis potensi kegagalan proses ekstrusi plastik dan langkah pencegahannya secara efektif.</p>
+                </div>
+                <div class="card-footer">
+                    <span style="font-size: 0.85rem; color: var(--text-muted);"><i class="fa-regular fa-file-lines"></i> 5 Min Baca</span>
+                    <a href="#" class="btn btn-outline">Baca Artikel <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Kartu 2: Template Excel Free -->
+            <div class="card">
+                <div class="card-img-container">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Checklist Excel Manufaktur">
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="badge free">Free Template</span>
+                        <span class="card-date">02 Okt 2026</span>
+                    </div>
+                    <h3><a href="#">Checklist Harian Mesin Blown Film & Parameter Extrusion</a></h3>
+                    <p>Format pencatatan suhu heater, kecepatan tarik, dan ketebalan film standar untuk supervisor produksi.</p>
+                </div>
+                <div class="card-footer">
+                    <span style="font-size: 0.85rem; color: var(--text-muted);"><i class="fa-regular fa-file-excel" style="color: #10b981;"></i> .XLSX Standard</span>
+                    <a href="#" class="btn btn-outline">Download <i class="fa-solid fa-download"></i></a>
+                </div>
+            </div>
+
+            <!-- Kartu 3: Tools Excel Lanjut (PRO / Paid) -->
+            <div class="card" style="border-color: rgba(245, 158, 11, 0.4);">
+                <div class="card-img-container">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Kalkulator OEE Dashboard">
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="badge pro">PRO / Premium</span>
+                        <span class="card-date">01 Okt 2026</span>
+                    </div>
+                    <h3><a href="#">Master Kalkulator OEE & Dashboard Downtime Otomatis</a></h3>
+                    <p>Alat ukur efektivitas mesin menyeluruh dilengkapi grafik interaktif, analisis shift, dan laporan scrap otomatis.</p>
+                </div>
+                <div class="card-footer">
+                    <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600; color: var(--badge-pro);">Rp 75.000</span>
+                    <a href="#" class="btn btn-primary">Beli Template <i class="fa-solid fa-cart-shopping"></i></a>
+                </div>
+            </div>
+        </div>
     </div>
-  </section>
 
-  <!-- Content Section -->
-  <div class="container" id="modul">
-    <h2 class="section-title">Fokus Keahlian &amp; Sistem Kerja</h2>
-    <div class="grid">
-      
-      <div class="card">
-        <div>
-          <span class="card-tag">Quality &amp; Process Control</span>
-          <h3>Analisis Defek &amp; Root Cause Problem Solving</h3>
-          <p>Metode terstruktur menggunakan 5 Whys, Fishbone Diagram, dan FMEA untuk mengidentifikasi serta menekan cacat produksi di lapangan.</p>
-        </div>
-        <a href="#" class="btn-primary" style="padding: 8px 16px; font-size: 0.85rem; text-align: center;">Pelajari Modul &rarr;</a>
-      </div>
-
-      <div class="card">
-        <div>
-          <span class="card-tag">Standardization &amp; Systems</span>
-          <h3>Perancangan SOP &amp; Work Instruction (WI)</h3>
-          <p>Penyusunan instruksi kerja yang jelas dan mudah dipahami operator guna menjaga konsistensi kualitas dan keselamatan kerja.</p>
-        </div>
-        <a href="#" class="btn-primary" style="padding: 8px 16px; font-size: 0.85rem; text-align: center;">Pelajari Modul &rarr;</a>
-      </div>
-
-      <div class="card" id="tools">
-        <div>
-          <span class="card-tag">Automation &amp; Excel Tools</span>
-          <h3>Template Excel &amp; Kalkulator Analisis Operasional</h3>
-          <p>Lembar kerja siap pakai untuk memantau performa harian, kontrol varian material, dan rekapitulasi data kualitas secara praktis.</p>
-        </div>
-        <a href="#" class="btn-primary" style="padding: 8px 16px; font-size: 0.85rem; text-align: center;">Unduh Template &rarr;</a>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2026 OtoritasKerja.com — Operational Excellence &amp; Systems by Sukardi.</p>
-    <p style="margin-top: 10px;">
-      <a href="#">Kebijakan Privasi</a> | 
-      <a href="#">Ketentuan Layanan</a> | 
-      <a href="#">Kontak</a>
-    </p>
-  </footer>
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 OtoritasKerja.com — Sukardi (Operational Excellence & Systems).</p>
+        <p>Seluruh hak cipta dilindungi undang-undang.</p>
+    </footer>
 
 </body>
 </html>
