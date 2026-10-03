@@ -87,13 +87,13 @@
             color: var(--accent-blue);
         }
 
-        /* RUNNING TEXT / TICKER (DI BAWAH NAVIGASI) */
+        /* RUNNING TEXT / TICKER */
         .ticker-wrap {
             background: #070d1d;
             border-bottom: 1px solid var(--steel-border);
             overflow: hidden;
             white-space: nowrap;
-            padding: 10px 0;
+            padding: 8px 0;
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.85rem;
             color: var(--accent-blue);
@@ -101,11 +101,11 @@
 
         .ticker {
             display: inline-block;
-            animation: ticker 35s linear infinite;
+            animation: ticker 30s linear infinite;
         }
 
         .ticker span {
-            margin-right: 60px;
+            margin-right: 50px;
         }
 
         .ticker span i {
@@ -118,12 +118,12 @@
             100% { transform: translate3d(-100%, 0, 0); }
         }
 
-        /* HERO SECTION DENGAN LATAR MESIN PABRIK (OVERLAY 65% - JELAS & ELEGAN) */
+        /* HERO SECTION DENGAN LATAR MESIN PABRIK (OVERLAY 65%) */
         .hero {
             position: relative;
             padding: 5rem 2rem 4rem 2rem;
             text-align: center;
-            background: linear-gradient(rgba(11, 19, 41, 0.65), rgba(11, 19, 41, 0.70)), 
+            background: linear-gradient(rgba(11, 19, 41, 0.70), rgba(11, 19, 41, 0.75)), 
                         url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
             border-bottom: 1px solid var(--steel-border);
         }
@@ -159,7 +159,7 @@
             font-family: 'JetBrains Mono', monospace;
         }
 
-        /* MAIN CONTAINER & GRID CARDS (FREEMIUM MODEL) */
+        /* MAIN CONTAINER & GRID CARDS */
         .container {
             max-width: 1200px;
             margin: 3rem auto;
@@ -200,26 +200,6 @@
         .card:hover {
             transform: translateY(-4px);
             border-color: var(--accent-blue);
-        }
-
-        /* DUKUNGAN GAMBAR DALAM KARTU / ARTIKEL */
-        .card-img-container {
-            width: 100%;
-            height: 180px;
-            overflow: hidden;
-            border-bottom: 1px solid var(--steel-border);
-            background: #070d1d;
-        }
-
-        .card-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s;
-        }
-
-        .card:hover .card-img-container img {
-            transform: scale(1.05);
         }
 
         .card-content {
@@ -345,7 +325,7 @@
 </head>
 <body>
 
-    <!-- HEADER & NAV (Poin 4: Menu Kejelasan Halaman) -->
+    <!-- HEADER & NAV -->
     <header>
         <div class="nav-container">
             <a href="#" class="logo">
@@ -361,7 +341,7 @@
         </div>
     </header>
 
-    <!-- RUNNING TEXT / TICKER (Poin 2: Info Dinamis Ala Ruang Kontrol) -->
+    <!-- RUNNING TEXT (TICKER) -->
     <div class="ticker-wrap">
         <div class="ticker">
             <span><i class="fa-solid fa-bullhorn"></i> Selamat datang di OtoritasKerja.com — Pusat Template Excel & Panduan Manufaktur Profesional.</span>
@@ -370,25 +350,22 @@
         </div>
     </div>
 
-    <!-- HERO SECTION (Poin 1: Industrial Navy & Steel dengan Latar Mesin Jelas) -->
+    <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-badge"><i class="fa-solid fa-shield-halved"></i> Operational Excellence & Systems</div>
         <h1>Pusat Standar & Template <span>Manufaktur Modern</span></h1>
         <p>Tingkatkan efisiensi lantai pabrik dan kualitas operasional Anda dengan panduan teknis, jurnal praktis, dan template Excel siap pakai.</p>
     </section>
 
-    <!-- KONTEN UTAMA: KARTU ARTIKEL, JURNAL & TOOLS (Poin 3, 5: Grid & Freemium) -->
+    <!-- KONTEN UTAMA: KARTU ARTIKEL & TEMPLATE -->
     <div class="container">
         <div class="section-title">
             <h2>Modul, Artikel & Tools Terbaru</h2>
         </div>
 
         <div class="grid">
-            <!-- Kartu 1: Artikel/Jurnal Free + Gambar Ilustrasi -->
+            <!-- Kartu 1: Artikel/Jurnal (Free) -->
             <div class="card">
-                <div class="card-img-container">
-                    <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80" alt="Ilustrasi FMEA Manufaktur">
-                </div>
                 <div class="card-content">
                     <div class="card-meta">
                         <span class="badge free">Free Artikel</span>
@@ -403,11 +380,8 @@
                 </div>
             </div>
 
-            <!-- Kartu 2: Template Excel Free -->
+            <!-- Kartu 2: Template Excel (Free) -->
             <div class="card">
-                <div class="card-img-container">
-                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Checklist Excel Manufaktur">
-                </div>
                 <div class="card-content">
                     <div class="card-meta">
                         <span class="badge free">Free Template</span>
@@ -422,11 +396,8 @@
                 </div>
             </div>
 
-            <!-- Kartu 3: Tools Excel Lanjut (PRO / Paid) -->
+            <!-- Kartu 3: Tools Excel Lanjut (Pro / Paid) -->
             <div class="card" style="border-color: rgba(245, 158, 11, 0.4);">
-                <div class="card-img-container">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Kalkulator OEE Dashboard">
-                </div>
                 <div class="card-content">
                     <div class="card-meta">
                         <span class="badge pro">PRO / Premium</span>
