@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OtoritasKerja — Sukardi | Pusat Template Excel & Panduan Manufaktur</title>
-    <meta name="description" content="Pusat download template Excel industri, analisis efisiensi operasional, problem solving lantai pabrik, dan panduan profesional dunia kerja oleh Sukardi.">
+    <meta name="description" content="Pusat download template Excel industri, analisis efisiensi operasional, problem solving lantai pabrik, dan portofolio trainer profesional oleh Sukardi.">
     <!-- Google Fonts: Inter & JetBrains Mono -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@700;800&display=swap" rel="stylesheet">
     <!-- FontAwesome untuk Icon -->
@@ -188,6 +188,24 @@
             font-family: 'JetBrains Mono', monospace;
         }
 
+        /* ADSENSE SLOT PLACEHOLDER */
+        .adsense-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .adsense-slot {
+            background: #f1f5f9;
+            border: 2px dashed var(--border-color);
+            padding: 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-family: 'JetBrains Mono', monospace;
+            border-radius: 8px;
+        }
+
         /* MAIN CONTAINER & GRID CARDS */
         .container {
             max-width: 1200px;
@@ -366,7 +384,7 @@
             display: block;
         }
 
-        /* ADMIN CMS & ABOUT */
+        /* ADMIN CMS & ABOUT & CONTACT */
         .admin-section, .about-card {
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -461,7 +479,7 @@
                 <li><button onclick="switchPage('beranda', event)" class="active" id="nav-beranda">Beranda</button></li>
                 <li><button onclick="switchPage('modul', event)" id="nav-modul">Modul & Jurnal</button></li>
                 <li><button onclick="switchPage('tools', event)" id="nav-tools">Tools Excel</button></li>
-                <li><button onclick="switchPage('tentang', event)" id="nav-tentang">Tentang</button></li>
+                <li><button onclick="switchPage('tentang', event)" id="nav-tentang">Tentang & Trainer</button></li>
                 <li><button onclick="checkAdminPassword()" class="admin-nav-btn" id="nav-admin"><i class="fa-solid fa-lock"></i> Admin CMS</button></li>
             </ul>
         </div>
@@ -484,7 +502,14 @@
             <p>Tingkatkan efisiensi lantai pabrik dan kualitas operasional Anda dengan panduan teknis, jurnal praktis, dan template Excel siap pakai.</p>
         </section>
 
-        <div class="container">
+        <!-- Google AdSense Slot (Top Banner) -->
+        <div class="adsense-container">
+            <div class="adsense-slot">
+                [ Google AdSense Banner Advertisement Slot (Responsive) ]
+            </div>
+        </div>
+
+        <div class="container" style="margin-top: 1rem;">
             <div class="section-title">
                 <h2>Modul, Artikel & Tools Terbaru</h2>
             </div>
@@ -527,7 +552,7 @@
                     </div>
                 </div>
 
-                <!-- Kartu 3 -->
+                <!-- Kartu 3 (PRO / Premium) -->
                 <div class="card" style="border-color: #fde68a;">
                     <div class="card-img-container">
                         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Kalkulator OEE">
@@ -547,6 +572,35 @@
                 </div>
             </div>
         </div>
+
+        <!-- SECTION: KONTAK & EMAIL INTERAKTIF (Untuk Klien In-house Training & Tanya Jawab) -->
+        <div class="container" style="margin-top: 4rem;">
+            <div class="admin-section" style="background: linear-gradient(135deg, #0f172a, #1e293b); color: #ffffff; border: none;">
+                <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+                    <span style="color: #38bdf8; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; font-weight: 600;">KONSULTASI & IN-HOUSE TRAINING</span>
+                    <h2 style="color: #ffffff; margin-top: 0.5rem; margin-bottom: 1rem;">Hubungi Sukardi Langsung</h2>
+                    <p style="color: #cbd5e1; margin-bottom: 2rem; font-size: 0.95rem;">Tertarik mengundang untuk in-house training efisiensi manufaktur, konsultasi sistem produksi, atau pemesanan template kustom? Kirim pesan melalui formulir di bawah ini.</p>
+                    
+                    <form onsubmit="handleEmailSubmit(event)" style="text-align: left;">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="senderName" style="color: #94a3b8;">Nama Anda</label>
+                                <input type="text" id="senderName" placeholder="Masukkan nama lengkap" required style="background: rgba(255,255,255,0.05); color: #fff; border-color: rgba(255,255,255,0.1);">
+                            </div>
+                            <div class="form-group">
+                                <label for="senderEmail" style="color: #94a3b8;">Alamat Email</label>
+                                <input type="email" id="senderEmail" placeholder="nama@email.com" required style="background: rgba(255,255,255,0.05); color: #fff; border-color: rgba(255,255,255,0.1);">
+                            </div>
+                            <div class="form-group full">
+                                <label for="senderMessage" style="color: #94a3b8;">Pesan / Kebutuhan Konsultasi</label>
+                                <textarea id="senderMessage" rows="4" placeholder="Tuliskan pesan atau detail kebutuhan training..." required style="background: rgba(255,255,255,0.05); color: #fff; border-color: rgba(255,255,255,0.1);"></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; margin-top: 1rem; padding: 12px;"><i class="fa-solid fa-paper-plane"></i> Kirim Pesan ke Email Sukardi</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- VIEW 2: MODUL & JURNAL -->
@@ -557,8 +611,8 @@
             </div>
             <div class="about-card">
                 <h3>Kumpulan Panduan Teknis Lantai Pabrik</h3>
-                <p>Halaman ini berisi daftar lengkap modul operasional, lembar kerja Root Cause Analysis (5 Whys & Fishbone), serta standar kendali mutu ekstrusi plastik.</p>
-                <p style="color: var(--primary-blue);">Gunakan menu <b>Admin CMS</b> di atas untuk menambahkan modul baru secara instan.</p>
+                <p>Halaman ini menyajikan pustaka modul operasional lengkap, lembar kerja Root Cause Analysis (5 Whys & Fishbone), serta standar kendali mutu ekstrusi plastik yang disusun secara sistematis untuk referensi para profesional industri.</p>
+                <p style="color: var(--primary-blue);">Gunakan menu <b>Admin CMS</b> untuk mempublikasikan catatan atau jurnal baru secara instan.</p>
             </div>
         </div>
     </div>
@@ -571,20 +625,21 @@
             </div>
             <div class="about-card">
                 <h3>Template & Kalkulator Siap Pakai</h3>
-                <p>Koleksi spreadsheet otomatis berbasis VBA macros dan formula tingkat lanjut untuk efisiensi laporan shift, pelacakan scrap, dan manajemen OEE.</p>
+                <p>Koleksi spreadsheet otomatis berbasis VBA macros dan formula tingkat lanjut untuk efisiensi laporan shift, pelacakan scrap, manajemen OEE, hingga audit kualitas harian.</p>
             </div>
         </div>
     </div>
 
-    <!-- VIEW 4: TENTANG -->
+    <!-- VIEW 4: TENTANG & TRAINER -->
     <div id="page-tentang" class="page-view">
         <div class="container">
             <div class="section-title">
-                <h2>Tentang OtoritasKerja.com</h2>
+                <h2>Tentang Inisiator & Portofolio Trainer</h2>
             </div>
             <div class="about-card">
-                <h3>Inisiator & Praktisi Manufaktur</h3>
-                <p><b>OtoritasKerja.com</b> dikembangkan oleh <b>Sukardi</b>, seorang praktisi dan Supervisor Produksi berpengalaman di industri manufaktur (PT Sanipak Indonesia). Platform ini didedikasikan untuk membagikan standarisasi kerja, perangkat analisis kualitas, dan edukasi praktis dunia industri modern.</p>
+                <h3>Sukardi — Praktisi & Supervisor Manufaktur</h3>
+                <p><b>OtoritasKerja.com</b> didirikan dan dikembangkan oleh <b>Sukardi</b>, seorang Supervisor Produksi berpengalaman di industri manufaktur plastik (PT Sanipak Indonesia) dengan latar belakang pendidikan S1 Teknik Industri.</p>
+                <p>Selain berpengalaman langsung mengelola efisiensi lantai pabrik, pengendalian mutu (7 QC Tools, FMEA, Root Cause Analysis), dan otomasi laporan berbasis Excel/VBA, beliau aktif menyediakan layanan konsultasi serta <b>In-House Training</b> untuk meningkatkan produktivitas tim operasional perusahaan.</p>
             </div>
         </div>
     </div>
@@ -657,6 +712,16 @@
             } else if(password !== null) {
                 alert("Password salah! Akses ditolak.");
             }
+        }
+
+        function handleEmailSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('senderName').value;
+            const email = document.getElementById('senderEmail').value;
+            
+            // Anda dapat menghubungkan aksi ini ke layanan backend seperti Formspree (contoh action form ke https://formspree.io/f/email_anda)
+            alert(`Terima kasih, ${name}! Pesan dan permintaan konsultasi Anda telah disiapkan. (Tips: Hubungkan atribut action form ke Formspree atau email tujuan agar pesan terkirim langsung ke inbox Anda).`);
+            e.target.reset();
         }
 
         document.getElementById('cmsForm').addEventListener('submit', function(e) {
