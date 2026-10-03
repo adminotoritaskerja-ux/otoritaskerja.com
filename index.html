@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OtoritasKerja — Pusat Template Excel & Panduan Manufaktur</title>
-    <meta name="description" content="Pusat download template Excel industri, analisis efisiensi operasional, problem solving lantai pabrik, dan panduan profesional dunia kerja.">
+    <title>OtoritasKerja — Sukardi | Pusat Template Excel & Panduan Manufaktur</title>
+    <meta name="description" content="Pusat download template Excel industri, analisis efisiensi operasional, problem solving lantai pabrik, dan panduan profesional dunia kerja oleh Sukardi.">
     <!-- Google Fonts: Inter & JetBrains Mono untuk kesan industrial -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome untuk Icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
@@ -87,25 +87,26 @@
             color: var(--accent-blue);
         }
 
-        /* RUNNING TEXT / TICKER */
+        /* RUNNING TEXT / TICKER (DITEBALKAN & DIPERJELAS) */
         .ticker-wrap {
             background: #070d1d;
             border-bottom: 1px solid var(--steel-border);
             overflow: hidden;
             white-space: nowrap;
-            padding: 8px 0;
+            padding: 12px 0;
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.85rem;
-            color: var(--accent-blue);
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #ffffff;
         }
 
         .ticker {
             display: inline-block;
-            animation: ticker 30s linear infinite;
+            animation: ticker 35s linear infinite;
         }
 
         .ticker span {
-            margin-right: 50px;
+            margin-right: 60px;
         }
 
         .ticker span i {
@@ -118,12 +119,12 @@
             100% { transform: translate3d(-100%, 0, 0); }
         }
 
-        /* HERO SECTION DENGAN LATAR MESIN PABRIK (OVERLAY 65%) */
+        /* HERO SECTION */
         .hero {
             position: relative;
             padding: 5rem 2rem 4rem 2rem;
             text-align: center;
-            background: linear-gradient(rgba(11, 19, 41, 0.70), rgba(11, 19, 41, 0.75)), 
+            background: linear-gradient(rgba(11, 19, 41, 0.65), rgba(11, 19, 41, 0.70)), 
                         url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
             border-bottom: 1px solid var(--steel-border);
         }
@@ -200,6 +201,25 @@
         .card:hover {
             transform: translateY(-4px);
             border-color: var(--accent-blue);
+        }
+
+        .card-img-container {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            border-bottom: 1px solid var(--steel-border);
+            background: #070d1d;
+        }
+
+        .card-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .card:hover .card-img-container img {
+            transform: scale(1.05);
         }
 
         .card-content {
@@ -280,11 +300,14 @@
             font-weight: 500;
             text-decoration: none;
             transition: background 0.2s;
+            cursor: pointer;
+            border: none;
         }
 
         .btn-primary {
             background-color: var(--accent-blue);
             color: var(--navy-dark);
+            font-weight: 600;
         }
 
         .btn-primary:hover {
@@ -294,11 +317,69 @@
         .btn-outline {
             border: 1px solid var(--steel-border);
             color: var(--text-main);
+            background: transparent;
         }
 
         .btn-outline:hover {
             border-color: var(--accent-blue);
             color: var(--accent-blue);
+        }
+
+        /* FORM ADMIN / CMS MINI SECTION */
+        .admin-section {
+            background-color: var(--navy-card);
+            border: 1px solid var(--steel-border);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .admin-section h2 {
+            font-size: 1.35rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--accent-blue);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            background-color: #070d1d;
+            border: 1px solid var(--steel-border);
+            border-radius: 6px;
+            padding: 10px 14px;
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-blue);
         }
 
         /* FOOTER */
@@ -325,12 +406,12 @@
 </head>
 <body>
 
-    <!-- HEADER & NAV -->
+    <!-- HEADER & NAV (Logo & Nama Penulis Dikembalikan) -->
     <header>
         <div class="nav-container">
             <a href="#" class="logo">
                 <i class="fa-solid fa-industry" style="color: var(--accent-blue);"></i>
-                Otoritas<span>Kerja</span>
+                Otoritas<span>Kerja</span> <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 400; margin-left: 5px;">— Sukardi</span>
             </a>
             <ul class="nav-links">
                 <li><a href="#" class="active">Beranda</a></li>
@@ -341,12 +422,12 @@
         </div>
     </header>
 
-    <!-- RUNNING TEXT (TICKER) -->
+    <!-- RUNNING TEXT / TICKER (Ditebalkan & Jelas) -->
     <div class="ticker-wrap">
         <div class="ticker">
-            <span><i class="fa-solid fa-bullhorn"></i> Selamat datang di OtoritasKerja.com — Pusat Template Excel & Panduan Manufaktur Profesional.</span>
-            <span><i class="fa-solid fa-circle-check"></i> Update Terbaru: Modul Analisis Defek Varian Material & Root Cause 5 Whys.</span>
-            <span><i class="fa-solid fa-bolt"></i> Download Template Standar Operasional & Kalkulator OEE Pabrik Sekarang!</span>
+            <span><i class="fa-solid fa-bullhorn"></i> SELAMAT DATANG DI OTORITASKERJA.COM — PUSAT TEMPLATE EXCEL & PANDUAN MANUFAKTUR PROFESIONAL.</span>
+            <span><i class="fa-solid fa-circle-check"></i> UPDATE TERBARU: MODUL ANALISIS DEFEK VARIAN MATERIAL & ROOT CAUSE 5 WHYS.</span>
+            <span><i class="fa-solid fa-bolt"></i> DOWNLOAD TEMPLATE STANDAR OPERASIONAL & KALKULATOR OEE PABRIK SEKARANG!</span>
         </div>
     </div>
 
@@ -357,15 +438,18 @@
         <p>Tingkatkan efisiensi lantai pabrik dan kualitas operasional Anda dengan panduan teknis, jurnal praktis, dan template Excel siap pakai.</p>
     </section>
 
-    <!-- KONTEN UTAMA: KARTU ARTIKEL & TEMPLATE -->
+    <!-- KONTEN UTAMA: KARTU ARTIKEL & TOOLS -->
     <div class="container">
         <div class="section-title">
             <h2>Modul, Artikel & Tools Terbaru</h2>
         </div>
 
-        <div class="grid">
-            <!-- Kartu 1: Artikel/Jurnal (Free) -->
+        <div class="grid" id="cardGrid">
+            <!-- Kartu 1: Artikel/Jurnal Free -->
             <div class="card">
+                <div class="card-img-container">
+                    <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80" alt="Ilustrasi FMEA Manufaktur">
+                </div>
                 <div class="card-content">
                     <div class="card-meta">
                         <span class="badge free">Free Artikel</span>
@@ -375,13 +459,16 @@
                     <p>Strategi sistematis menganalisis potensi kegagalan proses ekstrusi plastik dan langkah pencegahannya secara efektif.</p>
                 </div>
                 <div class="card-footer">
-                    <span style="font-size: 0.85rem; color: var(--text-muted);"><i class="fa-regular fa-file-lines"></i> 5 Min Baca</span>
+                    <span style="font-size: 0.85rem; color: var(--text-muted);"><i class="fa-regular fa-file-lines"></i> Oleh Sukardi</span>
                     <a href="#" class="btn btn-outline">Baca Artikel <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
 
-            <!-- Kartu 2: Template Excel (Free) -->
+            <!-- Kartu 2: Template Excel Free -->
             <div class="card">
+                <div class="card-img-container">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Checklist Excel Manufaktur">
+                </div>
                 <div class="card-content">
                     <div class="card-meta">
                         <span class="badge free">Free Template</span>
@@ -396,8 +483,11 @@
                 </div>
             </div>
 
-            <!-- Kartu 3: Tools Excel Lanjut (Pro / Paid) -->
+            <!-- Kartu 3: Tools Excel Lanjut (PRO / Paid) -->
             <div class="card" style="border-color: rgba(245, 158, 11, 0.4);">
+                <div class="card-img-container">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Kalkulator OEE Dashboard">
+                </div>
                 <div class="card-content">
                     <div class="card-meta">
                         <span class="badge pro">PRO / Premium</span>
@@ -412,6 +502,40 @@
                 </div>
             </div>
         </div>
+
+        <!-- FORM ADMIN / CMS MINI -->
+        <div class="admin-section">
+            <h2><i class="fa-solid fa-gauge-high"></i> Form Admin / CMS Mini — Tambah Konten Baru</h2>
+            <form id="cmsForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="titleInput">Judul Modul / Artikel</label>
+                        <input type="text" id="titleInput" placeholder="Contoh: Analisis Root Cause IB-01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="categoryInput">Kategori / Badge</label>
+                        <select id="categoryInput">
+                            <option value="free">Free Artikel</option>
+                            <option value="template">Free Template (.XLSX)</option>
+                            <option value="pro">PRO / Premium</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="imageInput">URL Gambar (Opsional)</label>
+                        <input type="url" id="imageInput" placeholder="https://images.unsplash.com/...">
+                    </div>
+                    <div class="form-group">
+                        <label for="priceInput">Harga / Keterangan Footer</label>
+                        <input type="text" id="priceInput" placeholder="Contoh: Rp 50.000 atau .XLSX Standard">
+                    </div>
+                    <div class="form-group full">
+                        <label for="descInput">Deskripsi Singkat</label>
+                        <textarea id="descInput" rows="3" placeholder="Tuliskan ringkasan isi modul atau template..." required></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Publikasikan Konten Baru</button>
+            </form>
+        </div>
     </div>
 
     <!-- FOOTER -->
@@ -420,5 +544,64 @@
         <p>Seluruh hak cipta dilindungi undang-undang.</p>
     </footer>
 
+    <!-- JAVASCRIPT UNTUK CMS MINI -->
+    <script>
+        document.getElementById('cmsForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const title = document.getElementById('titleInput').value;
+            const category = document.getElementById('categoryInput').value;
+            let imageUrl = document.getElementById('imageInput').value;
+            const price = document.getElementById('priceInput').value || 'Oleh Sukardi';
+            const desc = document.getElementById('descInput').value;
+            
+            if(!imageUrl) {
+                imageUrl = 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80';
+            }
+
+            let badgeClass = 'free';
+            let badgeText = 'Free Artikel';
+            let btnClass = 'btn-outline';
+            let btnText = 'Baca Artikel <i class="fa-solid fa-arrow-right"></i>';
+
+            if(category === 'template') {
+                badgeClass = 'free';
+                badgeText = 'Free Template';
+                btnText = 'Download <i class="fa-solid fa-download"></i>';
+            } else if(category === 'pro') {
+                badgeClass = 'pro';
+                badgeText = 'PRO / Premium';
+                btnClass = 'btn-primary';
+                btnText = 'Beli Template <i class="fa-solid fa-cart-shopping"></i>';
+            }
+
+            const grid = document.getElementById('cardGrid');
+            const newCard = document.createElement('div');
+            newCard.className = 'card';
+            if(category === 'pro') newCard.style.borderColor = 'rgba(245, 158, 11, 0.4)';
+
+            newCard.innerHTML = `
+                <div class="card-img-container">
+                    <img src="${imageUrl}" alt="${title}">
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="badge ${badgeClass}">${badgeText}</span>
+                        <span class="card-date">Baru Saja</span>
+                    </div>
+                    <h3><a href="#">${title}</a></h3>
+                    <p>${desc}</p>
+                </div>
+                <div class="card-footer">
+                    <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: ${category === 'pro' ? '600' : '400'}; color: ${category === 'pro' ? 'var(--badge-pro)' : 'var(--text-muted)'};">${price}</span>
+                    <a href="#" class="btn ${btnClass}">${btnText}</a>
+                </div>
+            `;
+
+            grid.prepend(newCard);
+            this.reset();
+            alert('Konten berhasil dipublikasikan ke halaman!');
+        });
+    </script>
 </body>
 </html>
