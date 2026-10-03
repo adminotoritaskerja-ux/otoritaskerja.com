@@ -72,22 +72,36 @@
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 1.5rem;
             list-style: none;
+            align-items: center;
         }
 
-        .nav-links a {
+        .nav-links button, .nav-links a {
+            background: none;
+            border: none;
             color: var(--text-muted);
             text-decoration: none;
             font-weight: 500;
+            font-size: 0.95rem;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
             transition: color 0.2s;
         }
 
-        .nav-links a:hover, .nav-links a.active {
+        .nav-links button:hover, .nav-links a:hover, .nav-links button.active, .nav-links a.active {
             color: var(--accent-blue);
         }
 
-        /* RUNNING TEXT / TICKER (DITEBALKAN & DIPERJELAS) */
+        .admin-nav-btn {
+            background: rgba(56, 189, 248, 0.1) !important;
+            border: 1px solid rgba(56, 189, 248, 0.3) !important;
+            padding: 6px 12px;
+            border-radius: 6px;
+            color: var(--accent-blue) !important;
+        }
+
+        /* RUNNING TEXT / TICKER */
         .ticker-wrap {
             background: #070d1d;
             border-bottom: 1px solid var(--steel-border);
@@ -325,13 +339,22 @@
             color: var(--accent-blue);
         }
 
-        /* FORM ADMIN / CMS MINI SECTION */
+        /* PAGE VIEWS (SINGLE PAGE TAB SYSTEM) */
+        .page-view {
+            display: none;
+        }
+
+        .page-view.active {
+            display: block;
+        }
+
+        /* ADMIN CMS SECTION */
         .admin-section {
             background-color: var(--navy-card);
             border: 1px solid var(--steel-border);
             border-radius: 12px;
             padding: 2.5rem;
-            margin-top: 4rem;
+            margin-top: 2rem;
         }
 
         .admin-section h2 {
@@ -382,6 +405,25 @@
             border-color: var(--accent-blue);
         }
 
+        /* ABOUT PAGE CONTENT */
+        .about-card {
+            background-color: var(--navy-card);
+            border: 1px solid var(--steel-border);
+            border-radius: 12px;
+            padding: 2.5rem;
+        }
+
+        .about-card h3 {
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .about-card p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
         /* FOOTER */
         footer {
             background-color: #070d1d;
@@ -399,25 +441,26 @@
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
-            .nav-links { display: none; }
+            .nav-links { gap: 0.8rem; font-size: 0.85rem; }
             .hero h1 { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER & NAV (Logo & Nama Penulis Dikembalikan) -->
+    <!-- HEADER & NAV (Logo, Penulis, & Menu Navbar Lengkap) -->
     <header>
         <div class="nav-container">
-            <a href="#" class="logo">
+            <a href="#" class="logo" onclick="switchPage('beranda', event)">
                 <i class="fa-solid fa-industry" style="color: var(--accent-blue);"></i>
                 Otoritas<span>Kerja</span> <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 400; margin-left: 5px;">— Sukardi</span>
             </a>
             <ul class="nav-links">
-                <li><a href="#" class="active">Beranda</a></li>
-                <li><a href="#">Modul & Jurnal</a></li>
-                <li><a href="#">Tools Excel</a></li>
-                <li><a href="#">Tentang</a></li>
+                <li><button onclick="switchPage('beranda', event)" class="active" id="nav-beranda">Beranda</button></li>
+                <li><button onclick="switchPage('modul', event)" id="nav-modul">Modul & Jurnal</button></li>
+                <li><button onclick="switchPage('tools', event)" id="nav-tools">Tools Excel</button></li>
+                <li><button onclick="switchPage('tentang', event)" id="nav-tentang">Tentang</button></li>
+                <li><button onclick="checkAdminPassword()" class="admin-nav-btn" id="nav-admin"><i class="fa-solid fa-lock"></i> Admin CMS</button></li>
             </ul>
         </div>
     </header>
@@ -431,110 +474,154 @@
         </div>
     </div>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-badge"><i class="fa-solid fa-shield-halved"></i> Operational Excellence & Systems</div>
-        <h1>Pusat Standar & Template <span>Manufaktur Modern</span></h1>
-        <p>Tingkatkan efisiensi lantai pabrik dan kualitas operasional Anda dengan panduan teknis, jurnal praktis, dan template Excel siap pakai.</p>
-    </section>
+    <!-- VIEW 1: BERANDA -->
+    <div id="page-beranda" class="page-view active">
+        <section class="hero">
+            <div class="hero-badge"><i class="fa-solid fa-shield-halved"></i> Operational Excellence & Systems</div>
+            <h1>Pusat Standar & Template <span>Manufaktur Modern</span></h1>
+            <p>Tingkatkan efisiensi lantai pabrik dan kualitas operasional Anda dengan panduan teknis, jurnal praktis, dan template Excel siap pakai.</p>
+        </section>
 
-    <!-- KONTEN UTAMA: KARTU ARTIKEL & TOOLS -->
-    <div class="container">
-        <div class="section-title">
-            <h2>Modul, Artikel & Tools Terbaru</h2>
+        <div class="container">
+            <div class="section-title">
+                <h2>Modul, Artikel & Tools Terbaru</h2>
+            </div>
+            <div class="grid" id="cardGrid">
+                <!-- Kartu 1 -->
+                <div class="card">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80" alt="FMEA Manufaktur">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="badge free">Free Artikel</span>
+                            <span class="card-date">03 Okt 2026</span>
+                        </div>
+                        <h3><a href="#">Panduan Lengkap FMEA untuk Menekan Defek di Lantai Pabrik</a></h3>
+                        <p>Strategi sistematis menganalisis potensi kegagalan proses ekstrusi plastik dan langkah pencegahannya secara efektif.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span style="font-size: 0.85rem; color: var(--text-muted);"><i class="fa-regular fa-file-lines"></i> Oleh Sukardi</span>
+                        <a href="#" class="btn btn-outline">Baca Artikel <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Kartu 2 -->
+                <div class="card">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Checklist Excel">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="badge free">Free Template</span>
+                            <span class="card-date">02 Okt 2026</span>
+                        </div>
+                        <h3><a href="#">Checklist Harian Mesin Blown Film & Parameter Extrusion</a></h3>
+                        <p>Format pencatatan suhu heater, kecepatan tarik, dan ketebalan film standar untuk supervisor produksi.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span style="font-size: 0.85rem; color: var(--text-muted);"><i class="fa-regular fa-file-excel" style="color: #10b981;"></i> .XLSX Standard</span>
+                        <a href="#" class="btn btn-outline">Download <i class="fa-solid fa-download"></i></a>
+                    </div>
+                </div>
+
+                <!-- Kartu 3 -->
+                <div class="card" style="border-color: rgba(245, 158, 11, 0.4);">
+                    <div class="card-img-container">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Kalkulator OEE">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="badge pro">PRO / Premium</span>
+                            <span class="card-date">01 Okt 2026</span>
+                        </div>
+                        <h3><a href="#">Master Kalkulator OEE & Dashboard Downtime Otomatis</a></h3>
+                        <p>Alat ukur efektivitas mesin menyeluruh dilengkapi grafik interaktif, analisis shift, dan laporan scrap otomatis.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600; color: var(--badge-pro);">Rp 75.000</span>
+                        <a href="#" class="btn btn-primary">Beli Template <i class="fa-solid fa-cart-shopping"></i></a>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
 
-        <div class="grid" id="cardGrid">
-            <!-- Kartu 1: Artikel/Jurnal Free -->
-            <div class="card">
-                <div class="card-img-container">
-                    <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80" alt="Ilustrasi FMEA Manufaktur">
-                </div>
-                <div class="card-content">
-                    <div class="card-meta">
-                        <span class="badge free">Free Artikel</span>
-                        <span class="card-date">03 Okt 2026</span>
-                    </div>
-                    <h3><a href="#">Panduan Lengkap FMEA untuk Menekan Defek di Lantai Pabrik</a></h3>
-                    <p>Strategi sistematis menganalisis potensi kegagalan proses ekstrusi plastik dan langkah pencegahannya secara efektif.</p>
-                </div>
-                <div class="card-footer">
-                    <span style="font-size: 0.85rem; color: var(--text-muted);"><i class="fa-regular fa-file-lines"></i> Oleh Sukardi</span>
-                    <a href="#" class="btn btn-outline">Baca Artikel <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
+    <!-- VIEW 2: MODUL & JURNAL -->
+    <div id="page-modul" class="page-view">
+        <div class="container">
+            <div class="section-title">
+                <h2>Arsip Modul & Jurnal Manufaktur</h2>
             </div>
-
-            <!-- Kartu 2: Template Excel Free -->
-            <div class="card">
-                <div class="card-img-container">
-                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Checklist Excel Manufaktur">
-                </div>
-                <div class="card-content">
-                    <div class="card-meta">
-                        <span class="badge free">Free Template</span>
-                        <span class="card-date">02 Okt 2026</span>
-                    </div>
-                    <h3><a href="#">Checklist Harian Mesin Blown Film & Parameter Extrusion</a></h3>
-                    <p>Format pencatatan suhu heater, kecepatan tarik, dan ketebalan film standar untuk supervisor produksi.</p>
-                </div>
-                <div class="card-footer">
-                    <span style="font-size: 0.85rem; color: var(--text-muted);"><i class="fa-regular fa-file-excel" style="color: #10b981;"></i> .XLSX Standard</span>
-                    <a href="#" class="btn btn-outline">Download <i class="fa-solid fa-download"></i></a>
-                </div>
-            </div>
-
-            <!-- Kartu 3: Tools Excel Lanjut (PRO / Paid) -->
-            <div class="card" style="border-color: rgba(245, 158, 11, 0.4);">
-                <div class="card-img-container">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Kalkulator OEE Dashboard">
-                </div>
-                <div class="card-content">
-                    <div class="card-meta">
-                        <span class="badge pro">PRO / Premium</span>
-                        <span class="card-date">01 Okt 2026</span>
-                    </div>
-                    <h3><a href="#">Master Kalkulator OEE & Dashboard Downtime Otomatis</a></h3>
-                    <p>Alat ukur efektivitas mesin menyeluruh dilengkapi grafik interaktif, analisis shift, dan laporan scrap otomatis.</p>
-                </div>
-                <div class="card-footer">
-                    <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600; color: var(--badge-pro);">Rp 75.000</span>
-                    <a href="#" class="btn btn-primary">Beli Template <i class="fa-solid fa-cart-shopping"></i></a>
-                </div>
+            <div class="about-card">
+                <h3>Kumpulan Panduan Teknis Lantai Pabrik</h3>
+                <p>Halaman ini berisi daftar lengkap modul operasional, lembar kerja Root Cause Analysis (5 Whys & Fishbone), serta standar kendali mutu ekstrusi plastik.</p>
+                <p style="color: var(--accent-blue);">Gunakan menu <b>Admin CMS</b> di atas untuk menambahkan modul baru secara instan.</p>
             </div>
         </div>
+    </div>
 
-        <!-- FORM ADMIN / CMS MINI -->
-        <div class="admin-section">
-            <h2><i class="fa-solid fa-gauge-high"></i> Form Admin / CMS Mini — Tambah Konten Baru</h2>
-            <form id="cmsForm">
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="titleInput">Judul Modul / Artikel</label>
-                        <input type="text" id="titleInput" placeholder="Contoh: Analisis Root Cause IB-01" required>
+    <!-- VIEW 3: TOOLS EXCEL -->
+    <div id="page-tools" class="page-view">
+        <div class="container">
+            <div class="section-title">
+                <h2>Katalog Tools Excel Profesional</h2>
+            </div>
+            <div class="about-card">
+                <h3>Template & Kalkulator Siap Pakai</h3>
+                <p>Koleksi spreadsheet otomatis berbasis VBA macros dan formula tingkat lanjut untuk efisiensi laporan shift, pelacakan scrap, dan manajemen OEE.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- VIEW 4: TENTANG -->
+    <div id="page-tentang" class="page-view">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tentang OtoritasKerja.com</h2>
+            </div>
+            <div class="about-card">
+                <h3>Inisiator & Praktisi Manufaktur</h3>
+                <p><b>OtoritasKerja.com</b> dikembangkan oleh <b>Sukardi</b>, seorang praktisi dan Supervisor Produksi berpengalaman di industri manufaktur (PT Sanipak Indonesia). Platform ini didedikasikan untuk membagikan standarisasi kerja, perangkat analisis kualitas, dan edukasi praktis dunia industri modern.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- VIEW 5: ADMIN CMS (TERLINDUNGI PASSWORD) -->
+    <div id="page-admin" class="page-view">
+        <div class="container">
+            <div class="admin-section">
+                <h2><i class="fa-solid fa-gauge-high"></i> Panel Admin CMS — Tambah Konten Baru</h2>
+                <form id="cmsForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="titleInput">Judul Modul / Artikel</label>
+                            <input type="text" id="titleInput" placeholder="Contoh: Analisis Root Cause IB-01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="categoryInput">Kategori / Badge</label>
+                            <select id="categoryInput">
+                                <option value="free">Free Artikel</option>
+                                <option value="template">Free Template (.XLSX)</option>
+                                <option value="pro">PRO / Premium</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="imageInput">URL Gambar (Opsional)</label>
+                            <input type="url" id="imageInput" placeholder="https://images.unsplash.com/...">
+                        </div>
+                        <div class="form-group">
+                            <label for="priceInput">Harga / Keterangan Footer</label>
+                            <input type="text" id="priceInput" placeholder="Contoh: Rp 50.000 atau .XLSX Standard">
+                        </div>
+                        <div class="form-group full">
+                            <label for="descInput">Deskripsi Singkat</label>
+                            <textarea id="descInput" rows="3" placeholder="Tuliskan ringkasan isi modul atau template..." required></textarea>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="categoryInput">Kategori / Badge</label>
-                        <select id="categoryInput">
-                            <option value="free">Free Artikel</option>
-                            <option value="template">Free Template (.XLSX)</option>
-                            <option value="pro">PRO / Premium</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="imageInput">URL Gambar (Opsional)</label>
-                        <input type="url" id="imageInput" placeholder="https://images.unsplash.com/...">
-                    </div>
-                    <div class="form-group">
-                        <label for="priceInput">Harga / Keterangan Footer</label>
-                        <input type="text" id="priceInput" placeholder="Contoh: Rp 50.000 atau .XLSX Standard">
-                    </div>
-                    <div class="form-group full">
-                        <label for="descInput">Deskripsi Singkat</label>
-                        <textarea id="descInput" rows="3" placeholder="Tuliskan ringkasan isi modul atau template..." required></textarea>
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Publikasikan Konten Baru</button>
-            </form>
+                    <button type="submit" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Publikasikan Konten Baru ke Beranda</button>
+                </form>
+            </div>
         </div>
     </div>
 
@@ -544,8 +631,40 @@
         <p>Seluruh hak cipta dilindungi undang-undang.</p>
     </footer>
 
-    <!-- JAVASCRIPT UNTUK CMS MINI -->
+    <!-- JAVASCRIPT NAVIGASI & ADMIN -->
     <script>
+        function switchPage(pageId, event) {
+            if(event) event.preventDefault();
+            
+            // Sembunyikan semua halaman
+            document.querySelectorAll('.page-view').forEach(el => el.classList.remove('active'));
+            
+            // Matikan semua tombol nav aktif
+            document.querySelectorAll('.nav-links button').forEach(el => el.classList.remove('active'));
+            
+            // Tampilkan halaman yang dipilih
+            document.getElementById('page-' + pageId).classList.add('active');
+            
+            // Aktifkan tombol nav terkait
+            const navBtn = document.getElementById('nav-' + pageId);
+            if(navBtn) navBtn.classList.add('active');
+
+            window.scrollTo(0, 0);
+        }
+
+        // Fungsi Password Admin
+        function checkAdminPassword() {
+            const password = prompt("Masukkan Password Admin:");
+            // Password default diatur "sukardi2026", silakan ubah sesuai keinginan Bapak
+            if(password === "sukardi2026") {
+                switchPage('admin');
+                document.getElementById('nav-admin').classList.add('active');
+            } else if(password !== null) {
+                alert("Password salah! Akses ditolak.");
+            }
+        }
+
+        // Script Tambah Konten via CMS
         document.getElementById('cmsForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -600,7 +719,8 @@
 
             grid.prepend(newCard);
             this.reset();
-            alert('Konten berhasil dipublikasikan ke halaman!');
+            alert('Konten berhasil dipublikasikan! Anda akan diarahkan ke Beranda.');
+            switchPage('beranda');
         });
     </script>
 </body>
