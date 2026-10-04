@@ -861,13 +861,13 @@
                         <span class="badge ${badgeClass}">${badgeText}</span>
                         <span class="card-date">Baru Saja</span>
                     </div>
-                    <h3><a href="#">${title}</a></h3>
-                    <p>${desc}</p>
-                </div>
-                <div class="card-footer">
-                    <span style="font-size: 0.85rem; font-weight: ${category === 'pro' ? '600' : '400'}; color: ${category === 'pro' ? 'var(--badge-pro)' : 'var(--text-muted)'};">${price}</span>
-                    <a href="#" class="btn ${btnClass}">${btnText}</a>
-                </div>
+                    <h3><a href="${title.toLowerCase().includes('pemimpin muda') ? 'buku-pemimpin-muda.html' : '#'}">${title}</a></h3>
+<p>${desc}</p>
+</div>
+<div class="card-footer">
+    <span style="font-size: 0.85rem; font-weight: ${category === 'pro' ? '600' : '400'}; color: ${category === 'pro' ? 'var(--badge-pro)' : 'var(--text-muted)'};">${price}</span>
+    <a href="${title.toLowerCase().includes('pemimpin muda') ? 'buku-pemimpin-muda.html' : '#'}" class="btn ${btnClass}">${btnText}</a>
+</div>
             `;
 
             grid.prepend(newCard);
