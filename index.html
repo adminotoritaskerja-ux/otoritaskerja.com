@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OtoritasKerja — Sukardi | Pusat Template Excel & Panduan Manufaktur</title>
-    <meta name="description" content="Pusat download template Excel industri, analisis efisiensi operasional, problem solving lantai pabrik, dan portofolio trainer profesional oleh Sukardi.">
+    <title>OtoritasKerja — Pusat Template Excel & Panduan Manufaktur Profesional</title>
+    <meta name="description" content="Pusat download template Excel industri, analisis efisiensi operasional, problem solving lantai pabrik, dan standar operasional profesional.">
     <!-- Google Fonts: Inter & JetBrains Mono -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@700;800&display=swap" rel="stylesheet">
     <!-- FontAwesome untuk Icon -->
@@ -112,25 +112,27 @@
             color: var(--primary-blue) !important;
         }
 
-        /* IKON KONTAK & DROPDOWN MINIMALIS DI NAVBAR */
+        /* TOMBOL & DROPDOWN KONTAK DENGAN TEKS */
         .contact-dropdown-container {
             position: relative;
             display: inline-block;
         }
-        .contact-icon-btn {
+        .contact-menu-btn {
             background: none;
             border: 1px solid #e2e8f0;
-            border-radius: 50%;
-            width: 36px;
-            height: 36px;
+            border-radius: 6px;
+            padding: 6px 12px;
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 8px;
             cursor: pointer;
-            color: #0f172a;
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.95rem;
+            font-family: 'Inter', sans-serif;
             transition: all 0.2s ease;
         }
-        .contact-icon-btn:hover {
+        .contact-menu-btn:hover, .contact-menu-btn.active {
             background-color: #f8fafc;
             border-color: #0284c7;
             color: #0284c7;
@@ -524,21 +526,22 @@
         <div class="nav-container">
             <a href="#" class="logo-area" onclick="switchPage('beranda', event)">
                 <img src="logo.jpeg" alt="Logo Otoritas Kerja" class="logo-img" onerror="this.onerror=null; this.src='logo.png';">
-                <div class="logo-text">Otoritas<span>Kerja</span> <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 400; margin-left: 5px;">— Sukardi</span></div>
+                <div class="logo-text">Otoritas<span>Kerja</span></div>
             </a>
             <ul class="nav-links">
                 <li><button onclick="switchPage('beranda', event)" class="active" id="nav-beranda">Beranda</button></li>
                 <li><button onclick="switchPage('modul', event)" id="nav-modul">Modul & Jurnal</button></li>
                 <li><button onclick="switchPage('tools', event)" id="nav-tools">Tools Excel</button></li>
-                <li><button onclick="switchPage('tentang', event)" id="nav-tentang">Tentang & Trainer</button></li>
+                <li><button onclick="switchPage('tentang', event)" id="nav-tentang">Tentang Otoritas Kerja</button></li>
                 <li><button onclick="checkAdminPassword()" class="admin-nav-btn" id="nav-admin"><i class="fa-solid fa-lock"></i> Admin CMS</button></li>
-                <!-- Ikon Kontak Ringkas di Navbar -->
+                
+                <!-- TOMBOL KONTAK DENGAN IKON & TEKS DI NAVBAR -->
                 <li class="contact-dropdown-container">
-                    <button class="contact-icon-btn" id="contactToggle" title="Hubungi Kami">
-                        <i class="fa-solid fa-envelope"></i>
+                    <button class="contact-menu-btn" id="contactToggle" title="Hubungi Kami">
+                        <i class="fa-solid fa-envelope"></i> Kontak
                     </button>
                     <div class="contact-popup" id="contactPopup">
-                        <h4>Hubungi Sukardi</h4>
+                        <h4>Hubungi Otoritas Kerja</h4>
                         <a href="mailto:sukardi@otoritaskerja.com" class="contact-item">
                             <i class="fa-solid fa-paper-plane"></i>
                             <span>sukardi@otoritaskerja.com</span>
@@ -589,7 +592,7 @@
                         <p>Strategi sistematis menganalisis potensi kegagalan proses ekstrusi plastik dan langkah pencegahannya secara efektif.</p>
                     </div>
                     <div class="card-footer">
-                        <span style="font-size: 0.85rem; color: var(--text-muted);"><i class="fa-regular fa-file-lines"></i> Oleh Sukardi</span>
+                        <span style="font-size: 0.85rem; color: var(--text-muted);"><i class="fa-regular fa-file-lines"></i> Oleh Otoritas Kerja</span>
                         <a href="#" class="btn btn-outline">Baca Artikel <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
@@ -635,16 +638,15 @@
         </div>
     </div>
 
-    <!-- VIEW 2: MODUL & JURNAL -->
+    <!-- VIEW 2: MODUL & JURNAL (TANPA KALIMAT CMS & TANPA JUDUL KAKU) -->
     <div id="page-modul" class="page-view">
         <div class="container">
             <div class="section-title">
                 <h2>Arsip Modul & Jurnal Manufaktur</h2>
             </div>
             <div class="about-card">
-                <h3>Kumpulan Panduan Teknis Lantai Pabrik</h3>
-                <p>Halaman ini menyajikan pustaka modul operasional lengkap, lembar kerja Root Cause Analysis (5 Whys & Fishbone), serta standar kendali mutu ekstrusi plastik yang disusun secara sistematis untuk referensi para profesional industri.</p>
-                <p style="color: var(--primary-blue);">Gunakan menu <b>Admin CMS</b> untuk mempublikasikan catatan atau jurnal baru secara instan.</p>
+                <h3>Kumpulan Panduan & Catatan Operasional</h3>
+                <p>Halaman ini menyajikan arsip artikel, modul praktis, serta lembar kerja analisis yang disusun langsung dari pengalaman nyata di lantai pabrik. Pusat referensi bagi para profesional industri untuk mengupas tuntas teknik pemecahan masalah, pengendalian mutu, dan efisiensi lini produksi.</p>
             </div>
         </div>
     </div>
@@ -662,16 +664,17 @@
         </div>
     </div>
 
-    <!-- VIEW 4: TENTANG & TRAINER -->
+    <!-- VIEW 4: TENTANG OTORITAS KERJA (VERSI REALISTIS BERBASIS DI BATAM) -->
     <div id="page-tentang" class="page-view">
         <div class="container">
             <div class="section-title">
-                <h2>Tentang Inisiator & Portofolio Trainer</h2>
+                <h2>Tentang OtoritasKerja.com</h2>
             </div>
             <div class="about-card">
-                <h3>Sukardi — Praktisi Manufaktur & Pengembang OtoritasKerja.com</h3>
-                <p><b>OtoritasKerja.com</b> dikembangkan oleh <b>Sukardi</b>, seorang praktisi yang telah menjalani lebih dari 14 tahun pengalaman di industri manufaktur di Batam, dengan latar belakang pendidikan S1 Teknik Industri. Selama perjalanan tersebut, ia memperoleh pengalaman langsung dalam lingkungan operasional produksi, pengelolaan tim, serta berbagai aktivitas yang berkaitan dengan pencapaian target dan peningkatan kinerja di tempat kerja.</p>
-                <p>Berangkat dari pengalaman tersebut, <b>OtoritasKerja.com</b> dibangun sebagai ruang untuk berbagi pengetahuan, pengalaman, dan pembelajaran praktis seputar dunia kerja, khususnya di bidang manufaktur, produktivitas, problem solving, improvement, dan pengembangan kompetensi. Materi dan pelatihan yang dikembangkan berusaha menghubungkan konsep dengan kondisi nyata di lapangan, sehingga dapat memberikan manfaat yang relevan bagi pekerja maupun organisasi.</p>
+                <h3>Pusat Solusi Praktis & Standar Operasional Manufaktur</h3>
+                <p><b>OtoritasKerja.com</b> adalah platform independen yang dikurasi langsung oleh praktisi berpengalaman di bidang teknik industri dan manufaktur. Berbasis di <b>Batam, Kepulauan Riau</b>, platform ini hadir untuk menjembatani kebutuhan teori dan praktik nyata di lantai pabrik—mulai dari pengendalian mutu (<i>quality control</i>), analisis <i>root cause</i>, hingga penyediaan template Excel operasional yang siap pakai.</p>
+                <p>Seluruh materi, lembar kerja, dan modul yang dibagikan di situs ini bukan sekadar teori buku teks, melainkan dirancang berdasarkan pengalaman operasional harian di lingkungan manufaktur. Fokus utamanya adalah membantu para supervisor, engineer, dan profesional industri di kawasan Batam untuk memecahkan masalah lini produksi dengan cepat, terstruktur, dan efisien.</p>
+                <p>Selain menyediakan sumber daya digital secara mandiri, Otoritas Kerja terbuka untuk kerja sama profesional, pendampingan teknis, serta <i>in-house training</i> bagi perusahaan manufaktur yang ingin meningkatkan kompetensi tim operasionalnya secara langsung di lapangan tanpa birokrasi yang rumit.</p>
             </div>
         </div>
     </div>
@@ -716,8 +719,8 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 OtoritasKerja.com — Sukardi (Operational Excellence & Systems).</p>
-        <p>Seluruh hak cipta dilindungi undang-undang.</p>
+        <p>&copy; 2026 OtoritasKerja.com — Operational Excellence & Systems.</p>
+        <p>Basis Operasional: Batam, Kepulauan Riau, Indonesia.</p>
     </footer>
 
     <!-- JAVASCRIPT -->
@@ -746,17 +749,19 @@
             }
         }
 
-        // Script untuk Toggle Popup Ikon Kontak di Navbar
+        // Script untuk Toggle Popup Tombol Kontak di Navbar
         const contactToggle = document.getElementById('contactToggle');
         const contactPopup = document.getElementById('contactPopup');
         if (contactToggle && contactPopup) {
             contactToggle.addEventListener('click', function(e) {
                 e.stopPropagation();
                 contactPopup.classList.toggle('active');
+                contactToggle.classList.toggle('active');
             });
             window.addEventListener('click', function(e) {
                 if (!contactPopup.contains(e.target) && e.target !== contactToggle) {
                     contactPopup.classList.remove('active');
+                    contactToggle.classList.remove('active');
                 }
             });
         }
@@ -767,7 +772,7 @@
             const title = document.getElementById('titleInput').value;
             const category = document.getElementById('categoryInput').value;
             let imageUrl = document.getElementById('imageInput').value;
-            const price = document.getElementById('priceInput').value || 'Oleh Sukardi';
+            const price = document.getElementById('priceInput').value || 'Oleh Otoritas Kerja';
             const desc = document.getElementById('descInput').value;
             
             if(!imageUrl) {
