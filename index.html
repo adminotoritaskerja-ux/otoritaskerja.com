@@ -638,7 +638,7 @@
         </div>
     </div>
 
-    <!-- VIEW 2: MODUL & JURNAL (TANPA KALIMAT CMS & TANPA JUDUL KAKU) -->
+    <!-- VIEW 2: MODUL & JURNAL -->
     <div id="page-modul" class="page-view">
         <div class="container">
             <div class="section-title">
@@ -664,7 +664,7 @@
         </div>
     </div>
 
-    <!-- VIEW 4: TENTANG OTORITAS KERJA (VERSI REALISTIS BERBASIS DI BATAM) -->
+    <!-- VIEW 4: TENTANG OTORITAS KERJA -->
     <div id="page-tentang" class="page-view">
         <div class="container">
             <div class="section-title">
@@ -766,6 +766,39 @@
             });
         }
 
+        // --- SISTEM PENYIMPANAN LOCALSTORAGE UNTUK KONTEN CMS ---
+        function loadStoredContent() {
+            const storedCards = JSON.parse(localStorage.getItem('otoritasKerja_cards') || '[]');
+            const grid = document.getElementById('cardGrid');
+            
+            storedCards.forEach(item => {
+                const newCard = document.createElement('div');
+                newCard.className = 'card';
+                if(item.category === 'pro') newCard.style.borderColor = '#fde68a';
+
+                newCard.innerHTML = `
+                    <div class="card-img-container">
+                        <img src="${item.imageUrl}" alt="${item.title}">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="badge ${item.badgeClass}">${item.badgeText}</span>
+                            <span class="card-date">${item.date}</span>
+                        </div>
+                        <h3><a href="#">${item.title}</a></h3>
+                        <p>${item.desc}</p>
+                    </div>
+                    <div class="card-footer">
+                        <span style="font-size: 0.85rem; font-weight: ${item.category === 'pro' ? '600' : '400'}; color: ${item.category === 'pro' ? 'var(--badge-pro)' : 'var(--text-muted)'};">${item.price}</span>
+                        <a href="#" class="btn ${item.btnClass}">${item.btnText}</a>
+                    </div>
+                `;
+                grid.prepend(newCard);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', loadStoredContent);
+
         document.getElementById('cmsForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -795,6 +828,25 @@
                 btnText = 'Beli Template <i class="fa-solid fa-cart-shopping"></i>';
             }
 
+            const cardData = {
+                title,
+                category,
+                imageUrl,
+                price,
+                desc,
+                badgeClass,
+                badgeText,
+                btnClass,
+                btnText,
+                date: 'Baru Saja'
+            };
+
+            // Simpan ke localStorage
+            const storedCards = JSON.parse(localStorage.getItem('otoritasKerja_cards') || '[]');
+            storedCards.push(cardData);
+            localStorage.setItem('otoritasKerja_cards', JSON.stringify(storedCards));
+
+            // Render langsung ke DOM
             const grid = document.getElementById('cardGrid');
             const newCard = document.createElement('div');
             newCard.className = 'card';
@@ -820,7 +872,7 @@
 
             grid.prepend(newCard);
             this.reset();
-            alert('Konten berhasil dipublikasikan! Anda akan diarahkan ke Beranda.');
+            alert('Konten berhasil dipublikasikan dan tersimpan permanen! Anda akan diarahkan ke Beranda.');
             switchPage('beranda');
         });
     </script>
