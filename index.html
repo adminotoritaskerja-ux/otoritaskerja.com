@@ -874,7 +874,104 @@
             this.reset();
             alert('Konten berhasil dipublikasikan dan tersimpan permanen! Anda akan diarahkan ke Beranda.');
             switchPage('beranda');
-        });
+        });document.getElementById('cmsForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const title = document.getElementById('titleInput').value;
+  const category = document.getElementById('categoryInput').value;
+  let imageUrl = document.getElementById('imageInput').value;
+  const price = document.getElementById('priceInput').value || 'Oleh Otoritas Kerja';
+  const desc = document.getElementById('descInput').value;
+
+  if (!imageUrl) {
+    imageUrl = 'https://images.unsplash.com/photo-1581091225825-a6a2u5ee1587?auto=format&fit=crop&w=500&q=80';
+  }
+
+  let badgeClass = 'free';
+  let badgeText = 'Free Artikel';
+  let btnClass = 'btn-outline';
+  let btnText = 'Baca Artikel <i class="fa-solid fa-arrow-right"></i>';
+
+  if (category === 'template') {
+    badgeClass = 'free';
+    badgeText = 'Free Template';
+    btnText = 'Download <i class="fa-solid fa-download"></i>';
+  } else if (category === 'pro') {
+    badgeClass = 'pro';
+    badgeText = 'PRO / Premium';
+    btnClass = 'btn-primary';
+    btnText = 'Beli Template <i class="fa-solid fa-cart-shopping"></i>';
+  }
+
+  const cardData = {
+    title,
+    category,
+    imageUrl,
+    price,
+    desc,
+    badgeClass,
+    badgeText,
+    btnClass,
+    btnText,
+    date: 'Baru Saja'
+  };
+
+  // 1. Kirim data otomatis ke Google Spreadsheet via Apps Script
+  const scriptUrl = "https://script.google.com/macros/s/AKfycby0gokqLsxOUbCQszTHn_M5eeb7asJKPIpetAKyJDG9nCg_lm7Q1BHwfwfOwhD_S0dTvg/exec";
+  
+  const payload = {
+    judul: title,
+    kategori: category,
+    gambar: imageUrl,
+    footer: price,
+    deskripsi: desc,
+    link: ""
+  };
+
+  fetch(scriptUrl, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  }).catch(err => console.error('Sync Error:', err));
+
+  // 2. Simpan ke localStorage untuk tampilan instan di perangkat lokal
+  let storedCards = JSON.parse(localStorage.getItem('otoritasKerja_cards')) || [];
+  storedCards.push(cardData);
+  localStorage.setItem('otoritasKerja_cards', JSON.stringify(storedCards));
+
+  // 3. Render langsung ke DOM
+  const grid = document.getElementById('cardGrid');
+  const newCard = document.createElement('div');
+  newCard.className = 'card';
+  if (category === 'pro') newCard.style.borderColor = '#fde68a';
+
+  newCard.innerHTML = `
+    <div class="card-img-container">
+      <img src="${imageUrl}" alt="${title}">
+    </div>
+    <div class="card-content">
+      <div class="card-meta">
+        <span class="badge ${badgeClass}">${badgeText}</span>
+        <span class="card-date">Baru Saja</span>
+      </div>
+      <a href="${title.toLowerCase().includes('pemimpin muda') ? 'buku-pemimpin-muda.html' : '#'}">
+        <h3>${title}</h3>
+      </a>
+      <p>${desc}</p>
+    </div>
+    <div class="card-footer">
+      <span style="font-size: 0.85rem; font-weight: ${category === 'pro' ? '600' : '400'}; color: ${category === 'pro' ? '#2563eb' : '#4b5563'}">${price}</span>
+      <a href="${title.toLowerCase().includes('pemimpin muda') ? 'buku-pemimpin-muda.html' : '#'}" class="btn ${btnClass}">${btnText}</a>
+    </div>
+  `;
+
+  grid.prepend(newCard);
+  this.reset();
+  alert('Konten berhasil dipublikasikan, tersimpan permanen, dan tersinkron ke Spreadsheet!');
+  switchPage('beranda');
+});
+
     </script>
 </body>
 </html>
