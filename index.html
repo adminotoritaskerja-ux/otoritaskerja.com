@@ -829,52 +829,7 @@
             }
 
             const cardData = {
-                title,
-                category,
-                imageUrl,
-                price,
-                desc,
-                badgeClass,
-                badgeText,
-                btnClass,
-                btnText,
-                date: 'Baru Saja'
-            };
-
-            // Simpan ke localStorage
-            const storedCards = JSON.parse(localStorage.getItem('otoritasKerja_cards') || '[]');
-            storedCards.push(cardData);
-            localStorage.setItem('otoritasKerja_cards', JSON.stringify(storedCards));
-
-            // Render langsung ke DOM
-            const grid = document.getElementById('cardGrid');
-            const newCard = document.createElement('div');
-            newCard.className = 'card';
-            if(category === 'pro') newCard.style.borderColor = '#fde68a';
-
-            newCard.innerHTML = `
-                <div class="card-img-container">
-                    <img src="${imageUrl}" alt="${title}">
-                </div>
-                <div class="card-content">
-                    <div class="card-meta">
-                        <span class="badge ${badgeClass}">${badgeText}</span>
-                        <span class="card-date">Baru Saja</span>
-                    </div>
-                    <h3><a href="${title.toLowerCase().includes('pemimpin muda') ? 'buku-pemimpin-muda.html' : '#'}">${title}</a></h3>
-<p>${desc}</p>
-</div>
-<div class="card-footer">
-    <span style="font-size: 0.85rem; font-weight: ${category === 'pro' ? '600' : '400'}; color: ${category === 'pro' ? 'var(--badge-pro)' : 'var(--text-muted)'};">${price}</span>
-    <a href="${title.toLowerCase().includes('pemimpin muda') ? 'buku-pemimpin-muda.html' : '#'}" class="btn ${btnClass}">${btnText}</a>
-</div>
-            `;
-
-            grid.prepend(newCard);
-            this.reset();
-            alert('Konten berhasil dipublikasikan dan tersimpan permanen! Anda akan diarahkan ke Beranda.');
-            switchPage('beranda');
-        });document.getElementById('cmsForm').addEventListener('submit', function(e) {
+  document.getElementById('cmsForm').addEventListener('submit', function(e) {
   e.preventDefault();
 
   const title = document.getElementById('titleInput').value;
@@ -940,11 +895,13 @@
   storedCards.push(cardData);
   localStorage.setItem('otoritasKerja_cards', JSON.stringify(storedCards));
 
-  // 3. Render langsung ke DOM
+  // 3. Render langsung ke DOM dengan pengecekan halaman buku Pemimpin Muda
   const grid = document.getElementById('cardGrid');
   const newCard = document.createElement('div');
   newCard.className = 'card';
   if (category === 'pro') newCard.style.borderColor = '#fde68a';
+
+  const targetLink = title.toLowerCase().includes('pemimpin muda') ? 'buku-pemimpin-muda.html' : '#';
 
   newCard.innerHTML = `
     <div class="card-img-container">
@@ -955,14 +912,14 @@
         <span class="badge ${badgeClass}">${badgeText}</span>
         <span class="card-date">Baru Saja</span>
       </div>
-      <a href="${title.toLowerCase().includes('pemimpin muda') ? 'buku-pemimpin-muda.html' : '#'}">
+      <a href="${targetLink}">
         <h3>${title}</h3>
       </a>
       <p>${desc}</p>
     </div>
     <div class="card-footer">
       <span style="font-size: 0.85rem; font-weight: ${category === 'pro' ? '600' : '400'}; color: ${category === 'pro' ? '#2563eb' : '#4b5563'}">${price}</span>
-      <a href="${title.toLowerCase().includes('pemimpin muda') ? 'buku-pemimpin-muda.html' : '#'}" class="btn ${btnClass}">${btnText}</a>
+      <a href="${targetLink}" class="btn ${btnClass}">${btnText}</a>
     </div>
   `;
 
@@ -971,7 +928,6 @@
   alert('Konten berhasil dipublikasikan, tersimpan permanen, dan tersinkron ke Spreadsheet!');
   switchPage('beranda');
 });
-
     </script>
 </body>
 </html>
