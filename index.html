@@ -1,933 +1,661 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OtoritasKerja — Pusat Template Excel & Panduan Manufaktur Profesional</title>
-    <meta name="description" content="Pusat download template Excel industri, analisis efisiensi operasional, problem solving lantai pabrik, dan standar operasional profesional.">
-    <!-- Google Fonts: Inter & JetBrains Mono -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome untuk Icon -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --bg-body: #f8fafc;
-            --bg-card: #ffffff;
-            --border-color: #e2e8f0;
-            --primary-blue: #0284c7;
-            --primary-dark: #0f172a;
-            --accent-orange: #ea580c;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --badge-free: #059669;
-            --badge-pro: #d97706;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-body);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
-
-        /* HEADER & NAVIGATION */
-        header {
-            background-color: #ffffff;
-            border-bottom: 1px solid var(--border-color);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-
-        .logo-img {
-            height: 38px;
-            width: auto;
-            object-fit: contain;
-            border-radius: 4px;
-        }
-
-        .logo-text {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--primary-dark);
-        }
-
-        .logo-text span {
-            color: var(--primary-blue);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-            list-style: none;
-            align-items: center;
-        }
-
-        .nav-links button, .nav-links a {
-            background: none;
-            border: none;
-            color: var(--text-muted);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            cursor: pointer;
-            font-family: 'Inter', sans-serif;
-            transition: color 0.2s;
-        }
-
-        .nav-links button:hover, .nav-links a:hover, .nav-links button.active, .nav-links a.active {
-            color: var(--primary-blue);
-        }
-
-        .admin-nav-btn {
-            background: rgba(2, 132, 199, 0.1) !important;
-            border: 1px solid rgba(2, 132, 199, 0.3) !important;
-            padding: 6px 12px;
-            border-radius: 6px;
-            color: var(--primary-blue) !important;
-        }
-
-        /* TOMBOL & DROPDOWN KONTAK DENGAN TEKS */
-        .contact-dropdown-container {
-            position: relative;
-            display: inline-block;
-        }
-        .contact-menu-btn {
-            background: none;
-            border: 1px solid #e2e8f0;
-            border-radius: 6px;
-            padding: 6px 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-            color: var(--text-muted);
-            font-weight: 500;
-            font-size: 0.95rem;
-            font-family: 'Inter', sans-serif;
-            transition: all 0.2s ease;
-        }
-        .contact-menu-btn:hover, .contact-menu-btn.active {
-            background-color: #f8fafc;
-            border-color: #0284c7;
-            color: #0284c7;
-        }
-        .contact-popup {
-            display: none;
-            position: absolute;
-            right: 0;
-            top: 45px;
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            width: 260px;
-            padding: 1rem;
-            z-index: 1100;
-        }
-        .contact-popup.active {
-            display: block;
-        }
-        .contact-popup h4 {
-            font-size: 0.85rem;
-            color: #0f172a;
-            margin-bottom: 0.5rem;
-            border-bottom: 1px solid #e2e8f0;
-            padding-bottom: 0.4rem;
-        }
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            margin-bottom: 0.5rem;
-            font-size: 0.8rem;
-            color: #334155;
-            text-decoration: none;
-        }
-        .contact-item:last-child {
-            margin-bottom: 0;
-        }
-        .contact-item i {
-            color: #0284c7;
-            font-size: 0.9rem;
-            width: 18px;
-            text-align: center;
-        }
-        .contact-item:hover span {
-            color: #0284c7;
-            text-decoration: underline;
-        }
-
-        /* RUNNING TEXT / TICKER */
-        .ticker-wrap {
-            background: var(--primary-dark);
-            border-bottom: 2px solid var(--accent-orange);
-            overflow: hidden;
-            white-space: nowrap;
-            padding: 12px 0;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.95rem;
-            font-weight: 800;
-            color: #ffffff;
-            letter-spacing: 0.5px;
-        }
-
-        .ticker {
-            display: inline-block;
-            animation: ticker 32s linear infinite;
-        }
-
-        .ticker span {
-            margin-right: 80px;
-        }
-
-        .ticker span i {
-            color: var(--accent-orange);
-            margin-right: 10px;
-            font-size: 1.1rem;
-        }
-
-        @keyframes ticker {
-            0% { transform: translate3d(100%, 0, 0); }
-            100% { transform: translate3d(-100%, 0, 0); }
-        }
-
-        /* HERO SECTION */
-        .hero {
-            position: relative;
-            padding: 5rem 2rem 4rem 2rem;
-            text-align: center;
-            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.90)), 
-                        url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
-            color: #ffffff;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            letter-spacing: -0.5px;
-        }
-
-        .hero h1 span {
-            color: #38bdf8;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            color: #cbd5e1;
-            max-width: 700px;
-            margin: 0 auto 2rem auto;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: rgba(56, 189, 248, 0.15);
-            color: #38bdf8;
-            border: 1px solid rgba(56, 189, 248, 0.3);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        /* MAIN CONTAINER & GRID CARDS */
-        .container {
-            max-width: 1200px;
-            margin: 3rem auto;
-            padding: 0 2rem;
-        }
-
-        .section-title {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-            border-left: 4px solid var(--primary-blue);
-            padding-left: 12px;
-        }
-
-        .section-title h2 {
-            font-size: 1.5rem;
-            font-weight: 650;
-            color: var(--primary-dark);
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s, box-shadow 0.2s;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            border-color: var(--primary-blue);
-        }
-
-        .card-img-container {
-            width: 100%;
-            height: 180px;
-            overflow: hidden;
-            border-bottom: 1px solid var(--border-color);
-            background: #f1f5f9;
-        }
-
-        .card-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s;
-        }
-
-        .card:hover .card-img-container img {
-            transform: scale(1.05);
-        }
-
-        .card-content {
-            padding: 1.5rem;
-        }
-
-        .card-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-
-        .badge {
-            font-size: 0.75rem;
-            font-weight: 600;
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-family: 'JetBrains Mono', monospace;
-            text-transform: uppercase;
-        }
-
-        .badge.free {
-            background: #ecfdf5;
-            color: var(--badge-free);
-            border: 1px solid #a7f3d0;
-        }
-
-        .badge.pro {
-            background: #fffbeb;
-            color: var(--badge-pro);
-            border: 1px solid #fde68a;
-        }
-
-        .card-date {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
-
-        .card h3 {
-            font-size: 1.15rem;
-            margin-bottom: 0.75rem;
-            line-height: 1.4;
-        }
-
-        .card h3 a {
-            color: var(--primary-dark);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .card h3 a:hover {
-            color: var(--primary-blue);
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .card-footer {
-            padding: 1rem 1.5rem;
-            background: #f8fafc;
-            border-top: 1px solid var(--border-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            text-decoration: none;
-            transition: background 0.2s;
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-blue);
-            color: #ffffff;
-            font-weight: 600;
-        }
-
-        .btn-primary:hover {
-            background-color: #0284c7;
-            opacity: 0.9;
-        }
-
-        .btn-outline {
-            border: 1px solid var(--border-color);
-            color: var(--primary-dark);
-            background: #ffffff;
-        }
-
-        .btn-outline:hover {
-            border-color: var(--primary-blue);
-            color: var(--primary-blue);
-        }
-
-        /* PAGE VIEWS */
-        .page-view {
-            display: none;
-        }
-
-        .page-view.active {
-            display: block;
-        }
-
-        /* ADMIN CMS & ABOUT & CONTACT */
-        .admin-section, .about-card {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2.5rem;
-            margin-top: 2rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-
-        .admin-section h2, .about-card h3 {
-            color: var(--primary-blue);
-            margin-bottom: 1.5rem;
-        }
-
-        .form-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        .form-group.full {
-            grid-column: 1 / -1;
-        }
-
-        .form-group label {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        .form-group input, .form-group select, .form-group textarea {
-            background-color: #ffffff;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            padding: 10px 14px;
-            color: var(--text-main);
-            font-family: 'Inter', sans-serif;
-            font-size: 0.95rem;
-        }
-
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-blue);
-            box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.1);
-        }
-
-        .about-card p {
-            color: var(--text-muted);
-            margin-bottom: 1rem;
-        }
-
-        /* FOOTER */
-        footer {
-            background-color: var(--primary-dark);
-            border-top: 1px solid var(--border-color);
-            padding: 3rem 2rem;
-            text-align: center;
-            margin-top: 5rem;
-            color: #94a3b8;
-            font-size: 0.9rem;
-        }
-
-        footer p {
-            margin-bottom: 0.5rem;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .nav-links { gap: 0.8rem; font-size: 0.85rem; }
-            .hero h1 { font-size: 2rem; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OtoritasKerja - Pusat Template Excel & Panduan Manufaktur Profesional</title>
+<meta name="description" content="Pusat download template Excel industri, analisis efisiensi operasional, problem solving lantai pabrik, dan standar operasional profesional.">
+<!-- Google Fonts: Inter & JetBrains Mono -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@700;800&display=swap" rel="stylesheet">
+<!-- FontAwesome untuk Icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root {
+  --bg-body: #f8fafc;
+  --bg-card: #ffffff;
+  --border-color: #e2e8f0;
+  --primary-blue: #0284c7;
+  --primary-dark: #0f172a;
+  --accent-orange: #ea580c;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --badge-free: #059669;
+  --badge-pro: #d97706;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+/* HEADER & NAVIGATION */
+header {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+.logo-img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 4px;
+}
+.logo-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+.logo-text span {
+  color: var(--primary-blue);
+}
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  align-items: center;
+}
+.nav-links button, .nav-links a {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: color 0.2s;
+}
+.nav-links button:hover, .nav-links a:hover, .nav-links button.active, .nav-links a.active {
+  color: var(--primary-blue);
+}
+.admin-nav-btn {
+  background: rgba(2, 132, 199, 0.1) !important;
+  border: 1px solid rgba(2, 132, 199, 0.3) !important;
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: var(--primary-blue) !important;
+}
+/* TOMBOL & DROPDOWN KONTAK */
+.contact-dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+.contact-menu-btn {
+  background: none;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.95rem;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.2s ease;
+}
+.contact-menu-btn:hover, .contact-menu-btn.active {
+  background-color: #f8fafc;
+  border-color: #0284c7;
+  color: #0284c7;
+}
+.contact-popup {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 45px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 260px;
+  padding: 1rem;
+  z-index: 1100;
+}
+.contact-popup.active {
+  display: block;
+}
+.contact-popup h4 {
+  font-size: 0.85rem;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 0.4rem;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  color: #334155;
+  text-decoration: none;
+}
+.contact-item:last-child {
+  margin-bottom: 0;
+}
+.contact-item i {
+  color: #0284c7;
+  font-size: 0.9rem;
+  width: 18px;
+  text-align: center;
+}
+.contact-item:hover span {
+  color: #0284c7;
+  text-decoration: underline;
+}
+/* RUNNING TEXT/TICKER */
+.ticker-wrap {
+  background: var(--primary-dark);
+  border-bottom: 2px solid var(--accent-orange);
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 12px 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+.ticker {
+  display: inline-block;
+  animation: ticker 32s linear infinite;
+}
+.ticker span {
+  margin-right: 80px;
+}
+.ticker span i {
+  color: var(--accent-orange);
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+@keyframes ticker {
+  0% { transform: translate3d(100%, 0, 0); }
+  100% { transform: translate3d(-100%, 0, 0); }
+}
+/* HERO SECTION */
+.hero {
+  position: relative;
+  padding: 5rem 2rem 4rem 2rem;
+  text-align: center;
+  background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.90)),
+  url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+  color: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+}
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+}
+.hero h1 span {
+  color: #38bdf8;
+}
+.hero p {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  max-width: 700px;
+  margin: 0 auto 2rem auto;
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  font-family: 'JetBrains Mono', monospace;
+}
+/* MAIN CONTAINER & GRID CARDS */
+.container {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 2rem;
+}
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-left: 4px solid var(--primary-blue);
+  padding-left: 12px;
+}
+.section-title h2 {
+  font-size: 1.5rem;
+  font-weight: 650;
+  color: var(--primary-dark);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+}
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary-blue);
+}
+.card-img-container {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-color);
+  background: #f1f5f9;
+}
+.card-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+.card:hover .card-img-container img {
+  transform: scale(1.05);
+}
+.card-content {
+  padding: 1.5rem;
+}
+.card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+}
+.badge.free {
+  background: #ecfdf5;
+  color: var(--badge-free);
+  border: 1px solid #a7f3d0;
+}
+.badge.pro {
+  background: #fffbeb;
+  color: var(--badge-pro);
+  border: 1px solid #fde68a;
+}
+.card-date {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+.card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+.card h3 a {
+  color: var(--primary-dark);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.card h3 a:hover {
+  color: var(--primary-blue);
+}
+.card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+.card-footer {
+  padding: 1rem 1.5rem;
+  background: #f8fafc;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s;
+  cursor: pointer;
+  border: none;
+}
+.btn-primary {
+  background-color: var(--primary-blue);
+  color: #ffffff;
+  font-weight: 600;
+}
+.btn-primary:hover {
+  background-color: #0284c7;
+  opacity: 0.9;
+}
+.btn-outline {
+  border: 1px solid var(--border-color);
+  color: var(--primary-dark);
+  background: #ffffff;
+}
+.btn-outline:hover {
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+}
+/* PAGE VIEWS */
+.page-view {
+  display: none;
+}
+.page-view.active {
+  display: block;
+}
+/* ADMIN CMS & ABOUT */
+.admin-section, .about-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2.5rem;
+  margin-top: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+.admin-section h2, .about-card h3 {
+  color: var(--primary-blue);
+  margin-bottom: 1.5rem;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.form-group.full {
+  grid-column: 1/-1;
+}
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+}
+.form-group input, .form-group select, .form-group textarea {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 10px 14px;
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.1);
+}
+.about-card p {
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+/* FOOTER */
+footer {
+  background-color: var(--primary-dark);
+  border-top: 1px solid var(--border-color);
+  padding: 3rem 2rem;
+  text-align: center;
+  margin-top: 5rem;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+footer p {
+  margin-bottom: 0.5rem;
+}
+</style>
 </head>
 <body>
 
-    <!-- HEADER & NAV -->
-    <header>
-        <div class="nav-container">
-            <a href="#" class="logo-area" onclick="switchPage('beranda', event)">
-                <img src="logo.jpeg" alt="Logo Otoritas Kerja" class="logo-img" onerror="this.onerror=null; this.src='logo.png';">
-                <div class="logo-text">Otoritas<span>Kerja</span></div>
-            </a>
-            <ul class="nav-links">
-                <li><button onclick="switchPage('beranda', event)" class="active" id="nav-beranda">Beranda</button></li>
-                <li><button onclick="switchPage('modul', event)" id="nav-modul">Modul & Jurnal</button></li>
-                <li><button onclick="switchPage('tools', event)" id="nav-tools">Tools Excel</button></li>
-                <li><button onclick="switchPage('tentang', event)" id="nav-tentang">Tentang Otoritas Kerja</button></li>
-                <li><button onclick="checkAdminPassword()" class="admin-nav-btn" id="nav-admin"><i class="fa-solid fa-lock"></i> Admin CMS</button></li>
-                
-                <!-- TOMBOL KONTAK DENGAN IKON & TEKS DI NAVBAR -->
-                <li class="contact-dropdown-container">
-                    <button class="contact-menu-btn" id="contactToggle" title="Hubungi Kami">
-                        <i class="fa-solid fa-envelope"></i> Kontak
-                    </button>
-                    <div class="contact-popup" id="contactPopup">
-                        <h4>Hubungi Otoritas Kerja</h4>
-                        <a href="mailto:sukardi@otoritaskerja.com" class="contact-item">
-                            <i class="fa-solid fa-paper-plane"></i>
-                            <span>sukardi@otoritaskerja.com</span>
-                        </a>
-                        <a href="https://wa.me/6281270000000" target="_blank" class="contact-item">
-                            <i class="fa-brands fa-whatsapp"></i>
-                            <span>WhatsApp Konsultasi</span>
-                        </a>
-                    </div>
-                </li>
-            </ul>
+<!-- HEADER & NAV -->
+<header>
+  <div class="nav-container">
+    <a href="#" class="logo-area" onclick="switchPage('beranda', event)">
+      <img src="logo.jpeg" alt="Logo Otoritas Kerja" class="logo-img" onerror="this.onerror=null; this.src='logo.png';">
+      <div class="logo-text">Otoritas<span>Kerja</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><button onclick="switchPage('beranda', event)" class="active" id="nav-beranda">Beranda</button></li>
+      <li><button onclick="switchPage('modul', event)" id="nav-modul">Modul & Jurnal</button></li>
+      <li><button onclick="switchPage('tools', event)" id="nav-tools">Tools Excel</button></li>
+      <li><button onclick="switchPage('tentang', event)" id="nav-tentang">Tentang Otoritas Kerja</button></li>
+      <li><button onclick="checkAdminPassword()" class="admin-nav-btn" id="nav-admin"><i class="fa-solid fa-lock"></i> Admin CMS</button></li>
+      
+      <!-- DROPDOWN KONTAK -->
+      <li class="contact-dropdown-container">
+        <button class="contact-menu-btn" id="contactToggle" title="Hubungi Kami">
+          <i class="fa-solid fa-envelope"></i> Kontak
+        </button>
+        <div class="contact-popup" id="contactPopup">
+          <h4>Hubungi Otoritas Kerja</h4>
+          <a href="mailto:sukardi@otoritaskerja.com" class="contact-item">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span>sukardi@otoritaskerja.com</span>
+          </a>
+          <a href="https://wa.me/6281270000000" target="_blank" class="contact-item">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>WhatsApp Konsultasi</span>
+          </a>
         </div>
-    </header>
+      </li>
+    </ul>
+  </div>
+</header>
 
-    <!-- RUNNING TEXT / TICKER -->
-    <div class="ticker-wrap">
-        <div class="ticker">
-            <span><i class="fa-solid fa-bullhorn"></i> SELAMAT DATANG DI OTORITASKERJA.COM — PUSAT TEMPLATE EXCEL & PANDUAN MANUFAKTUR PROFESIONAL.</span>
-            <span><i class="fa-solid fa-circle-check"></i> UPDATE TERBARU: MODUL ANALISIS DEFEK VARIAN MATERIAL & ROOT CAUSE 5 WHYS.</span>
-            <span><i class="fa-solid fa-bolt"></i> DOWNLOAD TEMPLATE STANDAR OPERASIONAL & KALKULATOR OEE PABRIK SEKARANG!</span>
+<!-- RUNNING TEXT/TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker">
+    <span><i class="fa-solid fa-bullhorn"></i> SELAMAT DATANG DI OTORITASKERJA.COM - PUSAT TEMPLATE EXCEL & PANDUAN MANUFAKTUR PROFESIONAL.</span>
+    <span><i class="fa-solid fa-circle-check"></i> UPDATE TERBARU: STANDAR OPERATIONAL PROCEDURE (SOP) & WORK INSTRUCTION (WI) LANTAI PRODUKSI.</span>
+    <span><i class="fa-solid fa-bolt"></i> DOWNLOAD TEMPLATE STANDAR OPERASIONAL & KALKULATOR OEE PABRIK SEKARANG!</span>
+  </div>
+</div>
+
+<!-- VIEW 1: BERANDA -->
+<div id="page-beranda" class="page-view active">
+  <section class="hero">
+    <div class="hero-badge"><i class="fa-solid fa-shield-halved"></i> Operational Excellence & Systems</div>
+    <h1>Pusat Standar & Template <span>Manufaktur Modern</span></h1>
+    <p>Tingkatkan efisiensi lantai pabrik dan kualitas operasional Anda dengan panduan teknis, jurnal praktis, dan template Excel siap pakai.</p>
+  </section>
+
+  <div class="container" style="margin-top: 1rem;">
+    <div class="section-title">
+      <h2>Modul, Artikel & Tools Terbaru</h2>
+    </div>
+    <div class="grid" id="cardGrid">
+      
+      <!-- Kartu 1: FMEA -->
+      <div class="card">
+        <div class="card-img-container">
+          <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80" alt="FMEA Manufaktur">
         </div>
-    </div>
-
-    <!-- VIEW 1: BERANDA -->
-    <div id="page-beranda" class="page-view active">
-        <section class="hero">
-            <div class="hero-badge"><i class="fa-solid fa-shield-halved"></i> Operational Excellence & Systems</div>
-            <h1>Pusat Standar & Template <span>Manufaktur Modern</span></h1>
-            <p>Tingkatkan efisiensi lantai pabrik dan kualitas operasional Anda dengan panduan teknis, jurnal praktis, dan template Excel siap pakai.</p>
-        </section>
-
-        <div class="container" style="margin-top: 1rem;">
-            <div class="section-title">
-                <h2>Modul, Artikel & Tools Terbaru</h2>
-            </div>
-            <div class="grid" id="cardGrid">
-                <!-- Kartu 1 -->
-                <div class="card">
-                    <div class="card-img-container">
-                        <img src="https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=600&q=80" alt="FMEA Manufaktur">
-                    </div>
-                    <div class="card-content">
-                        <div class="card-meta">
-                            <span class="badge free">Free Artikel</span>
-                            <span class="card-date">03 Okt 2026</span>
-                        </div>
-                        <h3><a href="#">Panduan Lengkap FMEA untuk Menekan Defek di Lantai Pabrik</a></h3>
-                        <p>Strategi sistematis menganalisis potensi kegagalan proses ekstrusi plastik dan langkah pencegahannya secara efektif.</p>
-                    </div>
-                    <div class="card-footer">
-                        <span style="font-size: 0.85rem; color: var(--text-muted);"><i class="fa-regular fa-file-lines"></i> Oleh Otoritas Kerja</span>
-                        <a href="#" class="btn btn-outline">Baca Artikel <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-
-                <!-- Kartu 2 -->
-                <div class="card">
-                    <div class="card-img-container">
-                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Checklist Excel">
-                    </div>
-                    <div class="card-content">
-                        <div class="card-meta">
-                            <span class="badge free">Free Template</span>
-                            <span class="card-date">02 Okt 2026</span>
-                        </div>
-                        <h3><a href="#">Checklist Harian Mesin Blown Film & Parameter Extrusion</a></h3>
-                        <p>Format pencatatan suhu heater, kecepatan tarik, dan ketebalan film standar untuk supervisor produksi.</p>
-                    </div>
-                    <div class="card-footer">
-                        <span style="font-size: 0.85rem; color: var(--text-muted);"><i class="fa-regular fa-file-excel" style="color: #059669;"></i> .XLSX Standard</span>
-                        <a href="#" class="btn btn-outline">Download <i class="fa-solid fa-download"></i></a>
-                    </div>
-                </div>
-
-                <!-- Kartu 3 (PRO / Premium) -->
-                <div class="card" style="border-color: #fde68a;">
-                    <div class="card-img-container">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Kalkulator OEE">
-                    </div>
-                    <div class="card-content">
-                        <div class="card-meta">
-                            <span class="badge pro">PRO / Premium</span>
-                            <span class="card-date">01 Okt 2026</span>
-                        </div>
-                        <h3><a href="#">Master Kalkulator OEE & Dashboard Downtime Otomatis</a></h3>
-                        <p>Alat ukur efektivitas mesin menyeluruh dilengkapi grafik interaktif, analisis shift, dan laporan scrap otomatis.</p>
-                    </div>
-                    <div class="card-footer">
-                        <span style="font-size: 0.85rem; font-weight: 600; color: var(--badge-pro);">Rp 75.000</span>
-                        <a href="#" class="btn btn-primary">Beli Template <i class="fa-solid fa-cart-shopping"></i></a>
-                    </div>
-                </div>
-            </div>
+        <div class="card-content">
+          <div class="card-meta">
+            <span class="badge free">Free Artikel</span>
+            <span class="card-date">03 Okt 2026</span>
+          </div>
+          <h3><a href="#">Panduan Lengkap FMEA untuk Menekan Defek di Lantai Pabrik</a></h3>
+          <p>Strategi sistematis menganalisis potensi kegagalan proses ekstrusi plastik dan langkah pencegahannya secara efektif.</p>
         </div>
-    </div>
-
-    <!-- VIEW 2: MODUL & JURNAL -->
-    <div id="page-modul" class="page-view">
-        <div class="container">
-            <div class="section-title">
-                <h2>Arsip Modul & Jurnal Manufaktur</h2>
-            </div>
-            <div class="about-card">
-                <h3>Kumpulan Panduan & Catatan Operasional</h3>
-                <p>Halaman ini menyajikan arsip artikel, modul praktis, serta lembar kerja analisis yang disusun langsung dari pengalaman nyata di lantai pabrik. Pusat referensi bagi para profesional industri untuk mengupas tuntas teknik pemecahan masalah, pengendalian mutu, dan efisiensi lini produksi.</p>
-            </div>
+        <div class="card-footer">
+          <span style="font-size: 0.85rem; color: var(--text-muted);"><i class="fa-regular fa-file-lines"></i> Oleh Otoritas Kerja</span>
+          <a href="#" class="btn btn-outline card-btn">Baca Artikel <i class="fa-solid fa-arrow-right"></i></a>
         </div>
-    </div>
-
-    <!-- VIEW 3: TOOLS EXCEL -->
-    <div id="page-tools" class="page-view">
-        <div class="container">
-            <div class="section-title">
-                <h2>Katalog Tools Excel Profesional</h2>
-            </div>
-            <div class="about-card">
-                <h3>Pustaka Referensi & Lembar Kerja</h3>
-                <p>Direktori dokumen, template perhitungan, dan modul analisis yang dapat digunakan sebagai referensi praktis dalam mengelola proses operasional dan standar kualitas industri.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- VIEW 4: TENTANG OTORITAS KERJA -->
-    <div id="page-tentang" class="page-view">
-        <div class="container">
-            <div class="section-title">
-                <h2>Tentang OtoritasKerja.com</h2>
-            </div>
-            <div class="about-card">
-                <h3>Pusat Solusi Praktis & Standar Operasional Manufaktur</h3>
-                <p><b>OtoritasKerja.com</b> adalah platform independen yang dikurasi langsung oleh praktisi berpengalaman di bidang teknik industri dan manufaktur. Berbasis di <b>Batam, Kepulauan Riau</b>, platform ini hadir untuk menjembatani kebutuhan teori dan praktik nyata di lantai pabrik—mulai dari pengendalian mutu (<i>quality control</i>), analisis <i>root cause</i>, hingga penyediaan template Excel operasional yang siap pakai.</p>
-                <p>Seluruh materi, lembar kerja, dan modul yang dibagikan di situs ini bukan sekadar teori buku teks, melainkan dirancang berdasarkan pengalaman operasional harian di lingkungan manufaktur. Fokus utamanya adalah membantu para supervisor, engineer, dan profesional industri di kawasan Batam untuk memecahkan masalah lini produksi dengan cepat, terstruktur, dan efisien.</p>
-                <p>Otoritas Kerja hadir sebagai mitra diskusi dan rujukan praktis bagi para profesional industri yang ingin mengoptimalkan sistem kerja serta produktivitas manufaktur secara berkelanjutan.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- VIEW 5: ADMIN CMS -->
-    <div id="page-admin" class="page-view">
-        <div class="container">
-            <div class="admin-section">
-                <h2><i class="fa-solid fa-gauge-high"></i> Panel Admin CMS — Tambah Konten Baru</h2>
-                <form id="cmsForm">
-                    <div class="form-grid">
-                        <div class="form-group">
-                            <label for="titleInput">Judul Modul / Artikel</label>
-                            <input type="text" id="titleInput" placeholder="Contoh: Analisis Root Cause IB-01" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="categoryInput">Kategori / Badge</label>
-                            <select id="categoryInput">
-                                <option value="free">Free Artikel</option>
-                                <option value="template">Free Template (.XLSX)</option>
-                                <option value="pro">PRO / Premium</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="imageInput">URL Gambar (Opsional)</label>
-                            <input type="url" id="imageInput" placeholder="https://images.unsplash.com/...">
-                        </div>
-                        <div class="form-group">
-                            <label for="priceInput">Harga / Keterangan Footer</label>
-                            <input type="text" id="priceInput" placeholder="Contoh: Rp 50.000 atau .XLSX Standard">
-                        </div>
-                        <div class="form-group full">
-                            <label for="descInput">Deskripsi Singkat</label>
-                            <textarea id="descInput" rows="3" placeholder="Tuliskan ringkasan isi modul atau template..." required></textarea>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary"><i class="fa-solid fa-plus"></i> Publikasikan Konten Baru ke Beranda</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2026 OtoritasKerja.com — Operational Excellence & Systems.</p>
-        <p>Basis Operasional: Batam, Kepulauan Riau, Indonesia.</p>
-    </footer>
-
-    <!-- JAVASCRIPT -->
-    <script>
-        function switchPage(pageId, event) {
-            if(event) event.preventDefault();
-            
-            document.querySelectorAll('.page-view').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.nav-links button').forEach(el => el.classList.remove('active'));
-            
-            document.getElementById('page-' + pageId).classList.add('active');
-            
-            const navBtn = document.getElementById('nav-' + pageId);
-            if(navBtn) navBtn.classList.add('active');
-
-            window.scrollTo(0, 0);
-        }
-
-        function checkAdminPassword() {
-            const password = prompt("Masukkan Password Admin:");
-            if(password === "sukardi2026") {
-                switchPage('admin');
-                document.getElementById('nav-admin').classList.add('active');
-            } else if(password !== null) {
-                alert("Password salah! Akses ditolak.");
-            }
-        }
-
-        // Script untuk Toggle Popup Tombol Kontak di Navbar
-        const contactToggle = document.getElementById('contactToggle');
-        const contactPopup = document.getElementById('contactPopup');
-        if (contactToggle && contactPopup) {
-            contactToggle.addEventListener('click', function(e) {
-                e.stopPropagation();
-                contactPopup.classList.toggle('active');
-                contactToggle.classList.toggle('active');
-            });
-            window.addEventListener('click', function(e) {
-                if (!contactPopup.contains(e.target) && e.target !== contactToggle) {
-                    contactPopup.classList.remove('active');
-                    contactToggle.classList.remove('active');
-                }
-            });
-        }
-
-        // --- SISTEM PENYIMPANAN LOCALSTORAGE UNTUK KONTEN CMS ---
-        function loadStoredContent() {
-            const storedCards = JSON.parse(localStorage.getItem('otoritasKerja_cards') || '[]');
-            const grid = document.getElementById('cardGrid');
-            
-            storedCards.forEach(item => {
-                const newCard = document.createElement('div');
-                newCard.className = 'card';
-                if(item.category === 'pro') newCard.style.borderColor = '#fde68a';
-
-                newCard.innerHTML = `
-                    <div class="card-img-container">
-                        <img src="${item.imageUrl}" alt="${item.title}">
-                    </div>
-                    <div class="card-content">
-                        <div class="card-meta">
-                            <span class="badge ${item.badgeClass}">${item.badgeText}</span>
-                            <span class="card-date">${item.date}</span>
-                        </div>
-                        <h3><a href="#">${item.title}</a></h3>
-                        <p>${item.desc}</p>
-                    </div>
-                    <div class="card-footer">
-                        <span style="font-size: 0.85rem; font-weight: ${item.category === 'pro' ? '600' : '400'}; color: ${item.category === 'pro' ? 'var(--badge-pro)' : 'var(--text-muted)'};">${item.price}</span>
-                        <a href="#" class="btn ${item.btnClass}">${item.btnText}</a>
-                    </div>
-                `;
-                grid.prepend(newCard);
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', loadStoredContent);
-
-        document.getElementById('cmsForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const title = document.getElementById('titleInput').value;
-            const category = document.getElementById('categoryInput').value;
-            let imageUrl = document.getElementById('imageInput').value;
-            const price = document.getElementById('priceInput').value || 'Oleh Otoritas Kerja';
-            const desc = document.getElementById('descInput').value;
-            
-            if(!imageUrl) {
-                imageUrl = 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80';
-            }
-
-            let badgeClass = 'free';
-            let badgeText = 'Free Artikel';
-            let btnClass = 'btn-outline';
-            let btnText = 'Baca Artikel <i class="fa-solid fa-arrow-right"></i>';
-
-            if(category === 'template') {
-                badgeClass = 'free';
-                badgeText = 'Free Template';
-                btnText = 'Download <i class="fa-solid fa-download"></i>';
-            } else if(category === 'pro') {
-                badgeClass = 'pro';
-                badgeText = 'PRO / Premium';
-                btnClass = 'btn-primary';
-                btnText = 'Beli Template <i class="fa-solid fa-cart-shopping"></i>';
-            }
-
-            const cardData = {
-  document.getElementById('cmsForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-
-  const title = document.getElementById('titleInput').value;
-  const category = document.getElementById('categoryInput').value;
-  let imageUrl = document.getElementById('imageInput').value;
-  const price = document.getElementById('priceInput').value || 'Oleh Otoritas Kerja';
-  const desc = document.getElementById('descInput').value;
-
-  if (!imageUrl) {
-    imageUrl = 'https://images.unsplash.com/photo-1581091225825-a6a2u5ee1587?auto=format&fit=crop&w=500&q=80';
-  }
-
-  let badgeClass = 'free';
-  let badgeText = 'Free Artikel';
-  let btnClass = 'btn-outline';
-  let btnText = 'Baca Artikel <i class="fa-solid fa-arrow-right"></i>';
-
-  if (category === 'template') {
-    badgeClass = 'free';
-    badgeText = 'Free Template';
-    btnText = 'Download <i class="fa-solid fa-download"></i>';
-  } else if (category === 'pro') {
-    badgeClass = 'pro';
-    badgeText = 'PRO / Premium';
-    btnClass = 'btn-primary';
-    btnText = 'Beli Template <i class="fa-solid fa-cart-shopping"></i>';
-  }
-
-  const cardData = {
-    title,
-    category,
-    imageUrl,
-    price,
-    desc,
-    badgeClass,
-    badgeText,
-    btnClass,
-    btnText,
-    date: 'Baru Saja'
-  };
-
-  // 1. Kirim data otomatis ke Google Spreadsheet via Apps Script
-  const scriptUrl = "https://script.google.com/macros/s/AKfycby0gokqLsxOUbCQszTHn_M5eeb7asJKPIpetAKyJDG9nCg_lm7Q1BHwfwfOwhD_S0dTvg/exec";
-  
-  const payload = {
-    judul: title,
-    kategori: category,
-    gambar: imageUrl,
-    footer: price,
-    deskripsi: desc,
-    link: ""
-  };
-
-  fetch(scriptUrl, {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload)
-  }).catch(err => console.error('Sync Error:', err));
-
-  // 2. Simpan ke localStorage untuk tampilan instan di perangkat lokal
-  let storedCards = JSON.parse(localStorage.getItem('otoritasKerja_cards')) || [];
-  storedCards.push(cardData);
-  localStorage.setItem('otoritasKerja_cards', JSON.stringify(storedCards));
-
-  // 3. Render langsung ke DOM dengan pengecekan halaman buku Pemimpin Muda
-  const grid = document.getElementById('cardGrid');
-  const newCard = document.createElement('div');
-  newCard.className = 'card';
-  if (category === 'pro') newCard.style.borderColor = '#fde68a';
-
-  const targetLink = title.toLowerCase().includes('pemimpin muda') ? 'buku-pemimpin-muda.html' : '#';
-
-  newCard.innerHTML = `
-    <div class="card-img-container">
-      <img src="${imageUrl}" alt="${title}">
-    </div>
-    <div class="card-content">
-      <div class="card-meta">
-        <span class="badge ${badgeClass}">${badgeText}</span>
-        <span class="card-date">Baru Saja</span>
       </div>
-      <a href="${targetLink}">
-        <h3>${title}</h3>
-      </a>
-      <p>${desc}</p>
-    </div>
-    <div class="card-footer">
-      <span style="font-size: 0.85rem; font-weight: ${category === 'pro' ? '600' : '400'}; color: ${category === 'pro' ? '#2563eb' : '#4b5563'}">${price}</span>
-      <a href="${targetLink}" class="btn ${btnClass}">${btnText}</a>
-    </div>
-  `;
 
-  grid.prepend(newCard);
-  this.reset();
-  alert('Konten berhasil dipublikasikan, tersimpan permanen, dan tersinkron ke Spreadsheet!');
-  switchPage('beranda');
-});
-    </script>
-</body>
-</html>
+      <!-- Kartu 2: Checklist Blown Film -->
+      <div class="card">
+        <div class="card-img-container">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="Checklist Excel">
+        </div>
+        <div class="card-content">
+          <div class="card-meta">
+            <span class="badge free">Free Template</span>
+            <span class="card-date">02 Okt 2026</span>
+          </div>
+          <h3><a href="#">Checklist Harian Mesin Blown Film & Parameter Extrusion</a></h3>
+          <p>Format pencatatan suhu heater, kecepatan tarik, dan ketebalan film standar untuk supervisor produksi.</p>
+        </div>
+        <div class="card-footer">
+          <span style="font-size: 0.85rem; color: var(--text-muted);"><i class="fa-regular fa-file-excel" style="color: #059669;"></i> .XLSX Standard</span>
+          <a href="#" class="btn btn-outline card-btn">Download <i class="fa-solid fa-download"></i></a>
+        </div>
+      </div>
+
+      <!-- Kartu 3: Kalkulator OEE (PRO) -->
+      <div class="card" style="border-color: #fde68a;">
+        <div class="card-img-container">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Kalkulator OEE">
+        </div>
+        <div class="card-content">
+          <div class="card-meta">
+            <span class="badge pro">PRO / Premium</span>
+            <span class="card-date">01 Okt 2026</span>
+          </div>
+          <h3><a href="#">Master Kalkulator OEE & Dashboard Downtime Otomatis</a></h3>
+          <p>Alat ukur efektivitas mesin menyeluruh dilengkapi grafik interaktif, analisis shift, dan laporan scrap otomatis.</p>
+        </div>
+        <div class="card-footer">
+          <span style="font-size: 0.85rem; font-weight: 600; color: var(--badge-pro);">Rp 75.000</span>
+          <a href="#" class="btn btn-primary card-btn">Beli Template <i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+      </div>
+
+      <!-- Kartu 4: Buku Pemimpin Muda dari Lantai Pabrik -->
+      <div class="card">
+        <div class="card-img-container">
+          <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=600&q=80" alt="Buku Pemimpin Muda">
+        </div>
+        <div class="card-content">
+          <div class="card-meta">
+            <span class="badge free">E-Book / Manuskrip</span>
+            <span class="card-date">28 Sep 2026</span>
+          </div>
+          <h3><a href="#">Pemimpin Muda dari Lantai Pabrik: Perjalanan Menuju Supervisor Profesional</a></h3>
+          <p>Kisah inspiratif dan panduan praktis kepemimpinan operasional langsung dari lantai produksi pabrik.</p>
+        </div>
+        <div class="card-footer">
+          <span style="font-size: 0.85rem; color: var(--text-muted);"><i class="fa-regular fa-book"></i> Karya Sukardi</span>
+          <a href="#" class="btn btn-outline card-btn">Baca Buku <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Kartu 5: SOP & Work Instruction (WI) Manufaktur -->
+      <div class="card">
+        <div class="card-img-container">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" alt="SOP dan Work Instruction">
+        </div>
+        <div class="card-content">
+          <div class="card-meta">
+            <span class="badge free">SOP & WI</span>
+            <span class="card-date">04 Okt 2026</span>
+          </div>
+          <h3><a href="#">SOP & Work Instruction (WI) Standar Operasional Mesin Produksi</a></h3>
+          <p>Dokumen panduan kerja terstandar untuk operator lini produksi guna menjaga konsistensi kualitas dan keselamatan kerja.</p>
+        </div>
+        <div class="card-footer">
+          <span style="font-size: 0.85rem; color: var(--text-muted);"><i class="fa-regular fa-file-pdf" style="color: #ea580c;"></i> PDF Standard</span>
+          <a href="#" class="btn btn-outline card-btn">Lihat Dokumen <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- VIEW 2: MODUL & JURNAL -->
+<div id="page-modul" class="page-view">
+  <div class="container">
+    <div class="section-title">
+      <h2>Arsip Modul & Jurnal Manufaktur</h2>
+    </div>
+    <div class="about-card">
+      <h3>Kumpulan Panduan & Catatan Operasional</h3>
+      <p>Halaman ini menyajikan arsip artikel, modul praktis, serta lembar kerja analisis yang disusun langsung dari pengalaman nyata di lantai pabrik. Pusat referensi bagi para profesional industri.</p>
+    </div>
+  </div>
+</div>
+
+<!-- VIEW 3: TOOLS EXCEL -->
+<div id="page-tools" class="page-view">
+  <div class="container">
+    <div class="section-title">
+      <h2>Katalog Tools Excel Profesional</h2>
+    </div>
+    <div class="about-card">
+      <h3>Pustaka Referensi & Lembar Kerja</h3>
+      <p>Direktori dokumen, template perhitungan, dan modul analisis yang dapat digunakan sebagai referensi praktis dalam mengelola proses operasional industri.</p>
+    </div>
+  </div>
+</div>
+
+<!-- VIEW 4: TENTANG OTORITAS KERJA -->
+<div id="page-tentang" class="page-view">
+  <div class="container">
+    <div class="section-title">
+      <h2>Tentang OtoritasKerja.com</h2>
+    </div>
+    <div class="about-card">
+      <h3>Pusat Solusi Praktis & Standar Operasional Manufaktur</h3>
+      <p><b>OtoritasKerja.com</b> adalah platform independen yang dikurasi langsung oleh praktisi berpengalaman di bidang teknik industri dan manufaktur. Berbasis di <b>Batam, Kepulauan Riau</b>, platform ini hadir untuk menjembatani kebutuhan teori dan praktik nyata di lantai pabrik.</p>
+    </div>
+  </div>
+</div>
+
+<!-- VIEW 5: ADMIN CMS -->
+<div id="page-admin" class="page-view">
+  <div class="container">
+    <div class="admin-section">
+      <h2><i class="fa-solid fa-gauge-high"></i> Panel Admin CMS - Tambah Konten Baru</h2>
+      <form id="cmsForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="titleInput">Judul Modul / Artikel / SOP / WI</label>
+            <input type="t
