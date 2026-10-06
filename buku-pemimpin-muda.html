@@ -3,206 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pemimpin Muda dari Lantai Pabrik - Bab 1 & 2</title>
-    <!-- Tailwind CSS untuk styling modern dan responsif -->
+    <title>Pemimpin Muda dari Lantai Pabrik - Otoritas Kerja</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Inter:wght@400;500;600;700&display=swap');
-        .font-serif-book { font-family: 'Merriweather', serif; }
-        .font-sans-ui { font-family: 'Inter', sans-serif; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
+        .font-serif-book {
+            font-family: 'Merriweather', serif;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans-ui antialiased">
+<body class="bg-slate-50 text-slate-800 antialiased">
 
-    <!-- Navigasi / Header Publikasi -->
-    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+    <!-- Header Navigasi -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
         <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
-            <span class="font-bold text-lg text-slate-900">Otoritas Kerja</span>
-            <nav class="text-sm text-slate-600 space-x-6">
-                <a href="#daftar-isi-section" class="hover:text-blue-600 transition">Daftar Isi</a>
-                <a href="#tentang-penulis-section" class="hover:text-blue-600 transition">Tentang Penulis</a>
+            <a href="#" class="font-bold text-slate-900 tracking-tight text-lg">Otoritas Kerja</a>
+            <nav class="flex items-center space-x-6 text-sm font-medium">
+                <a href="#daftar-isi" class="text-slate-600 hover:text-slate-900 transition">Daftar Isi</a>
+                <a href="#tentang-penulis-section" class="text-slate-600 hover:text-slate-900 transition">Tentang Penulis</a>
             </nav>
         </div>
     </header>
 
-    <!-- Konten Utama Buku -->
-    <main class="max-w-3xl mx-auto px-6 py-12">
-        
-        <!-- Info Buku -->
-        <div class="text-center mb-16 border-b border-slate-200 pb-10">
-            <span class="text-xs font-bold tracking-widest text-blue-600 uppercase bg-blue-50 px-3 py-1 rounded-full">Baca Gratis - Bab 1 & 2</span>
-            <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mt-4 mb-2 font-serif-book">Pemimpin Muda dari Lantai Pabrik</h1>
-            <p class="text-slate-600">Oleh: Sukardi</p>
-        </div>
+    <!-- Konten Utama -->
+    <main class="max-w-4xl mx-auto px-6 py-12">
 
-        <!-- BAB 1 -->
-        <section id="daftar-isi-section" class="mb-20">
-            <div class="text-center mb-10">
-                <span class="text-sm font-semibold text-slate-500 uppercase tracking-wider">Bab 1</span>
-                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-1 font-serif-book">Langkah Pertama di Lantai Pabrik</h2>
-            </div>
+        <!-- Judul Buku / Hero Section -->
+        <section class="text-center my-12">
+            <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">E-Book Eksklusif</span>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-4 mb-4 font-serif-book">Pemimpin Muda dari Lantai Pabrik</h1>
+            <p class="text-slate-600 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+                Panduan autentik menavigasi kepemimpinan, menyelesaikan masalah operasional, dan membangun karier dari bawah tanpa kehilangan integritas.
+            </p>
+        </section>
 
-            <div class="prose prose-slate max-w-none font-serif-book leading-relaxed space-y-6 text-slate-700">
-                <h3 class="font-sans-ui text-xl font-bold text-slate-900 mt-8 mb-4">Seragam Pertama</h3>
-                <p>Aku masih ingat hari pertamaku bekerja di pabrik. Suara mesin berdentum, aroma tinta <em>printing</em> dan <em>thinner</em> yang khas, serta panas ruangan yang tak mengenal ampun menjadi sambutan pertamaku. Aku berdiri agak canggung di sudut ruangan, mengenakan seragam merah yang masih tampak terlalu bersih dibanding rekan-rekan kerjaku yang lain, yang sudah terbiasa bekerja. Hari itu adalah kali pertama aku menginjakkan kaki sebagai karyawan resmi di lantai produksi. Aku masuk bukan sebagai manajer atau supervisor. Aku hanya anak pabrik, operator biasa yang bahkan tak tahu nama semua alat di depanku, apalagi mengoperasikan mesin.</p>
-                
-                <p>Ketika <em>leader</em> yang memimpin tim mendekat dan menyapaku, aku menegakkan badan, berusaha tersenyum meski canggung dan tubuh sedikit terasa gemetar. Suaranya tegas tetapi tidak galak. Ia memberiku pengarahan singkat tentang keselamatan kerja, SOP, dan area kerjaku hari itu. Aku ditempatkan di bagian pembuatan film, pekerjaan yang terlihat sederhana, tetapi ternyata membutuhkan ketelitian tinggi.</p>
+        <!-- Daftar Isi Section -->
+        <section id="daftar-isi" class="bg-white border border-slate-200 rounded-2xl p-8 my-12 shadow-sm">
+            <h3 class="text-xl font-bold text-slate-900 mb-6 font-serif-book">Daftar Isi Buku</h3>
+            <ul class="space-y-3 text-slate-700 text-sm md:text-base">
+                <li class="flex items-start">
+                    <span class="font-semibold text-blue-600 mr-3">Bab 1</span>
+                    <span>Realitas Lantai Pabrik: Tempat Pengujian Mental Pertama</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="font-semibold text-blue-600 mr-3">Bab 2</span>
+                    <span>Membangun Kredibilitas di Tengah Tekanan Operasional</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="font-semibold text-blue-600 mr-3">Bab 3 - 11</span>
+                    <span>Strategi Lanjutan: Standar Kerja, Egosentrisme, hingga Ruang Profesional</span>
+                </li>
+            </ul>
+        </section>
 
-                <p>Langkah pertama di lantai produksi itu bukan hanya soal fisik, melainkan juga mental. Aku belajar dengan saksama mengikuti instruksi dan menerima koreksi tanpa sakit hati. Di sana aku menyadari bahwa dunia kerja berbeda jauh dari bangku sekolah. Tidak ada nilai ujian, yang ada adalah target produksi. Tidak ada guru yang sabar membimbing setiap detik, yang ada adalah atasan yang menginginkan hasil cepat dan tepat.</p>
-
-                <p>Aku sempat beberapa kali melakukan kesalahan kecil: salah mencatat kecepatan mesin, menyusun palet kurang rapi, atau lupa mencatat jumlah produk cacat. Namun, setiap kesalahan menjadi pelajaran berharga. Rekan-rekan satu <em>shift</em> banyak membantu. Mereka tidak melihatku sebagai saingan, melainkan sebagai teman baru yang perlu dibimbing.</p>
-
-                <p>Hari itu aku pulang dengan tubuh lelah, tetapi hati penuh semangat. Di dalam kamar kos kecilku, aku berpikir: <em>"Inilah dunia baruku. Dunia yang keras, tetapi nyata. Dunia yang tidak menjanjikan jalan mulus, tetapi membuka peluang bagi mereka yang siap bekerja keras."</em></p>
-
-                <p>Langkah pertama di lantai produksi bukan sekadar awal dari pekerjaanku, melainkan langkah pertama dalam perjalanan hidup yang membentuk siapa aku hari ini. Seorang anak pabrik yang bermimpi besar dan bersedia memulainya dari bawah.</p>
-
-                <p>Aku berangkat dari kampung halaman dengan sejuta harapan, bermodalkan selembar ijazah SMK. Bukan sarjana, tetapi aku tahu aku harus bertumbuh; perubahan tidak akan instan tanpa pergerakan nyata. Itu yang menjadi pegangan di dalam hati.</p>
-
-                <p>Setiap hari, tugasku hanya satu: menjalankan mesin dan memastikan produk keluar tanpa cacat. Itu saja. Bukan hal yang membanggakan di mata sebagian orang. Namun bagiku, itu adalah langkah awal menuju sesuatu yang lebih besar. Aku belajar diam-diam. Mengamati cara kerja senior, mencatat cara mereka mengatasi masalah mesin. Saat istirahat, aku tidak sekadar makan. Aku bertanya, aku mendengar, dan aku menyimpan semua pelajaran itu.</p>
-
-                <p>Bagiku, mereka bisa karena mereka belajar lebih dulu. Tidak ada orang yang tidak bisa, yang ada hanyalah belum tahu; tidak ada orang yang benar-benar pintar sejak lahir, melainkan mereka yang mau belajar lebih dulu. Itulah yang membuat hari-hariku selalu bersemangat untuk bisa.</p>
-
-                <blockquote class="border-l-4 border-blue-600 pl-4 italic text-slate-800 my-6 bg-blue-50/50 p-4 rounded-r-lg">
-                    <strong>Pelajaran Pertama:</strong><br>
-                    "Kalau kamu ingin naik level, jangan tunggu orang lain datang mengajarimu. Kamu sendiri yang harus mendatangi ilmu."
-                </blockquote>
-
-                <h3 class="font-sans-ui text-xl font-bold text-slate-900 mt-8 mb-4">Pagi-pagi Buta, Lembur, dan Suara Mesin</h3>
-                <p>Masih gelap ketika alarm berbunyi. Jam menunjukkan pukul 04.00 pagi. Di luar, udara dingin menusuk kulit, embun masih menempel di kaca jendela. Namun bagi kami anak pabrik, pagi bukan lagi waktu untuk berleha-leha. Ini saatnya bangkit, mengenakan seragam, dan bersiap menghadapi suara mesin yang terus berdengung.</p>
-
-                <p>Di pabrik, suara mesin seakan menjadi irama kehidupan. Suara dentingan logam, deru motor listrik, dan bunyi alarm mesin menjadi latar belakang dari setiap langkah kami. Kadang menyebalkan, kadang menenangkan, tetapi selalu mengingatkan bahwa produksi tak pernah tidur.</p>
-
-                <p>Aku masih ingat saat pertama kali masuk <em>shift</em> malam dan harus lembur hingga pagi. Rasanya tubuh ingin menyerah, dan kantuk menjadi lawan terberat. Namun di antara rasa lelah itu, ada rasa tanggung jawab yang terus menguatkan. Kami belajar bahwa bekerja bukan sekadar hadir, melainkan juga menjaga ritme dan kualitas, karena sedikit saja lengah, satu kesalahan kecil bisa berdampak besar.</p>
-
-                <p>Ada satu momen yang tak terlupakan. Suatu malam ketika terjadi salah penukaran jenis barang produksi sehingga banyak produk cacat (NG), suasana mendadak tegang. <em>Leader</em> panik dan operator saling pandang. Dari kejadian itu, aku belajar untuk tetap tenang dan berpikir jernih di tengah tekanan. Aku ikut membantu mengidentifikasi masalah, bukan karena aku ahli, melainkan karena aku mau belajar. Di situlah awal mula aku mulai dipercaya.</p>
-
-                <p>Dari situ aku menyadari satu hal penting: mental baja ditempa bukan oleh kenyamanan, melainkan oleh situasi paling menantang.</p>
-
-                <h3 class="font-sans-ui text-xl font-bold text-slate-900 mt-8 mb-4">Secangkir Kopi dan Catatan Produksi</h3>
-                <p>Setiap pagi setelah pergantian <em>shift</em>, aku menyempatkan diri duduk sejenak di kantin, menikmati secangkir kopi hangat. Di tangan kiriku catatan produksi semalam, di tangan kananku roti isi dari rumah. Sederhana, tetapi itulah momen refleksi paling jujur.</p>
-
-                <p>Kopi pagi tak hanya mengusir kantuk. Ia menjadi teman untuk merenungkan, mengevaluasi, dan merancang langkah selanjutnya. Aku mulai terbiasa mencatat hal-hal kecil: mesin mana yang sering mengalami kendala, siapa operator yang terlambat, dan berapa banyak produk cacat yang harus diminimalkan.</p>
-
-                <p>From catatan itu aku belajar membaca pola. Dan dari pola tersebut, aku mulai bisa menyarankan perbaikan kecil. Awalnya mungkin dianggap remeh, tetapi lambat laun manajer produksi mulai melirik.</p>
-
-                <p>Kamu tidak harus memiliki gelar tinggi untuk bisa memberi solusi. Kamu hanya butuh kepekaan dan inisiatif.</p>
+        <!-- Bab 1 -->
+        <section class="bg-white border border-slate-200 rounded-2xl p-6 md:p-10 my-8 shadow-sm">
+            <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Bab 1</span>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2 mb-6 font-serif-book">Realitas Lantai Pabrik: Tempat Pengujian Mental Pertama</h2>
+            <div class="space-y-4 text-slate-700 leading-relaxed text-base md:text-lg">
+                <p>Pabrik tidak pernah tidur. Di balik deru mesin ekstrusi yang berputar konstan dan bau bijih plastik yang melekat di pakaian kerja, ada ritme kehidupan yang menuntut ketahanan fisik dan mental tingkat tinggi. Hari-hari pertama di lantai pabrik bukanlah tentang teori manajemen yang muluk-muluk, melainkan tentang bagaimana bertahan hidup di bawah tekanan target produksi yang ketat.</p>
+                <p>Banyak lulusan baru datang dengan membawa ekspektasi tinggi, mengira dunia industri akan menyambut mereka dengan meja kerja ber-AC dan ruang diskusi yang elegan. Realitasnya justru sebaliknya: debu, oli, peluh, dan suara bising mesin yang memekakkan telinga. Di sinilah seleksi alam yang sesungguhnya terjadi.</p>
+                <p>Mentalitas instan sering kali menjadi musuh utama. Ketika dihadapkan pada mesin yang macet total di tengah malam atau komplain produk cacat dari bagian quality control, ijazah sarjana tidak akan menyelamatkan Anda. Yang dibutuhkan adalah kesigapan tangan, ketenangan kepala, dan kerendahan hati untuk belajar langsung dari para operator senior yang sudah belasan tahun makan asam garam di lini produksi.</p>
             </div>
         </section>
 
-        <hr class="my-12 border-slate-200">
-
-        <!-- BAB 2 -->
-        <section id="bab-2" class="mb-20">
-            <div class="text-center mb-10">
-                <span class="text-sm font-semibold text-slate-500 uppercase tracking-wider">Bab 2</span>
-                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-1 font-serif-book">Kuliah di Sela-Sela Waktu Kerja</h2>
-            </div>
-
-            <div class="prose prose-slate max-w-none font-serif-book leading-relaxed space-y-6 text-slate-700">
-                <p>Pagi-pagi buta aku sudah berpakaian lengkap dengan seragam kerja. Waktu itu aku masih menjadi operator di bagian produksi. <em>Shift</em> pagi dimulai pukul 07.00, dan aku harus sudah absen sebelum itu. Tidak jarang, aku berangkat saat matahari bahkan belum terbit, menembus dingin dan rasa kantuk demi ketepatan waktu.</p>
-
-                <p>Namun ada satu mimpi yang tidak pernah padam: kuliah.</p>
-
-                <p>Bekerja di pabrik bukan berarti harus berhenti belajar. Bagiku, justru bekerja di pabrik memberikan alasan kuat untuk berkuliah. Aku ingin lebih dari sekadar mengoperasikan mesin—aku ingin mengerti mengapa mesin itu bekerja, bagaimana prosesnya bisa lebih efisien, dan apa peran manusia di dalam sistem tersebut.</p>
-
-                <p>Akan tetapi, jalan itu tidak mudah.</p>
-
-                <p>Kuliah sambil bekerja menuntut pengorbanan besar. Waktu istirahat nyaris habis, waktu bersama keluarga berkurang, dan ajakan berkumpul dengan teman-teman hampir semuanya terpaksa kutinggalkan. Namun aku percaya, setiap pengorbanan ini akan terbayar dengan hasil yang sepadan.</p>
-
-                <p>Ranselku berisi dua hal yang tak biasa dibawa bersamaan: sepatu keselamatan kerja dan buku kuliah. Yang satu melambangkan dunia kerja keras di lantai pabrik, sedangkan yang lain adalah simbol perjuangan meraih ilmu dan masa depan.</p>
-
-                <p>Dan itu terbukti. Materi kuliah yang kudapatkan sering kali bisa langsung kuterapkan di tempat kerja. Ketika di kelas membahas pengendalian proses statistik, aku langsung membayangkan bagaimana menerapkannya pada mesin di tempatku bekerja.</p>
-
-                <p>Aku mulai bertransformasi. Bukan sekadar karena gelarnya, melainkan karena pola pikirku yang berkembang.</p>
-
-                <p>Rekan-rekan di pabrik mulai melihatku bukan hanya sebagai sesama operator, melainkan seseorang yang juga bisa memberikan sudut pandang baru. Aku tidak merasa lebih pintar dari mereka—sama sekali tidak. Aku hanya menyadari bahwa pendidikan membuka pintu untuk membantu lebih banyak orang.</p>
-
-                <p>Setiap malam aku belajar, bukan sekadar demi mengejar nilai, melainkan untuk membuktikan bahwa mimpi dapat tumbuh bahkan di tengah kesibukan lantai produksi.</p>
-
-                <h3 class="font-sans-ui text-xl font-bold text-slate-900 mt-8 mb-4">Tidur di Bus, Belajar di Kelas</h3>
-                <p>Kadang aku tertidur di bus dengan masih mengenakan pakaian seragam. Namun begitu sampai di kampus, aku harus mengubah penampilan dan fokus. Dari seorang operator produksi, aku bertukar peran menjadi mahasiswa Teknik Industri. Mata yang sembab karena kurang tidur tetap dipaksa fokus membaca grafik, menyelesaikan soal statistik, atau berdiskusi mengenai sistem produksi.</p>
-
-                <p>Tak jarang aku dipandang sebelah mata karena pakaian yang masih beraroma pabrik atau karena sering terlambat masuk kelas akibat kendala perjalanan. Namun aku sudah kebal. Bagiku, <strong>rasa malu itu sementara, tetapi ilmu adalah investasi seumur hidup</strong>.</p>
-
-                <p>Banyak dosenku yang tidak tahu bahwa aku bekerja pada <em>shift</em> malam. Mereka mungkin hanya melihatku sering menguap atau kurang konsentrasi. Namun bagi beberapa dosen yang mengetahui perjuanganku, dukungan mereka luar biasa:</p>
-
-                <blockquote class="border-l-4 border-blue-600 pl-4 italic text-slate-800 my-6 bg-blue-50/50 p-4 rounded-r-lg">
-                    "Kamu bukan sekadar belajar teori di atas kertas, kamu sedang hidup di dalam dunia nyata industri. Itu lebih dari cukup untuk membuatmu unggul."
-                </blockquote>
-
-                <h3 class="font-sans-ui text-xl font-bold text-slate-900 mt-8 mb-4">Uang Gaji untuk Biaya Kuliah</h3>
-                <p>Setiap tanggal gajian tiba, ada dua hal yang langsung menjadi prioritas utamaku: biaya hidup dan biaya kuliah. Sejak memutuskan untuk kuliah sambil bekerja, aku sadar bahwa aku tidak memiliki kebebasan untuk menggunakan penghasilan sesuka hati. Tidak ada liburan mewah, tidak ada nongkrong setiap akhir pekan, bahkan untuk membeli pakaian baru pun aku harus berpikir berulang kali.</p>
-
-                <p>Namun bagiku, tidak ada pengorbanan yang sia-sia. Setiap lembar rupiah yang kutabung dari hasil kerja lembur dan lelahnya <em>shift</em> malam, kusiapkan untuk satu tujuan utama: melunasi biaya kuliah dan mengubah masa depan.</p>
-
-                <p>Aku masih ingat betul momen ketika harus menahan diri karena keuangan menipis, sementara cicilan semester sudah harus dibayarkan. Rasanya hampir ingin menyerah. Namun aku bertahan, karena aku tahu jika aku menyerah saat itu, seluruh lelah yang sudah dilalui tidak akan ada artinya.</p>
-
-                <p>Rekan kerjaku kerap bertanya, <em>"Ngapain sih kuliah? Capek kerja, malamnya kuliah, kapan istirahatnya?"</em> Aku hanya tersenyum dan menjawab, <em>"Karena aku tidak ingin selamanya bekerja seperti ini."</em> Bukan karena aku malu menjadi anak pabrik, melainkan karena aku ingin naik kelas. Aku ingin suatu saat nanti bisa mengambil keputusan penting, bukan sekadar menunggu perintah.</p>
-
-                <p>Perlahan-lahan, semuanya mulai membuahkan hasil. Nilai kuliahku baik, dan ilmu yang kudapatkan mulai relevan dengan pekerjaanku di pabrik. Bahkan, atasan mulai memberikan tanggung jawab yang lebih besar karena melihat keseriusanku untuk terus berkembang.</p>
-
-                <p>Penghasilan mungkin terbatas, tetapi dengan adanya impian yang jelas, setiap rupiah menjadi sangat bernilai karena ia sedang membangun jembatan menuju masa depan.</p>
-
-                <h3 class="font-sans-ui text-xl font-bold text-slate-900 mt-8 mb-4">Teman Kampus, Teman Pabrik</h3>
-                <p>Pernah suatu hari, teman kuliah mengajakku bersantai selepas jam pelajaran. Aku menolak dengan sopan dan berkata, <em>"Maaf, aku harus langsung pulang karena masuk shift malam."</em></p>
-
-                <p>Aku tahu mereka mungkin merasa heran. Namun aku tidak pernah malu mengakui bahwa aku adalah seorang anak pabrik—yang siang harinya mengoperasikan mesin, dan malam harinya duduk di bangku kuliah mengejar mimpi yang sering kali tampak terlampau tinggi bagi sebagian orang.</p>
-
-                <p>Ini bukan sekadar soal manajemen waktu, melainkan prioritas. Aku harus bersikap disiplin terhadap keuanganku sendiri. Biaya harus dicadangkan untuk kuliah, transportasi, makan seadanya, serta kiriman untuk orang tua di kampung.</p>
-
-                <p>Aku tidak anti bersenang-senang, tetapi aku tahu apa yang harus diutamakan.</p>
-
-                <p>Menolak ajakan teman bukan berarti menutup diri dari pergaulan, melainkan karena aku sedang berjuang untuk tujuan yang mungkin belum sepenuhnya mereka pahami. Dari situ aku belajar bahwa hidup bukan tentang mengikuti arus, melainkan tahu kapan harus berenang ke arah yang lebih baik, meski harus melawan derasnya godaan.</p>
-
-                <p>Seiring waktu, teman-teman di kampus mulai memahami dan menghargai pilihanku. Beberapa bahkan mulai bertanya bagaimana caraku membagi waktu dan mengatur keuangan. Di sisi lain, rekan-rekan di pabrik memberiku pelajaran hidup yang tidak pernah tertulis di buku teks: tentang ketangguhan mental, tanggung jawab penuh, dan cara bertahan di bawah tekanan.</p>
-
-                <p>Aku berdiri di antara dua dunia—pabrik dan kampus—dan keduanya membentuk diriku yang sekarang.</p>
-
-                <p>Dari kedua dunia itu pula aku menarik satu kesimpulan besar:</p>
-
-                <p>Bahwa nilai seseorang tidak diukur dari pakaian yang ia kenakan atau posisi tempat ia berdiri saat ini, melainkan dari kegigihannya memperjuangkan mimpi, sekalipun harus mengorbankan kenyamanan sesaat. Aku tidak ingin dikasihani karena harus pulang lebih cepat; aku ingin dihargai karena berani memilih jalan pendakian yang terjal demi masa depan yang lebih bermakna.</p>
-
-                <h3 class="font-sans-ui text-xl font-bold text-slate-900 mt-8 mb-4">Penutup Bab 2</h3>
-                <p>Menjalani peran ganda sebagai pekerja sekaligus mahasiswa memang menguji ketahanan diri. Namun dari proses itu, aku belajar tiga pilar penting:</p>
-                <ul class="list-disc pl-6 space-y-2">
-                    <li>Mengelola waktu dengan cermat</li>
-                    <li>Menjaga energi fisik dan mental</li>
-                    <li>Mengendalikan ego pribadi</li>
-                </ul>
-                <p class="mt-4">Sebab ketika orang lain memiliki banyak waktu luang untuk bersantai, aku harus bijak memilih prioritas: belajar, bekerja, atau beristirahat.</p>
-
-                <p>Aku bukan mahasiswa biasa. Aku adalah anak pabrik yang sedang menulis jalan hidupnya sendiri—dengan buku di tangan kanan, dan kunci pas di tangan kiri.</p>
+        <!-- Bab 2 -->
+        <section class="bg-white border border-slate-200 rounded-2xl p-6 md:p-10 my-8 shadow-sm">
+            <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Bab 2</span>
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2 mb-6 font-serif-book">Membangun Kredibilitas di Tengah Tekanan Operasional</h2>
+            <div class="space-y-4 text-slate-700 leading-relaxed text-base md:text-lg">
+                <p>Kepercayaan di lantai pabrik tidak bisa dibeli dengan jabatan atau disematkan lewat selembar Surat Keputusan (SK) pengangkatan. Kepercayaan harus direbut melalui tindakan nyata di lapangan. Seorang pemimpin lini produksi yang baru sering kali terjebak dalam ilusi kekuasaan struktural—merasa bahwa perintahnya akan otomatis dijalankan hanya karena ia memegang posisi tertentu.</p>
+                <p>Kenyataannya, para operator di lapangan jauh lebih peka daripada yang Anda duga. Mereka tahu persis siapa pemimpin yang benar-benar menguasai persoalan teknis dan siapa yang hanya bisa berteori di balik meja kantor. Kredibilitas dibangun dari konsistensi kecil: hadir lebih awal saat pergantian shift, turun tangan langsung memeriksa masalah mesin, dan tidak pernah melempar kesalahan kepada anak buah ketika target meleset.</p>
+                <p>Ketika Anda menunjukkan rasa hormat kepada pengalaman para pekerja senior, mereka akan berbalik menjaga Anda. Di titik itulah kepemimpinan yang sejati mulai terbentuk—bukan karena takut pada atasan, tetapi karena adanya rasa saling percaya di dalam tim.</p>
             </div>
         </section>
 
-        <!-- Kotak Penawaran / Call to Action Akses Premium (Tanpa Bonus Template) -->
-        <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-2xl p-8 md:p-12 text-center mt-16 shadow-xl border border-slate-700">
-            <span class="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Akses Eksklusif</span>
-            <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-3 font-serif-book">Ingin Melanjutkan Membaca Bab 3 sampai Bab 11?</h3>
-            <p class="text-slate-300 text-sm md:text-base max-w-xl mx-auto mb-8">
-                Temukan kisah lengkap perjalanan kepemimpinan, strategi menghadapi konflik mesin, pembangunan sistem kerja, hingga peluncuran karier profesional di buku penuh <strong>Pemimpin Muda dari Lantai Pabrik</strong>.
+        <!-- Kotak Penawaran / Call to Action Akses Premium -->
+        <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 md:p-12 text-center text-white my-12 shadow-xl">
+            <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Akses Penuh</span>
+            <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-3 font-serif-book">Dapatkan Seluruh Bab Naskah Lengkap</h3>
+            <p class="text-slate-300 text-sm md:text-base max-w-xl mx-auto mb-8 leading-relaxed">
+                Temukan kisah lengkap perjalanan kepemimpinan dan metodologi praktis langsung dari lantai produksi.
             </p>
             
-            <!-- Tombol Pembelian (Ganti tanda pagar # dengan link pendaftaran/pembayaran Anda) -->
-            <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-xl transition shadow-lg transform hover:-translate-y-0.5">
+            <!-- Tombol Pembelian -->
+            <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition duration-200 text-base">
                 Dapatkan Akses Buku Lengkap Sekarang
             </a>
-            
-            <p class="text-xs text-slate-400 mt-4">Dapatkan akses instan ke seluruh bab naskah buku secara lengkap.</p>
+            <p class="text-xs text-slate-400 mt-4">Akses instan setelah konfirmasi pembayaran.</p>
         </div>
 
- <!-- Bagian Tentang Penulis -->
-<section id="tentang-penulis-section" class="bg-white border border-slate-200 rounded-2xl p-8 my-12 text-center shadow-sm">
-    <h3 class="text-xl font-bold text-slate-900 mb-3 font-serif-book">Tentang Penulis</h3>
-    <p class="text-slate-600 text-sm max-w-lg mx-auto leading-relaxed">
-        Sukardi adalah seorang praktisi manufaktur dan pemimpin lini produksi yang mendedikasikan pengalamannya untuk membangun standar kerja serta menyelesaikan berbagai tantangan operasional. Melalui buku ini, ia membagikan perjalanan autentik kepemimpinan langsung dari lantai pabrik untuk menginspirasi para profesional muda.
-    </p>
-</section>
+        <!-- Bagian Tentang Penulis -->
+        <section id="tentang-penulis-section" class="bg-white border border-slate-200 rounded-2xl p-8 my-12 text-center shadow-sm">
+            <h3 class="text-xl font-bold text-slate-900 mb-3 font-serif-book">Tentang Penulis</h3>
+            <p class="text-slate-600 text-sm max-w-lg mx-auto leading-relaxed">
+                Sukardi adalah seorang praktisi manufaktur dan pemimpin lini produksi yang mendedikasikan pengalamannya untuk membangun standar kerja serta menyelesaikan berbagai tantangan operasional. Melalui buku ini, ia membagikan perjalanan autentik kepemimpinan langsung dari lantai pabrik untuk menginspirasi para profesional muda.
+            </p>
+        </section>
 
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200 py-8 text-center text-sm text-slate-500 font-sans-ui mt-20">
+    <footer class="bg-white border-t border-slate-200 py-8 text-center text-xs text-slate-500">
         <p>&copy; 2026 Sukardi. Hak Cipta Dilindungi.</p>
     </footer>
 
