@@ -14,20 +14,18 @@
         body {
             font-family: 'Inter', sans-serif;
         }
-        html {
-            scroll-behavior: smooth;
-        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased">
 
     <!-- Header Navigasi -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="#" class="font-bold text-slate-900 tracking-tight text-lg">Otoritas Kerja</a>
+            <a href="#" onclick="showSection('home')" class="font-bold text-slate-900 tracking-tight text-lg cursor-pointer">Otoritas Kerja</a>
             <nav class="flex items-center space-x-6 text-sm font-medium">
-                <a href="#daftar-isi" class="text-slate-600 hover:text-slate-900 transition">Daftar Isi</a>
-                <a href="#tentang-penulis-section" class="text-slate-600 hover:text-slate-900 transition">Tentang Penulis</a>
+                <button onclick="showSection('home')" class="text-slate-600 hover:text-slate-900 transition">Beranda / Baca</button>
+                <button onclick="showSection('daftar-isi')" class="text-slate-600 hover:text-slate-900 transition">Daftar Isi</button>
+                <button onclick="showSection('tentang')" class="text-slate-600 hover:text-slate-900 transition">Tentang Penulis</button>
             </nav>
         </div>
     </header>
@@ -35,85 +33,116 @@
     <!-- Konten Utama -->
     <main class="max-w-4xl mx-auto px-6 py-12">
 
-        <!-- Judul Buku / Hero Section -->
-        <section class="text-center my-12">
-            <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">E-Book Eksklusif</span>
-            <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-4 mb-4 font-serif-book">Pemimpin Muda dari Lantai Pabrik</h1>
-            <p class="text-slate-600 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-                Panduan autentik menavigasi kepemimpinan, menyelesaikan masalah operasional, dan membangun karier dari bawah tanpa kehilangan integritas.
-            </p>
-        </section>
+        <!-- KONTEN UTAMA: BERANDA (Bab 1 & Bab 2 langsung tampil di awal) -->
+        <div id="section-home" class="space-y-12">
+            <!-- Judul Buku / Hero Section -->
+            <section class="text-center my-6">
+                <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">E-Book Eksklusif</span>
+                <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-4 mb-4 font-serif-book">Pemimpin Muda dari Lantai Pabrik</h1>
+                <p class="text-slate-600 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+                    Panduan autentik menavigasi kepemimpinan, menyelesaikan masalah operasional, dan membangun karier dari bawah tanpa kehilangan integritas.
+                </p>
+            </section>
 
-        <!-- Daftar Isi Section -->
-        <section id="daftar-isi" class="bg-white border border-slate-200 rounded-2xl p-8 my-12 shadow-sm">
-            <h3 class="text-xl font-bold text-slate-900 mb-6 font-serif-book">Daftar Isi Buku</h3>
-            <ul class="space-y-3 text-slate-700 text-sm md:text-base">
-                <li class="flex items-start">
-                    <span class="font-semibold text-blue-600 mr-3">Bab 1</span>
-                    <span>Realitas Lantai Pabrik: Tempat Pengujian Mental Pertama</span>
-                </li>
-                <li class="flex items-start">
-                    <span class="font-semibold text-blue-600 mr-3">Bab 2</span>
-                    <span>Membangun Kredibilitas di Tengah Tekanan Operasional</span>
-                </li>
-                <li class="flex items-start">
-                    <span class="font-semibold text-blue-600 mr-3">Bab 3 - 11</span>
-                    <span>Strategi Lanjutan: Standar Kerja, Egosentrisme, hingga Ruang Profesional</span>
-                </li>
-            </ul>
-        </section>
+            <!-- Bab 1 -->
+            <section class="bg-white border border-slate-200 rounded-2xl p-6 md:p-10 shadow-sm">
+                <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Bab 1</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2 mb-6 font-serif-book">Realitas Lantai Pabrik: Tempat Pengujian Mental Pertama</h2>
+                <div class="space-y-4 text-slate-700 leading-relaxed text-base md:text-lg">
+                    <p>Pabrik tidak pernah tidur. Di balik deru mesin ekstrusi yang berputar konstan dan bau bijih plastik yang melekat di pakaian kerja, ada ritme kehidupan yang menuntut ketahanan fisik dan mental tingkat tinggi. Hari-hari pertama di lantai pabrik bukanlah tentang teori manajemen yang muluk-muluk, melainkan tentang bagaimana bertahan hidup di bawah tekanan target produksi yang ketat.</p>
+                    <p>Banyak lulusan baru datang dengan membawa ekspektasi tinggi, mengira dunia industri akan menyambut mereka dengan meja kerja ber-AC dan ruang diskusi yang elegan. Realitasnya justru sebaliknya: debu, oli, peluh, dan suara bising mesin yang memekakkan telinga. Di sinilah seleksi alam yang sesungguhnya terjadi.</p>
+                    <p>Mentalitas instan sering kali menjadi musuh utama. Ketika dihadapkan pada mesin yang macet total di tengah malam atau komplain produk cacat dari bagian quality control, ijazah sarjana tidak akan menyelamatkan Anda. Yang dibutuhkan adalah kesigapan tangan, ketenangan kepala, dan kerendahan hati untuk belajar langsung dari para operator senior yang sudah belasan tahun makan asam garam di lini produksi.</p>
+                </div>
+            </section>
 
-        <!-- Bab 1 -->
-        <section class="bg-white border border-slate-200 rounded-2xl p-6 md:p-10 my-8 shadow-sm">
-            <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Bab 1</span>
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2 mb-6 font-serif-book">Realitas Lantai Pabrik: Tempat Pengujian Mental Pertama</h2>
-            <div class="space-y-4 text-slate-700 leading-relaxed text-base md:text-lg">
-                <p>Pabrik tidak pernah tidur. Di balik deru mesin ekstrusi yang berputar konstan dan bau bijih plastik yang melekat di pakaian kerja, ada ritme kehidupan yang menuntut ketahanan fisik dan mental tingkat tinggi. Hari-hari pertama di lantai pabrik bukanlah tentang teori manajemen yang muluk-muluk, melainkan tentang bagaimana bertahan hidup di bawah tekanan target produksi yang ketat.</p>
-                <p>Banyak lulusan baru datang dengan membawa ekspektasi tinggi, mengira dunia industri akan menyambut mereka dengan meja kerja ber-AC dan ruang diskusi yang elegan. Realitasnya justru sebaliknya: debu, oli, peluh, dan suara bising mesin yang memekakkan telinga. Di sinilah seleksi alam yang sesungguhnya terjadi.</p>
-                <p>Mentalitas instan sering kali menjadi musuh utama. Ketika dihadapkan pada mesin yang macet total di tengah malam atau komplain produk cacat dari bagian quality control, ijazah sarjana tidak akan menyelamatkan Anda. Yang dibutuhkan adalah kesigapan tangan, ketenangan kepala, dan kerendahan hati untuk belajar langsung dari para operator senior yang sudah belasan tahun makan asam garam di lini produksi.</p>
+            <!-- Bab 2 -->
+            <section class="bg-white border border-slate-200 rounded-2xl p-6 md:p-10 shadow-sm">
+                <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Bab 2</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2 mb-6 font-serif-book">Membangun Kredibilitas di Tengah Tekanan Operasional</h2>
+                <div class="space-y-4 text-slate-700 leading-relaxed text-base md:text-lg">
+                    <p>Kepercayaan di lantai pabrik tidak bisa dibeli dengan jabatan atau disematkan lewat selembar Surat Keputusan (SK) pengangkatan. Kepercayaan harus direbut melalui tindakan nyata di lapangan. Seorang pemimpin lini produksi yang baru sering kali terjebak dalam ilusi kekuasaan struktural—merasa bahwa perintahnya akan otomatis dijalankan hanya karena ia memegang posisi tertentu.</p>
+                    <p>Kenyataannya, para operator di lapangan jauh lebih peka daripada yang Anda duga. Mereka tahu persis siapa pemimpin yang benar-benar menguasai persoalan teknis dan siapa yang hanya bisa berteori di balik meja kantor. Kredibilitas dibangun dari konsistensi kecil: hadir lebih awal saat pergantian shift, turun tangan langsung memeriksa masalah mesin, dan tidak pernah melempar kesalahan kepada anak buah ketika target meleset.</p>
+                    <p>Ketika Anda menunjukkan rasa hormat kepada pengalaman para pekerja senior, mereka akan berbalik menjaga Anda. Di titik itulah kepemimpinan yang sejati mulai terbentuk—bukan karena takut pada atasan, tetapi karena adanya rasa saling percaya di dalam tim.</p>
+                </div>
+            </section>
+
+            <!-- Kotak Penawaran / Call to Action Akses Premium -->
+            <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 md:p-12 text-center text-white shadow-xl">
+                <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Akses Penuh</span>
+                <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-3 font-serif-book">Dapatkan Seluruh Bab Naskah Lengkap</h3>
+                <p class="text-slate-300 text-sm md:text-base max-w-xl mx-auto mb-8 leading-relaxed">
+                    Temukan kisah lengkap perjalanan kepemimpinan dan metodologi praktis langsung dari lantai produksi.
+                </p>
+                <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition duration-200 text-base">
+                    Dapatkan Akses Buku Lengkap Sekarang
+                </a>
+                <p class="text-xs text-slate-400 mt-4">Akses instan setelah konfirmasi pembayaran.</p>
             </div>
-        </section>
-
-        <!-- Bab 2 -->
-        <section class="bg-white border border-slate-200 rounded-2xl p-6 md:p-10 my-8 shadow-sm">
-            <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Bab 2</span>
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mt-2 mb-6 font-serif-book">Membangun Kredibilitas di Tengah Tekanan Operasional</h2>
-            <div class="space-y-4 text-slate-700 leading-relaxed text-base md:text-lg">
-                <p>Kepercayaan di lantai pabrik tidak bisa dibeli dengan jabatan atau disematkan lewat selembar Surat Keputusan (SK) pengangkatan. Kepercayaan harus direbut melalui tindakan nyata di lapangan. Seorang pemimpin lini produksi yang baru sering kali terjebak dalam ilusi kekuasaan struktural—merasa bahwa perintahnya akan otomatis dijalankan hanya karena ia memegang posisi tertentu.</p>
-                <p>Kenyataannya, para operator di lapangan jauh lebih peka daripada yang Anda duga. Mereka tahu persis siapa pemimpin yang benar-benar menguasai persoalan teknis dan siapa yang hanya bisa berteori di balik meja kantor. Kredibilitas dibangun dari konsistensi kecil: hadir lebih awal saat pergantian shift, turun tangan langsung memeriksa masalah mesin, dan tidak pernah melempar kesalahan kepada anak buah ketika target meleset.</p>
-                <p>Ketika Anda menunjukkan rasa hormat kepada pengalaman para pekerja senior, mereka akan berbalik menjaga Anda. Di titik itulah kepemimpinan yang sejati mulai terbentuk—bukan karena takut pada atasan, tetapi karena adanya rasa saling percaya di dalam tim.</p>
-            </div>
-        </section>
-
-        <!-- Kotak Penawaran / Call to Action Akses Premium -->
-        <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 md:p-12 text-center text-white my-12 shadow-xl">
-            <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Akses Penuh</span>
-            <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-3 font-serif-book">Dapatkan Seluruh Bab Naskah Lengkap</h3>
-            <p class="text-slate-300 text-sm md:text-base max-w-xl mx-auto mb-8 leading-relaxed">
-                Temukan kisah lengkap perjalanan kepemimpinan dan metodologi praktis langsung dari lantai produksi.
-            </p>
-            
-            <!-- Tombol Pembelian -->
-            <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition duration-200 text-base">
-                Dapatkan Akses Buku Lengkap Sekarang
-            </a>
-            <p class="text-xs text-slate-400 mt-4">Akses instan setelah konfirmasi pembayaran.</p>
         </div>
 
-        <!-- Bagian Tentang Penulis -->
-        <section id="tentang-penulis-section" class="bg-white border border-slate-200 rounded-2xl p-8 my-12 text-center shadow-sm">
-            <h3 class="text-xl font-bold text-slate-900 mb-3 font-serif-book">Tentang Penulis</h3>
-            <p class="text-slate-600 text-sm max-w-lg mx-auto leading-relaxed">
+        <!-- KONTEN: HALAMAN DAFTAR ISI (Muncul saat menu Daftar Isi diklik) -->
+        <div id="section-daftar-isi" class="hidden bg-white border border-slate-200 rounded-2xl p-8 shadow-sm my-6">
+            <h3 class="text-2xl font-bold text-slate-900 mb-6 font-serif-book">Daftar Isi Buku</h3>
+            <ul class="space-y-4 text-slate-700 text-base">
+                <li class="flex items-start border-b border-slate-100 pb-3">
+                    <span class="font-semibold text-blue-600 mr-4 w-20">Bab 1</span>
+                    <span>Realitas Lantai Pabrik: Tempat Pengujian Mental Pertama</span>
+                </li>
+                <li class="flex items-start border-b border-slate-100 pb-3">
+                    <span class="font-semibold text-blue-600 mr-4 w-20">Bab 2</span>
+                    <span>Membangun Kredibilitas di Tengah Tekanan Operasional</span>
+                </li>
+                <li class="flex items-start border-b border-slate-100 pb-3">
+                    <span class="font-semibold text-blue-600 mr-4 w-20">Bab 3 - 5</span>
+                    <span>Standar Kerja, Pengendalian Mutu, dan Problem Solving Lapangan</span>
+                </li>
+                <li class="flex items-start pb-3">
+                    <span class="font-semibold text-blue-600 mr-4 w-20">Bab 6 - 11</span>
+                    <span>Dinamika Tim, Egosentrisme, hingga Transisi ke Ruang Profesional</span>
+                </li>
+            </ul>
+            <div class="mt-8">
+                <button onclick="showSection('home')" class="bg-slate-900 text-white px-6 py-2.5 rounded-xl text-sm font-semibold hover:bg-slate-800 transition">Kembali Membaca Naskah</button>
+            </div>
+        </div>
+
+        <!-- KONTEN: HALAMAN TENTANG PENULIS (Muncul saat menu Tentang Penulis diklik) -->
+        <div id="section-tentang" class="hidden bg-white border border-slate-200 rounded-2xl p-8 shadow-sm my-6 text-center max-w-xl mx-auto">
+            <h3 class="text-2xl font-bold text-slate-900 mb-4 font-serif-book">Tentang Penulis</h3>
+            <p class="text-slate-600 text-base leading-relaxed mb-6">
                 Sukardi adalah seorang praktisi manufaktur dan pemimpin lini produksi yang mendedikasikan pengalamannya untuk membangun standar kerja serta menyelesaikan berbagai tantangan operasional. Melalui buku ini, ia membagikan perjalanan autentik kepemimpinan langsung dari lantai pabrik untuk menginspirasi para profesional muda.
             </p>
-        </section>
+            <button onclick="showSection('home')" class="bg-slate-900 text-white px-6 py-2.5 rounded-xl text-sm font-semibold hover:bg-slate-800 transition">Kembali Membaca Naskah</button>
+        </div>
 
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200 py-8 text-center text-xs text-slate-500">
+    <footer class="bg-white border-t border-slate-200 py-8 text-center text-xs text-slate-500 mt-12">
         <p>&copy; 2026 Sukardi. Hak Cipta Dilindungi.</p>
     </footer>
+
+    <!-- Skrip Pengalih Halaman Sederhana (Interactive Views) -->
+    <script>
+        function showSection(target) {
+            // Sembunyikan semua section utama
+            document.getElementById('section-home').classList.add('hidden');
+            document.getElementById('section-daftar-isi').classList.add('hidden');
+            document.getElementById('section-tentang').classList.add('hidden');
+
+            // Tampilkan section yang dipilih
+            if (target === 'home') {
+                document.getElementById('section-home').classList.remove('hidden');
+            } else if (target === 'daftar-isi') {
+                document.getElementById('section-daftar-isi').classList.remove('hidden');
+            } else if (target === 'tentang') {
+                document.getElementById('section-tentang').classList.remove('hidden');
+            }
+            
+            // Gulir ke atas otomatis secara mulus saat menu diklik
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 
 </body>
 </html>
