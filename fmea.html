@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panduan Lengkap FMEA untuk Menekan Defek di Lantai Pabrik - Otoritas Kerja</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
+        .font-serif-book {
+            font-family: 'Merriweather', serif;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+
+    <!-- Header Navigasi Atas -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="font-bold text-slate-900 tracking-tight text-lg hover:text-blue-600 transition">Otoritas Kerja</a>
+            <nav class="flex items-center space-x-6 text-sm font-medium">
+                <a href="index.html" class="text-slate-600 hover:text-slate-900 transition">Beranda</a>
+                <button onclick="openModal('authorModal')" class="text-slate-600 hover:text-slate-900 transition cursor-pointer">Tentang Penulis</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Konten Utama Artikel -->
+    <main class="max-w-3xl mx-auto px-6 py-12 space-y-12 flex-grow">
+
+        <!-- Banner / Cover FMEA & Judul Utama -->
+        <section class="text-center pb-8 border-b border-slate-200 space-y-6">
+            <div class="max-w-lg mx-auto shadow-xl rounded-xl overflow-hidden border border-slate-200 bg-white p-2">
+                <img src="fmea.jpg" alt="Panduan FMEA Manufaktur" class="w-full h-auto rounded-lg object-cover">
+            </div>
+
+            <div>
+                <span class="bg-emerald-100 text-emerald-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Free Artikel Manufaktur</span>
+                <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-4 mb-3 font-serif-book">
+                    Panduan Lengkap FMEA untuk Menekan Defek di Lantai Pabrik
+                </h1>
+                <p class="text-slate-600 italic text-base md:text-lg max-w-xl mx-auto font-serif-book">
+                    "Strategi sistematis menganalisis potensi kegagalan proses ekstrusi plastik dan langkah pencegahannya secara efektif."
+                </p>
+                <div class="text-xs text-slate-400 mt-4">Oleh Sukardi &bull; 03 Okt 2026</div>
+            </div>
+        </section>
+
+        <!-- ISI ARTIKEL: MENGALIR KE BAWAH -->
+        <article class="space-y-8">
+            
+            <!-- Pengantar -->
+            <div class="space-y-4">
+                <h2 class="text-2xl font-bold text-slate-900 font-serif-book">Mengapa FMEA Penting di Lini Produksi?</h2>
+                <p class="text-slate-700 leading-relaxed text-base md:text-lg">
+                    Di dunia manufaktur plastik—khususnya pada proses <em>blown film extrusion</em> dan <em>bag making</em>—kehilangan waktu produksi (downtime) dan tingginya produk cacat (NG) adalah musuh utama efisiensi. Seringkali, tim produksi bertindak sebagai pemadam kebakaran: menunggu mesin rusak atau produk reject menumpuk, baru kemudian mencari solusi. Padahal, pendekatan reaktif ini membuang banyak biaya material dan tenaga kerja.
+                </p>
+                <p class="text-slate-700 leading-relaxed text-base md:text-lg">
+                    <em>Failure Mode and Effects Analysis</em> (FMEA) hadir sebagai alat pencegahan proaktif. Melalui metode ini, kita memetakan potensi kegagalan sebelum benar-benar terjadi di lantai produksi, mengevaluasi seberapa parah dampaknya, dan menutup celah risikonya sejak dini.
+                </p>
+            </div>
+
+            <!-- Langkah 1 -->
+            <div class="space-y-4 pt-4">
+                <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Langkah 1</span>
+                <h3 class="text-xl font-bold text-slate-900 font-serif-book">Memetakan Potensi Mode Kegagalan (Failure Modes)</h3>
+                <p class="text-slate-700 leading-relaxed text-base md:text-lg">
+                    Langkah awal penyusunan FMEA adalah mengurai setiap tahapan proses kerja secara rinci. Sebagai contoh dalam pembuatan kantong plastik, tahapan proses meliputi pencampuran bijih plastik (mixing), pemanasan dan peniupan film (extrusion), pencetakan (printing), hingga pemotongan dan pembentukan seal (bag making).
+                </p>
+                <p class="text-slate-700 leading-relaxed text-base md:text-lg">
+                    Di setiap tahapan tersebut, tanyakan: <em>“Bagaimana proses ini bisa gagal?”</em>. Contoh kegagalan umum meliputi:
+                </p>
+                <ul class="list-disc list-inside space-y-2 text-slate-700 pl-4">
+                    <li><strong>Ketebalan film tidak merata (gauge variation):</strong> Menyebabkan rol film melengkung atau mudah robek saat ditarik mesin konversi.</li>
+                    <li><strong>Seal kantong bocor atau kurang rekat:</strong> Suhu heater tidak stabil atau tekanan pisau potong tidak pas.</li>
+                    <li><strong>Registration luntur pada cetakan rotogravure:</strong> Ketidaksesuaian tarik (tension) atau viskositas tinta yang tidak sesuai standar.</li>
+                </ul>
+            </div>
+
+            <!-- Langkah 2 -->
+            <div class="space-y-4 pt-4">
+                <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Langkah 2</span>
+                <h3 class="text-xl font-bold text-slate-900 font-serif-book">Menilai Tiga Pilar Utama: S, O, dan D</h3>
+                <p class="text-slate-700 leading-relaxed text-base md:text-lg">
+                    Setelah potensi kegagalan teridentifikasi, evaluasi dilakukan menggunakan tiga parameter penilain berskala 1 sampai 10:
+                </p>
+                <div class="grid md:grid-cols-3 gap-4 my-6">
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
+                        <div class="font-bold text-slate-900 text-lg">1. Severity (S)</div>
+                        <p class="text-sm text-slate-600 leading-relaxed">Seberapa parah dampak kegagalan tersebut bagi pelanggan atau proses selanjutnya?</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
+                        <div class="font-bold text-slate-900 text-lg">2. Occurrence (O)</div>
+                        <p class="text-sm text-slate-600 leading-relaxed">Seberapa sering penyebab kegagalan tersebut berpotensi muncul dalam operasional?</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
+                        <div class="font-bold text-slate-900 text-lg">3. Detection (D)</div>
+                        <p class="text-sm text-slate-600 leading-relaxed">Seberapa besar kemungkinan sistem kontrol kita mendeteksi kegagalan sebelum produk keluar pabrik?</p>
+                    </div>
+                </div>
+                <p class="text-slate-700 leading-relaxed text-base md:text-lg">
+                    Hasil perkalian dari ketiga nilai ini menghasilkan angka <strong>RPN (Risk Priority Number)</strong>. Semakin tinggi angka RPN, semakin mendesak masalah tersebut untuk segera diselesaikan melalui tindakan korektif atau perbaikan sistem.
+                </p>
+            </div>
+
+            <blockquote class="border-l-4 border-emerald-600 pl-4 py-3 my-6 bg-emerald-50/50 italic text-slate-700">
+                <strong>Prinsip Utama FMEA:</strong><br>
+                Fokuskan tenaga perbaikan pada titik yang memiliki angka RPN tertinggi. Jangan mencoba memperbaiki segalanya sekaligus; selesaikan akar masalah yang paling berisiko menghentikan lini produksi.
+            </blockquote>
+
+            <!-- Kesimpulan -->
+            <div class="space-y-4 pt-4">
+                <h3 class="text-xl font-bold text-slate-900 font-serif-book">Implementasi di Lantai Produksi</h3>
+                <p class="text-slate-700 leading-relaxed text-base md:text-lg">
+                    Penerapan FMEA bukan sekadar dokumen formalitas untuk audit mutu, melainkan panduan hidup harian bagi seorang supervisor dan leader produksi. Ketika lembar kerja FMEA diintegrasikan dengan rutinitas pengecekan mesin, operator lini depan akan memiliki kepekaan tinggi terhadap perubahan parameter sekecil apapun.
+                </p>
+            </div>
+        </article>
+
+        <!-- Kotak Penawaran Download Excel Template (Bagian Paling Akhir Halaman) -->
+        <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 md:p-12 text-center text-white shadow-xl mt-16 mb-8">
+            <span class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Praktis & Siap Pakai</span>
+            <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-3 font-serif-book">Download Template Excel FMEA Manufaktur</h3>
+            <p class="text-slate-300 text-sm md:text-base max-w-xl mx-auto mb-8 leading-relaxed">
+                Gunakan lembar kerja Excel otomatis dengan rumus RPN terintegrasi untuk langsung diterapkan mengevaluasi proses di lini produksi Anda.
+            </p>
+            <!-- Tautan Download Template Excel -->
+            <a href="#" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition duration-200 text-base cursor-pointer">
+                Download Excel Template FMEA Sekarang
+            </a>
+            <p class="text-xs text-slate-400 mt-4">Format file .xlsx kompatibel dengan Microsoft Excel dan Google Sheets.</p>
+        </div>
+
+    </main>
+
+    <!-- Modal Tentang Penulis -->
+    <div id="authorModal" class="fixed inset-0 z-50 hidden bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 md:p-8 shadow-2xl relative text-center">
+            <button onclick="closeModal('authorModal')" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 font-bold text-xl cursor-pointer">&times;</button>
+            <h3 class="text-2xl font-bold text-slate-900 mb-4 font-serif-book">Tentang Penulis</h3>
+            <p class="text-slate-700 text-sm md:text-base leading-relaxed mb-4">
+                <strong>Sukardi</strong> adalah seorang praktisi manufaktur yang meniti perjalanan kariernya secara bertahap langsung dari lantai produksi. Berbekal ketekunan, semangat belajar yang tinggi, serta pengalaman nyata menghadapi dinamika operasional harian, ia memahami betul denyut nadi dan tantangan yang dihadapi oleh para pekerja di lini depan.
+            </p>
+            <p class="text-slate-700 text-sm md:text-base leading-relaxed">
+                Melalui platform <em>Otoritas Kerja</em>, beliau mendedikasikan pengalaman praktisnya untuk berbagi perangkat kerja, SOP, dan metodologi peningkatan efisiensi manufaktur.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-8 text-center text-xs text-slate-500">
+        <p>&copy; 2026 Sukardi. Hak Cipta Dilindungi.</p>
+    </footer>
+
+    <!-- Skrip Modal Interaktif -->
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('fixed')) {
+                event.target.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
