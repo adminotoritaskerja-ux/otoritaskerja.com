@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panduan & Kalkulator OEE Manufaktur - Otoritas Kerja</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
+        .font-serif-book {
+            font-family: 'Merriweather', serif;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+
+    <!-- Header Navigasi Atas -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="font-bold text-slate-900 tracking-tight text-lg hover:text-blue-600 transition">Otoritas Kerja</a>
+            <nav class="flex items-center space-x-6 text-sm font-medium">
+                <a href="index.html" class="text-slate-600 hover:text-slate-900 transition">Beranda</a>
+                <button onclick="openModal('authorModal')" class="text-slate-600 hover:text-slate-900 transition cursor-pointer">Tentang Penulis</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Konten Utama Artikel -->
+    <main class="max-w-3xl mx-auto px-6 py-12 space-y-12 flex-grow">
+
+        <!-- Banner / Cover & Judul Utama -->
+        <section class="text-center pb-8 border-b border-slate-200 space-y-6">
+            <div class="max-w-lg mx-auto shadow-xl rounded-xl overflow-hidden border border-slate-200 bg-white p-2">
+                <img src="oee.jpg" alt="Panduan & Kalkulator OEE Manufaktur" class="w-full h-auto md:max-h-[380px] object-cover rounded-lg">
+            </div>
+
+            <div>
+                <span class="bg-emerald-100 text-emerald-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Free Tool & Modul Produktivitas</span>
+                <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-4 mb-3 font-serif-book">
+                    Panduan Praktis & Kalkulator OEE (Overall Equipment Effectiveness)
+                </h1>
+                <p class="text-slate-600 italic text-base md:text-lg max-w-xl mx-auto font-serif-book">
+                    "Metodologi mengukur efisiensi aktual mesin produksi berdasarkan Availability, Performance, dan Quality Rate secara presisi."
+                </p>
+                <div class="text-xs text-slate-400 mt-4">Oleh Sukardi &bull; 05 Okt 2026</div>
+            </div>
+        </section>
+
+        <!-- ISI ARTIKEL -->
+        <article class="space-y-8">
+            
+            <!-- Pengantar -->
+            <div class="space-y-4">
+                <h2 class="text-2xl font-bold text-slate-900 font-serif-book">Mengapa Mengukur OEE Sangat Penting?</h2>
+                <p class="text-slate-700 leading-relaxed text-base md:text-lg">
+                    Di dunia manufaktur modern, jam kerja mesin yang terus beroperasi belum tentu mencerminkan produktivitas yang sebenarnya. Sering kali mesin terlihat sibuk, namun hasil output-nya tergerus oleh masalah-masalah tersembunyi seperti kerugian waktu pemanasan (startup loss), kemacetan kecil (minor stoppages), hingga persentase produk defect yang tinggi.
+                </p>
+                <p class="text-slate-700 leading-relaxed text-base md:text-lg">
+                    <strong>Overall Equipment Effectiveness (OEE)</strong> adalah standar internasional untuk mengukur seberapa efektif mesin produksi dimanfaatkan. Angka OEE dihitung dari perkalian tiga variabel utama:
+                </p>
+            </div>
+
+            <!-- 3 Pilar OEE -->
+            <div class="space-y-4 pt-4">
+                <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Rumus Dasar OEE</span>
+                <h3 class="text-xl font-bold text-slate-900 font-serif-book">3 Komponen Utama Perhitungan OEE</h3>
+                
+                <div class="space-y-4 my-6">
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
+                        <div class="font-bold text-slate-900 text-lg">1. Availability Rate (Ketersediaan Mesin)</div>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Mengukur seberapa lama mesin benar-benar beroperasi dibandingkan waktu rencana produksi (Planned Production Time). Komponen ini tergerus oleh *downtime* seperti kerusakan mesin (breakdown) dan waktu *setup/changeover*.
+                        </p>
+                        <div class="bg-slate-100 p-2 rounded text-xs font-mono text-slate-700">
+                            Availability = (Operating Time / Planned Production Time) × 100%
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
+                        <div class="font-bold text-slate-900 text-lg">2. Performance Rate (Unjuk Kerja)</div>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Mengukur kecepatan mesin beroperasi dibandingkan dengan kecepatan ideal standar pabrik (*Ideal Cycle Time*). Komponen ini tergerus oleh penurunan kecepatan mesin dan kemacetan singkat.
+                        </p>
+                        <div class="bg-slate-100 p-2 rounded text-xs font-mono text-slate-700">
+                            Performance = ((Total Output × Ideal Cycle Time) / Operating Time) × 100%
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
+                        <div class="font-bold text-slate-900 text-lg">3. Quality Rate (Kualitas Hasil)</div>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Mengukur rasio produk bagus (*Good Product*) yang dihasilkan dibandingkan dengan total produk yang diproduksi (termasuk *reject*, *scrap*, dan *rework*).
+                        </p>
+                        <div class="bg-slate-100 p-2 rounded text-xs font-mono text-slate-700">
+                            Quality = (Good Output / Total Output) × 100%
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <blockquote class="border-l-4 border-emerald-600 pl-4 py-3 my-6 bg-emerald-50/50 italic text-slate-700">
+                <strong>Standar Klasifikasi OEE World Class:</strong><br>
+                • OEE = 85% atau lebih: Standar Manufaktur Kelas Dunia (*World Class*)<br>
+                • OEE = 60% – 84%: Wajar/Biasa, namun masih memiliki peluang perbaikan signifikan<br>
+                • OEE < 60%: Indikasi kerugian besar pada liniproduksi (membutuhkan analisis 6 Big Losses)
+            </blockquote>
+
+        </article>
+
+        <!-- Kotak Penawaran Download Master Kalkulator Excel -->
+        <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 md:p-12 text-center text-white shadow-xl mt-16 mb-8">
+            <span class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Praktis & Otomatis</span>
+            <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-3 font-serif-book">Download Master Kalkulator OEE Excel (Lengkap Dashboard)</h3>
+            <p class="text-slate-300 text-sm md:text-base max-w-xl mx-auto mb-8 leading-relaxed">
+                Dapatkan template spreadsheet Excel otomatis yang dilengkapi dengan input jam kerja harian, grafik kerugian *downtime*, serta *dashboard OEE* terintegrasi harian dan bulanan.
+            </p>
+            <!-- Tautan Download Template Excel -->
+            <a href="#" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition duration-200 text-base cursor-pointer">
+                Download Template Excel Kalkulator OEE
+            </a>
+            <p class="text-xs text-slate-400 mt-4">Format file .xlsx otomatis menghitung % OEE, Availability, Performance, dan Quality secara langsung.</p>
+        </div>
+
+    </main>
+
+    <!-- Modal Tentang Penulis -->
+    <div id="authorModal" class="fixed inset-0 z-50 hidden bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 md:p-8 shadow-2xl relative text-center">
+            <button onclick="closeModal('authorModal')" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 font-bold text-xl cursor-pointer">&times;</button>
+            <h3 class="text-2xl font-bold text-slate-900 mb-4 font-serif-book">Tentang Penulis</h3>
+            <p class="text-slate-700 text-sm md:text-base leading-relaxed mb-4">
+                <strong>Sukardi</strong> adalah seorang praktisi manufaktur yang meniti perjalanan kariernya secara bertahap langsung dari lantai produksi. Berbekal ketekunan, semangat belajar yang tinggi, serta pengalaman nyata menghadapi dinamika operasional harian, ia memahami betul denyut nadi dan tantangan yang dihadapi oleh para pekerja di lini depan.
+            </p>
+            <p class="text-slate-700 text
