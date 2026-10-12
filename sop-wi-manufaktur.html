@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panduan Menyusun SOP dan WI yang Efektif di Lantai Pabrik - Otoritas Kerja</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
+        .font-serif-book {
+            font-family: 'Merriweather', serif;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+
+    <!-- Header Navigasi Atas -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="font-bold text-slate-900 tracking-tight text-lg hover:text-blue-600 transition">Otoritas Kerja</a>
+            <nav class="flex items-center space-x-6 text-sm font-medium">
+                <a href="index.html" class="text-slate-600 hover:text-slate-900 transition">Beranda</a>
+                <button onclick="openModal('authorModal')" class="text-slate-600 hover:text-slate-900 transition cursor-pointer">Tentang Penulis</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Konten Utama Artikel -->
+    <main class="max-w-3xl mx-auto px-6 py-12 space-y-12 flex-grow">
+
+        <!-- Banner / Cover & Judul Utama -->
+        <section class="text-center pb-8 border-b border-slate-200 space-y-6">
+            <div class="max-w-lg mx-auto shadow-xl rounded-xl overflow-hidden border border-slate-200 bg-white p-2">
+                <img src="sop.jpg" alt="Panduan SOP dan WI Manufaktur" class="w-full h-auto md:max-h-[380px] object-cover rounded-lg">
+            </div>
+
+            <div>
+                <span class="bg-emerald-100 text-emerald-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Free Standar & Panduan Mutu</span>
+                <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-4 mb-3 font-serif-book">
+                    Menyusun SOP dan WI yang Efektif untuk Standarisasi Kerja Operator
+                </h1>
+                <p class="text-slate-600 italic text-base md:text-lg max-w-xl mx-auto font-serif-book">
+                    "Mengubah instruksi rumit di lantai pabrik menjadi panduan operasional yang mudah dipahami, aplikatif, dan konsisten dijalankan."
+                </p>
+                <div class="text-xs text-slate-400 mt-4">Oleh Sukardi &bull; 05 Okt 2026</div>
+            </div>
+        </section>
+
+        <!-- ISI ARTIKEL -->
+        <article class="space-y-8">
+            
+            <!-- Pengantar -->
+            <div class="space-y-4">
+                <h2 class="text-2xl font-bold text-slate-900 font-serif-book">Perbedaan Mendasar SOP dan WI di Lapangan</h2>
+                <p class="text-slate-700 leading-relaxed text-base md:text-lg">
+                    Dalam keseharian operasional manufaktur, istilah <strong>SOP (Standard Operating Procedure)</strong> dan <strong>WI (Work Instruction)</strong> sering kali dianggap sama dan disamakan begitu saja. Padahal, keduanya memiliki cakupan dan kedalaman level informasi yang berbeda.
+                </p>
+                <p class="text-slate-700 leading-relaxed text-base md:text-lg">
+                    SOP bersifat makro—menjelaskan *siapa melakukan apa, kapan, dan mengapa* dalam sebuah proses lintas departemen. Sedangkan WI bersifat mikro—panduan teknis step-by-step *bagaimana seorang operator menjalankan suatu mesin atau tugas spesifik* di stasiun kerjanya.
+                </p>
+            </div>
+
+            <!-- Langkah Utama -->
+            <div class="space-y-4 pt-4">
+                <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Panduan Praktis</span>
+                <h3 class="text-xl font-bold text-slate-900 font-serif-book">3 Kunci Utama agar WI Benar-Benar Dibaca Operator</h3>
+                
+                <div class="space-y-4 my-6">
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
+                        <div class="font-bold text-slate-900 text-lg">1. Visual & Bahasa yang Sederhana</div>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Hindari kalimat narasi yang terlalu panjang. Gunakan foto nyata kondisi mesin, diagram panah, atau ilustrasi langkah kerja agar operator baru sekalipun dapat langsung paham dalam waktu kurang dari 3 menit.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
+                        <div class="font-bold text-slate-900 text-lg">2. Libatkan Operator Langsung (Gemba)</div>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            WI yang baik tidak ditulis di dalam ruang kantor ber-AC. Susunlah bersama operator senior yang setiap hari memegang mesin tersebut agar aturan yang dibuat realistis dan solutif terhadap kendala lapangan.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
+                        <div class="font-bold text-slate-900 text-lg">3. Penempatan Dokumen yang Mudah Diakses</div>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Letakkan lembar WI di dekat panel kontrol mesin (misalnya dalam pelindung plastik bening atau papan visual management) agar operator dapat langsung melihatnya saat melakukan *setup* atau penanganan awal masalah.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <blockquote class="border-l-4 border-emerald-600 pl-4 py-3 my-6 bg-emerald-50/50 italic text-slate-700">
+                <strong>Catatan Penting Supervisor:</strong><br>
+                SOP dan WI yang baik adalah dokumen yang hidup (living document). Jika ada perubahan metode kerja atau suku cadang mesin, lakukan revisi segera agar tidak menjadi sumber potensi cacat produk.
+            </blockquote>
+
+        </article>
+
+        <!-- Kotak Penawaran Download Template -->
+        <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 md:p-12 text-center text-white shadow-xl mt-16 mb-8">
+            <span class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Praktis & Siap Pakai</span>
+            <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-3 font-serif-book">Download Template SOP & Work Instruction (Format Word/Excel)</h3>
+            <p class="text-slate-300 text-sm md:text-base max-w-xl mx-auto mb-8 leading-relaxed">
+                Dapatkan draf format dokumen standar perusahaan lengkap dengan kolom header revisi, alur proses, dan kotak visual instruksi kerja mesin produksi.
+            </p>
+            <!-- Tautan Download Template -->
+            <a href="#" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition duration-200 text-base cursor-pointer">
+                Download Template SOP & WI Sekarang
+            </a>
+            <p class="text-xs text-slate-400 mt-4">Format file .docx dan .xlsx mudah disesuaikan dengan logo serta standar perusahaan Anda.</p>
+        </div>
+
+    </main>
+
+    <!-- Modal Tentang Penulis -->
+    <div id="authorModal" class="fixed inset-0 z-50 hidden bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 md:p-8 shadow-2xl relative text-center">
+            <button onclick="closeModal('authorModal')" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 font-bold text-xl cursor-pointer">&times;</button>
+            <h3 class="text-2xl font-bold text-slate-900 mb-4 font-serif-book">Tentang Penulis</h3>
+            <p class="text-slate-700 text-sm md:text-base leading-relaxed mb-4">
+                <strong>Sukardi</strong> adalah seorang praktisi manufaktur yang meniti perjalanan kariernya secara bertahap langsung dari lantai produksi. Berbekal ketekunan, semangat belajar yang tinggi, serta pengalaman nyata menghadapi dinamika operasional harian, ia memahami betul denyut nadi dan tantangan yang dihadapi oleh para pekerja di lini depan.
+            </p>
+            <p class="text-slate-700 text-sm md:text-base leading-relaxed">
+                Melalui platform <em>Otoritas Kerja</em>, beliau mendedikasikan pengalaman praktisnya untuk berbagi perangkat kerja, SOP, dan metodologi peningkatan efisiensi manufaktur.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-8 text-center text-xs text-slate-500">
+        <p>&copy; 2026 Sukardi. Hak Cipta Dilindungi.</p>
+    </footer>
+
+    <!-- Skrip Modal Interaktif -->
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('fixed')) {
+                event.target.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
