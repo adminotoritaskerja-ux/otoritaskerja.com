@@ -476,38 +476,50 @@ footer p {
 </style>
 </head>
 <body>
-
-<!-- HEADER & NAV -->
-<header>
-  <div class="nav-container">
-    <a href="#" class="logo-area" onclick="switchPage('beranda', event)">
-      <img src="logo.jpeg" alt="Logo Otoritas Kerja" class="logo-img" onerror="this.onerror=null; this.src='logo.png';">
-      <div class="logo-text">Otoritas<span>Kerja</span></div>
-    </a>
-    <ul class="nav-links">
-      <li><button onclick="switchPage('beranda', event)" class="active" id="nav-beranda">Beranda</button></li>
-      <li><button onclick="switchPage('tentang', event)" id="nav-tentang">Tentang Otoritas Kerja</button></li>
-      <li><button onclick="checkAdminPassword()" class="admin-nav-btn" id="nav-admin"><i class="fa-solid fa-lock"></i> Admin CMS</button></li>
-      
-      <!-- DROPDOWN KONTAK -->
-      <li class="contact-dropdown-container">
-        <button class="contact-menu-btn" id="contactToggle" title="Hubungi Kami">
-          <i class="fa-solid fa-envelope"></i> Kontak
-        </button>
-        <div class="contact-popup" id="contactPopup">
-          <h4>Hubungi Otoritas Kerja</h4>
-          <a href="mailto:sukardi@otoritaskerja.com" class="contact-item">
-            <i class="fa-solid fa-paper-plane"></i>
-            <span>sukardi@otoritaskerja.com</span>
-          </a>
-          <a href="https://wa.me/6281270000000" target="_blank" class="contact-item">
-            <i class="fa-brands fa-whatsapp"></i>
-            <span>WhatsApp Konsultasi</span>
-          </a>
+  
+<!-- HEADER NAVBAR MOBILE MODERN (2 TINGKAT) -->
+<header style="background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 0.75rem 1rem; position: relative; z-index: 100;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.6rem;">
+        
+        <!-- BARIS 1: Logo di Kiri Atas -->
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+            <a href="#" onclick="switchPage('beranda', event)" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
+                <img src="logo.jpeg" alt="Logo Otoritas Kerja" style="height: 32px; width: auto;" onerror="this.style.display='none'">
+                <div style="font-weight: 800; font-size: 1.15rem; color: #0f172a;">Otoritas<span style="color: #0284c7;">Kerja</span></div>
+            </a>
         </div>
-      </li>
-    </ul>
-  </div>
+
+        <!-- GARIS PEMISAH HALUS -->
+        <div style="height: 1px; background-color: #f1f5f9; width: 100%;"></div>
+
+        <!-- BARIS 2: Barisan Menu Navigasi & Dropdown Kontak -->
+        <nav style="display: flex; align-items: center; justify-content: flex-start; gap: 12px; flex-wrap: wrap;">
+            <button onclick="switchPage('beranda', event)" class="active" style="background: none; border: none; font-weight: 600; font-size: 0.85rem; color: #0284c7; cursor: pointer; padding: 4px 8px;">Beranda</button>
+            <button onclick="switchPage('tentang', event)" id="nav-tentang" style="background: none; border: none; font-weight: 600; font-size: 0.85rem; color: #475569; cursor: pointer; padding: 4px 8px;">Tentang</button>
+            
+            <!-- Dropdown Kontak Utuh -->
+            <div class="contact-dropdown-container" style="position: relative; display: inline-block;">
+                <button class="contact-menu-btn" id="contactToggle" title="Hubungi Kami" style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 6px; padding: 4px 10px; font-size: 0.82rem; font-weight: 600; color: #334155; cursor: pointer;">
+                    <i class="fa-solid fa-envelope" style="margin-right: 4px;"></i> Kontak
+                </button>
+                <div class="contact-popup" id="contactPopup">
+                    <h4>Hubungi Otoritas Kerja</h4>
+                    <a href="mailto:sukardi@otoritaskerja.com" class="contact-item">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>sukardi@otoritaskerja.com</span>
+                    </a>
+                    <a href="https://wa.me/6281270000000" target="_blank" class="contact-item">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>WhatsApp Konsultasi</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tombol Admin -->
+            <button onclick="checkAdminPassword()" class="admin-nav-btn" style="background: none; border: none; font-weight: 600; font-size: 0.85rem; color: #94a3b8; cursor: pointer; padding: 4px 8px; margin-left: auto;">Admin</button>
+        </nav>
+
+    </div>
 </header>
 
 <!-- RUNNING TEXT/TICKER -->
