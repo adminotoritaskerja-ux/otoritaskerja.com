@@ -8,7 +8,7 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
         
-        /* BACKGROUND FULL PUTIH BERSIH */
+        /* BACKGROUND BODY FULL PUTIH BERSIH */
         body { background-color: #ffffff; color: #334155; line-height: 1.8; min-height: 100vh; display: flex; flex-direction: column; }
         
         /* HEADER NAVBAR */
@@ -20,12 +20,13 @@
         .nav-links a { font-weight: 600; font-size: 0.88rem; color: #475569; text-decoration: none; padding: 4px 10px; border-radius: 6px; transition: all 0.2s; }
         .nav-links a:hover, .nav-links a.active { color: #0284c7; background: #f1f5f9; }
 
-        /* KONTEN UTAMA - SANYATU RATA TANPA CARD / OVERLAY */
+        /* KONTEN UTAMA - FULL PUTIH, RATA, TANPA CARD */
         .main-container { max-width: 800px; margin: 0 auto; padding: 3rem 1.2rem; flex: 1; width: 100%; }
         
         /* JUDUL & HEADER TENTANG */
         .about-header { margin-bottom: 2.5rem; text-align: left; border-bottom: 2px solid #0284c7; padding-bottom: 1rem; display: inline-block; }
-        .brand-badge { display: inline-block; color: #0284c7; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 0.4rem; }
+        .brand-badge { display: inline-flex; align-items: center; gap: 6px; color: #0284c7; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 0.4rem; }
+        .brand-badge img { width: 18px; height: 18px; border-radius: 50%; object-fit: cover; }
         .brand-title { font-size: 2rem; font-weight: 800; color: #0f172a; line-height: 1.2; }
         
         /* PARAGRAF & NARASI */
@@ -35,8 +36,16 @@
         /* STATEMENT / QUOTE RATA KIRI ELEGAN */
         .mission-quote { background: #f8fafc; border-left: 4px solid #0284c7; padding: 1.2rem 1.5rem; margin: 2rem 0; font-size: 1rem; color: #0f172a; font-weight: 500; font-style: italic; border-radius: 0 8px 8px 0; }
 
-        /* FOOTER SIMPEL & BERSIH */
-        footer { text-align: center; padding: 2rem 1rem; font-size: 0.85rem; color: #64748b; border-top: 1px solid #f1f5f9; background: #ffffff; margin-top: 3rem; }
+        /* FOOTER KAKI HALAMAN (WARNA DARK NAVY) */
+        footer { 
+            background-color: #0f172a; 
+            color: #94a3b8; 
+            text-align: center; 
+            padding: 2.5rem 1.5rem; 
+            font-size: 0.85rem; 
+            border-top: 1px solid #1e293b; 
+            margin-top: 3rem; 
+        }
     </style>
 </head>
 <body>
@@ -58,9 +67,12 @@
     <!-- ISI HALAMAN FULL WHITE & RATA -->
     <main class="main-container">
         
-        <!-- HEADER JUDUL -->
+        <!-- HEADER JUDUL DENGAN LOGO ASLI OTORITAS KERJA -->
         <div class="about-header">
-            <span class="brand-badge"><i class="fa-solid fa-shield-halved"></i> Profil Platform</span>
+            <span class="brand-badge">
+                <img src="logo.jpeg" alt="Logo Otoritas Kerja" onerror="this.style.display='none'">
+                Profil Platform
+            </span>
             <h1 class="brand-title">Tentang Otoritas Kerja</h1>
         </div>
 
@@ -79,7 +91,7 @@
 
     </main>
 
-    <!-- FOOTER DENGAN REKOMENDASI BAHASA INDONESIA -->
+    <!-- FOOTER KAKI HALAMAN (DARK NAVY) -->
     <footer>
         &copy; 2026 OtoritasKerja.com. Hak cipta dilindungi undang-undang.
     </footer>
