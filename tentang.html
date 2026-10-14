@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - Otoritas Kerja</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+        body { background-color: #0f172a; color: #334155; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
+        
+        /* HEADER NAVBAR */
+        header { background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 0.75rem 1rem; position: relative; z-index: 10; }
+        .nav-container { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+        .logo-nav { font-weight: 800; font-size: 1.15rem; color: #0f172a; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .logo-nav span { color: #0284c7; }
+        .nav-links { display: flex; gap: 15px; }
+        .nav-links a { font-weight: 600; font-size: 0.85rem; color: #475569; text-decoration: none; padding: 4px 8px; border-radius: 4px; transition: 0.2s; }
+        .nav-links a:hover, .nav-links a.active { color: #0284c7; background: #f1f5f9; }
+
+        /* MAIN CONTENT CONTAINER */
+        .main-container { max-width: 800px; margin: 2.5rem auto; padding: 0 1rem; flex: 1; width: 100%; }
+        
+        /* CARD ABOUT CLEAN & ELEGANT */
+        .card-about { background: #ffffff; border-radius: 16px; border: 1px solid #1e293b; padding: 2.5rem 2rem; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3); }
+        
+        /* HEADER DI DALAM KARTU */
+        .about-header { text-align: center; margin-bottom: 2rem; border-bottom: 1px solid #f1f5f9; padding-bottom: 1.5rem; }
+        .brand-badge { display: inline-block; background: #e0f2fe; color: #0369a1; font-weight: 700; font-size: 0.75rem; padding: 4px 14px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.6rem; }
+        .brand-title { font-size: 1.8rem; font-weight: 800; color: #0f172a; margin-top: 0.2rem; }
+        
+        /* ISI PENJELASAN NARRATIVE */
+        .about-text { font-size: 1rem; color: #334155; line-height: 1.8; text-align: justify; }
+        .about-text p { margin-bottom: 1.4rem; }
+        .about-text p:last-child { margin-bottom: 0; }
+        
+        /* HIGHLIGHT QUOTE / MISSION STATEMENT */
+        .mission-quote { background: #f8fafc; border-left: 4px solid #0284c7; padding: 1.2rem 1.5rem; border-radius: 0 8px 8px 0; margin: 1.8rem 0; font-size: 0.95rem; color: #1e293b; font-style: italic; }
+
+        /* FOOTER */
+        footer { text-align: center; padding: 1.5rem 1rem; font-size: 0.85rem; color: #94a3b8; border-top: 1px solid #1e293b; margin-top: 2rem; }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER NAVBAR -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo-nav">
+                <img src="logo.jpeg" alt="Logo" style="height: 28px; width: auto;" onerror="this.style.display='none'">
+                Otoritas<span>Kerja</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html"><i class="fa-solid fa-house"></i> Beranda</a>
+                <a href="tentang.html" class="active"><i class="fa-solid fa-circle-info"></i> Tentang</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTENT -->
+    <div class="main-container">
+        <div class="card-about">
+            
+            <!-- JUDUL UTAMA -->
+            <div class="about-header">
+                <span class="brand-badge"><i class="fa-solid fa-shield-halved"></i> Profil Platform</span>
+                <h1 class="brand-title">Tentang Otoritas Kerja</h1>
+            </div>
+
+            <!-- PENJELASAN PROFIL UNIVERSAL & TIMELESS -->
+            <div class="about-text">
+                <p><strong>Otoritas Kerja</strong> adalah platform digital independen yang didedikasikan sebagai pusat referensi, standar operasional, dan penguatan kompetensi teknis di dunia kerja serta manufaktur modern.</p>
+                
+                <div class="mission-quote">
+                    "Mendampingi praktisi dan profesional industri dalam mewujudkan efisiensi, kualitas, dan keunggulan operasional yang berkelanjutan."
+                </div>
+
+                <p>Platform ini hadir untuk menjembatani kebutuhan para praktisi, supervisor, teknisi, hingga manajemen dalam mengakses metodologi kerja terstruktur, alat analisis operasional, serta panduan praktis yang siap diterapkan secara nyata di lapangan.</p>
+
+                <p>Seluruh materi dan pemikiran yang disajikan di Otoritas Kerja disusun berorientasi pada pendekatan <em>Operational Excellence</em>, kepemimpinan teknis, serta peningkatan efisiensi yang berkesinambungan.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        &copy; 2026 OtoritasKerja.com. All rights reserved.
+    </footer>
+
+</body>
+      </html>
