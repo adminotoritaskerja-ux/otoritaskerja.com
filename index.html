@@ -268,19 +268,21 @@ header {
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   border-color: var(--primary-blue);
 }
-.card-img-container {
-  width: 100%;
-  height: 170px;
-  overflow: hidden;
-  border-bottom: 1px solid var(--border-color);
-  background: #f1f5f9;
-}
-.card-img-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s;
-}
+    .card-img-container {
+        width: 100%;
+        aspect-ratio: 16 / 9; /* Mengunci proporsi gambar agar pas dan tidak terlalu tinggi */
+        height: auto;        /* Mengganti height tetap agar menyesuaikan otomatis */
+        overflow: hidden;
+        border-bottom: 1px solid var(--border-color);
+        background: #f1f5f9;
+    }
+
+    .card-img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s;
+    }
 .card:hover .card-img-container img {
   transform: scale(1.05);
 }
