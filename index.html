@@ -214,42 +214,32 @@ header {
   100% { transform: translate3d(-100%, 0, 0); }
 }
 /* HERO SECTION */
-.hero {
-    position: relative;
-    padding: 3rem 1rem 2rem 1rem;
-    text-align: center;
-    background: linear-gradient(180deg, rgba(15, 23, 42, 0.70) 0%, rgba(15, 23, 42, 0.40) 100%), url('hero-bg.jpg') no-repeat center center;
-    background-size: contain;
-    color: #ffffff;
-    border-bottom: 1px solid var(--border-color);
-}
-.hero h1 {
-  font-size: 2.1rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  letter-spacing: -0.5px;
-}
-.hero h1 span {
-  color: #38bdf8;
-}
-.hero p {
-  font-size: 1rem;
-  color: #cbd5e1;
-  max-width: 700px;
-  margin: 0 auto 1.5rem auto;
-}
-.hero-badge {
-  display: inline-block;
-  background: rgba(56, 189, 248, 0.15);
-  color: #38bdf8;
-  border: 1px solid rgba(56, 189, 248, 0.3);
-  padding: 5px 14px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  margin-bottom: 1.2rem;
-  font-family: 'JetBrains Mono', monospace;
-}
+<!-- HERO SECTION PROFESIONAL (OPSI 1: TEKS DI ATAS, BANNER UTUH DI BAWAH) -->
+<section style="background-color: #0f172a; padding: 2.5rem 1rem; text-align: center; color: #ffffff;">
+    <div style="max-width: 900px; margin: 0 auto;">
+        
+        <!-- Badge Kategori -->
+        <div style="display: inline-block; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); color: #38bdf8; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem;">
+            🛡️ Operational Excellence & Systems
+        </div>
+
+        <!-- Judul Utama -->
+        <h1 style="font-size: 1.6rem; font-weight: 700; color: #ffffff; margin-bottom: 0.75rem; line-height: 1.3;">
+            Pusat Standar & Template <span style="color: #38bdf8;">Manufaktur Modern</span>
+        </h1>
+
+        <!-- Deskripsi Ringkas -->
+        <p style="font-size: 0.95rem; color: #cbd5e1; max-width: 700px; margin: 0 auto 1.5rem auto; line-height: 1.5;">
+            Tingkatkan efisiensi lantai pabrik dan kualitas operasional Anda dengan panduan teknis, jurnal praktis, dan template Excel siap pakai.
+        </p>
+
+        <!-- Bingkai Banner Utama (Tampil Utuh Tanpa Terpotong/Bertumpuk) -->
+        <div style="width: 100%; border-radius: 12px; overflow: hidden; border: 1px solid #1e293b; box-shadow: 0 10px 25px rgba(0,0,0,0.5); margin-top: 1rem;">
+            <img src="hero-bg.jpg" alt="Preview Template Otoritas Kerja" style="width: 100%; height: auto; display: block;">
+        </div>
+
+    </div>
+</section>
 /* MAIN CONTAINER & GRID CARDS */
 .container {
   max-width: 1200px;
