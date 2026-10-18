@@ -616,59 +616,43 @@ footer p {
 </head>
 <body>
   
-<!-- HEADER NAVBAR MOBILE MODERN (2 TINGKAT) -->
-<header style="background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 0.75rem 1rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
-    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 0.6rem;">
-        
-        <!-- BARIS 1: Logo di Kiri Atas -->
-        <div style="display: flex; align-items: center; justify-content: space-between;">
-            <a href="#" onclick="switchPage('beranda', event)" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
-                <img src="favicon.png" alt="Logo Otoritas Kerja" style="height: 32px; width: auto;" onerror="this.style.display='none'">
-                <div style="font-weight: 800; font-size: 1.15rem; color: #0f172a;">Otoritas<span style="color: #0284c7;">Kerja</span></div>
+<header class="site-header">
+    <!-- BARIS 1: LOGO (PUTIH) -->
+    <div class="top-header-white">
+        <div class="container top-header-inner">
+            <a href="index.html" class="logo-brand">
+                <img src="favicon.png" alt="OtoritasKerja Logo" class="logo-img">
+                <span class="brand-title">Otoritas<span>Kerja</span></span>
             </a>
         </div>
+    </div>
 
-        <!-- GARIS PEMISAH HALUS -->
-        <div style="height: 1px; background-color: #f1f5f9; width: 100%;"></div>
+    <!-- BARIS 2: NAVIGASI (NAVY GELAP) -->
+    <nav class="main-navbar-navy">
+        <div class="container">
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">BERANDA</a></li>
+                <li><a href="about.html">TENTANG</a></li>
+                <li><a href="contact.html">KONTAK</a></li>
+                <li><a href="admin.html" class="btn-admin-nav">ADMIN</a></li>
+            </ul>
+        </div>
+    </nav>
 
-        <!-- BARIS 2: Barisan Menu Navigasi & Dropdown Kontak -->
-        <nav style="display: flex; align-items: center; justify-content: flex-start; gap: 12px; flex-wrap: wrap;">
-            <button onclick="switchPage('beranda', event)" class="active" style="background: none; border: none; font-weight: 600; font-size: 0.85rem; color: #0284c7; cursor: pointer; padding: 4px 8px;">Beranda</button>
-<a href="tentang.html" style="background: none; border: none; font-weight: 600; font-size: 0.85rem; color: #475569; text-decoration: none; padding: 4px 8px;">Tentang</a>
-            
-            <!-- Dropdown Kontak Utuh -->
-            <div class="contact-dropdown-container" style="position: relative; display: inline-block;">
-                <button class="contact-menu-btn" id="contactToggle" title="Hubungi Kami" style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 6px; padding: 4px 10px; font-size: 0.82rem; font-weight: 600; color: #334155; cursor: pointer;">
-                    <i class="fa-solid fa-envelope" style="margin-right: 4px;"></i> Kontak
-                </button>
-                <div class="contact-popup" id="contactPopup">
-                    <h4>Hubungi Otoritas Kerja</h4>
-                    <a href="mailto:sukardi@otoritaskerja.com" class="contact-item">
-                        <i class="fa-solid fa-paper-plane"></i>
-                        <span>sukardi@otoritaskerja.com</span>
-                    </a>
-                    <a href="https://wa.me/6281270000000" target="_blank" class="contact-item">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        <span>WhatsApp Konsultasi</span>
-                    </a>
-                </div>
+    <!-- BARIS 3: RUNNING TEXT (BADGE JAJARAN GENJANG + TEKS UTUH PAK SUKARDI) -->
+    <div class="ticker-bar-white">
+        <div class="container ticker-container">
+            <div class="badge-skew-container">
+                <span class="badge-text-inner">OTORITAS MANUFAKTUR</span>
             </div>
-
-            <!-- Tombol Admin -->
-            <button onclick="checkAdminPassword()" class="admin-nav-btn" style="background: none; border: none; font-weight: 600; font-size: 0.85rem; color: #94a3b8; cursor: pointer; padding: 4px 8px; margin-left: auto;">Admin</button>
-        </nav>
-
+            <div class="ticker-marquee-box">
+                <marquee behavior="scroll" direction="left" scrollamount="5" onmouseover="this.stop();" onmouseout="this.start();">
+                    <strong>Pusat Panduan Sistem Manufaktur &amp; Tools Analisis Industri</strong> &nbsp;&bull;&nbsp; <i>Solusi Kendali Mutu, Efisiensi &amp; Operasional Pabrik</i>
+                </marquee>
+            </div>
+        </div>
     </div>
 </header>
-
-<!-- RUNNING TEXT / TICKER NAVY ELEGANT (LOGO WHITE INVERT) -->
-<div class="ticker-wrap" style="background-color: #0f172a; color: #f8fafc; padding: 10px 0; border-bottom: 2px solid #0284c7; font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.5px;">
-    <div class="ticker">
-        <span><img src="favicon.png" style="height: 16px; width: auto; vertical-align: middle; margin-right: 8px; margin-left: 20px; filter: brightness(0) invert(1);"> SELAMAT DATANG DI <strong style="color: #38bdf8;">OTORITASKERJA.COM</strong> — PUSAT TEMPLATE EXCEL & PANDUAN MANUFAKTUR</span>
-        <span><img src="favicon.png" style="height: 16px; width: auto; vertical-align: middle; margin-right: 8px; margin-left: 20px; filter: brightness(0) invert(1);"> PORTOFOLIO & PUSAT STANDAR OPERATIONAL PROCEDURE (SOP) LANTAI PRODUKSI</span>
-        <span><img src="favicon.png" style="height: 16px; width: auto; vertical-align: middle; margin-right: 8px; margin-left: 20px; filter: brightness(0) invert(1);"> DOWNLOAD TEMPLATE STANDAR OPERASIONAL & KALKULATOR OEE PABRIK SEKARANG!</span>
-    </div>
-</div>
 
 <!-- VIEW 1: BERANDA -->
 <!-- HERO BANNER ABU-ABU MELEBAR PENUH & MENEMPEL FOTO -->
