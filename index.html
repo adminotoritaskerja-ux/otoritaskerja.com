@@ -138,8 +138,12 @@ body {
     background-color: #1e293b;
     margin-left: auto;
 }
+/* =========================================================
+   PERBAIKAN TICKER & PEMBATAS GARIS TIPIS
+   ========================================================= */
 .ticker-bar-white {
     background-color: #ffffff;
+    border-top: 1px solid #cbd5e1; /* Garis pembatas tipis agar terpisah tegas dari menu navy di atasnya */
     border-bottom: 2px solid var(--border-color, #e2e8f0);
     padding: 0;
     overflow: hidden;
@@ -154,23 +158,23 @@ body {
     margin: 0 !important;
 }
 
-/* BADGE JAJARAN GENJANG MEPET KIRI */
+/* BADGE JAJARAN GENJANG MEPET KIRI DENGAN GARIS EMAS TEGAS */
 .badge-skew-container {
     background-color: var(--primary-dark, #0f172a);
     color: #ffffff;
-    padding: 8px 20px 8px 16px;
+    padding: 9px 22px 9px 16px;
     font-size: 0.82rem;
     font-weight: 800;
     white-space: nowrap;
     transform: skewX(-15deg);
     transform-origin: left bottom;
-    margin-left: -10px;
-    border-right: 5px solid var(--accent-orange, #ea580c);
+    margin-left: -12px; /* Mepet mentok ke kiri layar */
+    border-right: 5px solid var(--accent-orange, #ea580c); /* Aksen garis kuning emas */
     border-left: none !important;
     flex-shrink: 0;
     position: relative;
     z-index: 10;
-    box-shadow: 4px 0 8px rgba(0,0,0,0.15);
+    box-shadow: 4px 0 10px rgba(0,0,0,0.2);
 }
 
 .badge-text-inner {
@@ -184,9 +188,10 @@ body {
     font-size: 0.88rem;
     color: var(--primary-dark, #0f172a);
     font-weight: 600;
-    padding-left: 15px;
+    padding-left: 20px; /* Jarak pas agar teks mengalir mulus dari balik sudut miring emas */
     position: relative;
     z-index: 1;
+    overflow: hidden;
 }
 
 .ticker-marquee-box marquee {
@@ -198,8 +203,8 @@ body {
     .logo-img { height: 36px; }
     .brand-title { font-size: 1.3rem; }
     .nav-menu li a { padding: 10px 14px; font-size: 0.82rem; }
-    .badge-skew-container { padding: 6px 14px 6px 12px; font-size: 0.72rem; }
-    .ticker-marquee-box { font-size: 0.8rem; }
+    .badge-skew-container { padding: 7px 16px 7px 12px; font-size: 0.72rem; }
+    .ticker-marquee-box { font-size: 0.8rem; padding-left: 16px; }
     }
 /* HERO SECTION */
 .hero {
