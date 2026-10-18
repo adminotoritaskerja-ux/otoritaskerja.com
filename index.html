@@ -60,94 +60,9 @@ body {
     color: var(--text-main);
     line-height: 1.6;
 }
-/* HEADER & NAVIGATION */
-header {
-    background-color: #ffffff;
-    border-bottom: 1px solid var(--border-color);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-}
-.nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.logo-area {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-}
-.logo-img {
-  height: 35px;
-  width: auto;
-  object-fit: contain;
-  border-radius: 4px;
-}
-.logo-text {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--primary-dark);
-}
-.logo-text span {
-  color: var(--primary-blue);
-}
-.nav-links {
-  display: flex;
-  gap: 1rem;
-  list-style: none;
-  align-items: center;
-}
-.nav-links button, .nav-links a {
-  background: none;
-  border: none;
-  color: var(--text-muted);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.9rem;
-  cursor: pointer;
-  font-family: 'Inter', sans-serif;
-  transition: color 0.2s;
-}
-.nav-links button:hover, .nav-links a:hover, .nav-links button.active, .nav-links a.active {
-  color: var(--primary-blue);
-}
-.admin-nav-btn {
-  background: rgba(2, 132, 199, 0.1) !important;
-  border: 1px solid rgba(2, 132, 199, 0.3) !important;
-  padding: 6px 10px;
-  border-radius: 6px;
-  color: var(--primary-blue) !important;
-}
-/* TOMBOL & DROPDOWN KONTAK */
-.contact-dropdown-container {
-  position: relative;
-  display: inline-block;
-}
-.contact-menu-btn {
-  background: none;
-  border: 1px solid #e2e8f0;
-  border-radius: 6px;
-  padding: 6px 10px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  cursor: pointer;
-  color: var(--text-muted);
-  font-weight: 500;
-  font-size: 0.9rem;
-  font-family: 'Inter', sans-serif;
-  transition: all 0.2s ease;
-}
-.contact-menu-btn:hover, .contact-menu-btn.active {
-  background-color: #f8fafc;
-/* HEADER & NAVIGATION - PORTAL NAVY STICKY */
+/* =========================================================
+   HEADER 3-TIER PORTAL NAVY STICKY (BERSIH & FINAL)
+   ========================================================= */
 .site-header {
     position: sticky;
     top: 0;
@@ -159,7 +74,7 @@ header {
 .top-header-white {
     background-color: #ffffff;
     padding: 10px 0;
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color, #e2e8f0);
 }
 
 .top-header-inner {
@@ -183,15 +98,15 @@ header {
 .brand-title {
     font-size: 1.65rem;
     font-weight: 800;
-    color: var(--primary-dark);
+    color: var(--primary-dark, #0f172a);
 }
 
 .brand-title span {
-    color: var(--primary-blue);
+    color: var(--primary-blue, #0284c7);
 }
 
 .main-navbar-navy {
-    background-color: var(--primary-dark);
+    background-color: var(--primary-dark, #0f172a);
 }
 
 .nav-menu {
@@ -216,7 +131,7 @@ header {
 
 .nav-menu li a:hover,
 .nav-menu li a.active {
-    background-color: var(--primary-blue);
+    background-color: var(--primary-blue, #0284c7);
 }
 
 .nav-menu li a.btn-admin-nav {
@@ -226,7 +141,7 @@ header {
 
 .ticker-bar-white {
     background-color: #ffffff;
-    border-bottom: 2px solid var(--border-color);
+    border-bottom: 2px solid var(--border-color, #e2e8f0);
     padding: 6px 0;
     overflow: hidden;
 }
@@ -238,7 +153,7 @@ header {
 }
 
 .badge-skew-container {
-    background-color: var(--primary-dark);
+    background-color: var(--primary-dark, #0f172a);
     color: #ffffff;
     padding: 6px 18px;
     font-size: 0.8rem;
@@ -246,7 +161,7 @@ header {
     white-space: nowrap;
     transform: skewX(-15deg);
     border-right: 4px solid var(--badge-pro, #d97706);
-    border-left: 4px solid var(--primary-blue);
+    border-left: 4px solid var(--primary-blue, #0284c7);
     flex-shrink: 0;
 }
 
@@ -258,7 +173,7 @@ header {
 .ticker-marquee-box {
     flex-grow: 1;
     font-size: 0.88rem;
-    color: var(--primary-dark);
+    color: var(--primary-dark, #0f172a);
     font-weight: 600;
 }
 
@@ -273,7 +188,7 @@ header {
     .badge-skew-container { padding: 4px 10px; font-size: 0.7rem; transform: skewX(-10deg); }
     .badge-text-inner { transform: skewX(10deg); }
     .ticker-marquee-box { font-size: 0.8rem; }
-    }
+}
 /* HERO SECTION */
 .hero {
     position: relative;
