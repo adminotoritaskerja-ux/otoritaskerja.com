@@ -147,83 +147,133 @@ header {
 }
 .contact-menu-btn:hover, .contact-menu-btn.active {
   background-color: #f8fafc;
-  border-color: #0284c7;
-  color: #0284c7;
+/* HEADER & NAVIGATION - PORTAL NAVY STICKY */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
 }
-.contact-popup {
-  display: none;
-  position: absolute;
-  right: 0;
-  top: 40px;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  width: 250px;
-  padding: 1rem;
-  z-index: 1100;
+
+.top-header-white {
+    background-color: #ffffff;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
 }
-.contact-popup.active {
-  display: block;
+
+.top-header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
-.contact-popup h4 {
-  font-size: 0.85rem;
-  color: #0f172a;
-  margin-bottom: 0.5rem;
-  border-bottom: 1px solid #e2e8f0;
-  padding-bottom: 0.4rem;
+
+.logo-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
 }
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-bottom: 0.5rem;
-  font-size: 0.8rem;
-  color: #334155;
-  text-decoration: none;
+
+.logo-img {
+    height: 44px;
+    width: auto;
 }
-.contact-item:last-child {
-  margin-bottom: 0;
+
+.brand-title {
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: var(--primary-dark);
 }
-.contact-item i {
-  color: #0284c7;
-  font-size: 0.9rem;
-  width: 18px;
-  text-align: center;
+
+.brand-title span {
+    color: var(--primary-blue);
 }
-.contact-item:hover span {
-  color: #0284c7;
-  text-decoration: underline;
+
+.main-navbar-navy {
+    background-color: var(--primary-dark);
 }
-/* RUNNING TEXT/TICKER */
-.ticker-wrap {
-  background: var(--primary-dark);
-  border-bottom: 2px solid var(--accent-orange);
-  overflow: hidden;
-  white-space: nowrap;
-  padding: 10px 0;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.85rem;
-  font-weight: 800;
-  color: #ffffff;
-  letter-spacing: 0.5px;
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
 }
-.ticker {
-  display: inline-block;
-  animation: ticker 32s linear infinite;
+
+.nav-menu li a {
+    display: block;
+    padding: 12px 22px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
 }
-.ticker span {
-  margin-right: 60px;
+
+.nav-menu li a:hover,
+.nav-menu li a.active {
+    background-color: var(--primary-blue);
 }
-.ticker span i {
-  color: var(--accent-orange);
-  margin-right: 8px;
-  font-size: 1rem;
+
+.nav-menu li a.btn-admin-nav {
+    background-color: #1e293b;
+    margin-left: auto;
 }
-@keyframes ticker {
-  0% { transform: translate3d(100%, 0, 0); }
-  100% { transform: translate3d(-100%, 0, 0); }
+
+.ticker-bar-white {
+    background-color: #ffffff;
+    border-bottom: 2px solid var(--border-color);
+    padding: 6px 0;
+    overflow: hidden;
 }
+
+.ticker-container {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.badge-skew-container {
+    background-color: var(--primary-dark);
+    color: #ffffff;
+    padding: 6px 18px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    white-space: nowrap;
+    transform: skewX(-15deg);
+    border-right: 4px solid var(--badge-pro, #d97706);
+    border-left: 4px solid var(--primary-blue);
+    flex-shrink: 0;
+}
+
+.badge-text-inner {
+    display: inline-block;
+    transform: skewX(15deg);
+}
+
+.ticker-marquee-box {
+    flex-grow: 1;
+    font-size: 0.88rem;
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+
+.ticker-marquee-box marquee {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .logo-img { height: 36px; }
+    .brand-title { font-size: 1.3rem; }
+    .nav-menu li a { padding: 10px 14px; font-size: 0.82rem; }
+    .badge-skew-container { padding: 4px 10px; font-size: 0.7rem; transform: skewX(-10deg); }
+    .badge-text-inner { transform: skewX(10deg); }
+    .ticker-marquee-box { font-size: 0.8rem; }
+    }
 /* HERO SECTION */
 .hero {
     position: relative;
