@@ -138,36 +138,45 @@ body {
     background-color: #1e293b;
     margin-left: auto;
 }
-
 .ticker-bar-white {
     background-color: #ffffff;
     border-bottom: 2px solid var(--border-color, #e2e8f0);
-    padding: 6px 0;
+    padding: 0;
     overflow: hidden;
+    position: relative;
 }
 
 .ticker-container {
     display: flex;
     align-items: center;
-    gap: 14px;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
 }
 
+/* BADGE JAJARAN GENJANG MEPET KIRI */
 .badge-skew-container {
     background-color: var(--primary-dark, #0f172a);
     color: #ffffff;
-    padding: 6px 18px;
-    font-size: 0.8rem;
+    padding: 8px 20px 8px 16px;
+    font-size: 0.82rem;
     font-weight: 800;
     white-space: nowrap;
     transform: skewX(-15deg);
-    border-right: 4px solid var(--badge-pro, #d97706);
-    border-left: 4px solid var(--primary-blue, #0284c7);
+    transform-origin: left bottom;
+    margin-left: -10px;
+    border-right: 5px solid var(--accent-orange, #ea580c);
+    border-left: none !important;
     flex-shrink: 0;
+    position: relative;
+    z-index: 10;
+    box-shadow: 4px 0 8px rgba(0,0,0,0.15);
 }
 
 .badge-text-inner {
     display: inline-block;
     transform: skewX(15deg);
+    padding-left: 10px;
 }
 
 .ticker-marquee-box {
@@ -175,20 +184,23 @@ body {
     font-size: 0.88rem;
     color: var(--primary-dark, #0f172a);
     font-weight: 600;
+    padding-left: 15px;
+    position: relative;
+    z-index: 1;
 }
 
 .ticker-marquee-box marquee {
     display: block;
+    vertical-align: middle;
 }
 
 @media (max-width: 768px) {
     .logo-img { height: 36px; }
     .brand-title { font-size: 1.3rem; }
     .nav-menu li a { padding: 10px 14px; font-size: 0.82rem; }
-    .badge-skew-container { padding: 4px 10px; font-size: 0.7rem; transform: skewX(-10deg); }
-    .badge-text-inner { transform: skewX(10deg); }
+    .badge-skew-container { padding: 6px 14px 6px 12px; font-size: 0.72rem; }
     .ticker-marquee-box { font-size: 0.8rem; }
-}
+    }
 /* HERO SECTION */
 .hero {
     position: relative;
@@ -573,19 +585,6 @@ footer p {
 <!-- HERO BANNER ABU-ABU MELEBAR PENUH & MENEMPEL FOTO -->
 <section style="background-color: #0f172a; padding: 0; text-align: center; overflow: hidden;">
     
-    <!-- Pita Teks Abu-abu Terang (Full Width & Menempel ke Banner) -->
-    <div style="background-color: #d1d5db; padding: 0.75rem 1rem; border-bottom: 2px solid #0284c7;">
-        
-      <!-- Judul Utama (Gelap & Kontras di Atas Abu-abu) -->
-        <h1 style="font-size: 0.98rem; font-weight: 800; color: #0f172a; margin: 0 0 0.2rem 0; line-height: 1.35; letter-spacing: 0.2px;">
-            Pusat Panduan Sistem Manufaktur & <span style="color: #0284c7;">Tools Analisis Industri</span>
-        </h1>
-
-        <!-- Sub-judul Simpel -->
-        <p style="font-size: 0.75rem; font-style: italic; color: #334155; margin: 0; line-height: 1.25;">
-            Solusi Kendali Mutu, Efisiensi & Operasional Pabrik
-        </p>
-
     <!-- Gambar Banner Utama (FULL WIDTH & MENEMPEL TEPAT DI BAWAH PITA ABU-ABU) -->
     <div style="width: 100%;">
         <img src="hero-bg.jpg" alt="Otoritas Kerja Banner" style="width: 100%; height: auto; display: block;">
