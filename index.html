@@ -240,13 +240,13 @@ body {
   font-weight: 650;
   color: var(--primary-dark);
 }
-/* --- GRID KARTU RESPONSIVE (1 KOLOM DI HP, 2 KOLOM DI PC) --- */
+/* --- GRID KARTU OTOMATIS 2 KOLOM DI PC / 1 KOLOM DI HP --- */
 .grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
+    /* Secara otomatis membuat kolom selebar minimal 350px, jika muat langsung jadi 2 kolom */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
 }
-
 @media (min-width: 600px) {
     .grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
