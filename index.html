@@ -245,44 +245,82 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1.5rem;
 }
-/* --- KARTU MODUL COMPACT (GAMBAR KIRI, TEKS KANAN) --- */
+/* --- KARTU MODUL HYBRID (GAMBAR SEJAJAR JUDUL, DESKRIPSI UTUH) --- */
 .card {
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: 14px;
-    padding: 1rem;
+    padding: 1.1rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-    margin-bottom: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 1.25rem;
     display: flex;
-    flex-direction: row; /* Mengatur tata letak menyamping (kiri - kanan) */
-    align-items: center;
-    gap: 1rem;
+    flex-direction: column; /* Mengalir dari atas ke bawah */
+    gap: 0.8rem;
 }
 
-/* KOTAK GAMBAR THUMBNAIL 1:1 DI KIRI */
+/* 1. META ATAS (BADGE & TANGGAL) */
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* 2. AREA SEJAJAR: GAMBAR DI KIRI + JUDUL DI KANAN */
+.card-header-flex {
+    display: flex;
+    align-items: center;  /* Gambar dan Judul sejajar secara vertikal */
+    gap: 12px;
+    width: 100%;
+}
+
+/* THUMBNAIL 1:1 LEBIH BESAR & JELAS */
 .card-img-container {
-    width: 95px;          /* Ukuran presisi thumbnail 1:1 di HP */
-    height: 95px;         /* Ukuran presisi thumbnail 1:1 di HP */
-    flex-shrink: 0;       /* Agar gambar tidak gepeng/tertekan */
+    width: 110px;         /* Ukuran diperbesar agar SOD terlihat sangat tajam */
+    height: 110px;
+    flex-shrink: 0;       /* Mengunci agar gambar tidak gepeng */
     border-radius: 10px;
     overflow: hidden;
-    background: #ffffff;  /* Latar putih bersih untuk gambar SOD */
+    background: #ffffff;
     border: 1px solid #e2e8f0;
 }
 
 .card-img-container img {
     width: 100%;
     height: 100%;
-    object-fit: contain;  /* Menjaga proporsi gambar SOD 1:1 tetap utuh & tajam */
-    transition: transform 0.3s ease;
+    object-fit: contain;  /* Gambar SOD 1:1 tampil utuh tanpa terpotong */
 }
 
-/* KONTEN TEKS DI KANAN */
-.card-content {
+.card-title-box {
+    flex: 1;
+}
+
+.card-title-box h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin: 0;
+    color: var(--primary-dark);
+}
+
+/* 3. DESKRIPSI ARTIKEL (LEBAR PENUH KIRI KE KANAN) */
+.card-desc {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+    margin: 0;
+    width: 100%;          /* Mengalir utuh dari kiri ke kanan */
+}
+
+/* 4. FOOTER (PENULIS & TOMBOL BACA) */
+.card-footer {
     display: flex;
-    flex-direction: column;
-    flex: 1;              /* Memenuhi sisa ruang di sebelah kanan gambar */
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.6rem;
+    border-top: 1px solid #f1f5f9;
+    margin-top: 0.2rem;
 }
 .card:hover .card-img-container img {
     transform: scale(1.03);
