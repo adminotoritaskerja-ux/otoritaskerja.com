@@ -594,17 +594,13 @@ footer {
 footer p {
   margin-bottom: 0.4rem;
 }
-    /* PENGATURAN RESPONSIF KHUSUS HP */
+ /* HANYA MENGECILKAN UKURAN JUDUL DI HP SUPAYA TIDAK TURUN */
 @media (max-width: 768px) {
-    .card {
-        flex-direction: column !important;
-        align-items: stretch !important;
+    .card-title-box h3 {
+        font-size: 0.95rem !important;  /* Ukuran disesuaikan agar pas di samping gambar */
     }
-    .card-img-container {
-        width: 100% !important;
-        height: 200px !important;
-        max-width: 100% !important;
-    }
+}
+   
 </style>
 </head>
 <body>
