@@ -240,20 +240,21 @@ body {
   font-weight: 650;
   color: var(--primary-dark);
 }
-/* --- PAKSA 2 KOLOM DI PC / 1 KOLOM DI HP --- */
+/* --- PAKSA 2 KOLOM MUTLAK DI PC / 1 KOLOM DI HP --- */
 .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Langsung dibagi 2 kolom sama besar di PC */
-    gap: 1.5rem;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1.5rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
 }
 
-/* Khusus untuk HP (Layar di bawah 768px), otomatis ubah jadi 1 kolom ke bawah */
+/* Khusus untuk HP (Layar di bawah 768px), kembalikan jadi 1 kolom */
 @media (max-width: 768px) {
     .grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
     }
 }
-
 /* --- KARTU MODUL HYBRID (GAMBAR SEJAJAR JUDUL, DESKRIPSI UTUH) --- */
 .card {
     background-color: var(--bg-card);
