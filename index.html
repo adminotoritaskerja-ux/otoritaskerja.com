@@ -240,12 +240,18 @@ body {
   font-weight: 650;
   color: var(--primary-dark);
 }
-/* --- GRID KARTU OTOMATIS 2 KOLOM DI PC / 1 KOLOM DI HP --- */
+/* --- PAKSA 2 KOLOM DI PC / 1 KOLOM DI HP --- */
 .grid {
     display: grid;
-    /* Secara otomatis membuat kolom selebar minimal 350px, jika muat langsung jadi 2 kolom */
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: 1fr 1fr; /* Langsung dibagi 2 kolom sama besar di PC */
     gap: 1.5rem;
+}
+
+/* Khusus untuk HP (Layar di bawah 768px), otomatis ubah jadi 1 kolom ke bawah */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* --- KARTU MODUL HYBRID (GAMBAR SEJAJAR JUDUL, DESKRIPSI UTUH) --- */
