@@ -601,6 +601,29 @@ footer p {
     .card-title-box h3 {
         font-size: 0.95rem !important;  /* Ukuran disesuaikan agar pas di samping gambar */
     }
+/* CSS GLOBAL: MEMBUAT JUDUL & DESKRIPSI NAIK KE SAMPING MENJADI PADAT */
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Mengatur wadah utama agar foto di kiri, dan teks di kanan tersusun ke bawah */
+.card-header-flex {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+/* Membungkus area teks (judul dan deskripsi) agar berada di sisi kanan foto */
+.card-header-flex + .card-desc {
+    margin-top: -10px !important; /* Menarik deskripsi agar merapat ke bawah judul */
+}
+
+/* Jika struktur HTML kartu menggunakan kontainer teks gabungan, atur fleksibilitasnya */
+.card-content-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
    
 </style>
