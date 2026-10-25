@@ -684,35 +684,32 @@ footer p {
     </div>
     <div class="grid" id="cardGrid">
 
-<!-- Kartu 1: FMEA (Thumbnail lokal: fmea.jpg) -->
+<!-- Kartu 1: FMEA (Badge Free Artikel di Bawah Judul, Tanpa Tanggal) -->
 <div class="card">
-    <div class="card-meta">
-        <span class="badge free">Free Artikel</span>
-        <span class="card-date">03 Okt 2026</span>
-    </div>
-    
-    <!-- Wadah Konten Kartu -->
-    <div style="overflow: hidden; padding: 0 4px;">
-        <!-- Foto Thumbnail di Kiri -->
-        <div style="float: left; width: 115px; margin-right: 12px; margin-bottom: 4px;">
+    <!-- Wadah Foto di Kiri & Judul Utama di Kanan -->
+    <div style="overflow: hidden; padding: 0 4px; display: flex; align-items: flex-start; gap: 12px;">
+        <!-- Foto Thumbnail -->
+        <div style="width: 120px; flex-shrink: 0;">
             <a href="fmea.html">
                 <img src="fmea.jpg" alt="Metode SOD FMEA" style="width: 100%; border-radius: 6px; display: block;">
             </a>
         </div>
         
-        <!-- Judul Artikel di Kanan Foto -->
-        <h3 style="margin-top: 0; margin-bottom: 6px; font-size: 0.98rem; line-height: 1.3;">
-            <a href="fmea.html">Panduan Lengkap FMEA untuk Menekan Defek di Lantai Pabrik</a>
-        </h3>
-        
-        <!-- Deskripsi Singkat dengan Penyesuaian Ukuran Font & Justify -->
-        <div style="font-size: 0.88rem; line-height: 1.45; color: var(--text-muted); text-align: justify;">
-            Strategi sistematis menganalisis potensi kegagalan proses produksi dan langkah pencegahannya secara efektif di berbagai sektor industri.
+        <!-- Kolom Kanan: Judul & Badge Free Artikel di Bawahnya -->
+        <div style="flex-grow: 1;">
+            <h3 style="margin: 0 0 8px 0; font-size: 1rem; line-height: 1.35;">
+                <a href="fmea.html">Panduan Lengkap FMEA untuk Menekan Defek di Lantai Pabrik</a>
+            </h3>
+            
+            <!-- Badge Free Artikel dipindah ke bawah judul -->
+            <div>
+                <span class="badge free" style="display: inline-block; font-size: 0.75rem; padding: 2px 8px;">Free Artikel</span>
+            </div>
         </div>
     </div>
 
     <!-- Footer Kartu -->
-    <div class="card-footer" style="clear: both; margin-top: 10px;">
+    <div class="card-footer" style="margin-top: 12px;">
         <span style="font-size: 0.85rem; color: var(--text-muted);"><i class="fa-regular fa-file-lines"></i> Oleh Otoritas Kerja</span>
         <a href="fmea.html" class="btn btn-outline card-btn">Baca Artikel <i class="fa-solid fa-arrow-right"></i></a>
     </div>
