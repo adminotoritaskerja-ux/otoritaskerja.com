@@ -240,21 +240,18 @@ body {
   font-weight: 650;
   color: var(--primary-dark);
 }
-/* --- PAKSA 2 KOLOM MUTLAK DI PC / 1 KOLOM DI HP --- */
+/* --- TAMPILAN 1 KOLOM KONSISTEN & RAPI DI PC --- */
 .grid {
     display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
+    grid-template-columns: 1fr !important; /* Mutlak 1 kolom ke bawah */
     gap: 1.5rem !important;
     width: 100% !important;
-    max-width: 100% !important;
+    max-width: 800px !important; /* Membatasi lebar maksimal di PC agar tidak melebar */
+    margin-left: auto !important;
+    margin-right: auto !important; /* Membuat posisi card otomatis pas di tengah layar PC */
 }
 
-/* Khusus untuk HP (Layar di bawah 768px), kembalikan jadi 1 kolom */
-@media (max-width: 768px) {
-    .grid {
-        grid-template-columns: 1fr !important;
-    }
-}
+/* Hapus atau nonaktifkan media query 2 kolom jika ada sebelumnya */
 /* --- KARTU MODUL HYBRID (GAMBAR SEJAJAR JUDUL, DESKRIPSI UTUH) --- */
 .card {
     background-color: var(--bg-card);
@@ -295,10 +292,10 @@ body {
     overflow: hidden;
 }
 
-.card-img-container img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important; /* Gambar 1:1 SOD tampil utuh & jelas */
+.card-img-container {
+    width: clamp(130px, 25vw, 190px) !important; /* Ukuran menyesuaikan otomatis antara HP dan PC */
+    height: auto !important;
+    flex-shrink: 0 !important;
 }
 
 /* 2. ATUR JUDUL AGAR LEBIH JELAS & PROPORTIONAL */
