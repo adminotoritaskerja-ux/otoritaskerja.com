@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisis Akar Masalah dengan Diagram Fishbone - Otoritas Kerja</title>
+    <meta name="description" content="Panduan lengkap menggunakan Diagram Tulang Ikan (Fishbone / Ishikawa Diagram) untuk mencari akar penyebab masalah di lini produksi.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://otoritaskerja.com/fishbone.html">
+    <meta property="og:title" content="Analisis Akar Masalah dengan Diagram Fishbone">
+    <meta property="og:description" content="Panduan lengkap menggunakan Diagram Tulang Ikan (Fishbone Diagram) untuk mencari akar penyebab masalah produksi.">
+    <meta property="og:image" content="https://otoritaskerja.com/fishbone.jpg">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
+        .font-serif-book { font-family: 'Merriweather', serif; }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="font-bold text-slate-900 tracking-tight text-lg hover:text-blue-600 transition">Otoritas Kerja</a>
+            <nav class="flex items-center space-x-6 text-sm font-medium">
+                <a href="index.html" class="text-slate-600 hover:text-slate-900 transition">Beranda</a>
+                <button onclick="openModal('authorModal')" class="text-slate-600 hover:text-slate-900 transition cursor-pointer">Tentang Penulis</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-3xl mx-auto px-6 py-12 space-y-12 flex-grow">
+        <section class="text-center pb-8 border-b border-slate-200 space-y-6">
+            <div class="max-w-lg mx-auto shadow-xl rounded-xl overflow-hidden border border-slate-200 bg-white p-2">
+                <img src="fishbone.jpg" alt="Diagram Fishbone Manufaktur" class="w-full h-auto rounded-lg object-cover">
+            </div>
+            <div>
+                <span class="bg-emerald-100 text-emerald-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Root Cause Analysis</span>
+                <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-4 mb-3 font-serif-book">
+                    Analisis Akar Masalah dengan Diagram Fishbone
+                </h1>
+                <p class="text-slate-600 italic text-base md:text-lg max-w-xl mx-auto font-serif-book">
+                    "Mengurai sumber masalah produksi secara visual menggunakan metode 6M (Man, Machine, Material, Method, Measurement, Mother Nature)."
+                </p>
+                <div class="text-xs text-slate-400 mt-4">Oleh Sukardi &bull; 03 Okt 2026</div>
+            </div>
+        </section>
+
+        <article class="space-y-8">
+            <div class="space-y-4">
+                <h2 class="text-2xl font-bold text-slate-900 font-serif-book">Mengapa Menggunakan Diagram Fishbone?</h2>
+                <p class="text-slate-700 leading-relaxed text-base md:text-lg">
+                    Seringkali masalah di pabrik diselesaikan hanya pada gejalanya saja, sehingga masalah yang sama terus berulang. <em>Fishbone Diagram</em> (atau Ishikawa Diagram) membantu tim produksi menelusuri hubungan sebab-akibat hingga menemukan akar masalah yang sesungguhnya melalui pendekatan terstruktur 6M.
+                </p>
+            </div>
+            <div class="space-y-4 pt-4">
+                <h3 class="text-xl font-bold text-slate-900 font-serif-book">Kategori 6M dalam Analisis Fishbone</h3>
+                <ul class="list-disc list-inside space-y-3 text-slate-700 pl-4">
+                    <li><strong>Man (Manusia):</strong> Faktor keterampilan, kedisiplinan, pelatihan, atau kelelahan operator.</li>
+                    <li><strong>Machine (Mesin):</strong> Kondisi keausan alat, akurasi setting parameter, atau gangguan mekanis.</li>
+                    <li><strong>Material (Bahan Baku):</strong> Kualitas bahan baku, spesifikasi supplier, atau penyimpanan material.</li>
+                    <li><strong>Method (Metode):</strong> SOP kerja, instruksi kerja (WI), atau tahapan proses yang kurang efektif.</li>
+                    <li><strong>Measurement (Pengukuran):</strong> Keakuratan alat ukur, kalibrasi, atau metode inspeksi kualitas.</li>
+                    <li><strong>Mother Nature (Lingkungan):</strong> Suhu ruangan, kelembaban, atau kebersihan area kerja.</li>
+                </ul>
+            </div>
+        </article>
+
+        <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 md:p-12 text-center text-white shadow-xl mt-16 mb-8">
+            <span class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Praktis & Siap Pakai</span>
+            <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-3 font-serif-book">Download Template Fishbone & RCA Excel</h3>
+            <p class="text-slate-300 text-sm md:text-base max-w-xl mx-auto mb-8 leading-relaxed">
+                Gunakan format lembar kerja analisis akar masalah untuk mengaudit kendala operasional secara profesional.
+            </p>
+            <a href="#" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition duration-200 text-base cursor-pointer">
+                Download Template Fishbone Sekarang
+            </a>
+        </div>
+    </main>
+
+    <div id="authorModal" class="fixed inset-0 z-50 hidden bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 md:p-8 shadow-2xl relative text-center">
+            <button onclick="closeModal('authorModal')" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 font-bold text-xl cursor-pointer">&times;</button>
+            <h3 class="text-2xl font-bold text-slate-900 mb-4 font-serif-book">Tentang Penulis</h3>
+            <p class="text-slate-700 text-sm md:text-base leading-relaxed mb-4">
+                <strong>Sukardi</strong> adalah praktisi manufaktur yang mendirikan platform <em>Otoritas Kerja</em> sebagai pusat solusi operasional dan panduan praktis bagi para profesional industri.
+            </p>
+        </div>
+    </div>
+
+    <footer class="bg-white border-t border-slate-200 py-8 text-center text-xs text-slate-500">
+        <p>&copy; 2026 Sukardi. Hak Cipta Dilindungi.</p>
+    </footer>
+
+    <script>
+        function openModal(id) { document.getElementById(id).classList.remove('hidden'); }
+        function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
+        window.onclick = function(e) { if (e.target.classList.contains('fixed')) e.target.classList.add('hidden'); }
+    </script>
+</body>
+</html>
