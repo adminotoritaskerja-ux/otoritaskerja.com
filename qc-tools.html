@@ -3,62 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 1. JUDUL KHUSUS ARTIKEL -->
     <title>Panduan Praktis 7QC Tools untuk Analisis & Pengendalian Mutu Pabrik - Otoritas Kerja</title>
-    <!-- Masukkan stylesheet / CSS utama website Anda di sini -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- 2. DESKRIPSI KHUSUS ARTIKEL -->
+    <meta name="description" content="Pelajari 7 Basic Quality Control Tools (7QC Tools) sebagai senjata ampuh bagi engineer dan supervisor untuk menekan angka produk cacat di lantai pabrik.">
+
+    <!-- 3. PREVIEW / THUMBNAIL KHUSUS UNTUK WHATSAPP / SOSMED -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://otoritaskerja.com/qc-tools.html">
+    <meta property="og:title" content="Panduan Praktis 7QC Tools untuk Analisis & Pengendalian Mutu Pabrik - Otoritas Kerja">
+    <meta property="og:description" content="Pelajari 7 Basic Quality Control Tools (7QC Tools) sebagai senjata ampuh bagi engineer dan supervisor untuk menekan angka produk cacat di lantai pabrik.">
+    <meta property="og:image" content="https://otoritaskerja.com/qc.jfif">
+
+    <!-- FAVICON & APPLE TOUCH ICON -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="qc.jfif">
+
+    <!-- Tailwind CSS CDN & Custom Font -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
+        .font-serif-book {
+            font-family: 'Merriweather', serif;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
 </head>
-<body>
-    <!-- Header / Navigasi Website -->
-    <header>
-        <!-- Sesuaikan dengan header utama website Anda -->
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+
+    <!-- Header Navigasi Atas -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="font-bold text-slate-900 tracking-tight text-lg hover:text-blue-600 transition">Otoritas Kerja</a>
+            <nav class="flex items-center space-x-6 text-sm font-medium">
+                <a href="index.html" class="text-slate-600 hover:text-slate-900 transition">Beranda</a>
+                <button onclick="openModal('authorModal')" class="text-slate-600 hover:text-slate-900 transition cursor-pointer">Tentang Penulis</button>
+            </nav>
+        </div>
     </header>
 
-    <main class="container" style="padding: 30px 15px; max-width: 800px; margin: 0 auto;">
-        <article>
-            <div style="margin-bottom: 15px;">
-                <span style="display: inline-block; font-size: 0.75rem; padding: 3px 10px; background-color: #1b4965; color: #ffffff; border-radius: 4px; font-weight: 500;">Free Template</span>
-                <span style="font-size: 0.85rem; color: var(--text-muted); margin-left: 10px;"><i class="fa-regular fa-calendar"></i> 05 Okt 2026</span>
+    <!-- Konten Utama Artikel -->
+    <main class="max-w-3xl mx-auto px-6 py-12 space-y-12 flex-grow">
+
+        <!-- Banner / Cover & Judul Utama -->
+        <section class="text-center pb-8 border-b border-slate-200 space-y-6">
+            <div class="max-w-lg mx-auto shadow-xl rounded-xl overflow-hidden border border-slate-200 bg-white p-2">
+                <img src="qc.jfif" alt="7QC Tools" class="w-full h-auto md:max-h-[380px] object-cover rounded-lg">
             </div>
 
-            <h1 style="font-size: 1.8rem; line-height: 1.3; margin-bottom: 20px; color: var(--text-main);">Panduan Praktis 7QC Tools untuk Analisis & Pengendalian Mutu Pabrik</h1>
+            <div>
+                <span class="bg-emerald-100 text-emerald-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Free Template & Modul Mutu</span>
+                <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-4 mb-3 font-serif-book">
+                    Panduan Praktis 7QC Tools untuk Analisis & Pengendalian Mutu Pabrik
+                </h1>
+                <p class="text-slate-600 italic text-base md:text-lg max-w-xl mx-auto font-serif-book">
+                    "Strategi sistematis mengendalikan kualitas, menekan produk cacat, dan mengoptimalkan performa lini produksi secara akurat."
+                </p>
+                <div class="text-xs text-slate-400 mt-4">Oleh Sukardi &bull; 05 Okt 2026</div>
+            </div>
+        </section>
+
+        <!-- ISI ARTIKEL -->
+        <article class="space-y-8">
             
-            <div style="margin-bottom: 25px;">
-                <img src="qc.jfif" alt="7QC Tools" style="width: 100%; border-radius: 8px; display: block;">
+            <!-- Pengantar -->
+            <div class="space-y-4">
+                <h2 class="text-2xl font-bold text-slate-900 font-serif-book">Pentingnya 7QC Tools di Lantai Produksi</h2>
+                <p class="text-slate-700 leading-relaxed text-base md:text-lg">
+                    Dalam dunia manufaktur modern, pengendalian kualitas (<i>Quality Control</i>) adalah fondasi utama untuk menekan angka <i>defective product</i> (produk cacat) dan menjaga efisiensi lini produksi. Salah satu senjata paling ampuh yang wajib dikuasai oleh setiap engineer, supervisor, dan praktisi mutu adalah <strong>7 Basic Quality Control Tools (7QC Tools)</strong>.
+                </p>
             </div>
 
-            <div class="article-content" style="line-height: 1.7; font-size: 1rem; color: #333;">
-                <p>Dalam dunia manufaktur modern, pengendalian kualitas (*Quality Control*) adalah fondasi utama untuk menekan angka *defective product* (produk cacat) dan menjaga efisiensi lini produksi. Salah satu senjata paling ampuh yang wajib dikuasai oleh setiap engineer, supervisor, dan praktisi mutu adalah **7 Basic Quality Control Tools (7QC Tools)**.</p>
+            <!-- Daftar 7QC Tools -->
+            <div class="space-y-4 pt-4">
+                <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Metodologi Mutu</span>
+                <h3 class="text-xl font-bold text-slate-900 font-serif-book">Apa Saja 7 Alat Pengendali Mutu Ini?</h3>
                 
-                <h3 style="margin-top: 25px; margin-bottom: 10px; font-size: 1.3rem;">Apa Saja 7 Alat Pengendali Mutu Ini?</h3>
-                <ol style="padding-left: 20px; margin-bottom: 20px;">
-                    <li style="margin-bottom: 8px;"><strong>Check Sheet (Lembar Periksa):</strong> Alat pengumpulan data sederhana untuk mencatat frekuensi kemunculan masalah di lantai produksi.</li>
-                    <li style="margin-bottom: 8px;"><strong>Pareto Chart (Diagram Pareto):</strong> Grafik batang dan garis kumulatif untuk mengidentifikasi 20% penyebab utama yang menimbulkan 80% masalah (Prinsip Pareto).</li>
-                    <li style="margin-bottom: 8px;"><strong>Cause and Effect Diagram (Fishbone / Ishikawa):</strong> Diagram tulang ikan untuk memetakan akar masalah berdasarkan kategori <em>Man, Machine, Method, Material, Measurement,</em> dan <em>Environment</em>.</li>
-                    <li style="margin-bottom: 8px;"><strong>Control Chart (Peta Kendali):</strong> Grafik garis statistik untuk memantau apakah proses produksi berada dalam batas kendali yang stabil.</li>
-                    <li style="margin-bottom: 8px;"><strong>Histogram:</strong> Menunjukkan distribusi frekuensi dari data numerik untuk melihat variasi proses.</li>
-                    <li style="margin-bottom: 8px;"><strong>Scatter Diagram (Diagram Pencar):</strong> Menganalisis korelasi atau hubungan antara dua variabel berbeda di lini produksi.</li>
-                    <li style="margin-bottom: 8px;"><strong>Stratification (Stratifikasi):</strong> Mengelompokkan data ke dalam kelompok-kelompok yang lebih spesifik agar pola tersembunyi dapat terlihat jelas.</li>
-                </ol>
+                <div class="space-y-4 my-6">
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
+                        <div class="font-bold text-slate-900 text-lg">1. Check Sheet (Lembar Periksa)</div>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Alat pengumpulan data sederhana untuk mencatat frekuensi kemunculan masalah di lantai produksi secara terstruktur.
+                        </p>
+                    </div>
 
-                <h3 style="margin-top: 25px; margin-bottom: 10px; font-size: 1.3rem;">Kesimpulan</h3>
-                <p>Dengan menguasai dan menerapkan 7QC Tools secara konsisten, tim di lantai pabrik tidak hanya dapat menyelesaikan masalah dengan cepat, tetapi juga mampu melakukan tindakan preventif secara sistematis.</p>
-            </div>
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
+                        <div class="font-bold text-slate-900 text-lg">2. Pareto Chart (Diagram Pareto)</div>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Grafik batang dan garis kumulatif untuk mengidentifikasi 20% penyebab utama yang menimbulkan 80% masalah (Prinsip Pareto).
+                        </p>
+                    </div>
 
-            <!-- Tombol Aksi / Download Template jika ada -->
-            <div style="margin-top: 40px; padding: 20px; background-color: #f8f9fa; border-radius: 8px; border: 1px solid #e5e7eb; display: flex; justify-content: space-between; align-items: center;">
-                <div>
-                    <h4 style="margin: 0 0 5px 0; font-size: 1rem;">Butuh Template Analisis Mutu?</h4>
-                    <p style="margin: 0; font-size: 0.85rem; color: var(--text-muted);">Gunakan panduan dan lembar kerja standar untuk efisiensi pabrik Anda.</p>
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
+                        <div class="font-bold text-slate-900 text-lg">3. Cause and Effect Diagram (Fishbone / Ishikawa)</div>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Diagram tulang ikan untuk memetakan akar masalah berdasarkan kategori <i>Man, Machine, Method, Material, Measurement,</i> dan <i>Environment</i>.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
+                        <div class="font-bold text-slate-900 text-lg">4. Control Chart (Peta Kendali)</div>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Grafik garis statistik untuk memantau apakah proses produksi berada dalam batas kendali yang stabil dari waktu ke waktu.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
+                        <div class="font-bold text-slate-900 text-lg">5. Histogram</div>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Menunjukkan distribusi frekuensi dari data numerik untuk melihat variasi dan sebaran proses di lapangan.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
+                        <div class="font-bold text-slate-900 text-lg">6. Scatter Diagram (Diagram Pencar)</div>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Menganalisis korelasi atau hubungan sebab-akibat antara dua variabel berbeda di lini produksi.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
+                        <div class="font-bold text-slate-900 text-lg">7. Stratification (Stratifikasi)</div>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Mengelompokkan data ke dalam kategori atau kelompok yang lebih spesifik agar pola tersembunyi dapat terlihat jelas.
+                        </p>
+                    </div>
                 </div>
-                <a href="index.html" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.9rem; background-color: #1b4965; color: #fff; text-decoration: none; border-radius: 4px;">Kembali ke Beranda <i class="fa-solid fa-arrow-left"></i></a>
             </div>
+
+            <blockquote class="border-l-4 border-emerald-600 pl-4 py-3 my-6 bg-emerald-50/50 italic text-slate-700">
+                <strong>Kesimpulan Praktisi:</strong><br>
+                Dengan menguasai dan menerapkan 7QC Tools secara konsisten, tim di lantai pabrik tidak hanya dapat menyelesaikan masalah dengan cepat, tetapi juga mampu melakukan tindakan preventif secara sistematis.
+            </blockquote>
+
         </article>
+
+        <!-- Kotak Penawaran Kembali / Beranda -->
+        <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 md:p-12 text-center text-white shadow-xl mt-16 mb-8">
+            <span class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Eksplorasi Modul Lain</span>
+            <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-3 font-serif-book">Butuh Template & Panduan Mutu Lainnya?</h3>
+            <p class="text-slate-300 text-sm md:text-base max-w-xl mx-auto mb-8 leading-relaxed">
+                Temukan berbagai perangkat kerja, kalkulator efisiensi, dan lembar periksa standar untuk meningkatkan produktivitas pabrik Anda.
+            </p>
+            <a href="index.html" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition duration-200 text-base cursor-pointer">
+                Kembali ke Beranda <i class="fa-solid fa-arrow-left ml-2"></i>
+            </a>
+        </div>
+
     </main>
 
-    <!-- Footer Website -->
-    <footer>
-        <!-- Sesuaikan dengan footer utama website Anda -->
+    <!-- Modal Tentang Penulis -->
+    <div id="authorModal" class="fixed inset-0 z-50 hidden bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 md:p-8 shadow-2xl relative text-center">
+            <button onclick="closeModal('authorModal')" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 font-bold text-xl cursor-pointer">&times;</button>
+            <h3 class="text-2xl font-bold text-slate-900 mb-4 font-serif-book">Tentang Penulis</h3>
+            <p class="text-slate-700 text-sm md:text-base leading-relaxed mb-4">
+                <strong>Sukardi</strong> adalah seorang praktisi manufaktur yang meniti perjalanan kariernya secara bertahap langsung dari lantai produksi. Berbekal ketekunan, semangat belajar yang tinggi, serta pengalaman nyata menghadapi dinamika operasional harian, ia memahami betul denyut nadi dan tantangan yang dihadapi oleh para pekerja di lini depan.
+            </p>
+            <p class="text-slate-700 text-sm md:text-base leading-relaxed">
+                Melalui platform <em>Otoritas Kerja</em>, beliau mendedikasikan pengalaman praktisnya untuk berbagi perangkat kerja, SOP, dan metodologi peningkatan efisiensi manufaktur.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-8 text-center text-xs text-slate-500">
+        <p>&copy; 2026 Sukardi. Hak Cipta Dilindungi.</p>
     </footer>
+
+    <!-- Skrip Modal Interaktif -->
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('fixed')) {
+                event.target.classList.add('hidden');
+            }
+        }
+    </script>
 </body>
 </html>
