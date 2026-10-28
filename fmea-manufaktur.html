@@ -31,11 +31,188 @@
         body {
             font-family: 'Inter', sans-serif;
         }
-    </style>
-</head>
+    
+<style>
+:root {
+  --bg-body: #f8fafc;
+  --bg-card: #ffffff;
+  --border-color: #e2e8f0;
+  --primary-blue: #0284c7;
+  --primary-dark: #0f172a;
+  --accent-orange: #ea580c;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --badge-free: #059669;
+  --badge-pro: #d97706;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  max-width: 100%;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* =========================================================
+   HEADER 3-TIER PORTAL NAVY STICKY
+   ========================================================= */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+.top-header-white {
+  background-color: #ffffff;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+}
+
+.top-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.logo-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logo-svg {
+  height: 44px;
+  width: auto;
+}
+
+.brand-title {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--primary-dark, #0f172a);
+}
+
+.brand-title span {
+  color: var(--primary-blue, #0284c7);
+}
+
+.main-navbar-navy {
+  background-color: var(--primary-dark, #0f172a);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-x: auto;
+}
+
+.nav-menu li a {
+  display: block;
+  padding: 12px 22px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a.active {
+  background-color: var(--primary-blue, #0284c7);
+}
+
+.nav-menu li a.btn-admin-nav {
+  background-color: #1e293b;
+  margin-left: auto;
+}
+
+/* TICKER & BADGE */
+.ticker-bar-white {
+  background-color: #ffffff;
+  border-top: 1px solid #cbd5e1;
+  border-bottom: 2px solid var(--border-color, #e2e8f0);
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.ticker-container {
+  display: flex;
+  align-items: center;
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.badge-skew-container {
+  background-color: var(--primary-dark, #0f172a);
+  color: #ffffff;
+  padding: 9px 22px 9px 16px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  white-space: nowrap;
+  transform: skewX(-15deg);
+  transform-origin: left bottom;
+  margin-left: -12px;
+  border-right: 5px solid var(--accent-orange, #ea580c);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 10;
+  box-shadow: 4px 0 10px rgba(0,0,0,0.2);
+}
+
+.badge-text-inner {
+  display: inline-block;
+  transform: skewX(15deg);
+  padding-left: 10px;
+}
+
+.ticker-marquee-box {
+  flex-grow: 1;
+  font-size: 0.88rem;
+  color: var(--primary-dark, #0f172a);
+  font-weight: 600;
+  padding-left: 20px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.ticker-marquee-box marquee {
+  display: block;
+  vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+  .logo-svg { height: 36px; }
+  .brand-title { font-size: 1.3rem; }
+  .nav-menu li a { padding: 10px 14px; font-size: 0.82rem; }
+  .badge-skew-container { padding: 7px 16px 7px 12px; font-size: 0.72rem; }
+  .ticker-marquee-box { font-size: 0.8rem; padding-left: 16px; }
+}
+</style>
+    </head>
 <body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
     
-<!-- HEADER UTAMA 3-TIER + TICKER (HANYA MENGGANTI BAGIAN ATAS SAJA) -->
+    <!-- HEADER UTAMA 3-TIER PORTAL -->
 <header class="site-header">
   <!-- TIER 1: LOGO HEADER PUTIH -->
   <div class="top-header-white">
@@ -61,7 +238,7 @@
     </ul>
   </nav>
 
-  <!-- TIER 3: TICKER BAR DENGAN JAJAR GENJANG EMAS -->
+  <!-- TIER 3: TICKER BAR / SUB-HEADER -->
   <div class="ticker-bar-white">
     <div class="ticker-container">
       <div class="badge-skew-container">
@@ -75,7 +252,6 @@
     </div>
   </div>
 </header>
-
 
     <!-- Konten Utama Artikel -->
     <main class="max-w-3xl mx-auto px-6 py-12 space-y-12 flex-grow">
