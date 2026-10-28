@@ -62,15 +62,13 @@
         }
 
         /* =========================================================
-           HEADER 3-TIER FULL RESPONSIVE FIX (TIDAK TERPOTONG DI HP)
+           HEADER 3-TIER STICKY AMAN & PROGESIF
            ========================================================= */
         .site-header {
             position: sticky;
             top: 0;
             z-index: 1000;
-            width: 100vw !important;
-            margin-left: calc(-50vw + 50%);
-            margin-right: calc(-50vw + 50%);
+            width: 100%;
             background-color: #ffffff;
             box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
         }
@@ -87,7 +85,8 @@
             align-items: center;
             justify-content: space-between;
             width: 100%;
-            max-width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 0;
         }
 
@@ -122,10 +121,10 @@
             display: flex;
             align-items: center;
             list-style: none;
-            margin: 0;
+            margin: 0 auto;
+            max-width: 1200px;
             padding: 0;
             overflow-x: auto;
-            width: 100%;
         }
 
         .nav-menu li a {
@@ -165,10 +164,10 @@
         .ticker-container {
             display: flex;
             align-items: center;
-            width: 100% !important;
-            max-width: 100% !important;
-            padding: 0 !important;
-            margin: 0 !important;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
         }
 
         .badge-skew-container {
@@ -180,7 +179,7 @@
             white-space: nowrap;
             transform: skewX(-15deg);
             transform-origin: left bottom;
-            margin-left: -12px;
+            margin-left: 0;
             border-right: 5px solid var(--accent-orange, #ea580c);
             border-left: none !important;
             flex-shrink: 0;
@@ -222,7 +221,7 @@
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
     
-    <!-- HEADER UTAMA 3-TIER PORTAL -->
+    <!-- HEADER UTAMA 3-TIER PORTAL (TERKUNCI / STICKY DI ATAS) -->
     <header class="site-header">
         <!-- TIER 1: LOGO HEADER PUTIH -->
         <div class="top-header-white">
