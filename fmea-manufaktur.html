@@ -62,6 +62,13 @@
             line-height: 1.6;
         }
 
+        /* PENGAMAN GAMBAR AGAR TIDAK MELUBER DI HP */
+        article img, main img {
+            max-width: 100% !important;
+            height: auto !important;
+            display: block;
+        }
+
         /* =========================================================
            HEADER UTAMA STICKY & FULL WIDTH AMAN DI HP & PC
            ========================================================= */
@@ -216,17 +223,7 @@
             vertical-align: middle;
         }
 
-        /* KHUSUS HP: PAKSA HEADER FULL WIDTH TANPA ADA BATASAN KONTainer */
         @media (max-width: 768px) {
-            .site-header {
-                position: fixed !important;
-                top: 0;
-                left: 0;
-                width: 100vw !important;
-            }
-            body {
-                padding-top: 135px; /* Memberi ruang agar artikel tidak tertutup header fixed */
-            }
             .logo-svg { height: 36px; }
             .brand-title { font-size: 1.3rem; }
             .nav-menu li a { padding: 10px 14px; font-size: 0.82rem; }
