@@ -25,235 +25,230 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
+        
         .font-serif-book {
             font-family: 'Merriweather', serif;
         }
-        body {
-            font-family: 'Inter', sans-serif;
+
+        :root {
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --border-color: #e2e8f0;
+            --primary-blue: #0284c7;
+            --primary-dark: #0f172a;
+            --accent-orange: #ea580c;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --badge-free: #059669;
+            --badge-pro: #d97706;
         }
 
-:root {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  --bg-body: #f8fafc;
-  --bg-card: #ffffff;
-  --border-color: #e2e8f0;
-  --primary-blue: #0284c7;
-  --primary-dark: #0f172a;
-  --accent-orange: #ea580c;
-  --text-main: #1e293b;
-  --text-muted: #64748b;
-  --badge-free: #059669;
-  --badge-pro: #d97706;
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-html, body {
-    max-width: 100%;
-}
+        html, body {
+            max-width: 100%;
+        }
 
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-body);
-    color: var(--text-main);
-    line-height: 1.6;
-}
-/* =========================================================
-   HEADER 3-TIER PORTAL NAVY STICKY (BERSIH & FINAL)
-   ========================================================= */
-.site-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background-color: #ffffff;
-    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
-}
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
 
-    .top-header-white {
-  background-color: #ffffff;
-  padding: 12px 0; /* Mengatur ruang putih atas dan bawah logo */
-  border-bottom: 1px solid var(--border-color, #e2e8f0);
-    }
-    .top-header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-left: 16px; /* Ditambahkan jarak kiri di sini agar logo tidak mepet */
-      padding-right: 16px; /* Opsional untuk kanan */
-    }
+        /* =========================================================
+           HEADER 3-TIER PORTAL NAVY STICKY
+           ========================================================= */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+        }
 
-    .logo-brand {
-      display: flex; /* Diperbaiki dari 'flux' ke 'flex' */
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-    }
+        .top-header-white {
+            background-color: #ffffff;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color, #e2e8f0);
+        }
 
-    .logo-svg {
-      height: 44px;
-      width: auto;
-    }
+        .top-header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
 
-.brand-title {
-    font-size: 1.65rem;
-    font-weight: 800;
-    color: var(--primary-dark, #0f172a);
-}
+        .logo-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
 
-.brand-title span {
-    color: var(--primary-blue, #0284c7);
-}
+        .logo-svg {
+            height: 44px;
+            width: auto;
+        }
 
-.main-navbar-navy {
-    background-color: var(--primary-dark, #0f172a);
-}
+        .brand-title {
+            font-size: 1.65rem;
+            font-weight: 800;
+            color: var(--primary-dark, #0f172a);
+        }
 
-.nav-menu {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    overflow-x: auto;
-}
+        .brand-title span {
+            color: var(--primary-blue, #0284c7);
+        }
 
-.nav-menu li a {
-    display: block;
-    padding: 12px 22px;
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
-    white-space: nowrap;
-}
+        .main-navbar-navy {
+            background-color: var(--primary-dark, #0f172a);
+        }
 
-.nav-menu li a:hover,
-.nav-menu li a.active {
-    background-color: var(--primary-blue, #0284c7);
-}
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            overflow-x: auto;
+        }
 
-.nav-menu li a.btn-admin-nav {
-    background-color: #1e293b;
-    margin-left: auto;
-}
-/* =========================================================
-   PERBAIKAN TICKER & PEMBATAS GARIS TIPIS
-   ========================================================= */
-.ticker-bar-white {
-    background-color: #ffffff;
-    border-top: 1px solid #cbd5e1; /* Garis pembatas tipis agar terpisah tegas dari menu navy di atasnya */
-    border-bottom: 2px solid var(--border-color, #e2e8f0);
-    padding: 0;
-    overflow: hidden;
-    position: relative;
-}
+        .nav-menu li a {
+            display: block;
+            padding: 12px 22px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
 
-.ticker-container {
-    display: flex;
-    align-items: center;
-    max-width: 100% !important;
-    padding: 0 !important;
-    margin: 0 !important;
-}
+        .nav-menu li a:hover,
+        .nav-menu li a.active {
+            background-color: var(--primary-blue, #0284c7);
+        }
 
-/* BADGE JAJARAN GENJANG MEPET KIRI DENGAN GARIS EMAS TEGAS */
-.badge-skew-container {
-    background-color: var(--primary-dark, #0f172a);
-    color: #ffffff;
-    padding: 9px 22px 9px 16px;
-    font-size: 0.82rem;
-    font-weight: 800;
-    white-space: nowrap;
-    transform: skewX(-15deg);
-    transform-origin: left bottom;
-    margin-left: -12px; /* Mepet mentok ke kiri layar */
-    border-right: 5px solid var(--accent-orange, #ea580c); /* Aksen garis kuning emas */
-    border-left: none !important;
-    flex-shrink: 0;
-    position: relative;
-    z-index: 10;
-    box-shadow: 4px 0 10px rgba(0,0,0,0.2);
-}
+        .nav-menu li a.btn-admin-nav {
+            background-color: #1e293b;
+            margin-left: auto;
+        }
 
-.badge-text-inner {
-    display: inline-block;
-    transform: skewX(15deg);
-    padding-left: 10px;
-}
+        /* =========================================================
+           TICKER & BADGE JAJARAN GENJANG
+           ========================================================= */
+        .ticker-bar-white {
+            background-color: #ffffff;
+            border-top: 1px solid #cbd5e1;
+            border-bottom: 2px solid var(--border-color, #e2e8f0);
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+        }
 
-.ticker-marquee-box {
-    flex-grow: 1;
-    font-size: 0.88rem;
-    color: var(--primary-dark, #0f172a);
-    font-weight: 600;
-    padding-left: 20px; /* Jarak pas agar teks mengalir mulus dari balik sudut miring emas */
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-}
+        .ticker-container {
+            display: flex;
+            align-items: center;
+            max-width: 100% !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
 
-.ticker-marquee-box marquee {
-    display: block;
-    vertical-align: middle;
-}
+        .badge-skew-container {
+            background-color: var(--primary-dark, #0f172a);
+            color: #ffffff;
+            padding: 9px 22px 9px 16px;
+            font-size: 0.82rem;
+            font-weight: 800;
+            white-space: nowrap;
+            transform: skewX(-15deg);
+            transform-origin: left bottom;
+            margin-left: -12px;
+            border-right: 5px solid var(--accent-orange, #ea580c);
+            border-left: none !important;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 10;
+            box-shadow: 4px 0 10px rgba(0,0,0,0.2);
+        }
 
-@media (max-width: 768px) {
-    .logo-img { height: 36px; }
-    .brand-title { font-size: 1.3rem; }
-    .nav-menu li a { padding: 10px 14px; font-size: 0.82rem; }
-    .badge-skew-container { padding: 7px 16px 7px 12px; font-size: 0.72rem; }
-    .ticker-marquee-box { font-size: 0.8rem; padding-left: 16px; }
-}
+        .badge-text-inner {
+            display: inline-block;
+            transform: skewX(15deg);
+            padding-left: 10px;
+        }
 
-    </div>
-</section>
+        .ticker-marquee-box {
+            flex-grow: 1;
+            font-size: 0.88rem;
+            color: var(--primary-dark, #0f172a);
+            font-weight: 600;
+            padding-left: 20px;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
 
-    </head>
+        .ticker-marquee-box marquee {
+            display: block;
+            vertical-align: middle;
+        }
+
+        @media (max-width: 768px) {
+            .logo-svg { height: 36px; }
+            .brand-title { font-size: 1.3rem; }
+            .nav-menu li a { padding: 10px 14px; font-size: 0.82rem; }
+            .badge-skew-container { padding: 7px 16px 7px 12px; font-size: 0.72rem; }
+            .ticker-marquee-box { font-size: 0.8rem; padding-left: 16px; }
+        }
+    </style>
+</head>
 <body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
     
     <!-- HEADER UTAMA 3-TIER PORTAL -->
-<header class="site-header">
-  <!-- TIER 1: LOGO HEADER PUTIH -->
-  <div class="top-header-white">
-    <div class="top-header-inner">
-      <a href="index.html" class="logo-brand">
-        <!-- IMG Logo Perisai K -->
-        <img class="favicon.png" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M50 5L15 20V45C15 68 30 88 50 95C70 88 85 68 85 45V20L50 5Z" fill="#0F172A" stroke="#0284C7" stroke-width="4"/>
-          <path d="M35 32V68M35 50H45L58 32M45 50L60 68" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <div class="brand-title">Otoritas<span>Kerja</span></div>
-      </a>
-    </div>
-  </div>
+    <header class="site-header">
+        <!-- TIER 1: LOGO HEADER PUTIH -->
+        <div class="top-header-white">
+            <div class="top-header-inner">
+                <a href="index.html" class="logo-brand">
+                    <!-- IMG Logo Asli Otoritas Kerja -->
+                    <img src="logo.png" alt="Otoritas Kerja" class="logo-svg">
+                    <div class="brand-title">Otoritas<span>Kerja</span></div>
+                </a>
+            </div>
+        </div>
 
-  <!-- TIER 2: NAVBAR MENU NAVY -->
-  <nav class="main-navbar-navy">
-    <ul class="nav-menu">
-      <li><a href="index.html">BERANDA</a></li>
-      <li><a href="tentang.html">TENTANG</a></li>
-      <li><a href="kontak.html">KONTAK</a></li>
-      <li><a href="admin.html" class="btn-admin-nav">ADMIN</a></li>
-    </ul>
-  </nav>
+        <!-- TIER 2: NAVBAR MENU NAVY -->
+        <nav class="main-navbar-navy">
+            <ul class="nav-menu">
+                <li><a href="index.html">BERANDA</a></li>
+                <li><a href="tentang.html">TENTANG</a></li>
+                <li><a href="kontak.html">KONTAK</a></li>
+                <li><a href="admin.html" class="btn-admin-nav">ADMIN</a></li>
+            </ul>
+        </nav>
 
-  <!-- TIER 3: TICKER BAR / SUB-HEADER -->
-  <div class="ticker-bar-white">
-    <div class="ticker-container">
-      <div class="badge-skew-container">
-        <span class="badge-text-inner">MODUL FMEA</span>
-      </div>
-      <div class="ticker-marquee-box">
-        <marquee behavior="scroll" direction="left" scrollamount="4">
-          Panduan Praktis Failure Mode and Effects Analysis untuk Efisiensi & Kendali Mutu Manufaktur
-        </marquee>
-      </div>
-    </div>
-  </div>
-</header>
+        <!-- TIER 3: TICKER BAR / SUB-HEADER -->
+        <div class="ticker-bar-white">
+            <div class="ticker-container">
+                <div class="badge-skew-container">
+                    <span class="badge-text-inner">MODUL FMEA</span>
+                </div>
+                <div class="ticker-marquee-box">
+                    <marquee behavior="scroll" direction="left" scrollamount="4">
+                        Panduan Praktis Failure Mode and Effects Analysis untuk Efisiensi & Kendali Mutu Manufaktur
+                    </marquee>
+                </div>
+            </div>
+        </div>
+    </header>
 
     <!-- Konten Utama Artikel -->
     <main class="max-w-3xl mx-auto px-6 py-12 space-y-12 flex-grow">
@@ -271,28 +266,27 @@ body {
             </div>
 
             <!-- Author Box Sukardi, S.T. dengan Foto -->
-<div class="flex items-center space-x-4 p-4 bg-white rounded-xl border border-slate-200 shadow-sm">
-    <!-- Ganti "foto-sukardi.jpg" dengan nama file foto Anda yang sebenarnya -->
-    <img src="foto-sukardi.jpg" alt="Sukardi, S.T." class="w-12 h-12 rounded-full object-cover flex-shrink-0 border border-slate-200 shadow-inner">
-    
-    <div class="text-xs md:text-sm">
-        <div class="font-bold text-slate-900 text-base">Sukardi, S.T.</div>
-        <div class="text-slate-600">Praktisi Manufaktur & Industrial Engineer</div>
-        <div class="text-slate-400 text-xs mt-0.5">Ditinjau & Dipublikasikan: 03 Okt 2026 &bull; 8 min baca</div>
-    </div>
-</div>
+            <div class="flex items-center space-x-4 p-4 bg-white rounded-xl border border-slate-200 shadow-sm cursor-pointer" onclick="openModal('authorModal')">
+                <img src="foto-sukardi.jpg" alt="Sukardi, S.T." class="w-12 h-12 rounded-full object-cover flex-shrink-0 border border-slate-200 shadow-inner">
+                <div class="text-xs md:text-sm">
+                    <div class="font-bold text-slate-900 text-base">Sukardi, S.T.</div>
+                    <div class="text-slate-600">Praktisi Manufaktur & Industrial Engineer</div>
+                    <div class="text-slate-400 text-xs mt-0.5">Ditinjau & Dipublikasikan: 03 Okt 2026 &bull; 8 min baca</div>
+                </div>
+            </div>
 
-        <!-- Banner Tampil Lepas Tanpa Bingkai -->
-        <div class="rounded-xl overflow-hidden shadow-md">
-            <img src="fmea-artikel.jpg" alt="Banner Artikel FMEA Manufaktur" class="w-full h-auto object-cover">
-        </div>
+            <!-- Banner Tampil Lepas Tanpa Bingkai -->
+            <div class="rounded-xl overflow-hidden shadow-md">
+                <img src="fmea-artikel.jpg" alt="Banner Artikel FMEA Manufaktur" class="w-full h-auto object-cover">
+            </div>
+        </section>
 
         <!-- ISI ARTIKEL -->
         <article class="space-y-8">
             <div class="space-y-4">
                 <h2 class="text-2xl font-bold text-slate-900 font-serif-book">Mengapa FMEA Penting di Lini Produksi?</h2>
                 <p class="text-slate-700 leading-relaxed text-base md:text-lg">
-                    Di dunia manufaktur—khususnya pada proses produksi hulu maupun hilir—kehilangan waktu produksi (<em>downtime</em>) dan tingginya produk cacat (<em>Not Good / NG</em>) adalah musuh utama efisiensi. Seringkali, tim produksi bertindak sebagai pemadam kebakaran: menunggu mesin rusak atau produk *reject* menumpuk, baru kemudian mencari solusi. Padahal, pendekatan reaktif ini membuang banyak biaya material dan tenaga kerja.
+                    Di dunia manufaktur—khususnya pada proses produksi hulu maupun hilir—kehilangan waktu produksi (<em>downtime</em>) dan tingginya produk cacat (<em>Not Good / NG</em>) adalah musuh utama efisiensi. Seringkali, tim produksi bertindak sebagai pemadam kebakaran: menunggu mesin rusak atau produk <em>reject</em> menumpuk, baru kemudian mencari solusi. Padahal, pendekatan reaktif ini membuang banyak biaya material dan tenaga kerja.
                 </p>
                 <p class="text-slate-700 leading-relaxed text-base md:text-lg">
                     <em>Failure Mode and Effects Analysis</em> (FMEA) hadir sebagai alat pencegahan proaktif. Melalui metode ini, kita memetakan potensi kegagalan sebelum benar-benar terjadi di lantai produksi, mengevaluasi seberapa parah dampaknya, dan menutup celah risikonya sejak dini.
@@ -303,7 +297,7 @@ body {
                 <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Langkah 1</span>
                 <h3 class="text-xl font-bold text-slate-900 font-serif-book">Memetakan Potensi Mode Kegagalan (Failure Modes)</h3>
                 <p class="text-slate-700 leading-relaxed text-base md:text-lg">
-                    Langkah awal penyusunan FMEA adalah mengurai setiap tahapan proses kerja secara rinci. Sebagai ilustrasi, tahapan umum dalam proses produksi meliputi penyiapan material atau bahan baku (*incoming preparation*), proses utama mesin (*machining/processing*), perakitan atau *finishing*, hingga pengemasan akhir.
+                    Langkah awal penyusunan FMEA adalah mengurai setiap tahapan proses kerja secara rinci. Sebagai ilustrasi, tahapan umum dalam proses produksi meliputi penyiapan material atau bahan baku (<em>incoming preparation</em>), proses utama mesin (<em>machining/processing</em>), perakitan atau <em>finishing</em>, hingga pengemasan akhir.
                 </p>
                 <!-- Banner Alur FMEA -->
                 <div class="rounded-xl overflow-hidden shadow-md">
@@ -350,7 +344,7 @@ body {
                 </p>
             </div>
 
-            <!-- ================= TABEL SKOR SOD 1-10 (RESPONSIF AMAN DI HP) ================= -->
+            <!-- ================= TABEL SKOR SOD 1-10 ================= -->
             <div class="space-y-6 pt-6">
                 <h3 class="text-2xl font-bold text-slate-900 font-serif-book border-b pb-2">Matriks Kriteria Skor Nilai SOD (Skala 1 - 10)</h3>
                 <p class="text-slate-700 leading-relaxed text-sm md:text-base">
@@ -582,7 +576,7 @@ body {
                 Fokuskan tenaga perbaikan pada titik yang memiliki angka RPN tertinggi. Jangan mencoba memperbaiki segalanya sekaligus; selesaikan akar masalah yang paling berisiko menghentikan lini produksi.
             </blockquote>
 
-            <!-- ================= STUDI KASUS NETRAL ================= -->
+            <!-- ================= STUDI KASUS ================= -->
             <div class="space-y-4 pt-4">
                 <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Studi Kasus Umum</span>
                 <h3 class="text-2xl font-bold text-slate-900 font-serif-book">Contoh Penerapan FMEA pada Proses Perakitan Komponen Mekanikal</h3>
