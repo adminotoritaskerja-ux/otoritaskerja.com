@@ -51,6 +51,7 @@
 
         html, body {
             max-width: 100%;
+            overflow-x: hidden;
         }
 
         body {
@@ -61,13 +62,15 @@
         }
 
         /* =========================================================
-           HEADER 3-TIER PORTAL NAVY STICKY (FULL RESPONSIVE)
+           HEADER 3-TIER FULL RESPONSIVE FIX (TIDAK TERPOTONG DI HP)
            ========================================================= */
         .site-header {
             position: sticky;
             top: 0;
             z-index: 1000;
-            width: 100%;
+            width: 100vw !important;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
             background-color: #ffffff;
             box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
         }
@@ -75,7 +78,7 @@
         .top-header-white {
             background-color: #ffffff;
             width: 100%;
-            padding: 12px 0;
+            padding: 12px 16px;
             border-bottom: 1px solid var(--border-color, #e2e8f0);
         }
 
@@ -84,8 +87,8 @@
             align-items: center;
             justify-content: space-between;
             width: 100%;
-            padding-left: 16px;
-            padding-right: 16px;
+            max-width: 100%;
+            padding: 0;
         }
 
         .logo-brand {
@@ -122,6 +125,7 @@
             margin: 0;
             padding: 0;
             overflow-x: auto;
+            width: 100%;
         }
 
         .nav-menu li a {
