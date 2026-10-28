@@ -52,7 +52,7 @@
         html, body {
             width: 100%;
             max-width: 100%;
-            overflow-x: hidden; /* Mencegah layar bergeser ke samping */
+            overflow-x: hidden;
         }
 
         body {
@@ -62,19 +62,19 @@
             line-height: 1.6;
         }
 
-        /* PENGAMAN GAMBAR & KONTEN AGAR TIDAK MELUBER DI HP */
         img, picture, video, canvas, svg {
             max-width: 100%;
             height: auto;
         }
 
         /* =========================================================
-           HEADER UTAMA STICKY MURNI & FULL WIDTH AMAN
+           HEADER UTAMA STICKY MUTLAK & TERKUNCI DI ATAS
            ========================================================= */
         .site-header {
+            position: -webkit-sticky;
             position: sticky;
             top: 0;
-            z-index: 9999;
+            z-index: 99999;
             width: 100%;
             background-color: #ffffff;
             box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
@@ -161,7 +161,7 @@
         }
 
         /* =========================================================
-           TICKER & BADGE JAJARAN GENJANG
+           TICKER & BADGE JAJARAN GENJANG (WARNA BIRU KEBIRUAN "KERJA")
            ========================================================= */
         .ticker-bar-white {
             background-color: #ffffff;
@@ -183,7 +183,7 @@
         }
 
         .badge-skew-container {
-            background-color: var(--primary-dark, #0f172a);
+            background-color: var(--primary-blue, #0284c7); /* Diubah jadi biru senada tulisan "Kerja" */
             color: #ffffff;
             padding: 9px 20px 9px 12px;
             font-size: 0.82rem;
@@ -197,7 +197,7 @@
             flex-shrink: 0;
             position: relative;
             z-index: 10;
-            box-shadow: 4px 0 10px rgba(0,0,0,0.2);
+            box-shadow: 4px 0 10px rgba(0,0,0,0.15);
         }
 
         .badge-text-inner {
@@ -233,7 +233,7 @@
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
     
-    <!-- HEADER UTAMA 3-TIER PORTAL -->
+    <!-- HEADER UTAMA 3-TIER PORTAL (TERKUNCI / STICKY DI ATAS) -->
     <header class="site-header">
         <!-- TIER 1: LOGO HEADER PUTIH -->
         <div class="top-header-white">
