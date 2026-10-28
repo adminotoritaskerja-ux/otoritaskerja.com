@@ -36,11 +36,10 @@
             --border-color: #e2e8f0;
             --primary-blue: #0284c7;
             --primary-dark: #0f172a;
+            --industrial-blue: #0369a1; /* Biru pekat industrial */
             --accent-orange: #ea580c;
             --text-main: #1e293b;
             --text-muted: #64748b;
-            --badge-free: #059669;
-            --badge-pro: #d97706;
         }
 
         * {
@@ -49,10 +48,9 @@
             box-sizing: border-box;
         }
 
-        html, body {
-            width: 100%;
-            max-width: 100%;
-            overflow-x: hidden;
+        /* Memastikan root dan body murni untuk sistem sticky header yang stabil */
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -60,6 +58,7 @@
             background-color: var(--bg-body);
             color: var(--text-main);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         img, picture, video, canvas, svg {
@@ -68,10 +67,9 @@
         }
 
         /* =========================================================
-           HEADER UTAMA STICKY MUTLAK & TERKUNCI DI ATAS
+           HEADER UTAMA STICKY MUTLAK (DIJAMIN TIDAK IKUT KE-SCROLL)
            ========================================================= */
         .site-header {
-            position: -webkit-sticky;
             position: sticky;
             top: 0;
             z-index: 99999;
@@ -161,7 +159,7 @@
         }
 
         /* =========================================================
-           TICKER & BADGE JAJARAN GENJANG (WARNA BIRU KEBIRUAN "KERJA")
+           TICKER & BADGE JAJARAN GENJANG (BIRU PEKAT INDUSTRIAL)
            ========================================================= */
         .ticker-bar-white {
             background-color: #ffffff;
@@ -183,7 +181,7 @@
         }
 
         .badge-skew-container {
-            background-color: var(--primary-blue, #0284c7); /* Diubah jadi biru senada tulisan "Kerja" */
+            background-color: var(--industrial-blue, #0369a1); /* Warna biru pekat industrial */
             color: #ffffff;
             padding: 9px 20px 9px 12px;
             font-size: 0.82rem;
