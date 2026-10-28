@@ -63,7 +63,7 @@
         }
 
         /* =========================================================
-           HEADER UTAMA STICKY & FULL WIDTH PAS DI HP
+           HEADER UTAMA STICKY & FULL WIDTH AMAN DI HP & PC
            ========================================================= */
         .site-header {
             position: sticky;
@@ -130,7 +130,7 @@
         }
 
         .nav-menu::-webkit-scrollbar {
-            display: none; /* Sembunyikan scrollbar di HP agar bersih */
+            display: none;
         }
 
         .nav-menu li a {
@@ -216,7 +216,17 @@
             vertical-align: middle;
         }
 
+        /* KHUSUS HP: PAKSA HEADER FULL WIDTH TANPA ADA BATASAN KONTainer */
         @media (max-width: 768px) {
+            .site-header {
+                position: fixed !important;
+                top: 0;
+                left: 0;
+                width: 100vw !important;
+            }
+            body {
+                padding-top: 135px; /* Memberi ruang agar artikel tidak tertutup header fixed */
+            }
             .logo-svg { height: 36px; }
             .brand-title { font-size: 1.3rem; }
             .nav-menu li a { padding: 10px 14px; font-size: 0.82rem; }
@@ -227,7 +237,7 @@
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
     
-    <!-- HEADER UTAMA 3-TIER PORTAL (TERKUNCI / STICKY DI ATAS & FULL LAYAR HP) -->
+    <!-- HEADER UTAMA 3-TIER PORTAL -->
     <header class="site-header">
         <!-- TIER 1: LOGO HEADER PUTIH -->
         <div class="top-header-white">
