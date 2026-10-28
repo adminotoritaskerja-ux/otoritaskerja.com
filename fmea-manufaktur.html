@@ -8,14 +8,14 @@
     <title>Panduan Lengkap FMEA untuk Menekan Defek di Lantai Pabrik - Otoritas Kerja</title>
 
     <!-- 2. DESKRIPSI KHUSUS ARTIKEL -->
-    <meta name="description" content="Pelajari langkah-langkah penerapan FMEA untuk mengontrol cacat produksi di pabrik...">
+    <meta name="description" content="Pelajari langkah-langkah penerapan FMEA, matriks kriteria SOD (skor 1-10), studi kasus manufaktur, dan penentuan RPN untuk mengontrol cacat produksi di lantai pabrik.">
 
     <!-- 3. PREVIEW / THUMBNAIL KHUSUS UNTUK WHATSAPP / SOSMED -->
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://otoritaskerja.com/fmea.html">
     <meta property="og:title" content="Panduan Lengkap FMEA untuk Menekan Defek di Lantai Pabrik - Otoritas Kerja">
-    <meta property="og:description" content="Pelajari langkah-langkah penerapan FMEA untuk mengontrol cacat produksi di pabrik...">
-    <meta property="og:image" content="https://otoritaskerja.com/fmea.jpg"> <!-- Memakai gambar fmea.jpg sebagai thumbnail -->
+    <meta property="og:description" content="Panduan praktis implementasi FMEA beserta tabel skor SOD 1-10 dan contoh analisis kasus di lantai pabrik.">
+    <meta property="og:image" content="https://otoritaskerja.com/fmea.jpg">
 
     <!-- FAVICON LOGO PERISAI -->
     <link rel="icon" type="image/png" href="favicon.png">
@@ -49,26 +49,42 @@
     <!-- Konten Utama Artikel -->
     <main class="max-w-3xl mx-auto px-6 py-12 space-y-12 flex-grow">
 
+        <!-- HEADLINE ARTIKEL & E-E-A-T AUTHOR BADGE -->
+        <section class="space-y-4">
             <div>
-                <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-4 mb-3 font-serif-book">
+                <span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider mb-2">Quality & Process Improvement</span>
+                <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-2 mb-3 font-serif-book leading-tight">
                     Panduan Lengkap FMEA untuk Menekan Defek di Lantai Pabrik
                 </h1>
-                <p class="text-slate-600 italic text-base md:text-lg max-w-xl mx-auto font-serif-book">
+                <p class="text-slate-600 italic text-base md:text-lg max-w-xl font-serif-book">
                     "Strategi sistematis menganalisis potensi kegagalan proses produksi dan langkah pencegahannya secara efektif."
                 </p>
-                <div class="text-xs text-slate-400 mt-4">Oleh Sukardi &bull; 03 Okt 2026</div>
+            </div>
+
+            <!-- E-E-A-T Author Box (Penjelasan Kepakaran Penulis) -->
+            <div class="flex items-center space-x-4 p-4 bg-white rounded-xl border border-slate-200 shadow-sm">
+                <div class="w-12 h-12 rounded-full bg-slate-900 text-white font-bold flex items-center justify-center text-lg flex-shrink-0">
+                    S
+                </div>
+                <div class="text-xs md:text-sm">
+                    <div class="font-bold text-slate-900 text-base">Sukardi, S.T.</div>
+                    <div class="text-slate-600">Praktisi Manufaktur & Industrial Engineer</div>
+                    <div class="text-slate-400 text-xs mt-0.5">Ditinjau & Dipublikasikan: 03 Okt 2026 &bull; 8 min baca</div>
+                </div>
             </div>
         </section>
- <!-- Banner Tampil Lepas Tanpa Bingkai -->
-<div class="rounded-xl overflow-hidden shadow-md">
-    <img src="fmea-artikel.jpg" alt="Banner Artikel" class="w-full h-auto object-cover">
-</div>
+
+        <!-- Banner Tampil Lepas Tanpa Bingkai -->
+        <div class="rounded-xl overflow-hidden shadow-md">
+            <img src="fmea-artikel.jpg" alt="Banner Artikel FMEA Manufaktur" class="w-full h-auto object-cover">
+        </div>
+
         <!-- ISI ARTIKEL -->
         <article class="space-y-8">
             <div class="space-y-4">
                 <h2 class="text-2xl font-bold text-slate-900 font-serif-book">Mengapa FMEA Penting di Lini Produksi?</h2>
                 <p class="text-slate-700 leading-relaxed text-base md:text-lg">
-                    Di dunia manufaktur—khususnya pada proses produksi hulu maupun hilir—kehilangan waktu produksi (downtime) dan tingginya produk cacat (NG) adalah musuh utama efisiensi. Seringkali, tim produksi bertindak sebagai pemadam kebakaran: menunggu mesin rusak atau produk *reject* menumpuk, baru kemudian mencari solusi. Padahal, pendekatan reaktif ini membuang banyak biaya material dan tenaga kerja.
+                    Di dunia manufaktur—khususnya pada proses produksi hulu maupun hilir—kehilangan waktu produksi (<em>downtime</em>) dan tingginya produk cacat (<em>Not Good / NG</em>) adalah musuh utama efisiensi. Seringkali, tim produksi bertindak sebagai pemadam kebakaran: menunggu mesin rusak atau produk *reject* menumpuk, baru kemudian mencari solusi. Padahal, pendekatan reaktif ini membuang banyak biaya material dan tenaga kerja.
                 </p>
                 <p class="text-slate-700 leading-relaxed text-base md:text-lg">
                     <em>Failure Mode and Effects Analysis</em> (FMEA) hadir sebagai alat pencegahan proaktif. Melalui metode ini, kita memetakan potensi kegagalan sebelum benar-benar terjadi di lantai produksi, mengevaluasi seberapa parah dampaknya, dan menutup celah risikonya sejak dini.
@@ -81,10 +97,10 @@
                 <p class="text-slate-700 leading-relaxed text-base md:text-lg">
                     Langkah awal penyusunan FMEA adalah mengurai setiap tahapan proses kerja secara rinci. Sebagai ilustrasi, tahapan umum dalam proses produksi meliputi penyiapan material atau bahan baku (*incoming preparation*), proses utama mesin (*machining/processing*), perakitan atau *finishing*, hingga pengemasan akhir.
                 </p>
-                 <!-- Banner Tampil Lepas Tanpa Bingkai -->
-<div class="rounded-xl overflow-hidden shadow-md">
-    <img src="fmea-sod.jpg" alt="Banner Artikel" class="w-full h-auto object-cover">
-</div>
+                <!-- Banner Alur FMEA -->
+                <div class="rounded-xl overflow-hidden shadow-md">
+                    <img src="fmea-sod.jpg" alt="Alur Penilaian SOD dan RPN dalam FMEA" class="w-full h-auto object-cover">
+                </div>
                 <p class="text-slate-700 leading-relaxed text-base md:text-lg">
                     Di setiap tahapan tersebut, tanyakan: <em>“Bagaimana proses ini bisa gagal?”</em>. Contoh kegagalan umum di berbagai lini manufaktur meliputi:
                 </p>
@@ -116,72 +132,141 @@
                     </div>
                 </div>
                 <p class="text-slate-700 leading-relaxed text-base md:text-lg">
-                    Hasil perkalian dari ketiga nilai ini menghasilkan angka <strong>RPN (Risk Priority Number)</strong>. Semakin tinggi angka RPN, semakin mendesak masalah tersebut untuk segera diselesaikan melalui tindakan korektif atau perbaikan sistem.
+                    Hasil perkalian dari ketiga nilai ini menghasilkan angka <strong>RPN (Risk Priority Number)</strong> dengan rumus:
                 </p>
-            </div>
-
-            <blockquote class="border-l-4 border-emerald-600 pl-4 py-3 my-6 bg-emerald-50/50 italic text-slate-700">
-                <strong>Prinsip Utama FMEA:</strong><br>
-                Fokuskan tenaga perbaikan pada titik yang memiliki angka RPN tertinggi. Jangan mencoba memperbaiki segalanya sekaligus; selesaikan akar masalah yang paling berisiko menghentikan lini produksi.
-            </blockquote>
-
-            <div class="space-y-4 pt-4">
-                <h3 class="text-xl font-bold text-slate-900 font-serif-book">Implementasi di Lantai Produksi</h3>
+                <div class="bg-slate-900 text-emerald-400 font-mono p-4 rounded-xl text-center text-lg font-bold shadow-inner">
+                    RPN = Severity (S) × Occurrence (O) × Detection (D)
+                </div>
                 <p class="text-slate-700 leading-relaxed text-base md:text-lg">
-                    Penerapan FMEA bukan sekadar dokumen formalitas untuk audit mutu, melainkan panduan hidup harian bagi seorang supervisor dan *leader* produksi. Ketika lembar kerja FMEA diintegrasikan dengan rutinitas pengecekan mesin, operator lini depan akan memiliki kepekaan tinggi terhadap perubahan parameter sekecil apapun.
+                    Semakin tinggi angka RPN (skala 1–1000), semakin mendesak masalah tersebut untuk segera diselesaikan melalui tindakan korektif atau perbaikan sistem.
                 </p>
             </div>
-        </article>
 
-        <!-- Kotak Penawaran Download Excel Template -->
-        <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 md:p-12 text-center text-white shadow-xl mt-16 mb-8">
-            <span class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Praktis & Siap Pakai</span>
-            <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-3 font-serif-book">Download Template Excel FMEA Manufaktur</h3>
-            <p class="text-slate-300 text-sm md:text-base max-w-xl mx-auto mb-8 leading-relaxed">
-                Gunakan lembar kerja Excel otomatis dengan rumus RPN terintegrasi untuk langsung diterapkan mengevaluasi proses di lini produksi Anda.
-            </p>
-            <a href="#" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition duration-200 text-base cursor-pointer">
-                Download Excel Template FMEA Sekarang
-            </a>
-            <p class="text-xs text-slate-400 mt-4">Format file .xlsx kompatibel dengan Microsoft Excel dan Google Sheets.</p>
-        </div>
+            <!-- ================= TABEL SKOR SOD 1-10 LENGKAP ================= -->
+            <div class="space-y-6 pt-6">
+                <h3 class="text-2xl font-bold text-slate-900 font-serif-book border-b pb-2">Matriks Kriteria Skor Nilai SOD (Skala 1 - 10)</h3>
+                <p class="text-slate-700 leading-relaxed text-sm md:text-base">
+                    Untuk menghindari penilaian yang bersifat subjektif saat melakukan analisis bersama tim, gunakan standar acuan tabel penilaian SOD berikut:
+                </p>
 
-    </main>
+                <!-- TABEL SEVERITY -->
+                <div class="space-y-3">
+                    <h4 class="font-bold text-slate-900 text-lg flex items-center space-x-2">
+                        <span class="w-3 h-3 bg-red-500 rounded-full inline-block"></span>
+                        <span>1. Tabel Penilaian Severity (S) — Tingkat Keparahan</span>
+                    </h4>
+                    <div class="overflow-x-auto rounded-xl border border-slate-200 shadow-sm">
+                        <table class="w-full text-left text-xs md:text-sm text-slate-700">
+                            <thead class="bg-slate-100 text-slate-900 uppercase font-semibold border-b border-slate-200">
+                                <tr>
+                                    <th class="py-3 px-4 w-16 text-center">Skor</th>
+                                    <th class="py-3 px-4 w-32">Kategori</th>
+                                    <th class="py-3 px-4">Kriteria Dampak Operasional / Pelanggan</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200">
+                                <tr class="bg-red-50/60 font-medium">
+                                    <td class="py-2.5 px-4 text-center font-bold text-red-700">10</td>
+                                    <td class="py-2.5 px-4 text-red-700">Bahaya (Tanpa Peringatan)</td>
+                                    <td class="py-2.5 px-4">Mengancam keselamatan jiwa operator/pengguna atau melanggar regulasi tanpa ada indikasi awal.</td>
+                                </tr>
+                                <tr class="bg-red-50/30">
+                                    <td class="py-2.5 px-4 text-center font-bold text-red-600">9</td>
+                                    <td class="py-2.5 px-4 text-red-600">Bahaya (Dengan Peringatan)</td>
+                                    <td class="py-2.5 px-4">Sangat berbahaya terhadap keselamatan kerja/hukum, namun masih ada tanda peringatan sebelum terjadi.</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2.5 px-4 text-center font-bold text-orange-600">8</td>
+                                    <td class="py-2.5 px-4 font-semibold">Sangat Tinggi</td>
+                                    <td class="py-2.5 px-4">Produk rusak total, tidak berfungsi, atau menyebabkan stoppage lini produksi dalam waktu lama.</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2.5 px-4 text-center font-bold text-orange-500">7</td>
+                                    <td class="py-2.5 px-4 font-semibold">Tinggi</td>
+                                    <td class="py-2.5 px-4">Produk dapat berfungsi tetapi kinerja utama turun drastis. Pelanggan dipastikan mengajukan komplain resmi.</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2.5 px-4 text-center font-bold text-amber-500">6</td>
+                                    <td class="py-2.5 px-4">Sedang-Tinggi</td>
+                                    <td class="py-2.5 px-4">Fungsi utama mengalami kendala, memerlukan pengerjaan ulang (*rework*) di lini produksi.</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2.5 px-4 text-center font-bold text-amber-500">5</td>
+                                    <td class="py-2.5 px-4">Sedang</td>
+                                    <td class="py-2.5 px-4">Fungsi sekunder terganggu. Pelanggan merasakan adanya penurunan kualitas atau ketidaknyamanan.</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2.5 px-4 text-center font-bold text-slate-600">4</td>
+                                    <td class="py-2.5 px-4">Sedang-Rendah</td>
+                                    <td class="py-2.5 px-4">Produk dapat berfungsi normal, namun terdapat cacat penampilan (*visual defect*) yang disadari mayoritas pelanggan.</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2.5 px-4 text-center font-bold text-slate-600">3</td>
+                                    <td class="py-2.5 px-4">Rendah</td>
+                                    <td class="py-2.5 px-4">Cacat estetika ringan yang hanya disadari oleh sebagian kecil pelanggan yang sangat teliti.</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2.5 px-4 text-center font-bold text-slate-500">2</td>
+                                    <td class="py-2.5 px-4">Sangat Rendah</td>
+                                    <td class="py-2.5 px-4">Dampak sangat kecil pada penampilan fisik. Tidak mengganggu fungsi produk sama sekali.</td>
+                                </tr>
+                                <tr class="bg-emerald-50/50">
+                                    <td class="py-2.5 px-4 text-center font-bold text-emerald-700">1</td>
+                                    <td class="py-2.5 px-4 text-emerald-700 font-semibold">Tidak Ada Dampak</td>
+                                    <td class="py-2.5 px-4">Kegagalan tidak memberikan efek apapun pada operasional, kualitas, maupun pelanggan.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
 
-    <!-- Modal Tentang Penulis -->
-    <div id="authorModal" class="fixed inset-0 z-50 hidden bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-md w-full p-6 md:p-8 shadow-2xl relative text-center">
-            <button onclick="closeModal('authorModal')" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 font-bold text-xl cursor-pointer">&times;</button>
-            <h3 class="text-2xl font-bold text-slate-900 mb-4 font-serif-book">Tentang Penulis</h3>
-            <p class="text-slate-700 text-sm md:text-base leading-relaxed mb-4">
-                <strong>Sukardi</strong> adalah seorang praktisi manufaktur yang meniti perjalanan kariernya secara bertahap langsung dari lantai produksi. Berbekal ketekunan, semangat belajar yang tinggi, serta pengalaman nyata menghadapi dinamika operasional harian, ia memahami betul denyut nadi dan tantangan yang dihadapi oleh para pekerja di lini depan.
-            </p>
-            <p class="text-slate-700 text-sm md:text-base leading-relaxed">
-                Melalui platform <em>Otoritas Kerja</em>, beliau mendedikasikan pengalaman praktisnya untuk berbagi perangkat kerja, SOP, dan metodologi peningkatan efisiensi manufaktur.
-            </p>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200 py-8 text-center text-xs text-slate-500">
-        <p>&copy; 2026 Sukardi. Hak Cipta Dilindungi.</p>
-    </footer>
-
-    <!-- Skrip Modal Interaktif -->
-    <script>
-        function openModal(modalId) {
-            document.getElementById(modalId).classList.remove('hidden');
-        }
-
-        function closeModal(modalId) {
-            document.getElementById(modalId).classList.add('hidden');
-        }
-
-        window.onclick = function(event) {
-            if (event.target.classList.contains('fixed')) {
-                event.target.classList.add('hidden');
-            }
-        }
-    </script>
-</body>
-</html>
+                <!-- TABEL OCCURRENCE -->
+                <div class="space-y-3 pt-4">
+                    <h4 class="font-bold text-slate-900 text-lg flex items-center space-x-2">
+                        <span class="w-3 h-3 bg-amber-500 rounded-full inline-block"></span>
+                        <span>2. Tabel Penilaian Occurrence (O) — Kemungkinan Terjadi</span>
+                    </h4>
+                    <div class="overflow-x-auto rounded-xl border border-slate-200 shadow-sm">
+                        <table class="w-full text-left text-xs md:text-sm text-slate-700">
+                            <thead class="bg-slate-100 text-slate-900 uppercase font-semibold border-b border-slate-200">
+                                <tr>
+                                    <th class="py-3 px-4 w-16 text-center">Skor</th>
+                                    <th class="py-3 px-4 w-36">Kemungkinan</th>
+                                    <th class="py-3 px-4">Estimasi Frekuensi / Rasio Kegagalan</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200">
+                                <tr class="bg-red-50/60 font-medium">
+                                    <td class="py-2.5 px-4 text-center font-bold text-red-700">10</td>
+                                    <td class="py-2.5 px-4 text-red-700">Sangat Tinggi (Pasti)</td>
+                                    <td class="py-2.5 px-4">Hampir pasti terjadi secara konsisten (&gt; 100 per 1.000 unit / &gt; 10%).</td>
+                                </tr>
+                                <tr class="bg-red-50/30">
+                                    <td class="py-2.5 px-4 text-center font-bold text-red-600">9</td>
+                                    <td class="py-2.5 px-4 text-red-600">Sangat Tinggi</td>
+                                    <td class="py-2.5 px-4">Terjadi berulang kali dalam proses harian (sekitar 50 per 1.000 unit / 5%).</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2.5 px-4 text-center font-bold text-orange-600">8</td>
+                                    <td class="py-2.5 px-4 font-semibold">Tinggi</td>
+                                    <td class="py-2.5 px-4">Sering terjadi dalam siklus produksi (sekitar 20 per 1.000 unit / 2%).</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2.5 px-4 text-center font-bold text-orange-500">7</td>
+                                    <td class="py-2.5 px-4 font-semibold">Cukup Tinggi</td>
+                                    <td class="py-2.5 px-4">Terjadi berulang secara berkala (sekitar 10 per 1.000 unit / 1%).</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2.5 px-4 text-center font-bold text-amber-500">6</td>
+                                    <td class="py-2.5 px-4">Sedang-Tinggi</td>
+                                    <td class="py-2.5 px-4">Terjadi sesekali saat variasi bahan baku/mesin muncul (sekitar 5 per 1.000 unit).</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2.5 px-4 text-center font-bold text-amber-500">5</td>
+                                    <td class="py-2.5 px-4">Sedang</td>
+                                    <td class="py-2.5 px-4">Terjadi sesekali dalam satu lot produksi (sekitar 2 per 1.000 unit).</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2.5 px-4 text-center font-bold text-slate-600">4</td>
+                                    <td class="py-2.5 px-4">Sedang-Rendah</td>
+                                    <td class="py-2.5 px-4">Jarang terjadi, ad
