@@ -52,7 +52,7 @@
         html, body {
             width: 100%;
             max-width: 100%;
-            overflow-x: hidden;
+            overflow-x: hidden; /* Mencegah layar bergeser ke samping */
         }
 
         body {
@@ -62,15 +62,14 @@
             line-height: 1.6;
         }
 
-        /* PENGAMAN GAMBAR AGAR TIDAK MELUBER DI HP */
-        article img, main img {
-            max-width: 100% !important;
-            height: auto !important;
-            display: block;
+        /* PENGAMAN GAMBAR & KONTEN AGAR TIDAK MELUBER DI HP */
+        img, picture, video, canvas, svg {
+            max-width: 100%;
+            height: auto;
         }
 
         /* =========================================================
-           HEADER UTAMA STICKY & FULL WIDTH AMAN DI HP & PC
+           HEADER UTAMA STICKY MURNI & FULL WIDTH AMAN
            ========================================================= */
         .site-header {
             position: sticky;
@@ -273,16 +272,16 @@
     </header>
 
     <!-- Konten Utama Artikel -->
-    <main class="max-w-3xl mx-auto px-6 py-12 space-y-12 flex-grow">
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-12 space-y-12 flex-grow w-full">
 
         <!-- HEADLINE ARTIKEL & AUTHOR BADGE -->
         <section class="space-y-4">
             <div>
                 <span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider mb-2">Quality & Process Improvement</span>
-                <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-2 mb-3 font-serif-book leading-tight">
+                <h1 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-slate-900 mt-2 mb-3 font-serif-book leading-tight">
                     Panduan Lengkap FMEA untuk Menekan Defek di Lantai Pabrik
                 </h1>
-                <p class="text-slate-600 italic text-base md:text-lg max-w-xl font-serif-book">
+                <p class="text-slate-600 italic text-sm sm:text-base md:text-lg max-w-xl font-serif-book">
                     "Strategi sistematis menganalisis potensi kegagalan proses produksi dan langkah pencegahannya secara efektif."
                 </p>
             </div>
@@ -298,7 +297,7 @@
             </div>
 
             <!-- Banner Tampil Lepas Tanpa Bingkai -->
-            <div class="rounded-xl overflow-hidden shadow-md">
+            <div class="rounded-xl overflow-hidden shadow-md w-full">
                 <img src="fmea-artikel.jpg" alt="Banner Artikel FMEA Manufaktur" class="w-full h-auto object-cover">
             </div>
         </section>
@@ -306,29 +305,29 @@
         <!-- ISI ARTIKEL -->
         <article class="space-y-8">
             <div class="space-y-4">
-                <h2 class="text-2xl font-bold text-slate-900 font-serif-book">Mengapa FMEA Penting di Lini Produksi?</h2>
-                <p class="text-slate-700 leading-relaxed text-base md:text-lg">
+                <h2 class="text-xl sm:text-2xl font-bold text-slate-900 font-serif-book">Mengapa FMEA Penting di Lini Produksi?</h2>
+                <p class="text-slate-700 leading-relaxed text-sm sm:text-base md:text-lg">
                     Di dunia manufaktur—khususnya pada proses produksi hulu maupun hilir—kehilangan waktu produksi (<em>downtime</em>) dan tingginya produk cacat (<em>Not Good / NG</em>) adalah musuh utama efisiensi. Seringkali, tim produksi bertindak sebagai pemadam kebakaran: menunggu mesin rusak atau produk <em>reject</em> menumpuk, baru kemudian mencari solusi. Padahal, pendekatan reaktif ini membuang banyak biaya material dan tenaga kerja.
                 </p>
-                <p class="text-slate-700 leading-relaxed text-base md:text-lg">
+                <p class="text-slate-700 leading-relaxed text-sm sm:text-base md:text-lg">
                     <em>Failure Mode and Effects Analysis</em> (FMEA) hadir sebagai alat pencegahan proaktif. Melalui metode ini, kita memetakan potensi kegagalan sebelum benar-benar terjadi di lantai produksi, mengevaluasi seberapa parah dampaknya, dan menutup celah risikonya sejak dini.
                 </p>
             </div>
 
             <div class="space-y-4 pt-4">
                 <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Langkah 1</span>
-                <h3 class="text-xl font-bold text-slate-900 font-serif-book">Memetakan Potensi Mode Kegagalan (Failure Modes)</h3>
-                <p class="text-slate-700 leading-relaxed text-base md:text-lg">
+                <h3 class="text-lg sm:text-xl font-bold text-slate-900 font-serif-book">Memetakan Potensi Mode Kegagalan (Failure Modes)</h3>
+                <p class="text-slate-700 leading-relaxed text-sm sm:text-base md:text-lg">
                     Langkah awal penyusunan FMEA adalah mengurai setiap tahapan proses kerja secara rinci. Sebagai ilustrasi, tahapan umum dalam proses produksi meliputi penyiapan material atau bahan baku (<em>incoming preparation</em>), proses utama mesin (<em>machining/processing</em>), perakitan atau <em>finishing</em>, hingga pengemasan akhir.
                 </p>
                 <!-- Banner Alur FMEA -->
-                <div class="rounded-xl overflow-hidden shadow-md">
+                <div class="rounded-xl overflow-hidden shadow-md w-full">
                     <img src="fmea-sod.jpg" alt="Alur Penilaian SOD dan RPN dalam FMEA" class="w-full h-auto object-cover">
                 </div>
-                <p class="text-slate-700 leading-relaxed text-base md:text-lg">
+                <p class="text-slate-700 leading-relaxed text-sm sm:text-base md:text-lg">
                     Di setiap tahapan tersebut, tanyakan: <em>“Bagaimana proses ini bisa gagal?”</em>. Contoh kegagalan umum di berbagai lini manufaktur meliputi:
                 </p>
-                <ul class="list-disc list-inside space-y-2 text-slate-700 pl-4">
+                <ul class="list-disc list-inside space-y-2 text-slate-700 pl-4 text-sm sm:text-base">
                     <li><strong>Penyimpangan Dimensi atau Spesifikasi:</strong> Toleransi ukuran produk tidak sesuai dengan standar mesin atau gambar teknik yang ditetapkan.</li>
                     <li><strong>Kegagalan Ikatan atau Sambungan:</strong> Lem, las, segel, atau penguncian komponen kurang kuat sehingga mudah lepas atau bocor.</li>
                     <li><strong>Cacat Tampilan atau Permukaan:</strong> Adanya goresan, noda, atau ketidaksesuaian hasil cetak/finishing pada produk jadi.</li>
@@ -337,49 +336,49 @@
 
             <div class="space-y-4 pt-4">
                 <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Langkah 2</span>
-                <h3 class="text-xl font-bold text-slate-900 font-serif-book">Menilai Tiga Pilar Utama: S, O, dan D</h3>
-                <p class="text-slate-700 leading-relaxed text-base md:text-lg">
+                <h3 class="text-lg sm:text-xl font-bold text-slate-900 font-serif-book">Menilai Tiga Pilar Utama: S, O, dan D</h3>
+                <p class="text-slate-700 leading-relaxed text-sm sm:text-base md:text-lg">
                     Setelah potensi kegagalan teridentifikasi, evaluasi dilakukan menggunakan tiga parameter penilaian berskala 1 sampai 10:
                 </p>
                 <div class="grid md:grid-cols-3 gap-4 my-6">
                     <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
-                        <div class="font-bold text-slate-900 text-lg">1. Severity (S)</div>
-                        <p class="text-sm text-slate-600 leading-relaxed">Seberapa parah dampak kegagalan tersebut bagi pelanggan atau proses selanjutnya?</p>
+                        <div class="font-bold text-slate-900 text-base">1. Severity (S)</div>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Seberapa parah dampak kegagalan tersebut bagi pelanggan atau proses selanjutnya?</p>
                     </div>
                     <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
-                        <div class="font-bold text-slate-900 text-lg">2. Occurrence (O)</div>
-                        <p class="text-sm text-slate-600 leading-relaxed">Seberapa sering penyebab kegagalan tersebut berpotensi muncul dalam operasional?</p>
+                        <div class="font-bold text-slate-900 text-base">2. Occurrence (O)</div>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Seberapa sering penyebab kegagalan tersebut berpotensi muncul dalam operasional?</p>
                     </div>
                     <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
-                        <div class="font-bold text-slate-900 text-lg">3. Detection (D)</div>
-                        <p class="text-sm text-slate-600 leading-relaxed">Seberapa besar kemungkinan sistem kontrol kita mendeteksi kegagalan sebelum produk keluar pabrik?</p>
+                        <div class="font-bold text-slate-900 text-base">3. Detection (D)</div>
+                        <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Seberapa besar kemungkinan sistem kontrol kita mendeteksi kegagalan sebelum produk keluar pabrik?</p>
                     </div>
                 </div>
-                <p class="text-slate-700 leading-relaxed text-base md:text-lg">
+                <p class="text-slate-700 leading-relaxed text-sm sm:text-base md:text-lg">
                     Hasil perkalian dari ketiga nilai ini menghasilkan angka <strong>RPN (Risk Priority Number)</strong> dengan rumus:
                 </p>
-                <div class="bg-slate-900 text-emerald-400 font-mono p-4 rounded-xl text-center text-lg font-bold shadow-inner">
+                <div class="bg-slate-900 text-emerald-400 font-mono p-4 rounded-xl text-center text-sm sm:text-lg font-bold shadow-inner">
                     RPN = Severity (S) × Occurrence (O) × Detection (D)
                 </div>
-                <p class="text-slate-700 leading-relaxed text-base md:text-lg">
+                <p class="text-slate-700 leading-relaxed text-sm sm:text-base md:text-lg">
                     Semakin tinggi angka RPN (skala 1–1000), semakin mendesak masalah tersebut untuk segera diselesaikan melalui tindakan korektif atau perbaikan sistem.
                 </p>
             </div>
 
             <!-- ================= TABEL SKOR SOD 1-10 ================= -->
             <div class="space-y-6 pt-6">
-                <h3 class="text-2xl font-bold text-slate-900 font-serif-book border-b pb-2">Matriks Kriteria Skor Nilai SOD (Skala 1 - 10)</h3>
+                <h3 class="text-xl sm:text-2xl font-bold text-slate-900 font-serif-book border-b pb-2">Matriks Kriteria Skor Nilai SOD (Skala 1 - 10)</h3>
                 <p class="text-slate-700 leading-relaxed text-sm md:text-base">
                     Untuk menghindari penilaian yang bersifat subjektif saat melakukan analisis bersama tim, gunakan standar acuan tabel penilaian SOD berikut:
                 </p>
 
                 <!-- 1. TABEL SEVERITY (S) -->
                 <div class="space-y-3">
-                    <h4 class="font-bold text-slate-900 text-lg flex items-center space-x-2">
-                        <span class="w-3 h-3 bg-red-500 rounded-full inline-block"></span>
+                    <h4 class="font-bold text-slate-900 text-base sm:text-lg flex items-center space-x-2">
+                        <span class="w-3 h-3 bg-red-500 rounded-full inline-block flex-shrink-0"></span>
                         <span>1. Tabel Penilaian Severity (S) — Tingkat Keparahan</span>
                     </h4>
-                    <div class="w-full overflow-hidden rounded-xl border border-slate-200 shadow-sm">
+                    <div class="w-full overflow-hidden rounded-xl border border-slate-200 shadow-sm bg-white">
                         <div class="overflow-x-auto w-full">
                             <table class="w-full text-left text-xs md:text-sm text-slate-700 whitespace-normal">
                                 <thead class="bg-slate-100 text-slate-900 uppercase font-semibold border-b border-slate-200">
@@ -448,11 +447,11 @@
 
                 <!-- 2. TABEL OCCURRENCE (O) -->
                 <div class="space-y-3 pt-4">
-                    <h4 class="font-bold text-slate-900 text-lg flex items-center space-x-2">
-                        <span class="w-3 h-3 bg-amber-500 rounded-full inline-block"></span>
+                    <h4 class="font-bold text-slate-900 text-base sm:text-lg flex items-center space-x-2">
+                        <span class="w-3 h-3 bg-amber-500 rounded-full inline-block flex-shrink-0"></span>
                         <span>2. Tabel Penilaian Occurrence (O) — Kemungkinan Terjadi</span>
                     </h4>
-                    <div class="w-full overflow-hidden rounded-xl border border-slate-200 shadow-sm">
+                    <div class="w-full overflow-hidden rounded-xl border border-slate-200 shadow-sm bg-white">
                         <div class="overflow-x-auto w-full">
                             <table class="w-full text-left text-xs md:text-sm text-slate-700 whitespace-normal">
                                 <thead class="bg-slate-100 text-slate-900 uppercase font-semibold border-b border-slate-200">
@@ -521,11 +520,11 @@
 
                 <!-- 3. TABEL DETECTION (D) -->
                 <div class="space-y-3 pt-4">
-                    <h4 class="font-bold text-slate-900 text-lg flex items-center space-x-2">
-                        <span class="w-3 h-3 bg-blue-500 rounded-full inline-block"></span>
+                    <h4 class="font-bold text-slate-900 text-base sm:text-lg flex items-center space-x-2">
+                        <span class="w-3 h-3 bg-blue-500 rounded-full inline-block flex-shrink-0"></span>
                         <span>3. Tabel Penilaian Detection (D) — Kemampuan Deteksi</span>
                     </h4>
-                    <div class="w-full overflow-hidden rounded-xl border border-slate-200 shadow-sm">
+                    <div class="w-full overflow-hidden rounded-xl border border-slate-200 shadow-sm bg-white">
                         <div class="overflow-x-auto w-full">
                             <table class="w-full text-left text-xs md:text-sm text-slate-700 whitespace-normal">
                                 <thead class="bg-slate-100 text-slate-900 uppercase font-semibold border-b border-slate-200">
@@ -593,7 +592,7 @@
                 </div>
             </div>
 
-            <blockquote class="border-l-4 border-emerald-600 pl-4 py-3 my-6 bg-emerald-50/50 italic text-slate-700">
+            <blockquote class="border-l-4 border-emerald-600 pl-4 py-3 my-6 bg-emerald-50/50 italic text-slate-700 text-sm sm:text-base">
                 <strong>Prinsip Utama FMEA:</strong><br>
                 Fokuskan tenaga perbaikan pada titik yang memiliki angka RPN tertinggi. Jangan mencoba memperbaiki segalanya sekaligus; selesaikan akar masalah yang paling berisiko menghentikan lini produksi.
             </blockquote>
@@ -601,12 +600,12 @@
             <!-- ================= STUDI KASUS ================= -->
             <div class="space-y-4 pt-4">
                 <span class="text-xs font-bold text-blue-600 uppercase tracking-wider">Studi Kasus Umum</span>
-                <h3 class="text-2xl font-bold text-slate-900 font-serif-book">Contoh Penerapan FMEA pada Proses Perakitan Komponen Mekanikal</h3>
-                <p class="text-slate-700 leading-relaxed text-base md:text-lg">
+                <h3 class="text-xl sm:text-2xl font-bold text-slate-900 font-serif-book">Contoh Penerapan FMEA pada Proses Perakitan Komponen Mekanikal</h3>
+                <p class="text-slate-700 leading-relaxed text-sm sm:text-base md:text-lg">
                     Sebagai ilustrasi netral di dunia manufaktur perakitan (assembly), mari kita lihat contoh analisis mode kegagalan pada proses pemasangan komponen braket mekanik:
                 </p>
 
-                <div class="w-full overflow-hidden rounded-xl border border-slate-200 shadow-sm my-4">
+                <div class="w-full overflow-hidden rounded-xl border border-slate-200 shadow-sm my-4 bg-white">
                     <div class="overflow-x-auto w-full">
                         <table class="w-full text-left text-xs md:text-sm text-slate-700 whitespace-normal">
                             <thead class="bg-slate-900 text-white uppercase font-semibold">
@@ -646,27 +645,27 @@
                         </table>
                     </div>
                 </div>
-                <p class="text-slate-600 text-sm italic">
+                <p class="text-slate-600 text-xs sm:text-sm italic">
                     *Contoh di atas bersifat universal dan lazim digunakan sebagai modul pelatihan teknik industri standar di berbagai literatur manajemen mutu global.
                 </p>
             </div>
 
             <div class="space-y-4 pt-4">
-                <h3 class="text-xl font-bold text-slate-900 font-serif-book">Implementasi di Lantai Produksi</h3>
-                <p class="text-slate-700 leading-relaxed text-base md:text-lg">
+                <h3 class="text-lg sm:text-xl font-bold text-slate-900 font-serif-book">Implementasi di Lantai Produksi</h3>
+                <p class="text-slate-700 leading-relaxed text-sm sm:text-base md:text-lg">
                     Penerapan FMEA bukan sekadar dokumen formalitas untuk audit mutu, melainkan panduan hidup harian bagi seorang supervisor dan leader produksi. Ketika lembar kerja FMEA diintegrasikan dengan rutinitas pengecekan mesin, operator lini depan akan memiliki kepekaan tinggi terhadap perubahan parameter sekecil apapun.
                 </p>
             </div>
         </article>
 
         <!-- Kotak Penawaran Download Excel Template -->
-        <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 md:p-12 text-center text-white shadow-xl mt-16 mb-8">
+        <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-6 sm:p-8 md:p-12 text-center text-white shadow-xl mt-16 mb-8">
             <span class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Praktis & Siap Pakai</span>
-            <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-3 font-serif-book">Download Template Excel FMEA Manufaktur</h3>
-            <p class="text-slate-300 text-sm md:text-base max-w-xl mx-auto mb-8 leading-relaxed">
+            <h3 class="text-xl sm:text-2xl md:text-3xl font-bold mt-4 mb-3 font-serif-book">Download Template Excel FMEA Manufaktur</h3>
+            <p class="text-slate-300 text-xs sm:text-sm md:text-base max-w-xl mx-auto mb-8 leading-relaxed">
                 Gunakan lembar kerja Excel otomatis dengan rumus RPN terintegrasi dan kriteria penilaian SOD untuk langsung diterapkan mengevaluasi proses di lini produksi Anda.
             </p>
-            <a href="#" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition duration-200 text-base cursor-pointer">
+            <a href="#" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-xl shadow-lg transition duration-200 text-sm sm:text-base cursor-pointer">
                 Download Excel Template FMEA Sekarang
             </a>
             <p class="text-xs text-slate-400 mt-4">Format file .xlsx kompatibel dengan Microsoft Excel dan Google Sheets.</p>
