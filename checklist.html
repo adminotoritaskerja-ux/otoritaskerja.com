@@ -27,21 +27,242 @@
         .font-serif-book {
             font-family: 'Merriweather', serif;
         }
+        
+        :root {
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --border-color: #e2e8f0;
+            --primary-blue: #0284c7;
+            --primary-dark: #0f172a;
+            --industrial-blue: #0369a1; /* Biru pekat industrial */
+            --accent-orange: #ea580c;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Memastikan root dan body murni untuk sistem sticky header yang stabil */
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img, picture, video, canvas, svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* =========================================================
+           HEADER UTAMA STICKY MUTLAK (DIJAMIN TIDAK IKUT KE-SCROLL)
+           ========================================================= */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 99999;
+            width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+        }
+
+        .top-header-white {
+            background-color: #ffffff;
+            width: 100%;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color, #e2e8f0);
+        }
+
+        .top-header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .logo-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-svg {
+            height: 44px;
+            width: auto;
+        }
+
+        .brand-title {
+            font-size: 1.65rem;
+            font-weight: 800;
+            color: var(--primary-dark, #0f172a);
+        }
+
+        .brand-title span {
+            color: var(--primary-blue, #0284c7);
+        }
+
+        .main-navbar-navy {
+            background-color: var(--primary-dark, #0f172a);
+            width: 100%;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .nav-menu::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-menu li a {
+            display: block;
+            padding: 12px 20px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .nav-menu li a:hover,
+        .nav-menu li a.active {
+            background-color: var(--primary-blue, #0284c7);
+        }
+
+        .nav-menu li a.btn-admin-nav {
+            background-color: #1e293b;
+            margin-left: auto;
+        }
+
+        /* =========================================================
+           TICKER & BADGE JAJARAN GENJANG (BIRU PEKAT INDUSTRIAL)
+           ========================================================= */
+        .ticker-bar-white {
+            background-color: #ffffff;
+            width: 100%;
+            border-top: 1px solid #cbd5e1;
+            border-bottom: 2px solid var(--border-color, #e2e8f0);
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .ticker-container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        .badge-skew-container {
+            background-color: var(--industrial-blue, #0369a1); /* Warna biru pekat industrial */
+            color: #ffffff;
+            padding: 9px 20px 9px 12px;
+            font-size: 0.82rem;
+            font-weight: 800;
+            white-space: nowrap;
+            transform: skewX(-15deg);
+            transform-origin: left bottom;
+            margin-left: -8px;
+            border-right: 5px solid var(--accent-orange, #ea580c);
+            border-left: none !important;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 10;
+            box-shadow: 4px 0 10px rgba(0,0,0,0.15);
+        }
+
+        .badge-text-inner {
+            display: inline-block;
+            transform: skewX(15deg);
+            padding-left: 6px;
+        }
+
+        .ticker-marquee-box {
+            flex-grow: 1;
+            font-size: 0.88rem;
+            color: var(--primary-dark, #0f172a);
+            font-weight: 600;
+            padding-left: 16px;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .ticker-marquee-box marquee {
+            display: block;
+            vertical-align: middle;
+        }
+
+        @media (max-width: 768px) {
+            .logo-svg { height: 36px; }
+            .brand-title { font-size: 1.3rem; }
+            .nav-menu li a { padding: 10px 14px; font-size: 0.82rem; }
+            .badge-skew-container { padding: 7px 16px 7px 10px; font-size: 0.72rem; }
+            .ticker-marquee-box { font-size: 0.8rem; padding-left: 12px; }
         }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+    
+    <!-- HEADER UTAMA 3-TIER PORTAL (TERKUNCI / STICKY DI ATAS) -->
+    <header class="site-header">
+        <!-- TIER 1: LOGO HEADER PUTIH -->
+        <div class="top-header-white">
+            <div class="top-header-inner">
+                <a href="index.html" class="logo-brand">
+                    <!-- IMG Logo Asli Otoritas Kerja -->
+                    <img src="favicon.png" alt="Otoritas Kerja" class="logo-svg">
+                    <div class="brand-title">Otoritas<span>Kerja</span></div>
+                </a>
+            </div>
+        </div>
 
-    <!-- Header Navigasi Atas -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
-        <div class="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="index.html" class="font-bold text-slate-900 tracking-tight text-lg hover:text-blue-600 transition">Otoritas Kerja</a>
-            <nav class="flex items-center space-x-6 text-sm font-medium">
-                <a href="index.html" class="text-slate-600 hover:text-slate-900 transition">Beranda</a>
-                <button onclick="openModal('authorModal')" class="text-slate-600 hover:text-slate-900 transition cursor-pointer">Tentang Penulis</button>
-            </nav>
+        <!-- TIER 2: NAVBAR MENU NAVY -->
+        <nav class="main-navbar-navy">
+            <ul class="nav-menu">
+                <li><a href="index.html">BERANDA</a></li>
+                <li><a href="about.html">TENTANG</a></li>
+                <li><a href="contact.html">KONTAK</a></li>
+            </ul>
+        </nav>
+
+        <!-- TIER 3: TICKER BAR / SUB-HEADER -->
+        <div class="ticker-bar-white">
+            <div class="ticker-container">
+                <div class="badge-skew-container">
+                    <span class="badge-text-inner">MODUL CHECKLIST</span>
+                </div>
+                <div class="ticker-marquee-box">
+                    <marquee behavior="scroll" direction="left" scrollamount="4">
+                        Panduan Praktis dalam membuat form lembar checklist inspeksi harian manufaktur 
+                    </marquee>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -143,12 +364,15 @@
             </p>
         </div>
     </div>
-
+    
     <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200 py-8 text-center text-xs text-slate-500">
-        <p>&copy; 2026 Sukardi. Hak Cipta Dilindungi.</p>
+    <footer class="bg-slate-900 text-slate-300 py-4 mt-6 border-t border-slate-800 text-center text-xs">
+  <div class="max-w-xl mx-auto px-4 space-y-1">
+    <p>&copy; 2026 Otoritas Kerja. Hak Cipta Dilindungi.</p>
+    <p><a href="privacy.html" class="hover:text-white transition-colors">Kebijakan Privasi</a></p>
+  </div>
     </footer>
-
+    
     <!-- Skrip Modal Interaktif -->
     <script>
         function openModal(modalId) {
