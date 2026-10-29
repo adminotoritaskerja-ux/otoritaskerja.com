@@ -57,6 +57,98 @@
             height: auto;
         }
 
+             /* =========================================================
+           HEADER UTAMA STICKY MUTLAK (DIJAMIN TIDAK IKUT KE-SCROLL)
+           ========================================================= */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 99999;
+            width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+        }
+
+        .top-header-white {
+            background-color: #ffffff;
+            width: 100%;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color, #e2e8f0);
+        }
+
+        .top-header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .logo-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-svg {
+            height: 44px;
+            width: auto;
+        }
+
+        .brand-title {
+            font-size: 1.65rem;
+            font-weight: 800;
+            color: var(--primary-dark, #0f172a);
+        }
+
+        .brand-title span {
+            color: var(--primary-blue, #0284c7);
+        }
+
+        .main-navbar-navy {
+            background-color: var(--primary-dark, #0f172a);
+            width: 100%;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .nav-menu::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-menu li a {
+            display: block;
+            padding: 12px 20px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .nav-menu li a:hover,
+        .nav-menu li a.active {
+            background-color: var(--primary-blue, #0284c7);
+        }
+
+        .nav-menu li a.btn-admin-nav {
+            background-color: #1e293b;
+            margin-left: auto;
+        }
+
         /* =========================================================
            TICKER & BADGE JAJARAN GENJANG (BIRU PEKAT INDUSTRIAL)
            ========================================================= */
@@ -147,29 +239,8 @@
         <nav class="main-navbar-navy">
             <ul class="nav-menu">
                 <li><a href="index.html">BERANDA</a></li>
-                <li><a href="about.html">TENTANG</a></li>
-                <a href="contact.html" class="active" style="background-color: #007bff; color: #ffffff !important; display: block; padding: 12px 16px; margin-top: -12px; margin-bottom: -12px;">KONTAK</a>
-            </ul>
-        </nav>
-        <!-- HEADER UTAMA 3-TIER PORTAL (TERKUNCI / STICKY DI ATAS) -->
-    <header class="site-header">
-        <!-- TIER 1: LOGO HEADER PUTIH -->
-        <div class="top-header-white">
-            <div class="top-header-inner">
-                <a href="index.html" class="logo-brand">
-                    <!-- IMG Logo Asli Otoritas Kerja -->
-                    <img src="favicon.png" alt="Otoritas Kerja" class="logo-svg">
-                    <div class="brand-title">Otoritas<span>Kerja</span></div>
-                </a>
-            </div>
-        </div>
-
-        <!-- TIER 2: NAVBAR MENU NAVY -->
-        <nav class="main-navbar-navy">
-            <ul class="nav-menu">
-                <li><a href="index.html">BERANDA</a></li>
-                <li><a href="about.html">TENTANG</a></li>
-                <a href="contact.html" class="active" style="background-color: #007bff; color: #ffffff !important; display: block; padding: 12px 16px; margin-top: -12px; margin-bottom: -12px;">KONTAK</a>
+                <a href="about.html" class="active" style="background-color: #007bff; color: #ffffff !important; display: block; padding: 12px 16px; margin-top: -12px; margin-bottom: -12px;">TENTANG</a>
+             <li><a href="countact.html">KONTAK</a></li>
             </ul>
         </nav>
 
