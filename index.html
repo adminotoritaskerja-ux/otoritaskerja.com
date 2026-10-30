@@ -207,6 +207,42 @@ body {
     .badge-skew-container { padding: 7px 16px 7px 12px; font-size: 0.72rem; }
     .ticker-marquee-box { font-size: 0.8rem; padding-left: 16px; }
     }
+    /* Ukuran default untuk PC / Layar Lebar */
+.logo-img { 
+    height: 40px; /* Sesuaikan ukurannya agar pas di header PC */
+    width: auto;
+}
+
+.brand-title { 
+    font-size: 1.3rem; 
+}
+
+/* Khusus untuk HP (Layar kecil di bawah 768px) */
+@media (max-width: 768px) {
+    .logo-img { 
+        height: 36px; 
+    }
+    .brand-title { 
+        font-size: 1.1rem; 
+    }
+    .nav-menu li a { 
+        padding: 10px 14px; 
+        font-size: 0.82rem; 
+    }
+    .badge-skew-container { 
+        padding: 7px 16px 7px 12px; 
+        font-size: 0.72rem; 
+    }
+    .ticker-marquee-box { 
+        font-size: 0.8rem; 
+        padding-left: 16px; 
+    }
+}
+
+/* HERO SECTION */
+.hero {
+    position: relative;
+}
 /* HERO SECTION */
 .hero {
     position: relative;
