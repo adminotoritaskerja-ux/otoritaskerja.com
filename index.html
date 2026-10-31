@@ -337,12 +337,12 @@ body {
 
 /* 2. ATUR JUDUL AGAR LEBIH JELAS & PROPORTIONAL */
 .card-title-box h3 {
-    font-size: 1.6rem !important;    /* Ukuran teks judul lebih proporsional */
+    font-size: 1.9rem !important;    /* Ukuran teks judul di PC */
     font-weight: 700 !important;
     line-height: 1.4 !important;
     margin-bottom: 0.4rem !important;
     color: var(--primary-dark);
-        display: block !important;
+    display: block !important;
     width: 100% !important;
 }
 
@@ -355,6 +355,13 @@ body {
     -webkit-line-clamp: 2;          /* Membatasi deskripsi max 2 baris agar padat */
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+/* --- TAMBAHAN KHUSUS HP (Agar pas dan tidak terlalu besar di layar kecil) --- */
+@media (max-width: 768px) {
+    .card-title-box h3 {
+        font-size: 1.15rem !important; /* Ukuran khusus untuk layar HP */
+    }
 }
 
 /* 3. ATUR FOOTER KARTU (POSISI PENULIS, BADGE FREE & TOMBOL BACA) */
