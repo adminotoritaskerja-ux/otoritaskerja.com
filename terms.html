@@ -3,45 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Syarat & Ketentuan (Terms of Service) - OtoritasKerja.com</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-slate-50 text-slate-800 font-sans leading-relaxed">
+    <title>Tim Kami - Otoritas Kerja</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
+        
+        /* BACKGROUND BODY FULL PUTIH BERSIH */
+        body { background-color: #ffffff; color: #334155; line-height: 1.8; min-height: 100vh; display: flex; flex-direction: column; }
+        
+        /* HEADER NAVBAR */
+        header { background: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 0.8rem 1rem; position: sticky; top: 0; z-index: 100; }
+        .nav-container { max-width: 900px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+        .logo-nav { font-weight: 800; font-size: 1.15rem; color: #0f172a; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .logo-nav span { color: #0284c7; }
+        .nav-links { display: flex; gap: 16px; }
+        .nav-links a { font-weight: 600; font-size: 0.88rem; color: #475569; text-decoration: none; padding: 4px 10px; border-radius: 6px; transition: all 0.2s; }
+        .nav-links a:hover, .nav-links a.active { color: #0284c7; background: #f1f5f9; }
 
-    <header class="bg-white border-b border-slate-200 py-4 px-6 mb-8">
-        <div class="max-w-4xl mx-auto flex justify-between items-center">
-            <a href="index.html" class="font-bold text-lg text-slate-900">OtoritasKerja.com</a>
-            <a href="index.html" class="text-sm text-blue-600 hover:underline font-medium">&larr; Kembali ke Beranda</a>
+        /* KONTEN UTAMA - FULL PUTIH, RATA, TANPA CARD */
+        .main-container { max-width: 800px; margin: 0 auto; padding: 3rem 1.2rem; flex: 1; width: 100%; }
+        
+        /* JUDUL & HEADER TIM */
+        .about-header { margin-bottom: 2.5rem; text-align: left; border-bottom: 2px solid #0284c7; padding-bottom: 1rem; display: inline-block; }
+        .brand-badge { display: inline-flex; align-items: center; gap: 6px; color: #0284c7; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 0.4rem; }
+        .brand-badge img { width: 18px; height: 18px; border-radius: 50%; object-fit: cover; }
+        .brand-title { font-size: 2rem; font-weight: 800; color: #0f172a; line-height: 1.2; }
+        
+        /* PARAGRAF & NARASI */
+        .about-text { font-size: 1.05rem; color: #334155; text-align: justify; }
+        .about-text p { margin-bottom: 1.5rem; }
+        
+        /* STATEMENT / QUOTE RATA KIRI ELEGAN */
+        .mission-quote { background: #f8fafc; border-left: 4px solid #0284c7; padding: 1.2rem 1.5rem; margin: 2rem 0; font-size: 1rem; color: #0f172a; font-weight: 500; font-style: italic; border-radius: 0 8px 8px 0; }
+
+        /* PROFIL ANGGOTA TIM */
+        .team-profile { display: flex; gap: 1.5rem; align-items: flex-start; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px dashed #e2e8f0; }
+        .team-avatar { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 2px solid #0284c7; flex-shrink: 0; }
+        .team-info h3 { font-size: 1.25rem; color: #0f172a; font-weight: 700; margin-bottom: 0.2rem; }
+        .team-role { font-size: 0.9rem; color: #0284c7; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.8rem; }
+        .team-bio { font-size: 0.98rem; color: #475569; line-height: 1.6; }
+
+        /* FOOTER KAKI HALAMAN (DARK NAVY) */
+        footer { 
+            background-color: #0f172a; 
+            color: #94a3b8; 
+            text-align: center; 
+            padding: 2.5rem 1.5rem; 
+            font-size: 0.85rem; 
+            border-top: 1px solid #1e293b; 
+            margin-top: 3rem; 
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER NAVBAR -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo-nav">
+                <img src="logo.jpeg" alt="Logo" style="height: 28px; width: auto;" onerror="this.style.display='none'">
+                Otoritas<span>Kerja</span>
+            </a>
+            <nav class="nav-links">
+                <a href="index.html"><i class="fa-solid fa-house"></i> Beranda</a>
+                <a href="tentang.html"><i class="fa-solid fa-circle-info"></i> Tentang</a>
+                <a href="team.html" class="active"><i class="fa-solid fa-users"></i> Tim</a>
+            </nav>
         </div>
     </header>
 
-    <main class="max-w-4xl mx-auto px-6 pb-16">
-        <h1 class="text-3xl font-extrabold text-slate-900 mb-2">Syarat & Ketentuan (Terms of Service)</h1>
-        <p class="text-sm text-slate-500 mb-8 border-b pb-4">Pembaruan Terakhir: Oktober 2026</p>
-
-        <div class="space-y-6 text-slate-700 text-base">
-            <p>Selamat datang di <strong>OtoritasKerja.com</strong>. Dengan mengakses dan menggunakan situs web ini, Anda setuju untuk terikat oleh Syarat dan Ketentuan penggunaan berikut.</p>
-
-            <h2 class="text-xl font-bold text-slate-900 mt-8">1. Hak Kekayaan Intelektual & Klaim Hak Cipta</h2>
-            <p>Kecuali dinyatakan lain, seluruh materi, artikel, panduan teknis, gambar, dan file template Microsoft Excel yang dipublikasikan di OtoritasKerja.com adalah hasil karya orisinal dan milik intelektual sepenuhnya dari <strong>OtoritasKerja.com (Sukardi)</strong>. Hak cipta ini dilindungi secara otomatis oleh hukum hak cipta nasional dan internasional di bawah kepemilikan <em>&copy; 2026 OtoritasKerja.com</em>.</p>
-
-            <h2 class="text-xl font-bold text-slate-900 mt-8">2. Lisensi Penggunaan Materi & Template</h2>
-            <p>Pengunjung diberikan lisensi terbatas untuk mengunduh dan mengoperasikan template Excel atau materi panduan dengan ketentuan:</p>
-            <ul class="list-disc pl-6 space-y-2">
-                <li>Hanya digunakan untuk keperluan pribadi, pembelajaran individu, atau operasional internal perusahaan/pabrik Anda.</li>
-                <li><strong>Dilarang keras</strong> menjual kembali, mendistribusikan ulang secara komersial, memodifikasi untuk diperjualbelikan, atau mengklaim kepemilikan atas file template/artikel milik OtoritasKerja.com tanpa izin tertulis dari pengelola.</li>
-            </ul>
-
-            <h2 class="text-xl font-bold text-slate-900 mt-8">3. Penolakan Tanggung Jawab (Disclaimer)</h2>
-            <p>Semua informasi, panduan teknis manufaktur, dan rumus kalkulasi Excel di situs ini disediakan "sebagaimana adanya" untuk tujuan edukasi dan informasi umum. Meskipun dikembangkan berdasarkan pengalaman profesional manufaktur teruji, OtoritasKerja.com tidak memberikan jaminan mutlak atas hasil akhir dan tidak bertanggung jawab atas kerugian langsung maupun tidak langsung akibat penggunaan informasi/template tersebut.</p>
-
-            <h2 class="text-xl font-bold text-slate-900 mt-8">4. Perubahan Ketentuan</h2>
-            <p>OtoritasKerja.com berhak memperbarui Syarat & Ketentuan ini sewaktu-waktu demi menyesuaikan dengan perkembangan hukum dan standar industri digital.</p>
+    <!-- ISI HALAMAN FULL WHITE & RATA -->
+    <main class="main-container">
+        
+        <!-- HEADER JUDUL -->
+        <div class="about-header">
+            <span class="brand-badge">
+                <img src="logo.jpeg" alt="Logo Otoritas Kerja" onerror="this.style.display='none'">
+                Praktisi & Pengembang
+            </span>
+            <h1 class="brand-title">Tim & Penulis Otoritas Kerja</h1>
         </div>
+
+        <!-- NARASI PROFIL TIM -->
+        <div class="about-text">
+            <p>Dibalik seluruh materi, panduan analisis teknis, serta perangkat kerja operasional di <strong>Otoritas Kerja</strong>, terdapat dedikasi praktisi yang berpengalaman langsung menangani urusan lini produksi dan standar operasional di lantai pabrik.</p>
+            
+            <div class="mission-quote">
+                "Pengalaman nyata di lapangan disajikan dalam struktur metodologi yang presisi, praktis, dan siap dieksekusi."
+            </div>
+
+            <p>Kami percaya bahwa teori manajemen kualitas dan teknik industri terbaik adalah teori yang bisa diterapkan secara langsung tanpa berbelit-belit. Oleh karena itu, setiap panduan disusun berdasarkan studi kasus nyata di dunia kerja.</p>
+
+            <!-- PROFIL UTAMA -->
+            <div class="team-profile">
+                <img src="logo.jpeg" alt="Sukardi, S.T." class="team-avatar" onerror="this.style.src='https://via.placeholder.com/90'">
+                <div class="team-info">
+                    <h3>Sukardi, S.T.</h3>
+                    <div class="team-role">Pendiri & Penulis Utama / Praktisi Manufaktur</div>
+                    <p class="team-bio">
+                        Lulusan Teknik Industri yang aktif berkecimpung di lantai produksi manufaktur. Berfokus pada penerapan *Operational Excellence*, kendali mutu (*Quality Control*), FMEA, OEE, serta pengembangan instrumen analitis berbasis Microsoft Excel dan dokumentasi digital lapangan.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
     </main>
 
-    <footer class="text-center py-6 border-t border-slate-200 text-xs text-slate-500">
-        &copy; 2026 OtoritasKerja.com. All rights reserved.
+    <!-- FOOTER KAKI HALAMAN (DARK NAVY) -->
+    <footer>
+        &copy; 2026 OtoritasKerja.com. Hak cipta dilindungi undang-undang.
     </footer>
 
 </body>
