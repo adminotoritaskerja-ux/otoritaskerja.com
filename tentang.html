@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tentang Kami - Otoritas Kerja</title>
+    <title>Tim Kami - Otoritas Kerja</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; }
@@ -20,10 +20,10 @@
         .nav-links a { font-weight: 600; font-size: 0.88rem; color: #475569; text-decoration: none; padding: 4px 10px; border-radius: 6px; transition: all 0.2s; }
         .nav-links a:hover, .nav-links a.active { color: #0284c7; background: #f1f5f9; }
 
-        /* KONTEN UTAMA - FULL PUTIH, RATA, TANPA CARD */
+        /* KONTEN UTAMA - FULL PUTIH, RATA, TANPA CARD RUMIT */
         .main-container { max-width: 800px; margin: 0 auto; padding: 3rem 1.2rem; flex: 1; width: 100%; }
         
-        /* JUDUL & HEADER TENTANG */
+        /* JUDUL & HEADER TIM */
         .about-header { margin-bottom: 2.5rem; text-align: left; border-bottom: 2px solid #0284c7; padding-bottom: 1rem; display: inline-block; }
         .brand-badge { display: inline-flex; align-items: center; gap: 6px; color: #0284c7; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 0.4rem; }
         .brand-badge img { width: 18px; height: 18px; border-radius: 50%; object-fit: cover; }
@@ -35,6 +35,13 @@
         
         /* STATEMENT / QUOTE RATA KIRI ELEGAN */
         .mission-quote { background: #f8fafc; border-left: 4px solid #0284c7; padding: 1.2rem 1.5rem; margin: 2rem 0; font-size: 1rem; color: #0f172a; font-weight: 500; font-style: italic; border-radius: 0 8px 8px 0; }
+
+        /* PROFIL ANGGOTA TIM (BERSIH & MINIMALIS) */
+        .team-profile { display: flex; gap: 1.5rem; align-items: flex-start; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px dashed #e2e8f0; }
+        .team-avatar { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; border: 2px solid #0284c7; flex-shrink: 0; }
+        .team-info h3 { font-size: 1.25rem; color: #0f172a; font-weight: 700; margin-bottom: 0.2rem; }
+        .team-role { font-size: 0.9rem; color: #0284c7; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.8rem; }
+        .team-bio { font-size: 0.98rem; color: #475569; line-height: 1.6; }
 
         /* FOOTER KAKI HALAMAN (WARNA DARK NAVY) */
         footer { 
@@ -59,7 +66,8 @@
             </a>
             <nav class="nav-links">
                 <a href="index.html"><i class="fa-solid fa-house"></i> Beranda</a>
-                <a href="tentang.html" class="active"><i class="fa-solid fa-circle-info"></i> Tentang</a>
+                <a href="tentang.html"><i class="fa-solid fa-circle-info"></i> Tentang</a>
+                <a href="team.html" class="active"><i class="fa-solid fa-users"></i> Tim</a>
             </nav>
         </div>
     </header>
@@ -67,26 +75,35 @@
     <!-- ISI HALAMAN FULL WHITE & RATA -->
     <main class="main-container">
         
-        <!-- HEADER JUDUL DENGAN LOGO ASLI OTORITAS KERJA -->
+        <!-- HEADER JUDUL -->
         <div class="about-header">
             <span class="brand-badge">
                 <img src="logo.jpeg" alt="Logo Otoritas Kerja" onerror="this.style.display='none'">
-                Profil Platform
+                Praktisi & Pengembang
             </span>
-            <h1 class="brand-title">Tentang Otoritas Kerja</h1>
+            <h1 class="brand-title">Tim & Penulis Otoritas Kerja</h1>
         </div>
 
-        <!-- NARASI PROFIL -->
+        <!-- NARASI PROFIL TIM -->
         <div class="about-text">
-            <p><strong>Otoritas Kerja</strong> adalah platform digital independen yang didedikasikan sebagai pusat referensi, standar operasional, dan penguatan kompetensi teknis di dunia kerja serta manufaktur modern.</p>
+            <p>Dibalik seluruh materi, panduan analisis teknis, serta *template* operasional di <strong>Otoritas Kerja</strong>, terdapat dedikasi praktisi yang berpengalaman langsung di lantai pabrik dan industri manufaktur modern.</p>
             
             <div class="mission-quote">
-                "Mendampingi praktisi dan profesional industri dalam mewujudkan efisiensi, kualitas, dan keunggulan operasional yang berkelanjutan."
+                "Pengalaman nyata di lapangan disajikan dalam struktur metodologi yang presisi, praktis, dan siap dieksekusi."
             </div>
 
-            <p>Platform ini hadir untuk menjembatani kebutuhan para praktisi, supervisor, teknisi, hingga manajemen dalam mengakses metodologi kerja terstruktur, alat analisis operasional, serta panduan praktis yang siap diterapkan secara nyata di lapangan.</p>
+            <!-- PROFIL UTAMA (SUKARDI) -->
+            <div class="team-profile">
+                <img src="logo.jpeg" alt="Sukardi, S.T." class="team-avatar" onerror="this.src='https://via.placeholder.com/90'">
+                <div class="team-info">
+                    <h3>Sukardi, S.T.</h3>
+                    <div class="team-role">Pendiri & Penulis Utama / Praktisi Manufaktur</div>
+                    <p class="team-bio">
+                        Lulusan Teknik Industri yang aktif menjabat sebagai praktisi operasional manufaktur. Berfokus pada implementasi *Operational Excellence*, kendali mutu (*Quality Control*), sistem FMEA, OEE, serta digitalisasi alat bantu kerja berbasis Microsoft Excel dan web praktis.
+                    </p>
+                </div>
+            </div>
 
-            <p>Seluruh materi dan pemikiran yang disajikan di Otoritas Kerja disusun berorientasi pada pendekatan <em>Operational Excellence</em>, kepemimpinan teknis, serta peningkatan efisiensi yang berkesinambungan.</p>
         </div>
 
     </main>
