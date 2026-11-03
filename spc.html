@@ -3,101 +3,409 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 1. JUDUL KHUSUS ARTIKEL -->
     <title>Penerapan Statistical Process Control (SPC) di Pabrik - Otoritas Kerja</title>
-    <meta name="description" content="Panduan dasar penerapan Statistical Process Control (SPC) untuk mengontrol kualitas produk dan mendeteksi penyimpangan proses lebih dini.">
+
+    <!-- 2. DESKRIPSI KHUSUS ARTIKEL -->
+    <meta name="description" content="Kupas tuntas dan studi kasus penerapan Statistical Process Control (SPC) untuk mengendalikan kualitas dan mendeteksi penyimpangan proses manufaktur secara statistik.">
+
+    <!-- 3. PREVIEW / THUMBNAIL KHUSUS UNTUK WHATSAPP / SOSMED -->
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://otoritaskerja.com/spc.html">
-    <meta property="og:title" content="Penerapan Statistical Process Control (SPC) di Pabrik">
-    <meta property="og:description" content="Panduan dasar penerapan Statistical Process Control (SPC) untuk mengontrol kualitas produk secara statistik.">
-    <meta property="og:image" content="https://otoritaskerja.com/spc.jpg">
+    <meta property="og:url" content="https://otoritaskerja.com/penerapan-spc-pabrik.html">
+    <meta property="og:title" content="Penerapan Statistical Process Control (SPC) di Pabrik - Otoritas Kerja">
+    <meta property="og:description" content="Kupas tuntas dan studi kasus penerapan Statistical Process Control (SPC) untuk mengendalikan kualitas dan mendeteksi penyimpangan proses manufaktur secara statistik.">
+    <meta property="og:image" content="https://otoritaskerja.com/spc-banner.jpg">
+
+    <!-- FAVICON & APPLE TOUCH ICON -->
     <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="apple-touch-icon" href="spc-banner.jpg">
+
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
-        .font-serif-book { font-family: 'Merriweather', serif; }
-        body { font-family: 'Inter', sans-serif; }
+        .font-serif-book {
+            font-family: 'Merriweather', serif;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        :root {
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --border-color: #e2e8f0;
+            --primary-blue: #0284c7;
+            --primary-dark: #0f172a;
+            --industrial-blue: #0369a1; 
+            --accent-orange: #ea580c;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img, picture, video, canvas, svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 99999;
+            width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+        }
+
+        .top-header-white {
+            background-color: #ffffff;
+            width: 100%;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color, #e2e8f0);
+        }
+
+        .top-header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .logo-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-svg {
+            height: 44px;
+            width: auto;
+        }
+
+        .brand-title {
+            font-size: 1.65rem;
+            font-weight: 800;
+            color: var(--primary-dark, #0f172a);
+        }
+
+        .brand-title span {
+            color: var(--primary-blue, #0284c7);
+        }
+
+        .main-navbar-navy {
+            background-color: var(--primary-dark, #0f172a);
+            width: 100%;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .nav-menu::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-menu li a {
+            display: block;
+            padding: 12px 20px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .nav-menu li a:hover,
+        .nav-menu li a.active {
+            background-color: var(--primary-blue, #0284c7);
+        }
+
+        .ticker-bar-white {
+            background-color: #ffffff;
+            width: 100%;
+            border-top: 1px solid #cbd5e1;
+            border-bottom: 2px solid var(--border-color, #e2e8f0);
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .ticker-container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .badge-skew-container {
+            background-color: var(--industrial-blue, #0369a1);
+            color: #ffffff;
+            padding: 9px 22px 9px 14px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            white-space: nowrap;
+            transform: skewX(-15deg);
+            transform-origin: left bottom;
+            margin-left: -8px;
+            border-right: 5px solid var(--accent-orange, #ea580c);
+            flex-shrink: 0;
+            position: relative;
+            z-index: 10;
+            box-shadow: 4px 0 10px rgba(0,0,0,0.15);
+        }
+
+        .badge-text-inner {
+            display: inline-block;
+            transform: skewX(15deg);
+            padding-left: 4px;
+        }
+
+        .ticker-marquee-box {
+            flex-grow: 1;
+            font-size: 0.85rem;
+            color: var(--primary-dark, #0f172a);
+            font-weight: 600;
+            padding-left: 16px;
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .logo-svg { height: 36px; }
+            .brand-title { font-size: 1.3rem; }
+            .nav-menu li a { padding: 10px 14px; font-size: 0.82rem; }
+            .badge-skew-container { padding: 7px 16px 7px 10px; font-size: 0.72rem; }
+            .ticker-marquee-box { font-size: 0.78rem; padding-left: 10px; }
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
-        <div class="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="index.html" class="font-bold text-slate-900 tracking-tight text-lg hover:text-blue-600 transition">Otoritas Kerja</a>
-            <nav class="flex items-center space-x-6 text-sm font-medium">
-                <a href="index.html" class="text-slate-600 hover:text-slate-900 transition">Beranda</a>
-                <button onclick="openModal('authorModal')" class="text-slate-600 hover:text-slate-900 transition cursor-pointer">Tentang Penulis</button>
-            </nav>
+    
+    <!-- HEADER UTAMA 3-TIER PORTAL -->
+    <header class="site-header">
+        <div class="top-header-white">
+            <div class="top-header-inner">
+                <a href="index.html" class="logo-brand">
+                    <img src="favicon.png" alt="Otoritas Kerja" class="logo-svg">
+                    <div class="brand-title">Otoritas<span>Kerja</span></div>
+                </a>
+            </div>
+        </div>
+
+        <nav class="main-navbar-navy">
+            <ul class="nav-menu">
+                <li><a href="index.html">BERANDA</a></li>
+                <li><a href="about.html">TENTANG</a></li>
+                <li><a href="contact.html">KONTAK</a></li>
+            </ul>
+        </nav>
+
+        <div class="ticker-bar-white">
+            <div class="ticker-container">
+                <div class="badge-skew-container">
+                    <span class="badge-text-inner">STANDAR PRAKTISI</span>
+                </div>
+                <div class="ticker-marquee-box">
+                    <marquee behavior="scroll" direction="left" scrollamount="4">
+                        Penerapan Statistical Process Control (SPC) di Pabrik, Mengendalikan Variasi Proses & Menjaga Kualitas Produk
+                    </marquee>
+                </div>
+            </div>
         </div>
     </header>
+    
+    <!-- Konten Utama Artikel -->
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-5 space-y-12 flex-grow w-full">
 
-    <main class="max-w-3xl mx-auto px-6 py-12 space-y-12 flex-grow">
-        <section class="text-center pb-8 border-b border-slate-200 space-y-6">
-            <div class="max-w-lg mx-auto shadow-xl rounded-xl overflow-hidden border border-slate-200 bg-white p-2">
-                <img src="spc.jpg" alt="Penerapan SPC Manufaktur" class="w-full h-auto rounded-lg object-cover">
-            </div>
+        <!-- HEADLINE ARTIKEL & AUTHOR BADGE -->
+        <section class="space-y-4">
             <div>
-                <span class="bg-emerald-100 text-emerald-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Quality Control & Statistik</span>
-                <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-4 mb-3 font-serif-book">
+                <h1 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-slate-900 mt-2 mb-3 font-serif-book leading-tight">
                     Penerapan Statistical Process Control (SPC) di Pabrik
                 </h1>
-                <p class="text-slate-600 italic text-base md:text-lg max-w-xl mx-auto font-serif-book">
-                    "Mengendalikan kualitas produk secara statistik menggunakan peta kendali (*control chart*) untuk mencegah cacat sebelum terjadi."
+                <p class="text-slate-600 italic text-sm sm:text-base md:text-lg max-w-xl font-serif-book">
+                    "Kupas tuntas bagaimana metode statistik mengubah cara kerja pabrik dari sekadar menyortir barang rusak menjadi mencegah kerusakan sejak di dalam proses."
                 </p>
-                <div class="text-xs text-slate-400 mt-4">Oleh Sukardi &bull; 03 Okt 2026</div>
+            </div>
+
+            <div class="flex items-center space-x-4 p-4 bg-white rounded-xl border border-slate-200 shadow-sm cursor-pointer" onclick="openModal('authorModal')">
+                <img src="foto-sukardi.jpg" alt="Sukardi, S.T." class="w-12 h-12 rounded-full object-cover flex-shrink-0 border border-slate-200 shadow-inner">
+                <div class="text-xs md:text-sm">
+                    <div class="font-bold text-slate-900 text-base">Sukardi, S.T.</div>
+                    <div class="text-slate-600">Praktisi Manufaktur & Industrial Engineer</div>
+                    <div class="text-slate-400 text-xs mt-0.5">Ditinjau & Dipublikasikan: 03 Okt 2026 &bull; 11 min baca</div>
+                </div>
+            </div>
+                
+            <div class="rounded-xl overflow-hidden shadow-md">
+                <img src="spc-article-banner.jpg" alt="Banner Artikel SPC" class="w-full h-auto object-cover">
             </div>
         </section>
 
+        <!-- ISI ARTIKEL -->
         <article class="space-y-8">
+            
+            <!-- Pengantar & Realitas Lapangan -->
             <div class="space-y-4">
-                <h2 class="text-2xl font-bold text-slate-900 font-serif-book">Mengapa Pengendalian Proses Secara Statistik Dibutuhkan?</h2>
+                <h2 class="text-2xl font-bold text-slate-900 font-serif-book">Mengapa Inspeksi Saja Tidak Cukup Menyelamatkan Mutu?</h2>
                 <p class="text-slate-700 leading-relaxed text-base md:text-lg">
-                    Dalam proses manufaktur, variasi adalah hal yang tidak bisa dihindari. Namun, variasi yang tidak terkontrol akan menghasilkan produk di luar spesifikasi (*out of spec*). <em>Statistical Process Control</em> (SPC) adalah metode pengendalian mutu berbasis data statistik untuk memantau kestabilan proses produksi dari waktu ke waktu.
+                    Di banyak pabrik tradisional, pengendalian mutu dilakukan di ujung jalur produksi oleh tim Quality Control (QC) yang bertugas menyortir: mana produk yang bagus (lolos) dan mana yang rusak (masuk keranjang afkir). Cara ini ibarat menyetir mobil dengan hanya melihat ke spion belakang—kita baru tahu ada masalah setelah kecelakaan atau kerugian terjadi.
+                </p>
+                <p class="text-slate-700 leading-relaxed text-base md:text-lg">
+                    Di sinilah konsep <strong>Statistical Process Control (SPC)</strong> mengubah total filosofi tersebut. SPC menggunakan metode statistik untuk memantau dan mengendalikan proses produksi secara *real-time*, sehingga kita bisa mendeteksi tanda-tanda penyimpangan *sebelum* produk cacat benar-benar tercetak massal.
                 </p>
             </div>
-            <div class="space-y-4 pt-4">
-                <h3 class="text-xl font-bold text-slate-900 font-serif-book">Pilar Utama dalam SPC</h3>
-                <ul class="list-disc list-inside space-y-3 text-slate-700 pl-4">
-                    <li><strong>Peta Kendali (Control Chart):</strong> Grafik tren pengukuran dengan Batas Kontrol Atas (UCL) dan Batas Kontrol Bawah (LCL) untuk mendeteksi anomali mesin.</li>
-                    <li><strong>Common Causes vs Assignable Causes:</strong> Membedakan variasi wajar akibat sistem dengan variasi khusus akibat gangguan mesin atau material.</li>
-                    <li><strong>Inspeksi Berbasis Sampling:</strong> Pengambilan sampel produk secara berkala guna memastikan proses tetap berada di dalam koridor toleransi mutu.</li>
-                </ul>
+
+            <!-- MEMAHAMI DUA JENIS VARIASI -->
+            <div class="space-y-6 pt-4 border-t border-slate-200">
+                <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Konsep Dasar SPC</span>
+                <h3 class="text-xl md:text-2xl font-bold text-slate-900 font-serif-book">Memahami Musuh Utama Proses: Variasi Biasa vs Variasi Khusus</h3>
+                
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4 text-slate-700 leading-relaxed">
+                    <p>
+                        Dalam dunia manufaktur, tidak ada dua produk yang benar-benar identik 100%. Selalu ada sedikit perbedaan ukuran, ketebalan, atau berat. SPC membagi variasi ini menjadi dua kategori besar:
+                    </p>
+                    <ul class="list-disc pl-5 space-y-2 text-sm md:text-base">
+                        <li><strong>Common Causes (Penyebab Umum/Alami):</strong> Variasi kecil yang melekat pada sistem mesin itu sendiri (misalnya getaran halus motor standar atau gesekan mekanis normal). Variasi ini bersifat acak dan dapat diterima selama masih dalam batas kontrol.</li>
+                        <li><strong>Special Causes (Penyebab Khusus/Assignable):</strong> Variasi abnormal yang datang dari luar kebiasaan (misalnya bahan baku dari supplier baru yang jelek, baut longgar, atau setelan suhu pemanas yang berubah tiba-tiba). Variasi inilah yang harus segera diburu dan dihentikan.</li>
+                    </ul>
+                </div>
             </div>
+
+            <!-- STUDI KASUS PENERAPAN DI LINI EKSTRUSI -->
+            <div class="space-y-6 pt-4 border-t border-slate-200">
+                <span class="text-xs font-bold text-sky-600 uppercase tracking-wider">Studi Kasus Lapangan</span>
+                <h3 class="text-xl md:text-2xl font-bold text-slate-900 font-serif-book">Studi Kasus: Mengendalikan Ketebalan Plastik Film dengan Peta Kendali (Control Chart)</h3>
+                
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4 text-slate-700 leading-relaxed">
+                    <p>
+                        Mari kita lihat penerapan nyata di lini mesin <em>extrusion</em>. Masalah klasik yang sering dihadapi adalah ketebalan lembaran plastik film yang sering naik-turun di luar batas spesifikasi standar pelanggan.
+                    </p>
+                    <p class="font-semibold text-slate-900">Langkah-langkah Penerapan SPC di Lantai Produksi:</p>
+                    <ol class="list-decimal pl-5 space-y-2 text-sm md:text-base">
+                        <li><strong>Pengambilan Sampel Berkala:</strong> Setiap 2 jam sekali, operator mengambil 5 sampel gulungan produk dari titik yang sama untuk diukur ketebalannya secara presisi menggunakan mikrometer digital.</li>
+                        <li><strong>Pembuatan Peta Kendali (Control Chart):</strong> Data rata-rata (*X-bar chart*) dan rentang nilai (*R chart*) dimasukkan ke dalam grafik pengendali yang dipajang di dekat panel mesin. Grafik ini dilengkapi garis tengah (*Center Line*), Batas Kontrol Atas (*UCL*), dan Batas Kontrol Bawah (*LCL*).</li>
+                        <li><strong>Mendeteksi Sinyal Peringatan Dini:</strong> Pada hari Rabu shift sore, titik grafik memang belum keluar dari garis batas merah, namun muncul pola 7 titik beruntun yang terus menerus naik ke arah atas (*trend rule*).</li>
+                        <li><strong>Tindakan Korektif Dini:</strong> Operator tidak menunggu produk menjadi rusak. Berdasarkan sinyal SPC tersebut, mereka langsung memeriksa zona pemanas ekstruder dan menemukan elemen pengatur suhu mengalami gangguan awal. Mesin langsung dikalibrasi.</li>
+                    </ol>
+                    <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-200 text-xs md:text-sm text-emerald-900 space-y-1">
+                        <div class="font-bold">Hasil Akhir:</div>
+                        <div>Potensi kerugian besar berupa cetakan ribuan meter plastik cacat berhasil dicegah total sebelum produk keluar dari mesin.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ATURAN BACA PETA KENDALI -->
+            <div class="space-y-6 pt-4 border-t border-slate-200">
+                <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Panduan Praktis</span>
+                <h3 class="text-xl md:text-2xl font-bold text-slate-900 font-serif-book">Kapan Proses Dianggap Keluar Kendali? (Aturan Western Electric)</h3>
+                
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4 text-slate-700 leading-relaxed">
+                    <p>
+                        Operator tidak boleh menebak-nebak kapan sebuah mesin harus disetel ulang. Peta kendali SPC memiliki aturan tegas untuk menyatakan proses sedang bermasalah:
+                    </p>
+                    <ul class="list-disc pl-5 space-y-2 text-sm md:text-base">
+                        <li>Ada 1 titik data yang jatuh di luar batas kontrol atas (UCL) atau batas kontrol bawah (LCL).</li>
+                        <li>Ada 9 titik berturut-turut jatuh di sisi yang sama dari garis tengah (*Center Line*).</li>
+                        <li>Ada 6 titik berturut-turut menunjukkan tren naik terus atau turun terus (*trend*).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- KESIMPULAN -->
+            <div class="bg-slate-900 text-white p-6 md:p-8 rounded-2xl shadow-xl space-y-4 mt-8">
+                <h3 class="text-xl font-bold text-emerald-400 font-serif-book">Kesimpulan Praktisi</h3>
+                <p class="text-sm text-slate-300 leading-relaxed">
+                    Statistical Process Control (SPC) bukan sekadar menggambar grafik di atas kertas atau komputer, melainkan membangun budaya waspada berbasis data di lantai produksi. Dengan SPC, kita menghentikan kebiasaan "pemadam kebakaran" (menunggu barang rusak lalu panik) dan beralih menjadi pengendali proses yang proaktif.
+                </p>
+            </div>
+
+            <blockquote class="border-l-4 border-emerald-600 pl-4 py-3 my-6 bg-emerald-50/50 italic text-slate-700">
+                <strong>Catatan Praktisi:</strong><br>
+                "Proses yang dikendalikan dengan statistik adalah fondasi utama bagi pabrik mana pun yang ingin mencapai efisiensi tanpa kompromi."
+            </blockquote>
+
         </article>
 
+        <!-- Kotak Penawaran Download Template SPC -->
         <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 md:p-12 text-center text-white shadow-xl mt-16 mb-8">
-            <span class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Praktis & Siap Pakai</span>
-            <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-3 font-serif-book">Download Template Peta Kendali SPC</h3>
+            <span class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Praktis & Otomatis</span>
+            <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-3 font-serif-book">Download Template Master SPC Control Chart (Format Excel)</h3>
             <p class="text-slate-300 text-sm md:text-base max-w-xl mx-auto mb-8 leading-relaxed">
-                Gunakan lembar kerja Excel otomatis untuk membuat grafik kendali mutu dan analisis data pengukuran lini produksi.
+                Dapatkan template spreadsheet Excel otomatis lengkap dengan rumus perhitungan batas kontrol UCL/LCL otomatis dan grafik X-bar & R chart siap pakai untuk lini produksi Anda.
             </p>
             <a href="#" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition duration-200 text-base cursor-pointer">
-                Download Template SPC Sekarang
+                Download Template Excel SPC Chart
             </a>
+            <p class="text-xs text-slate-400 mt-4">Format file .xlsx ramah operator dan langsung terhubung ke grafik pengendali.</p>
         </div>
+
     </main>
 
+    <!-- Modal Tentang Penulis -->
     <div id="authorModal" class="fixed inset-0 z-50 hidden bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-white rounded-2xl max-w-md w-full p-6 md:p-8 shadow-2xl relative text-center">
             <button onclick="closeModal('authorModal')" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 font-bold text-xl cursor-pointer">&times;</button>
             <h3 class="text-2xl font-bold text-slate-900 mb-4 font-serif-book">Tentang Penulis</h3>
             <p class="text-slate-700 text-sm md:text-base leading-relaxed mb-4">
-                <strong>Sukardi</strong> adalah praktisi manufaktur yang membagikan metode pengendalian kualitas terapan dan perangkat kerja teknis melalui platform <em>Otoritas Kerja</em>.
+                <strong>Sukardi</strong> adalah seorang praktisi manufaktur yang meniti perjalanan kariernya secara bertahap langsung dari lantai produksi. Berbekal ketekunan, semangat belajar yang tinggi, serta pengalaman nyata menghadapi dinamika operasional harian, ia memahami betul denyut nadi dan tantangan yang dihadapi oleh para pekerja di lini depan.
+            </p>
+            <p class="text-slate-700 text-sm md:text-base leading-relaxed">
+                Melalui platform <em>Otoritas Kerja</em>, beliau mendedikasikan pengalaman praktisnya untuk berbagi perangkat kerja, SOP, dan metodologi peningkatan efisiensi manufaktur.
             </p>
         </div>
     </div>
 
     <!-- Footer -->
     <footer class="bg-slate-900 text-slate-300 py-4 mt-6 border-t border-slate-800 text-center text-xs">
-  <div class="max-w-xl mx-auto px-4 space-y-1">
-    <p>&copy; 2026 Otoritas Kerja. Hak Cipta Dilindungi.</p>
-    <p><a href="privacy.html" class="hover:text-white transition-colors">Kebijakan Privasi</a></p>
-  </div>
+        <div class="max-w-xl mx-auto px-4 space-y-1">
+            <p>&copy; 2026 Otoritas Kerja. Hak Cipta Dilindungi.</p>
+            <p><a href="privacy.html" class="hover:text-white transition-colors">Kebijakan Privasi</a></p>
+        </div>
     </footer>
 
+    <!-- Skrip Modal Interaktif -->
     <script>
-        function openModal(id) { document.getElementById(id).classList.remove('hidden'); }
-        function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
-        window.onclick = function(e) { if (e.target.classList.contains('fixed')) e.target.classList.add('hidden'); }
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('fixed')) {
+                event.target.classList.add('hidden');
+            }
+        }
     </script>
 </body>
 </html>
