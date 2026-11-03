@@ -5,21 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- 1. JUDUL KHUSUS ARTIKEL -->
-    <title>Panduan Menyusun SOP dan WI yang Efektif di Lantai Pabrik - Otoritas Kerja</title>
+    <title>Menyusun SOP & WI yang Efektif untuk Standarisasi Kerja - Otoritas Kerja</title>
 
     <!-- 2. DESKRIPSI KHUSUS ARTIKEL -->
-    <meta name="description" content="Mengubah instruksi rumit di lantai pabrik menjadi panduan operasional yang mudah dipahami, aplikatif, dan konsisten dijalankan.">
+    <meta name="description" content="Kupas tuntas dan studi kasus cara menyusun Standar Operasional Prosedur (SOP) serta Work Instruction (WI) yang aplikatif untuk operator di lantai produksi.">
 
     <!-- 3. PREVIEW / THUMBNAIL KHUSUS UNTUK WHATSAPP / SOSMED -->
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://otoritaskerja.com/sop-wi-manufaktur.html">
-    <meta property="og:title" content="Panduan Menyusun SOP dan WI yang Efektif di Lantai Pabrik - Otoritas Kerja">
-    <meta property="og:description" content="Mengubah instruksi rumit di lantai pabrik menjadi panduan operasional yang mudah dipahami, aplikatif, dan konsisten dijalankan.">
-    <meta property="og:image" content="https://otoritaskerja.com/sop.jpg">
+    <meta property="og:url" content="https://otoritaskerja.com/penyusunan-sop-wi.html">
+    <meta property="og:title" content="Menyusun SOP & WI yang Efektif untuk Standarisasi Kerja - Otoritas Kerja">
+    <meta property="og:description" content="Kupas tuntas dan studi kasus cara menyusun Standar Operasional Prosedur (SOP) serta Work Instruction (WI) yang aplikatif untuk operator di lantai produksi.">
+    <meta property="og:image" content="https://otoritaskerja.com/sop-wi-banner.jpg">
 
     <!-- FAVICON & APPLE TOUCH ICON -->
     <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="apple-touch-icon" href="sop.jpg">
+    <link rel="apple-touch-icon" href="sop-wi-banner.jpg">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -28,13 +28,16 @@
         .font-serif-book {
             font-family: 'Merriweather', serif;
         }
-          :root {
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        :root {
             --bg-body: #f8fafc;
             --bg-card: #ffffff;
             --border-color: #e2e8f0;
             --primary-blue: #0284c7;
             --primary-dark: #0f172a;
-            --industrial-blue: #0369a1; /* Biru pekat industrial */
+            --industrial-blue: #0369a1; 
             --accent-orange: #ea580c;
             --text-main: #1e293b;
             --text-muted: #64748b;
@@ -46,7 +49,6 @@
             box-sizing: border-box;
         }
 
-        /* Memastikan root dan body murni untuk sistem sticky header yang stabil */
         html {
             scroll-behavior: smooth;
         }
@@ -64,9 +66,6 @@
             height: auto;
         }
 
-        /* =========================================================
-           HEADER UTAMA STICKY MUTLAK (DIJAMIN TIDAK IKUT KE-SCROLL)
-           ========================================================= */
         .site-header {
             position: sticky;
             top: 0;
@@ -88,9 +87,6 @@
             align-items: center;
             justify-content: space-between;
             width: 100%;
-            max-width: 100%;
-            margin: 0;
-            padding: 0;
         }
 
         .logo-brand {
@@ -151,14 +147,6 @@
             background-color: var(--primary-blue, #0284c7);
         }
 
-        .nav-menu li a.btn-admin-nav {
-            background-color: #1e293b;
-            margin-left: auto;
-        }
-
-        /* =========================================================
-           TICKER & BADGE JAJARAN GENJANG (BIRU PEKAT INDUSTRIAL)
-           ========================================================= */
         .ticker-bar-white {
             background-color: #ffffff;
             width: 100%;
@@ -167,29 +155,27 @@
             padding: 0;
             overflow: hidden;
             position: relative;
+            display: flex;
+            align-items: center;
         }
 
         .ticker-container {
             display: flex;
             align-items: center;
             width: 100%;
-            max-width: 100%;
-            padding: 0;
-            margin: 0;
         }
 
         .badge-skew-container {
-            background-color: var(--industrial-blue, #0369a1); /* Warna biru pekat industrial */
+            background-color: var(--industrial-blue, #0369a1);
             color: #ffffff;
-            padding: 9px 20px 9px 12px;
-            font-size: 0.82rem;
+            padding: 9px 22px 9px 14px;
+            font-size: 0.8rem;
             font-weight: 800;
             white-space: nowrap;
             transform: skewX(-15deg);
             transform-origin: left bottom;
             margin-left: -8px;
             border-right: 5px solid var(--accent-orange, #ea580c);
-            border-left: none !important;
             flex-shrink: 0;
             position: relative;
             z-index: 10;
@@ -199,23 +185,16 @@
         .badge-text-inner {
             display: inline-block;
             transform: skewX(15deg);
-            padding-left: 6px;
+            padding-left: 4px;
         }
 
         .ticker-marquee-box {
             flex-grow: 1;
-            font-size: 0.88rem;
+            font-size: 0.85rem;
             color: var(--primary-dark, #0f172a);
             font-weight: 600;
             padding-left: 16px;
-            position: relative;
-            z-index: 1;
             overflow: hidden;
-        }
-
-        .ticker-marquee-box marquee {
-            display: block;
-            vertical-align: middle;
         }
 
         @media (max-width: 768px) {
@@ -223,26 +202,23 @@
             .brand-title { font-size: 1.3rem; }
             .nav-menu li a { padding: 10px 14px; font-size: 0.82rem; }
             .badge-skew-container { padding: 7px 16px 7px 10px; font-size: 0.72rem; }
-            .ticker-marquee-box { font-size: 0.8rem; padding-left: 12px; }
+            .ticker-marquee-box { font-size: 0.78rem; padding-left: 10px; }
         }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
     
-    <!-- HEADER UTAMA 3-TIER PORTAL (TERKUNCI / STICKY DI ATAS) -->
+    <!-- HEADER UTAMA 3-TIER PORTAL -->
     <header class="site-header">
-        <!-- TIER 1: LOGO HEADER PUTIH -->
         <div class="top-header-white">
             <div class="top-header-inner">
                 <a href="index.html" class="logo-brand">
-                    <!-- IMG Logo Asli Otoritas Kerja -->
                     <img src="favicon.png" alt="Otoritas Kerja" class="logo-svg">
                     <div class="brand-title">Otoritas<span>Kerja</span></div>
                 </a>
             </div>
         </div>
 
-        <!-- TIER 2: NAVBAR MENU NAVY -->
         <nav class="main-navbar-navy">
             <ul class="nav-menu">
                 <li><a href="index.html">BERANDA</a></li>
@@ -251,117 +227,163 @@
             </ul>
         </nav>
 
-        <!-- TIER 3: TICKER BAR / SUB-HEADER -->
         <div class="ticker-bar-white">
             <div class="ticker-container">
                 <div class="badge-skew-container">
-                    <span class="badge-text-inner">MODUL FMEA</span>
+                    <span class="badge-text-inner">STANDAR PRAKTISI</span>
                 </div>
                 <div class="ticker-marquee-box">
                     <marquee behavior="scroll" direction="left" scrollamount="4">
-                        Panduan Praktis Failure Mode and Effects Analysis untuk Efisiensi & Kendali Mutu Manufaktur
+                        Menyusun SOP & Work Instruction (WI) Efektif, Mengatasi Hambatan Operasional & Standarisasi Lantai Produksi
                     </marquee>
                 </div>
             </div>
         </div>
     </header>
-
+    
     <!-- Konten Utama Artikel -->
     <main class="max-w-3xl mx-auto px-4 sm:px-6 py-5 space-y-12 flex-grow w-full">
 
         <!-- HEADLINE ARTIKEL & AUTHOR BADGE -->
-    <main class="max-w-3xl mx-auto px-6 py-12 space-y-12 flex-grow">
-
+        <section class="space-y-4">
             <div>
-                <span class="bg-emerald-100 text-emerald-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Free Standar & Panduan Mutu</span>
-                <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-4 mb-3 font-serif-book">
+                <h1 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-slate-900 mt-2 mb-3 font-serif-book leading-tight">
                     Menyusun SOP dan WI yang Efektif untuk Standarisasi Kerja Operator
                 </h1>
-                <p class="text-slate-600 italic text-base md:text-lg max-w-xl mx-auto font-serif-book">
-                    "Mengubah instruksi rumit di lantai pabrik menjadi panduan operasional yang mudah dipahami, aplikatif, dan konsisten dijalankan."
+                <p class="text-slate-600 italic text-sm sm:text-base md:text-lg max-w-xl font-serif-book">
+                    "Kupas tuntas dan studi kasus nyata bagaimana mengubah dokumen tebal yang membosankan menjadi panduan kerja ringkas yang benar-benar dipahami dan dijalankan operator di lini depan."
                 </p>
             </div>
 
-            <!-- Author Box Sukardi, S.T. dengan Foto -->
             <div class="flex items-center space-x-4 p-4 bg-white rounded-xl border border-slate-200 shadow-sm cursor-pointer" onclick="openModal('authorModal')">
                 <img src="foto-sukardi.jpg" alt="Sukardi, S.T." class="w-12 h-12 rounded-full object-cover flex-shrink-0 border border-slate-200 shadow-inner">
                 <div class="text-xs md:text-sm">
                     <div class="font-bold text-slate-900 text-base">Sukardi, S.T.</div>
                     <div class="text-slate-600">Praktisi Manufaktur & Industrial Engineer</div>
-                    <div class="text-slate-400 text-xs mt-0.5">Ditinjau & Dipublikasikan: 03 Okt 2026 &bull; 8 min baca</div>
+                    <div class="text-slate-400 text-xs mt-0.5">Ditinjau & Dipublikasikan: 03 Okt 2026 &bull; 10 min baca</div>
                 </div>
             </div>
-
-            <!-- Banner Tampil Lepas Tanpa Bingkai -->
-            <div class="rounded-xl overflow-hidden shadow-md w-full">
-                <img src="fmea-artikel.jpg" alt="Banner Artikel FMEA Manufaktur" class="w-full h-auto object-cover">
+                
+            <div class="rounded-xl overflow-hidden shadow-md">
+                <img src="sop-artikel.jpg" alt="Banner Artikel SOP & WI" class="w-full h-auto object-cover">
             </div>
         </section>
-        </div>
-    </header>
 
         <!-- ISI ARTIKEL -->
         <article class="space-y-8">
             
-            <!-- Pengantar -->
+            <!-- Pengantar & Realitas Lapangan -->
             <div class="space-y-4">
-                <h2 class="text-2xl font-bold text-slate-900 font-serif-book">Perbedaan Mendasar SOP dan WI di Lapangan</h2>
+                <h2 class="text-2xl font-bold text-slate-900 font-serif-book">Mengapa Banyak SOP Berakhir Jadi "Pajangan" di Rak?</h2>
                 <p class="text-slate-700 leading-relaxed text-base md:text-lg">
-                    Dalam keseharian operasional manufaktur, istilah <strong>SOP (Standard Operating Procedure)</strong> dan <strong>WI (Work Instruction)</strong> sering kali dianggap sama dan disamakan begitu saja. Padahal, keduanya memiliki cakupan dan kedalaman level informasi yang berbeda.
+                    Mari kita bernostalgia sejenak ke lantai produksi. Di banyak pabrik, ketika auditor datang atau ada kunjungan manajemen, dokumen Standar Operasional Prosedur (SOP) tersusun rapi di dalam map tebal berwarna biru di sudut meja pengawas. Namun, begitu jam operasional berjalan dan operator harus mengganti gulungan film (*changeover*) atau mengatasi kemacetan mesin, jarang sekali ada operator yang berlari membuka map tersebut untuk membaca isinya.
                 </p>
                 <p class="text-slate-700 leading-relaxed text-base md:text-lg">
-                    SOP bersifat makro—menjelaskan <i>siapa melakukan apa, kapan, dan mengapa</i> dalam sebuah proses lintas departemen. Sedangkan WI bersifat mikro—panduan teknis step-by-step <i>bagaimana seorang operator menjalankan suatu mesin atau tugas spesifik</i> di stasiun kerjanya.
+                    Mengapa hal ini bisa terjadi? Jawabannya sederhana: <strong>SOP tersebut dibuat dari meja kantor, bukan dari realitas lantai produksi</strong>. Dokumennya terlalu birokratis, penuh dengan kalimat naratif yang panjang, dan gagal menerjemahkan instruksi teknis yang mudah dicerna oleh operator di lini depan.
                 </p>
             </div>
 
-            <!-- Langkah Utama -->
-            <div class="space-y-4 pt-4">
-                <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Panduan Praktis</span>
-                <h3 class="text-xl font-bold text-slate-900 font-serif-book">3 Kunci Utama agar WI Benar-Benar Dibaca Operator</h3>
+            <!-- Membedakan SOP dan WI -->
+            <div class="space-y-6 pt-4 border-t border-slate-200">
+                <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Fondasi Dasar</span>
+                <h3 class="text-xl md:text-2xl font-bold text-slate-900 font-serif-book">Memahami Perbedaan Mendasar: SOP vs Work Instruction (WI)</h3>
                 
-                <div class="space-y-4 my-6">
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4 text-slate-700 leading-relaxed">
+                    <p>
+                        Sebelum kita menyusun standarisasi, kita harus meluruskan pemahaman mengenai hierarki dokumen. Sering kali istilah SOP dan WI dicampuradukkan padahal fungsi dan sasarannya berbeda:
+                    </p>
+                    <ul class="list-disc pl-5 space-y-2 text-sm md:text-base">
+                        <li><strong>SOP (Standard Operating Procedure):</strong> Bersifat makro dan lintas departemen. Dokumen ini menjawab pertanyaan <em>Siapa, Kapan, dan Apa</em> tahapan besar dari sebuah proses (contoh: SOP Penanganan Produk Cacat dari Produksi ke Gudang QC).</li>
+                        <li><strong>WI (Work Instruction / Instruksi Kerja):</strong> Bersifat mikro dan sangat teknis. Dokumen ini mendetailkan pertanyaan <em>Bagaimana cara persisnya</em> seorang operator menjalankan sebuah mesin atau alat (contoh: WI Menyalakan dan Mengatur Suhu Heater Mesin Extrusion No. 3).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- STUDI KASUS NYATA -->
+            <div class="space-y-6 pt-4 border-t border-slate-200">
+                <span class="text-xs font-bold text-sky-600 uppercase tracking-wider">Studi Kasus Lapangan</span>
+                <h3 class="text-xl md:text-2xl font-bold text-slate-900 font-serif-book">Studi Kasus: Mengubah WI Mesin Extrusion yang Rumit Menjadi Visual</h3>
+                
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4 text-slate-700 leading-relaxed">
+                    <p>
+                        Di sebuah lini produksi plastik *extrusion*, tingkat produk cacat (*scrap*) akibat kesalahan pengaturan awal (*startup loss*) sempat melonjak hingga 8% setiap awal shift pagi. Setelah ditelusuri oleh tim Engineering, penyebabnya bukan karena mesinnya rusak, melainkan karena operator baru salah memasukkan urutan penekanan tombol parameter suhu dan kecepatan tarikan rol (*winder*).
+                    </p>
+                    <p>
+                        WI yang lama berbentuk teks paragraf padat sepanjang 3 halaman yang disimpan di dalam binder kantor. Operator malas membacanya dan mengandalkan hafalan atau "kira-kira".
+                    </p>
+                    <p class="font-semibold text-slate-900">Langkah Perbaikan yang Ditempuh:</p>
+                    <ol class="list-decimal pl-5 space-y-2 text-sm md:text-base">
+                        <li><strong>Penyederhanaan Bahasa:</strong> Mengubah kalimat naratif menjadi poin-poin instruksi singkat berbasis tindakan langsung (*action verbs*).</li>
+                        <li><strong>Pendekatan Visual (One Point Lesson):</strong> Memasang lembar instruksi berukuran A4 yang dilaminating persis di sebelah panel tombol mesin, dilengkapi foto asli tombol kontrol dan indikator lampu yang benar.</li>
+                        <li><strong>Pelibatan Operator:</strong> Mengajak operator senior untuk ikut merumuskan kalimat panduan agar sesuai dengan bahasa sehari-hari di lantai pabrik.</li>
+                    </ol>
+                    <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-200 text-xs md:text-sm text-emerald-900 space-y-1">
+                        <div class="font-bold">Hasil Evaluasi Setelah 1 Bulan:</div>
+                        <div>• Waktu setup awal (*startup time*) terpangkas 40% lebih cepat.</div>
+                        <div>• Angka cacat produk turun drastis dari 8% menjadi di bawah 2%.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KUNCI SUKSES PENYUSUNAN SOP & WI -->
+            <div class="space-y-6 pt-4 border-t border-slate-200">
+                <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Praktik Terbaik</span>
+                <h3 class="text-xl md:text-2xl font-bold text-slate-900 font-serif-book">4 Pilar Utama agar Standarisasi Kerja Berjalan Efektif</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
-                        <div class="font-bold text-slate-900 text-lg">1. Visual & Bahasa yang Sederhana</div>
+                        <div class="font-bold text-slate-900 text-base">1. Berbasis Visual & Foto Nyata</div>
                         <p class="text-sm text-slate-600 leading-relaxed">
-                            Hindari kalimat narasi yang terlalu panjang. Gunakan foto nyata kondisi mesin, diagram panah, atau ilustrasi langkah kerja agar operator baru sekalipun dapat langsung paham dalam waktu kurang dari 3 menit.
+                            Gunakan foto asli komponen, panel, atau alat kerja alih-alih ilustrasi abstrak agar operator langsung mengenali objek fisik di depannya.
                         </p>
                     </div>
-
                     <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
-                        <div class="font-bold text-slate-900 text-lg">2. Libatkan Operator Langsung (Gemba)</div>
+                        <div class="font-bold text-slate-900 text-base">2. Letakkan di Titik Gemba (Gemba Place)</div>
                         <p class="text-sm text-slate-600 leading-relaxed">
-                            WI yang baik tidak ditulis di dalam ruang kantor ber-AC. Susunlah bersama operator senior yang setiap hari memegang mesin tersebut agar aturan yang dibuat realistis dan solutif terhadap kendala lapangan.
+                            Tempel atau gantung dokumen Work Instruction tepat di samping mesin tempat operator bekerja, bukan disembunyikan di dalam lemari kantor.
                         </p>
                     </div>
-
                     <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
-                        <div class="font-bold text-slate-900 text-lg">3. Penempatan Dokumen yang Mudah Diakses</div>
+                        <div class="font-bold text-slate-900 text-base">3. Evaluasi Berkala (Feedback Loop)</div>
                         <p class="text-sm text-slate-600 leading-relaxed">
-                            Letakkan lembar WI di dekat panel kontrol mesin (misalnya dalam pelindung plastik bening atau papan visual management) agar operator dapat langsung melihatnya saat melakukan <i>setup</i> atau penanganan awal masalah.
+                            Ajak operator berdiskusi secara rutin. Jika ada modifikasi kecil pada alat atau metode kerja, segera perbarui dokumen WI yang bersangkutan.
+                        </p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
+                        <div class="font-bold text-slate-900 text-base">4. Fokus pada K3 & Titik Kritis</div>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Selalu tandai bagian mana yang mengandung potensi bahaya keselamatan kerja (*Safety Warning*) dan titik kritis kualitas (*Quality Checkpoint*).
                         </p>
                     </div>
                 </div>
             </div>
 
+            <!-- KESIMPULAN -->
+            <div class="bg-slate-900 text-white p-6 md:p-8 rounded-2xl shadow-xl space-y-4 mt-8">
+                <h3 class="text-xl font-bold text-emerald-400 font-serif-book">Kesimpulan Praktisi</h3>
+                <p class="text-sm text-slate-300 leading-relaxed">
+                    Standarisasi kerja bukanlah alat untuk mengekang kreativitas operator, melainkan fondasi keselamatan dan stabilitas kualitas produk. SOP dan WI yang baik adalah dokumen hidup yang mudah dibaca, dipahami, dan diaplikasikan tanpa menimbulkan kebingungan di lini depan.
+                </p>
+            </div>
+
             <blockquote class="border-l-4 border-emerald-600 pl-4 py-3 my-6 bg-emerald-50/50 italic text-slate-700">
-                <strong>Catatan Penting Supervisor:</strong><br>
-                SOP dan WI yang baik adalah dokumen yang hidup (living document). Jika ada perubahan metode kerja atau suku cadang mesin, lakukan revisi segera agar tidak menjadi sumber potensi cacat produk.
+                <strong>Catatan Lapangan:</strong><br>
+                "Dokumen standarisasi terbaik di pabrik bukanlah dokumen yang paling tebal dan rumit, melainkan dokumen paling ringkas yang dijalankan dengan benar oleh setiap operator."
             </blockquote>
 
         </article>
 
-        <!-- Kotak Penawaran Download Template -->
+        <!-- Kotak Penawaran Download Template SOP & WI -->
         <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 md:p-12 text-center text-white shadow-xl mt-16 mb-8">
             <span class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Praktis & Siap Pakai</span>
-            <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-3 font-serif-book">Download Template SOP & Work Instruction (Format Word/Excel)</h3>
+            <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-3 font-serif-book">Download Template Master SOP & Work Instruction (Format Word/Excel)</h3>
             <p class="text-slate-300 text-sm md:text-base max-w-xl mx-auto mb-8 leading-relaxed">
-                Dapatkan draf format dokumen standar perusahaan lengkap dengan kolom header revisi, alur proses, dan kotak visual instruksi kerja mesin produksi.
+                Dapatkan draf kerangka dokumen SOP produksi dan lembar kerja Work Instruction berbasis visual yang langsung bisa Anda sesuaikan dengan kebutuhan pabrik Anda.
             </p>
-            <!-- Tautan Download Template -->
             <a href="#" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition duration-200 text-base cursor-pointer">
-                Download Template SOP & WI Sekarang
+                Download Template SOP & WI Manufaktur
             </a>
-            <p class="text-xs text-slate-400 mt-4">Format file .docx dan .xlsx mudah disesuaikan dengan logo serta standar perusahaan Anda.</p>
+            <p class="text-xs text-slate-400 mt-4">Format dokumen terstruktur sesuai standar audit industri.</p>
         </div>
 
     </main>
@@ -380,12 +402,12 @@
         </div>
     </div>
 
-     <!-- Footer -->
+    <!-- Footer -->
     <footer class="bg-slate-900 text-slate-300 py-4 mt-6 border-t border-slate-800 text-center text-xs">
-  <div class="max-w-xl mx-auto px-4 space-y-1">
-    <p>&copy; 2026 Otoritas Kerja. Hak Cipta Dilindungi.</p>
-    <p><a href="privacy.html" class="hover:text-white transition-colors">Kebijakan Privasi</a></p>
-  </div>
+        <div class="max-w-xl mx-auto px-4 space-y-1">
+            <p>&copy; 2026 Otoritas Kerja. Hak Cipta Dilindungi.</p>
+            <p><a href="privacy.html" class="hover:text-white transition-colors">Kebijakan Privasi</a></p>
+        </div>
     </footer>
 
     <!-- Skrip Modal Interaktif -->
