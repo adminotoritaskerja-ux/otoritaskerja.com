@@ -3,104 +3,425 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 1. JUDUL KHUSUS ARTIKEL -->
     <title>Strategi Menekan 6 Big Losses untuk Efisiensi Pabrik - Otoritas Kerja</title>
-    <meta name="description" content="Panduan praktis mengidentifikasi dan menekan 6 kerugian besar (big losses) dalam operasional manufaktur untuk meningkatkan OEE.">
+
+    <!-- 2. DESKRIPSI KHUSUS ARTIKEL -->
+    <meta name="description" content="Kupas tuntas 6 kerugian besar (Six Big Losses) dalam manufaktur dan strategi praktis menekannya untuk mendongkrak efisiensi OEE pabrik.">
+
+    <!-- 3. PREVIEW / THUMBNAIL KHUSUS UNTUK WHATSAPP / SOSMED -->
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://otoritaskerja.com/bigloses.html">
-    <meta property="og:title" content="Strategi Menekan 6 Big Losses untuk Efisiensi Pabrik">
-    <meta property="og:description" content="Panduan praktis mengidentifikasi dan menekan 6 kerugian besar dalam operasional manufaktur.">
-    <meta property="og:image" content="https://otoritaskerja.com/bigloses.jpg">
+    <meta property="og:url" content="https://otoritaskerja.com/strategi-6-big-losses.html">
+    <meta property="og:title" content="Strategi Menekan 6 Big Losses untuk Efisiensi Pabrik - Otoritas Kerja">
+    <meta property="og:description" content="Kupas tuntas 6 kerugian besar (Six Big Losses) dalam manufaktur dan strategi praktis menekannya untuk mendongkrak efisiensi OEE pabrik.">
+    <meta property="og:image" content="https://otoritaskerja.com/six-big-losses.jpg">
+
+    <!-- FAVICON & APPLE TOUCH ICON -->
     <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="apple-touch-icon" href="six-big-losses.jpg">
+
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
-        .font-serif-book { font-family: 'Merriweather', serif; }
-        body { font-family: 'Inter', sans-serif; }
+        .font-serif-book {
+            font-family: 'Merriweather', serif;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        :root {
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --border-color: #e2e8f0;
+            --primary-blue: #0284c7;
+            --primary-dark: #0f172a;
+            --industrial-blue: #0369a1; 
+            --accent-orange: #ea580c;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img, picture, video, canvas, svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 99999;
+            width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+        }
+
+        .top-header-white {
+            background-color: #ffffff;
+            width: 100%;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color, #e2e8f0);
+        }
+
+        .top-header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .logo-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-svg {
+            height: 44px;
+            width: auto;
+        }
+
+        .brand-title {
+            font-size: 1.65rem;
+            font-weight: 800;
+            color: var(--primary-dark, #0f172a);
+        }
+
+        .brand-title span {
+            color: var(--primary-blue, #0284c7);
+        }
+
+        .main-navbar-navy {
+            background-color: var(--primary-dark, #0f172a);
+            width: 100%;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .nav-menu::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-menu li a {
+            display: block;
+            padding: 12px 20px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .nav-menu li a:hover,
+        .nav-menu li a.active {
+            background-color: var(--primary-blue, #0284c7);
+        }
+
+        .ticker-bar-white {
+            background-color: #ffffff;
+            width: 100%;
+            border-top: 1px solid #cbd5e1;
+            border-bottom: 2px solid var(--border-color, #e2e8f0);
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .ticker-container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .badge-skew-container {
+            background-color: var(--industrial-blue, #0369a1);
+            color: #ffffff;
+            padding: 9px 22px 9px 14px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            white-space: nowrap;
+            transform: skewX(-15deg);
+            transform-origin: left bottom;
+            margin-left: -8px;
+            border-right: 5px solid var(--accent-orange, #ea580c);
+            flex-shrink: 0;
+            position: relative;
+            z-index: 10;
+            box-shadow: 4px 0 10px rgba(0,0,0,0.15);
+        }
+
+        .badge-text-inner {
+            display: inline-block;
+            transform: skewX(15deg);
+            padding-left: 4px;
+        }
+
+        .ticker-marquee-box {
+            flex-grow: 1;
+            font-size: 0.85rem;
+            color: var(--primary-dark, #0f172a);
+            font-weight: 600;
+            padding-left: 16px;
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .logo-svg { height: 36px; }
+            .brand-title { font-size: 1.3rem; }
+            .nav-menu li a { padding: 10px 14px; font-size: 0.82rem; }
+            .badge-skew-container { padding: 7px 16px 7px 10px; font-size: 0.72rem; }
+            .ticker-marquee-box { font-size: 0.78rem; padding-left: 10px; }
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
-        <div class="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="index.html" class="font-bold text-slate-900 tracking-tight text-lg hover:text-blue-600 transition">Otoritas Kerja</a>
-            <nav class="flex items-center space-x-6 text-sm font-medium">
-                <a href="index.html" class="text-slate-600 hover:text-slate-900 transition">Beranda</a>
-                <button onclick="openModal('authorModal')" class="text-slate-600 hover:text-slate-900 transition cursor-pointer">Tentang Penulis</button>
-            </nav>
+    
+    <!-- HEADER UTAMA 3-TIER PORTAL -->
+    <header class="site-header">
+        <div class="top-header-white">
+            <div class="top-header-inner">
+                <a href="index.html" class="logo-brand">
+                    <img src="favicon.png" alt="Otoritas Kerja" class="logo-svg">
+                    <div class="brand-title">Otoritas<span>Kerja</span></div>
+                </a>
+            </div>
+        </div>
+
+        <nav class="main-navbar-navy">
+            <ul class="nav-menu">
+                <li><a href="index.html">BERANDA</a></li>
+                <li><a href="about.html">TENTANG</a></li>
+                <li><a href="contact.html">KONTAK</a></li>
+            </ul>
+        </nav>
+
+        <div class="ticker-bar-white">
+            <div class="ticker-container">
+                <div class="badge-skew-container">
+                    <span class="badge-text-inner">STANDAR PRAKTISI</span>
+                </div>
+                <div class="ticker-marquee-box">
+                    <marquee behavior="scroll" direction="left" scrollamount="4">
+                        Strategi Menekan 6 Big Losses, Mengupas Tuntas Akar Masalah & Peningkatan Efisiensi Manufaktur
+                    </marquee>
+                </div>
+            </div>
         </div>
     </header>
+    
+    <!-- Konten Utama Artikel -->
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-5 space-y-12 flex-grow w-full">
 
-    <main class="max-w-3xl mx-auto px-6 py-12 space-y-12 flex-grow">
-        <section class="text-center pb-8 border-b border-slate-200 space-y-6">
-            <div class="max-w-lg mx-auto shadow-xl rounded-xl overflow-hidden border border-slate-200 bg-white p-2">
-                <img src="bigloses.jpg" alt="Strategi Big Losses Manufaktur" class="w-full h-auto rounded-lg object-cover">
-            </div>
+        <!-- HEADLINE ARTIKEL & AUTHOR BADGE -->
+        <section class="space-y-4">
             <div>
-                <span class="bg-emerald-100 text-emerald-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Manajemen Produksi & OEE</span>
-                <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-4 mb-3 font-serif-book">
+                <h1 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-slate-900 mt-2 mb-3 font-serif-book leading-tight">
                     Strategi Menekan 6 Big Losses untuk Efisiensi Pabrik
                 </h1>
-                <p class="text-slate-600 italic text-base md:text-lg max-w-xl mx-auto font-serif-book">
-                    "Mengupas tuntas enam pemborosan utama dalam mesin produksi dan langkah taktis untuk mendongkrak nilai Overall Equipment Effectiveness (OEE)."
+                <p class="text-slate-600 italic text-sm sm:text-base md:text-lg max-w-xl font-serif-book">
+                    "Kupas tuntas 6 kerugian besar dalam manufaktur yang diam-diam menggerus kapasitas produksi dan cara sistematis mengatasinya dari lantai pabrik."
                 </p>
-                <div class="text-xs text-slate-400 mt-4">Oleh Sukardi &bull; 03 Okt 2026</div>
+            </div>
+
+            <div class="flex items-center space-x-4 p-4 bg-white rounded-xl border border-slate-200 shadow-sm cursor-pointer" onclick="openModal('authorModal')">
+                <img src="foto-sukardi.jpg" alt="Sukardi, S.T." class="w-12 h-12 rounded-full object-cover flex-shrink-0 border border-slate-200 shadow-inner">
+                <div class="text-xs md:text-sm">
+                    <div class="font-bold text-slate-900 text-base">Sukardi, S.T.</div>
+                    <div class="text-slate-600">Praktisi Manufaktur & Industrial Engineer</div>
+                    <div class="text-slate-400 text-xs mt-0.5">Ditinjau & Dipublikasikan: 03 Okt 2026 &bull; 9 min baca</div>
+                </div>
+            </div>
+                
+            <div class="rounded-xl overflow-hidden shadow-md">
+                <img src="six-big-losses-banner.jpg" alt="Banner Artikel 6 Big Losses" class="w-full h-auto object-cover">
             </div>
         </section>
 
+        <!-- ISI ARTIKEL -->
         <article class="space-y-8">
+            
             <div class="space-y-4">
-                <h2 class="text-2xl font-bold text-slate-900 font-serif-book">Mengenal Musuh Utama Efisiensi Pabrik</h2>
+                <h2 class="text-2xl font-bold text-slate-900 font-serif-book">Di Mana Sebenarnya Kapasitas Pabrik Kita Hilang?</h2>
                 <p class="text-slate-700 leading-relaxed text-base md:text-lg">
-                    Dalam dunia manufaktur modern, efisiensi adalah kunci daya saing. Seringkali lini produksi terlihat sibuk beroperasi, namun profitabilitas tergerus oleh pemborosan tersembunyi yang dikenal sebagai <em>6 Big Losses</em>. Konsep yang berakar dari sistem *Total Productive Maintenance* (TPM) ini mengklasifikasikan kerugian operasional ke dalam enam kategori utama.
+                    Sebagai praktisi yang sehari-hari berdiri di lantai produksi, kita sering kali merasa mesin sudah berjalan penuh selama 8 jam shift kerja. Namun, ketika laporan akhir bulan keluar, target efisiensi sering kali meleset dari harapan. Mengapa demikian? Jawabannya terletak pada apa yang disebut dalam kerangka Total Productive Maintenance (TPM) sebagai <strong>6 Big Losses (Enam Kerugian Besar)</strong>.
+                </p>
+                <p class="text-slate-700 leading-relaxed text-base md:text-lg">
+                    Kerugian ini bekerja secara senyap—bukan hanya berupa kerusakan mesin total, melainkan akumulasi dari berhentinya mesin sejenak, penurunan kecepatan, hingga produk afkir (*scrap*). Mari kita kupas tuntas satu per satu kelompok kerugian ini beserta strategi matematis dan praktis untuk menekannya.
                 </p>
             </div>
-            <div class="space-y-4 pt-4">
-                <h3 class="text-xl font-bold text-slate-900 font-serif-book">Klasifikasi 6 Kerugian Besar (Big Losses)</h3>
-                <ul class="list-disc list-inside space-y-3 text-slate-700 pl-4">
-                    <li><strong>Equipment Failure / Breakdown:</strong> Kerusakan mesin mendadak yang menghentikan proses produksi secara total.</li>
-                    <li><strong>Setup and Adjustment:</strong> Waktu yang terbuang saat penggantian ukuran, cetakan (*moulding*), atau pengaturan ulang parameter mesin.</li>
-                    <li><strong>Idling and Minor Stoppages:</strong> Gangguan kecil atau kemacetan material sesaat yang sering terjadi namun cepat diatasi oleh operator.</li>
-                    <li><strong>Reduced Speed:</strong> Penurunan kecepatan mesin dari kapasitas standar akibat aus atau masalah teknis.</li>
-                    <li><strong>Process Defects and Rework:</strong> Produk cacat (*reject*) atau produk yang memerlukan pengerjaan ulang (*rework*).</li>
-                    <li><strong>Reduced Yield / Startup Losses:</strong> Kerugian material dan waktu saat mesin baru dinyalakan hingga mencapai kondisi stabil (*stabilization phase*).</li>
-                </ul>
+
+            <!-- KELOMPOK 1: DOWNTIME LOSSES (AVAILABILITY) -->
+            <div class="space-y-6 pt-4 border-t border-slate-200">
+                <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Kategori I: Kerugian Waktu Henti (Downtime Losses)</span>
+                <h3 class="text-xl md:text-2xl font-bold text-slate-900 font-serif-book">1. Equipment Failure (Kerusakan Peralatan) & Setup/Adjustment</h3>
+                
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4 text-slate-700 leading-relaxed">
+                    <p>
+                        Kerugian pertama yang paling kasat mata adalah <strong>Equipment Failure</strong> atau breakdown tak terencana. Ketika komponen aus atau motor penggerak macet, waktu operasi bersih langsung terpangkas habis. 
+                    </p>
+                    <p>
+                        Kerugian kedua menyusul pada proses <strong>Setup and Adjustment</strong> (*changeover*). Sering kali pergantian jenis produk atau ukuran cetakan memakan waktu berjam-jam karena peralatan bantu atau parameter setelan yang belum terstandarisasi.
+                    </p>
+                    <div class="bg-slate-100 p-3 rounded text-xs font-mono text-slate-700 space-y-1">
+                        <div>Rumus Pengaruh: Mengurangi Operating Time terhadap Planned Production Time</div>
+                        <div class="font-semibold text-amber-800">Availability = (Operating Time / Planned Production Time) × 100%</div>
+                    </div>
+                    <p class="text-sm italic text-slate-600">
+                        <strong>Strategi Mitigasi:</strong> Terapkan pilar Autonomous Maintenance (perawatan mandiri oleh operator untuk pembersihan & pelumasan harian) guna meredam kerusakan mendadak, serta gunakan metode SMED (*Single-Minute Exchange of Die*) untuk memangkas waktu setup di bawah 10 menit.
+                    </p>
+                </div>
             </div>
+
+            <!-- KELOMPOK 2: SPEED LOSSES (PERFORMANCE) -->
+            <div class="space-y-6 pt-4 border-t border-slate-200">
+                <span class="text-xs font-bold text-sky-600 uppercase tracking-wider">Kategori II: Kerugian Kecepatan (Speed Losses)</span>
+                <h3 class="text-xl md:text-2xl font-bold text-slate-900 font-serif-book">2. Idling & Minor Stoppages serta Reduced Speed</h3>
+                
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4 text-slate-700 leading-relaxed">
+                    <p>
+                        Mesin terlihat menyala, namun sensor mendeteksi kemacetan kecil (*micro-stoppages*) atau material tersangkut selama beberapa detik yang jika ditotal bisa memakan waktu puluhan menit dalam satu shift. Inilah yang disebut <strong>Idling and Minor Stoppages</strong>.
+                    </p>
+                    <p>
+                        Kerugian keempat adalah <strong>Reduced Speed</strong> (Kecepatan Berkurang). Kondisi ini terjadi ketika mesin berjalan di bawah kecepatan desain idealnya—misalnya karena operator sengaja menurunkan kecepatan demi menghindari risiko material melar atau berkerut.
+                    </p>
+                    <div class="bg-slate-100 p-3 rounded text-xs font-mono text-slate-700 space-y-1">
+                        <div>Rumus Pengaruh: Menurunkan rasio output aktual terhadap kapasitas ideal</div>
+                        <div class="font-semibold text-sky-800">Performance = ((Total Output × Ideal Cycle Time) / Operating Time) × 100%</div>
+                    </div>
+                    <p class="text-sm italic text-slate-600">
+                        <strong>Strategi Mitigasi:</strong> Lakukan penelusuran akar masalah pada bagian pemberi bahan baku (*feed*) dan rol penarik (*winder*), serta tetapkan standar operasional baku (*Standardized Work*) untuk parameter suhu dan tegangan agar mesin aman digeber pada kecepatan maksimalnya.
+                    </p>
+                </div>
+            </div>
+
+            <!-- KELOMPOK 3: DEFECT LOSSES (QUALITY) -->
+            <div class="space-y-6 pt-4 border-t border-slate-200">
+                <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Kategori III: Kerugian Kualitas (Quality Losses)</span>
+                <h3 class="text-xl md:text-2xl font-bold text-slate-900 font-serif-book">3. Process Defects & Startup Losses</h3>
+                
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4 text-slate-700 leading-relaxed">
+                    <p>
+                        Kerugian kelima adalah <strong>Process Defects</strong> (Produk Cacat / Scrap), di mana barang yang dihasilkan tidak memenuhi spesifikasi kualitas sehingga harus dibuang atau dikerjakan ulang (*rework*).
+                    </p>
+                    <p>
+                        Kerugian keenam yang sering luput dari perhatian adalah <strong>Startup Losses</strong> (*yield loss* saat awal mesin dinyalakan). Pada saat mesin baru mulai beroperasi atau setelah *changeover*, produk yang dihasilkan di awal shift cenderung banyak yang cacat sebelum suhu dan parameter mesin benar-benar stabil.
+                    </p>
+                    <div class="bg-slate-100 p-3 rounded text-xs font-mono text-slate-700 space-y-1">
+                        <div>Rumus Pengaruh: Memangkas proporsi produk baik terhadap total produksi</div>
+                        <div class="font-semibold text-emerald-800">Quality = (Good Output / Total Output) × 100%</div>
+                    </div>
+                    <p class="text-sm italic text-slate-600">
+                        <strong>Strategi Mitigasi:</strong> Gunakan lembar checklist parameter pemanasan awal (*pre-heating*) yang presisi dan analisis Pareto pada jenis cacat dominan untuk mempercepat kestabilan mesin sejak menit pertama dihidupkan.
+                    </p>
+                </div>
+            </div>
+
+            <!-- KESIMPULAN & FORMULA OEE -->
+            <div class="bg-slate-900 text-white p-6 md:p-8 rounded-2xl shadow-xl space-y-4 mt-8">
+                <h3 class="text-xl font-bold text-emerald-400 font-serif-book">Merangkum 6 Big Losses ke dalam Skor OEE</h3>
+                <p class="text-sm text-slate-300 leading-relaxed">
+                    Seluruh akumulasi dari keenam kerugian di atas secara langsung menggerus tiga pilar utama efisiensi. Ketika dikalkulasikan, angka OEE akhir akan memperlihatkan seberapa besar kapasitas pabrikt kita benar-benar dimanfaatkan secara produktif:
+                </p>
+                <div class="bg-slate-800 p-4 rounded-xl text-xs font-mono text-emerald-300 space-y-1">
+                    <div>OEE = Availability Rate × Performance Rate × Quality Rate</div>
+                    <div class="text-white font-bold pt-1">Target Manufaktur Kelas Dunia (World Class OEE) ≥ 85%</div>
+                </div>
+                <p class="text-xs text-slate-400 italic">
+                    Dengan mengenali titik-titik kebocoran kapasitas melalui pendekatan 6 Big Losses ini, kita dapat menyusun program perbaikan berkelanjutan (*Continuous Improvement*) yang tepat sasaran tanpa harus menebak-nebak masalah di lantai produksi.
+                </p>
+            </div>
+
             <blockquote class="border-l-4 border-emerald-600 pl-4 py-3 my-6 bg-emerald-50/50 italic text-slate-700">
-                <strong>Catatan Supervisor:</strong><br>
-                Catat setiap *downtime* dan hitung persentasenya secara berkala. Fokuskan perbaikan pada kerugian yang paling sering memangkas jam operasional mesin Anda.
+                <strong>Catatan Praktisi:</strong><br>
+                Peningkatan efisiensi pabrik bukanlah hasil dari kerja keras semata, melainkan buah dari kedisiplinan membaca data operasional harian secara objektif dan sistematis.
             </blockquote>
+
         </article>
 
+        <!-- Kotak Penawaran Download Master Kalkulator Excel -->
         <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 md:p-12 text-center text-white shadow-xl mt-16 mb-8">
-            <span class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Praktis & Siap Pakai</span>
-            <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-3 font-serif-book">Download Lembar Analisis OEE & Losses</h3>
+            <span class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Praktis & Otomatis</span>
+            <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-3 font-serif-book">Download Master Kalkulator OEE & 6 Big Losses (Excel)</h3>
             <p class="text-slate-300 text-sm md:text-base max-w-xl mx-auto mb-8 leading-relaxed">
-                Gunakan template Excel perhitungan OEE dan pelacakan kerugian mesin untuk diterapkan langsung di lantai produksi.
+                Dapatkan template spreadsheet Excel otomatis yang dilengkapi dengan pencatatan 6 Big Losses harian, grafik analisis kerugian waktu, serta dashboard OEE terintegrasi.
             </p>
             <a href="#" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition duration-200 text-base cursor-pointer">
-                Download Template Excel OEE Sekarang
+                Download Template Excel 6 Big Losses
             </a>
+            <p class="text-xs text-slate-400 mt-4">Format file .xlsx siap pakai untuk evaluasi shift kerja di pabrik.</p>
         </div>
+
     </main>
 
+    <!-- Modal Tentang Penulis -->
     <div id="authorModal" class="fixed inset-0 z-50 hidden bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-white rounded-2xl max-w-md w-full p-6 md:p-8 shadow-2xl relative text-center">
             <button onclick="closeModal('authorModal')" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 font-bold text-xl cursor-pointer">&times;</button>
             <h3 class="text-2xl font-bold text-slate-900 mb-4 font-serif-book">Tentang Penulis</h3>
             <p class="text-slate-700 text-sm md:text-base leading-relaxed mb-4">
-                <strong>Sukardi</strong> adalah seorang praktisi manufaktur yang meniti perjalanan kariernya secara bertahap langsung dari lantai produksi. Berbekal pengalaman nyata menghadapi dinamika operasional harian, ia mendirikan platform <em>Otoritas Kerja</em> untuk berbagi perangkat kerja dan metodologi peningkatan efisiensi.
+                <strong>Sukardi</strong> adalah seorang praktisi manufaktur yang meniti perjalanan kariernya secara bertahap langsung dari lantai produksi. Berbekal ketekunan, semangat belajar yang tinggi, serta pengalaman nyata menghadapi dinamika operasional harian, ia memahami betul denyut nadi dan tantangan yang dihadapi oleh para pekerja di lini depan.
+            </p>
+            <p class="text-slate-700 text-sm md:text-base leading-relaxed">
+                Melalui platform <em>Otoritas Kerja</em>, beliau mendedikasikan pengalaman praktisnya untuk berbagi perangkat kerja, SOP, dan metodologi peningkatan efisiensi manufaktur.
             </p>
         </div>
     </div>
 
-    <footer class="bg-white border-t border-slate-200 py-8 text-center text-xs text-slate-500">
-        <p>&copy; 2026 Sukardi. Hak Cipta Dilindungi.</p>
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-4 mt-6 border-t border-slate-800 text-center text-xs">
+        <div class="max-w-xl mx-auto px-4 space-y-1">
+            <p>&copy; 2026 Otoritas Kerja. Hak Cipta Dilindungi.</p>
+            <p><a href="privacy.html" class="hover:text-white transition-colors">Kebijakan Privasi</a></p>
+        </div>
     </footer>
 
+    <!-- Skrip Modal Interaktif -->
     <script>
-        function openModal(id) { document.getElementById(id).classList.remove('hidden'); }
-        function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
-        window.onclick = function(e) { if (e.target.classList.contains('fixed')) e.target.classList.add('hidden'); }
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('fixed')) {
+                event.target.classList.add('hidden');
+            }
+        }
     </script>
 </body>
 </html>
