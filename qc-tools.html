@@ -5,23 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- 1. JUDUL KHUSUS ARTIKEL -->
-    <title>Panduan Praktis 7QC Tools untuk Analisis & Pengendalian Mutu Pabrik - Otoritas Kerja</title>
+    <title>Panduan Praktis 7QC Tools untuk Analisis & Pengendalian Mutu - Otoritas Kerja</title>
 
     <!-- 2. DESKRIPSI KHUSUS ARTIKEL -->
-    <meta name="description" content="Pelajari 7 Basic Quality Control Tools (7QC Tools) sebagai senjata ampuh bagi engineer dan supervisor untuk menekan angka produk cacat di lantai pabrik.">
+    <meta name="description" content="Kupas tuntas 7 QC Tools (Seven Quality Control Tools) secara mengalir lengkap dengan studi kasus nyata untuk pengendalian mutu di lantai pabrik.">
 
     <!-- 3. PREVIEW / THUMBNAIL KHUSUS UNTUK WHATSAPP / SOSMED -->
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://otoritaskerja.com/qc-tools.html">
-    <meta property="og:title" content="Panduan Praktis 7QC Tools untuk Analisis & Pengendalian Mutu Pabrik - Otoritas Kerja">
-    <meta property="og:description" content="Pelajari 7 Basic Quality Control Tools (7QC Tools) sebagai senjata ampuh bagi engineer dan supervisor untuk menekan angka produk cacat di lantai pabrik.">
-    <meta property="og:image" content="https://otoritaskerja.com/qc.jfif">
+    <meta property="og:url" content="https://otoritaskerja.com/7qc-tools-panduan.html">
+    <meta property="og:title" content="Panduan Praktis 7QC Tools untuk Analisis & Pengendalian Mutu - Otoritas Kerja">
+    <meta property="og:description" content="Kupas tuntas 7 QC Tools (Seven Quality Control Tools) secara mengalir lengkap dengan studi kasus nyata untuk pengendalian mutu di lantai pabrik.">
+    <meta property="og:image" content="https://otoritaskerja.com/7qc-tools-banner.jpg">
 
     <!-- FAVICON & APPLE TOUCH ICON -->
     <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="apple-touch-icon" href="qc.jfif">
+    <link rel="apple-touch-icon" href="7qc-tools-banner.jpg">
 
-    <!-- Tailwind CSS CDN & Custom Font -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
@@ -31,127 +31,341 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+        :root {
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --border-color: #e2e8f0;
+            --primary-blue: #0284c7;
+            --primary-dark: #0f172a;
+            --industrial-blue: #0369a1; 
+            --accent-orange: #ea580c;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img, picture, video, canvas, svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 99999;
+            width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+        }
+
+        .top-header-white {
+            background-color: #ffffff;
+            width: 100%;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color, #e2e8f0);
+        }
+
+        .top-header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .logo-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-svg {
+            height: 44px;
+            width: auto;
+        }
+
+        .brand-title {
+            font-size: 1.65rem;
+            font-weight: 800;
+            color: var(--primary-dark, #0f172a);
+        }
+
+        .brand-title span {
+            color: var(--primary-blue, #0284c7);
+        }
+
+        .main-navbar-navy {
+            background-color: var(--primary-dark, #0f172a);
+            width: 100%;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .nav-menu::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-menu li a {
+            display: block;
+            padding: 12px 20px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .nav-menu li a:hover,
+        .nav-menu li a.active {
+            background-color: var(--primary-blue, #0284c7);
+        }
+
+        .ticker-bar-white {
+            background-color: #ffffff;
+            width: 100%;
+            border-top: 1px solid #cbd5e1;
+            border-bottom: 2px solid var(--border-color, #e2e8f0);
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .ticker-container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .badge-skew-container {
+            background-color: var(--industrial-blue, #0369a1);
+            color: #ffffff;
+            padding: 9px 22px 9px 14px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            white-space: nowrap;
+            transform: skewX(-15deg);
+            transform-origin: left bottom;
+            margin-left: -8px;
+            border-right: 5px solid var(--accent-orange, #ea580c);
+            flex-shrink: 0;
+            position: relative;
+            z-index: 10;
+            box-shadow: 4px 0 10px rgba(0,0,0,0.15);
+        }
+
+        .badge-text-inner {
+            display: inline-block;
+            transform: skewX(15deg);
+            padding-left: 4px;
+        }
+
+        .ticker-marquee-box {
+            flex-grow: 1;
+            font-size: 0.85rem;
+            color: var(--primary-dark, #0f172a);
+            font-weight: 600;
+            padding-left: 16px;
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .logo-svg { height: 36px; }
+            .brand-title { font-size: 1.3rem; }
+            .nav-menu li a { padding: 10px 14px; font-size: 0.82rem; }
+            .badge-skew-container { padding: 7px 16px 7px 10px; font-size: 0.72rem; }
+            .ticker-marquee-box { font-size: 0.78rem; padding-left: 10px; }
+        }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+<body class="bg-slate-50text-slate-800 antialiased flex flex-col min-h-screen">
+    
+    <!-- HEADER UTAMA 3-TIER PORTAL -->
+    <header class="site-header">
+        <div class="top-header-white">
+            <div class="top-header-inner">
+                <a href="index.html" class="logo-brand">
+                    <img src="favicon.png" alt="Otoritas Kerja" class="logo-svg">
+                    <div class="brand-title">Otoritas<span>Kerja</span></div>
+                </a>
+            </div>
+        </div>
 
-    <!-- Header Navigasi Atas -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
-        <div class="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="index.html" class="font-bold text-slate-900 tracking-tight text-lg hover:text-blue-600 transition">Otoritas Kerja</a>
-            <nav class="flex items-center space-x-6 text-sm font-medium">
-                <a href="index.html" class="text-slate-600 hover:text-slate-900 transition">Beranda</a>
-                <button onclick="openModal('authorModal')" class="text-slate-600 hover:text-slate-900 transition cursor-pointer">Tentang Penulis</button>
-            </nav>
+        <nav class="main-navbar-navy">
+            <ul class="nav-menu">
+                <li><a href="index.html">BERANDA</a></li>
+                <li><a href="about.html">TENTANG</a></li>
+                <li><a href="contact.html">KONTAK</a></li>
+            </ul>
+        </nav>
+
+        <div class="ticker-bar-white">
+            <div class="ticker-container">
+                <div class="badge-skew-container">
+                    <span class="badge-text-inner">STANDAR PRAKTISI</span>
+                </div>
+                <div class="ticker-marquee-box">
+                    <marquee behavior="scroll" direction="left" scrollamount="4">
+                        Panduan Praktis 7 QC Tools, Analisis Akar Masalah Defect Manufaktur & Pengendalian Mutu Pabrik Berbasis Data
+                    </marquee>
+                </div>
+            </div>
         </div>
     </header>
-
+    
     <!-- Konten Utama Artikel -->
-    <main class="max-w-3xl mx-auto px-6 py-12 space-y-12 flex-grow">
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-5 space-y-12 flex-grow w-full">
 
-        <!-- Banner / Cover & Judul Utama -->
-        <section class="text-center pb-8 border-b border-slate-200 space-y-6">
-            <div class="max-w-lg mx-auto shadow-xl rounded-xl overflow-hidden border border-slate-200 bg-white p-2">
-                <img src="qc.jfif" alt="7QC Tools" class="w-full h-auto md:max-h-[380px] object-cover rounded-lg">
-            </div>
-
+        <!-- HEADLINE ARTIKEL & AUTHOR BADGE -->
+        <section class="space-y-4">
             <div>
-                <span class="bg-emerald-100 text-emerald-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Free Template & Modul Mutu</span>
-                <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-4 mb-3 font-serif-book">
+                <h1 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-slate-900 mt-2 mb-3 font-serif-book leading-tight">
                     Panduan Praktis 7QC Tools untuk Analisis & Pengendalian Mutu Pabrik
                 </h1>
-                <p class="text-slate-600 italic text-base md:text-lg max-w-xl mx-auto font-serif-book">
-                    "Strategi sistematis mengendalikan kualitas, menekan produk cacat, dan mengoptimalkan performa lini produksi secara akurat."
+                <p class="text-slate-600 italic text-sm sm:text-base md:text-lg max-w-xl font-serif-book">
+                    "Kupas tuntas 7 alat pengendali mutu klasik yang paling ampuh di lantai produksi, lengkap dengan alur cerita implementasinya untuk menumpas produk cacat."
                 </p>
-                <div class="text-xs text-slate-400 mt-4">Oleh Sukardi &bull; 05 Okt 2026</div>
+            </div>
+
+            <div class="flex items-center space-x-4 p-4 bg-white rounded-xl border border-slate-200 shadow-sm cursor-pointer" onclick="openModal('authorModal')">
+                <img src="foto-sukardi.jpg" alt="Sukardi, S.T." class="w-12 h-12 rounded-full object-cover flex-shrink-0 border border-slate-200 shadow-inner">
+                <div class="text-xs md:text-sm">
+                    <div class="font-bold text-slate-900 text-base">Sukardi, S.T.</div>
+                    <div class="text-slate-600">Praktisi Manufaktur & Industrial Engineer</div>
+                    <div class="text-slate-400 text-xs mt-0.5">Ditinjau & Dipublikasikan: 03 Okt 2026 &bull; 12 min baca</div>
+                </div>
+            </div>
+                
+            <div class="rounded-xl overflow-hidden shadow-md">
+                <img src="qc-artikel.jpg" alt="Banner Artikel 7QC Tools" class="w-full h-auto object-cover">
             </div>
         </section>
 
         <!-- ISI ARTIKEL -->
         <article class="space-y-8">
             
-            <!-- Pengantar -->
+            <!-- Pengantar & Realitas Lapangan -->
             <div class="space-y-4">
-                <h2 class="text-2xl font-bold text-slate-900 font-serif-book">Pentingnya 7QC Tools di Lantai Produksi</h2>
+                <h2 class="text-2xl font-bold text-slate-900 font-serif-book">Mengapa Menyelesaikan Masalah Pabrik Butuh "Bahasa Angka"?</h2>
                 <p class="text-slate-700 leading-relaxed text-base md:text-lg">
-                    Dalam dunia manufaktur modern, pengendalian kualitas (<i>Quality Control</i>) adalah fondasi utama untuk menekan angka <i>defective product</i> (produk cacat) dan menjaga efisiensi lini produksi. Salah satu senjata paling ampuh yang wajib dikuasai oleh setiap engineer, supervisor, dan praktisi mutu adalah <strong>7 Basic Quality Control Tools (7QC Tools)</strong>.
+                    Di lantai produksi, kalimat seperti <em>"Mesin hari ini sering rewel dan banyak produk jelek"</em> adalah ungkapan yang sangat sering kita dengar. Namun sebagai seorang Industrial Engineer atau pengawas pabrik, argumen yang hanya berdasarkan perasaan (*feeling*) tidak akan pernah bisa menyelesaikan masalah secara tuntas. Kita butuh data objektif.
+                </p>
+                <p class="text-slate-700 leading-relaxed text-base md:text-lg">
+                    Di sinilah peran <strong>7 QC Tools (Seven Basic Quality Control Tools)</strong> hadir. Bukan sekadar teori buku teks manajemen Jepang, ketujuh alat ini adalah senjata tempur harian di lantai pabrik untuk mengumpulkan, menyaring, dan membedah akar permasalahan mutu secara sistematis. Mari kita kupas tuntas satu per satu secara mengalir lewat studi kasus nyata lini pembuatan plastik film (*extrusion*).
                 </p>
             </div>
 
-            <!-- Daftar 7QC Tools -->
-            <div class="space-y-4 pt-4">
-                <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Metodologi Mutu</span>
-                <h3 class="text-xl font-bold text-slate-900 font-serif-book">Apa Saja 7 Alat Pengendali Mutu Ini?</h3>
+            <!-- ALAT 1 & 2: PENGUMPULAN DATA -->
+            <div class="space-y-6 pt-4 border-t border-slate-200">
+                <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Tahap 1: Pengumpulan & Pencatatan Data</span>
+                <h3 class="text-xl md:text-2xl font-bold text-slate-900 font-serif-book">1. Check Sheet (Lembar Periksa) & 2. Pareto Chart (Diagram Pareto)</h3>
                 
-                <div class="space-y-4 my-6">
-                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
-                        <div class="font-bold text-slate-900 text-lg">1. Check Sheet (Lembar Periksa)</div>
-                        <p class="text-sm text-slate-600 leading-relaxed">
-                            Alat pengumpulan data sederhana untuk mencatat frekuensi kemunculan masalah di lantai produksi secara terstruktur.
-                        </p>
-                    </div>
-
-                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
-                        <div class="font-bold text-slate-900 text-lg">2. Pareto Chart (Diagram Pareto)</div>
-                        <p class="text-sm text-slate-600 leading-relaxed">
-                            Grafik batang dan garis kumulatif untuk mengidentifikasi 20% penyebab utama yang menimbulkan 80% masalah (Prinsip Pareto).
-                        </p>
-                    </div>
-
-                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
-                        <div class="font-bold text-slate-900 text-lg">3. Cause and Effect Diagram (Fishbone / Ishikawa)</div>
-                        <p class="text-sm text-slate-600 leading-relaxed">
-                            Diagram tulang ikan untuk memetakan akar masalah berdasarkan kategori <i>Man, Machine, Method, Material, Measurement,</i> dan <i>Environment</i>.
-                        </p>
-                    </div>
-
-                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
-                        <div class="font-bold text-slate-900 text-lg">4. Control Chart (Peta Kendali)</div>
-                        <p class="text-sm text-slate-600 leading-relaxed">
-                            Grafik garis statistik untuk memantau apakah proses produksi berada dalam batas kendali yang stabil dari waktu ke waktu.
-                        </p>
-                    </div>
-
-                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
-                        <div class="font-bold text-slate-900 text-lg">5. Histogram</div>
-                        <p class="text-sm text-slate-600 leading-relaxed">
-                            Menunjukkan distribusi frekuensi dari data numerik untuk melihat variasi dan sebaran proses di lapangan.
-                        </p>
-                    </div>
-
-                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
-                        <div class="font-bold text-slate-900 text-lg">6. Scatter Diagram (Diagram Pencar)</div>
-                        <p class="text-sm text-slate-600 leading-relaxed">
-                            Menganalisis korelasi atau hubungan sebab-akibat antara dua variabel berbeda di lini produksi.
-                        </p>
-                    </div>
-
-                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
-                        <div class="font-bold text-slate-900 text-lg">7. Stratification (Stratifikasi)</div>
-                        <p class="text-sm text-slate-600 leading-relaxed">
-                            Mengelompokkan data ke dalam kategori atau kelompok yang lebih spesifik agar pola tersembunyi dapat terlihat jelas.
-                        </p>
-                    </div>
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4 text-slate-700 leading-relaxed">
+                    <p>
+                        Ceritanya bermula ketika bagian Quality Control melaporkan adanya lonjakan produk cacat dalam seminggu terakhir. Langkah pertama yang kita lakukan bukanlah memarahi operator, melainkan membuat <strong>Check Sheet</strong> (Lembar Periksa) sederhana yang diletakkan di meja sortir. Check sheet ini dirancang agar operator cukup mencentang jenis cacat secara real-time—apakah itu kerutan (*wrinkle*), bintik hitam (*black spot*), atau ketebalan tidak merata (*thickness variation*).
+                    </p>
+                    <p>
+                        Setelah data terkumpul selama seminggu terkumpul rapi, kita ubah deretan angka tersebut menjadi <strong>Pareto Chart</strong> (Diagram Pareto) menggunakan prinsip 80/20. Hasilnya langsung menampar kenyataan: dari 5 jenis cacat yang dicatat, <strong>78% kerugian ternyata disumbangkan oleh masalah ketebalan tidak merata dan kerutan (*wrinkle*)</strong>. Artinya, kita tidak perlu membuang energi membereskan kelimanya sekaligus; kita cukup fokus menumpas 2 masalah utama tersebut.
+                    </p>
                 </div>
             </div>
 
+            <!-- ALAT 3 & 4: MENCARI HUBUNGAN & AKAR MASALAH -->
+            <div class="space-y-6 pt-4 border-t border-slate-200">
+                <span class="text-xs font-bold text-sky-600 uppercase tracking-wider">Tahap 2: Analisis Korelasi & Sebab-Akibat</span>
+                <h3 class="text-xl md:text-2xl font-bold text-slate-900 font-serif-book">3. Ishikawa Diagram (Fishbone) & 4. Scatter Diagram (Diagram Korelasi)</h3>
+                
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4 text-slate-700 leading-relaxed">
+                    <p>
+                        Setelah tahu bahwa cacat utama adalah variasi ketebalan dan kerutan, pertanyaan selanjutnya adalah: <em>Mengapa hal itu bisa terjadi?</em> Di sinilah kita memanggil tim shift untuk duduk bersama membuat <strong>Ishikawa Diagram</strong> atau Diagram Tulang Ikan (Fishbone). Kita bedah potensi masalah dari 5M+1E (Man, Machine, Material, Method, Measurement, Environment).
+                    </p>
+                    <p>
+                        Dari sesi tulang ikan tersebut, muncul dugaan kuat bahwa suhu pemanas (*heater temperature*) berkolerasi langsung dengan kestabilan tarikan film. Untuk membuktikannya secara empiris, kita buat <strong>Scatter Diagram</strong> (Diagram Sebaran/Korelasi) dengan memetakan titik-titik suhu aktual terhadap tingkat penyimpangan ketebalan. Grafik titik-titik tersebut menunjukkan tren garis lurus ke atas yang jelas: semakin tinggi fluktuasi suhu pada zona 3, semakin tinggi pula tingkat variasi ketebalan plastik yang dihasilkan.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ALAT 5, 6, & 7: EVALUASI & PENGENDALIAN -->
+            <div class="space-y-6 pt-4 border-t border-slate-200">
+                <span class="text-xs font-bold text-amber-600 uppercase tracking-wider">Tahap 3: Stratifikasi, Distribusi, & Pengendalian Proses</span>
+                <h3 class="text-xl md:text-2xl font-bold text-slate-900 font-serif-book">5. Stratification, 6. Histogram, & 7. Control Chart (Peta Kendali)</h3>
+                
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4 text-slate-700 leading-relaxed">
+                    <p>
+                        Sebelum mengambil keputusan, kita melakukan <strong>Stratification</strong> (Stratifikasi) dengan memecah data berdasarkan kelompok operator Shift A dan Shift B. Melalui <strong>Histogram</strong>, terlihat jelas bahwa variasi ketebalan produk dari Shift A membentuk kurva lonceng yang stabil di tengah, sementara Shift B cenderung melebar ke batas toleransi bawah akibat perbedaan kebiasaan menyetel kecepatan awal.
+                    </p>
+                    <p>
+                        Langkah pamungkas untuk menjaga agar masalah ini tidak terulang adalah memasang <strong>Control Chart</strong> (Peta Kendali) di dinding ruang kontrol mesin. Peta kendali ini dilengkapi garis batas atas (*Upper Control Limit*) dan batas bawah (*Lower Control Limit*). Begitu titik ukur harian operator mulai mendekati garis batas merah, mereka tahu persis bahwa mesin harus segera dikalibrasi ulang sebelum produk cacat benar-benar tercetak massal.
+                    </p>
+                </div>
+            </div>
+
+            <!-- RINGKASAN & KESIMPULAN -->
+            <div class="bg-slate-900 text-white p-6 md:p-8 rounded-2xl shadow-xl space-y-4 mt-8">
+                <h3 class="text-xl font-bold text-emerald-400 font-serif-book">Siklus Pemecahan Masalah 7QC Tools</h3>
+                <p class="text-sm text-slate-300 leading-relaxed">
+                    Ketujuh alat pengendali mutu ini bukanlah instrumen yang berdiri sendiri, melainkan sebuah rangkaian investigasi yang saling mengunci:
+                </p>
+                <div class="bg-slate-800 p-4 rounded-xl text-xs font-mono text-emerald-300 space-y-1">
+                    <div>1. Kumpulkan data mentah &rarr; Check Sheet</div>
+                    <div>2. Saring prioritas masalah &rarr; Pareto Chart</div>
+                    <div>3. Stratifikasi kelompok data &rarr; Stratification</div>
+                    <div>4. Bedah akar penyebab &rarr; Ishikawa Diagram (Fishbone)</div>
+                    <div>5. Uji hubungan variabel &rarr; Scatter Diagram</div>
+                    <div>6. Lihat bentuk distribusi &rarr; Histogram</div>
+                    <div>7. Jaga stabilitas jangka panjang &rarr; Control Chart</div>
+                </div>
+                <p class="text-xs text-slate-400 italic">
+                    Dengan menerapkan ketujuh alat ini secara konsisten, budaya kerja di pabrik akan bergeser dari "menebak-nebak masalah" menjadi "menyelesaikan masalah berdasarkan bukti data yang akurat".
+                </p>
+            </div>
+
             <blockquote class="border-l-4 border-emerald-600 pl-4 py-3 my-6 bg-emerald-50/50 italic text-slate-700">
-                <strong>Kesimpulan Praktisi:</strong><br>
-                Dengan menguasai dan menerapkan 7QC Tools secara konsisten, tim di lantai pabrik tidak hanya dapat menyelesaikan masalah dengan cepat, tetapi juga mampu melakukan tindakan preventif secara sistematis.
+                <strong>Catatan Praktisi:</strong><br>
+                "Data tanpa analisis adalah deretan angka mati, namun analisis tanpa pemahaman kondisi nyata di lantai pabrik hanyalah ilusi di atas kertas."
             </blockquote>
 
         </article>
 
-        <!-- Kotak Penawaran Kembali / Beranda -->
+        <!-- Kotak Penawaran Download Master Template 7QC Tools -->
         <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 md:p-12 text-center text-white shadow-xl mt-16 mb-8">
-            <span class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Eksplorasi Modul Lain</span>
-            <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-3 font-serif-book">Butuh Template & Panduan Mutu Lainnya?</h3>
+            <span class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Praktis & Siap Pakai</span>
+            <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-3 font-serif-book">Download Template Master 7QC Tools (Format Excel Otomatis)</h3>
             <p class="text-slate-300 text-sm md:text-base max-w-xl mx-auto mb-8 leading-relaxed">
-                Temukan berbagai perangkat kerja, kalkulator efisiensi, dan lembar periksa standar untuk meningkatkan produktivitas pabrik Anda.
+                Dapatkan template spreadsheet Excel otomatis yang mencakup lembar check sheet harian, generator Pareto otomatis, hingga template fishbone diagram siap isi untuk laporan pabrik.
             </p>
-            <a href="index.html" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition duration-200 text-base cursor-pointer">
-                Kembali ke Beranda <i class="fa-solid fa-arrow-left ml-2"></i>
+            <a href="#" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition duration-200 text-base cursor-pointer">
+                Download Template Excel 7QC Tools
             </a>
+            <p class="text-xs text-slate-400 mt-4">Format file .xlsx ramah pengguna dan langsung sinkron dengan grafik analisis mutu.</p>
         </div>
 
     </main>
@@ -171,8 +385,11 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200 py-8 text-center text-xs text-slate-500">
-        <p>&copy; 2026 Sukardi. Hak Cipta Dilindungi.</p>
+    <footer class="bg-slate-900 text-slate-300 py-4 mt-6 border-t border-slate-800 text-center text-xs">
+        <div class="max-w-xl mx-auto px-4 space-y-1">
+            <p>&copy; 2026 Otoritas Kerja. Hak Cipta Dilindungi.</p>
+            <p><a href="privacy.html" class="hover:text-white transition-colors">Kebijakan Privasi</a></p>
+        </div>
     </footer>
 
     <!-- Skrip Modal Interaktif -->
