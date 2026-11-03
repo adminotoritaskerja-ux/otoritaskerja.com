@@ -276,7 +276,7 @@
         <section class="space-y-4">
             <div>
                 <h1 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-slate-900 mt-2 mb-3 font-serif-book leading-tight">
-                    Panduan Praktis & Kalkulator OEE (Overall Equipment Effectivness)
+                    Panduan Praktis & Kalkulator OEE (Overall Equipment Effectiveness)
                 </h1>
                 <p class="text-slate-600 italic text-sm sm:text-base md:text-lg max-w-xl font-serif-book">
                     "Metodologi mengukur efisiensi aktual mesin produksi berdasarkan Availability, Performance, dan Quality Rate secara presisi."
@@ -348,6 +348,73 @@
                             Quality = (Good Output / Total Output) × 100%
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- STUDI KASUS PENERAPAN OEE -->
+            <div class="space-y-6 pt-6 border-t border-slate-200">
+                <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Aplikasi Lapangan</span>
+                <h3 class="text-xl md:text-2xl font-bold text-slate-900 font-serif-book">Studi Kasus: Simulasi Perhitungan OEE di Lantai Produksi</h3>
+                <p class="text-slate-700 leading-relaxed text-base">
+                    Mari kita membedah kondisi nyata di lantai produksi menggunakan pendekatan matematis yang transparan dan mudah dipahami pada lini mesin <em>extrusion</em>.
+                </p>
+
+                <!-- Langkah 1 -->
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-3">
+                    <h4 class="font-bold text-slate-900 text-lg">1. Membaca Kondisi Waktu Nyata (Availability)</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Bayangkan kita sedang memantau 1 shift kerja mesin berdurasi 8 jam (480 menit) yang dipotong istirahat terencana 30 menit.
+                    </p>
+                    <div class="bg-slate-100 p-3 rounded text-xs font-mono text-slate-700 space-y-1">
+                        <div>\(\text{Planned Production Time} = 480\text{ menit} - 30\text{ menit} = 450\text{ menit}\)</div>
+                        <div>\(\text{Operating Time} = 450\text{ menit} - 45\text{ menit (downtime/setup)} = 405\text{ menit}\)</div>
+                    </div>
+                    <div class="bg-emerald-50 p-3 rounded text-xs font-mono text-emerald-900 font-semibold">
+                        $$\text{Availability} = \frac{405\text{ menit}}{450\text{ menit}} = 90\%$$
+                    </div>
+                </div>
+
+                <!-- Langkah 2 -->
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-3">
+                    <h4 class="font-bold text-slate-900 text-lg">2. Menelusuri Kecepatan Mesin (Performance)</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Dalam waktu 405 menit, jika mesin berjalan stabil pada kecepatan idealnya (0,5 menit per roll), target output maksimal adalah <strong>810 roll</strong>. Namun aktualnya tercatat keluar <strong>720 roll</strong>.
+                    </p>
+                    <div class="bg-slate-100 p-3 rounded text-xs font-mono text-slate-700">
+                        \(\text{Ideal Output} = \frac{405\text{ menit}}{0,5\text{ menit/roll}} = 810\text{ roll}\)
+                    </div>
+                    <div class="bg-emerald-50 p-3 rounded text-xs font-mono text-emerald-900 font-semibold">
+                        $$\text{Performance} = \frac{720\text{ roll}}{810\text{ roll}} \approx 88,89\%$$
+                    </div>
+                </div>
+
+                <!-- Langkah 3 -->
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-3">
+                    <h4 class="font-bold text-slate-900 text-lg">3. Mengukur Kualitas Produk (Quality)</h4>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Dari 720 roll yang diproduksi, QC menemukan 36 roll cacat (scrap). Artinya produk yang memenuhi standar berjumlah <strong>684 roll</strong>.
+                    </p>
+                    <div class="bg-slate-100 p-3 rounded text-xs font-mono text-slate-700">
+                        \(\text{Good Output} = 720\text{ roll} - 36\text{ roll} = 684\text{ roll}\)
+                    </div>
+                    <div class="bg-emerald-50 p-3 rounded text-xs font-mono text-emerald-900 font-semibold">
+                        $$\text{Quality} = \frac{684\text{ roll}}{720\text{ roll}} = 95\%$$
+                    </div>
+                </div>
+
+                <!-- Langkah 4 -->
+                <div class="bg-slate-900 text-white p-6 rounded-xl shadow-md space-y-3">
+                    <h4 class="font-bold text-lg text-emerald-400">4. Perhitungan Total Skor OEE</h4>
+                    <p class="text-sm text-slate-300">
+                        Hasil akhir diperoleh dengan mengalikan ketiga pilar efisiensi utama:
+                    </p>
+                    <div class="bg-slate-800 p-3 rounded text-xs font-mono text-emerald-300">
+                        $$\text{OEE} = \text{Availability} \times \text{Performance} \times \text{Quality}$$
+                        $$\text{OEE} = 90\% \times 88,89\% \times 95\% \approx 76,0\%$$
+                    </div>
+                    <p class="text-xs text-slate-400 italic">
+                        *Capaian 76% menunjukkan bahwa lini produksi masih memiliki celah perbaikan signifikan untuk mencapai standar World Class (&ge; 85%), terutama pada aspek Performance dan Quality.
+                    </p>
                 </div>
             </div>
 
