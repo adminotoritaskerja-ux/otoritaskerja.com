@@ -47,23 +47,227 @@
             </div>
         </section>
 
-        <article class="space-y-8">
+        <article class="space-y-10">
+            <!-- Pengantar -->
             <div class="space-y-4">
                 <h2 class="text-2xl font-bold text-slate-900 font-serif-book">Mengapa Menggunakan Diagram Fishbone?</h2>
                 <p class="text-slate-700 leading-relaxed text-base md:text-lg">
                     Seringkali masalah di pabrik diselesaikan hanya pada gejalanya saja, sehingga masalah yang sama terus berulang. <em>Fishbone Diagram</em> (atau Ishikawa Diagram) membantu tim produksi menelusuri hubungan sebab-akibat hingga menemukan akar masalah yang sesungguhnya melalui pendekatan terstruktur 6M.
                 </p>
             </div>
-            <div class="space-y-4 pt-4">
-                <h3 class="text-xl font-bold text-slate-900 font-serif-book">Kategori 6M dalam Analisis Fishbone</h3>
-                <ul class="list-disc list-inside space-y-3 text-slate-700 pl-4">
-                    <li><strong>Man (Manusia):</strong> Faktor keterampilan, kedisiplinan, pelatihan, atau kelelahan operator.</li>
-                    <li><strong>Machine (Mesin):</strong> Kondisi keausan alat, akurasi setting parameter, atau gangguan mekanis.</li>
-                    <li><strong>Material (Bahan Baku):</strong> Kualitas bahan baku, spesifikasi supplier, atau penyimpanan material.</li>
-                    <li><strong>Method (Metode):</strong> SOP kerja, instruksi kerja (WI), atau tahapan proses yang kurang efektif.</li>
-                    <li><strong>Measurement (Pengukuran):</strong> Keakuratan alat ukur, kalibrasi, atau metode inspeksi kualitas.</li>
-                    <li><strong>Mother Nature (Lingkungan):</strong> Suhu ruangan, kelembaban, atau kebersihan area kerja.</li>
-                </ul>
+
+            <!-- Penjelasan Rinci 6M (Agar Tidak Tertukar) -->
+            <div class="space-y-6 pt-4">
+                <h3 class="text-xl font-bold text-slate-900 font-serif-book">Detail 6 Kategori Utama (Metode 6M) &amp; Indikator Penilaian</h3>
+                <p class="text-slate-700 leading-relaxed text-base">
+                    Agar tidak salah menempatkan kategori ("salah kamar") saat melakukan sesi <em>brainstorming</em> di lapangan, pahami indikator rinci dari masing-masing pilar berikut:
+                </p>
+
+                <div class="space-y-6 pl-2 border-l-2 border-emerald-500">
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">1. Man (Manusia)</h4>
+                        <p class="text-sm text-slate-600 mt-1"><strong>Kunci Utama:</strong> Masalah bersumber dari faktor orang (keterbatasan fisik/mental, perilaku, atau tingkat kompetensi).</p>
+                        <ul class="list-disc list-inside text-sm text-slate-700 mt-2 space-y-1">
+                            <li><strong>Keterampilan &amp; Pelatihan (Skill/Training):</strong> Karyawan baru belum paham SOP atau kurang pembekalan.</li>
+                            <li><strong>Fisik &amp; Mental (Fatigue/Focus):</strong> Kelelahan akibat bekerja di jam rawan atau kurang konsentrasi.</li>
+                            <li><strong>Disiplin &amp; Perilaku:</strong> Sengaja melanggar aturan atau tidak melakukan pemeriksaan ganda (<em>double-check</em>).</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">2. Machine (Mesin / Peralatan)</h4>
+                        <p class="text-sm text-slate-600 mt-1"><strong>Kunci Utama:</strong> Masalah bersumber dari perangkat keras, mesin, perkakas, atau teknologi yang digunakan.</p>
+                        <ul class="list-disc list-inside text-sm text-slate-700 mt-2 space-y-1">
+                            <li><strong>Kerusakan Komponen:</strong> Bagian mesin aus, patah, korsleting, atau penurunan fungsi mekanis.</li>
+                            <li><strong>Teknologi Usang:</strong> Mesin terlalu tua sehingga tidak akurat lagi atau suku cadangnya langka.</li>
+                            <li><strong>Perawatan Buruk (Maintenance):</strong> Jadwal perawatan berkala terlewat, kotor, atau kurang pelumasan.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">3. Material (Bahan Baku / Komponen)</h4>
+                        <p class="text-sm text-slate-600 mt-1"><strong>Kunci Utama:</strong> Masalah bersumber dari bahan mentah, komponen setengah jadi, zat kimia, atau kemasan.</p>
+                        <ul class="list-disc list-inside text-sm text-slate-700 mt-2 space-y-1">
+                            <li><strong>Cacat Pemasok (Supplier Defect):</strong> Ukuran, kadar, atau spesifikasi tidak sesuai standar pabrik.</li>
+                            <li><strong>Penyimpanan (Storage):</strong> Rusak di gudang karena kedaluwarsa, lembap, atau salah susun.</li>
+                            <li><strong>Ketidaksesuaian Spesifikasi:</strong> Grade bahan dari awal berada di bawah standar proses.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">4. Method (Metode / Prosedur Kerja)</h4>
+                        <p class="text-sm text-slate-600 mt-1"><strong>Kunci Utama:</strong> Masalah bersumber dari cara kerja, prosedur operasional standar (SOP), atau alur proses.</p>
+                        <ul class="list-disc list-inside text-sm text-slate-700 mt-2 space-y-1">
+                            <li><strong>Ketiadaan SOP:</strong> Pekerjaan dilakukan berdasarkan kebiasaan karena tidak ada dokumen tertulis.</li>
+                            <li><strong>Alur Berbelit (Inefficiency):</strong> Tahapan kerja bolak-balik atau banyak pengulangan tidak perlu.</li>
+                            <li><strong>Prosedur Usang:</strong> SOP tidak relevan lagi dengan kondisi operasional lapangan saat ini.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">5. Measurement (Pengukuran &amp; Metrik)</h4>
+                        <p class="text-sm text-slate-600 mt-1"><strong>Kunci Utama:</strong> Masalah bersumber dari alat ukur, metode inspeksi, atau standar metrik yang keliru.</p>
+                        <ul class="list-disc list-inside text-sm text-slate-700 mt-2 space-y-1">
+                            <li><strong>Kalibrasi Alat Ukur:</strong> Timbangan, termometer, atau sensor tidak dikalibrasi sehingga hasilnya melenceng.</li>
+                            <li><strong>Standar Ambigu:</strong> Parameter kualitas tidak didefinisikan dengan angka pasti (subjektif).</li>
+                            <li><strong>Target Keliru:</strong> Target KPI yang dibebankan mendorong pekerja mengorbankan kualitas.</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-slate-900 text-base">6. Milieu / Mother Nature (Lingkungan Kerja)</h4>
+                        <p class="text-sm text-slate-600 mt-1"><strong>Kunci Utama:</strong> Masalah bersumber dari kondisi fisik area sekitar tempat kerja atau faktor eksternal.</p>
+                        <ul class="list-disc list-inside text-sm text-slate-700 mt-2 space-y-1">
+                            <li><strong>Kondisi Ruangan:</strong> Suhu terlalu panas/dingin, pencahayaan kurang, atau bising.</li>
+                            <li><strong>Kebersihan &amp; Kontaminasi:</strong> Area kerja berdebu, lembap, atau ada getaran mesin lain.</li>
+                            <li><strong>Faktor Eksternal:</strong> Pengaruh cuaca ekstrem atau hembusan angin langsung.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template Tabel Analisis Akar Masalah -->
+            <div class="space-y-4 pt-6">
+                <h3 class="text-xl font-bold text-slate-900 font-serif-book">Template Tabel Analisis Akar Masalah (Metode 6M)</h3>
+                <p class="text-slate-700 text-sm md:text-base">
+                    Gunakan format tabel praktis berikut untuk menguji temuan lapangan, memverifikasi akar masalah, hingga menentukan tindakan perbaikan:
+                </p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse border border-slate-300 text-xs md:text-sm">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-800">
+                                <th class="border border-slate-300 p-2">Kategori (6M)</th>
+                                <th class="border border-slate-300 p-2">Masalah / Temuan Lapangan</th>
+                                <th class="border border-slate-300 p-2">Pertanyaan Verifikasi Kunci</th>
+                                <th class="border border-slate-300 p-2">Akar Penyebab (Root Cause)</th>
+                                <th class="border border-slate-300 p-2">Tindakan Perbaikan (Action Plan)</th>
+                                <th class="border border-slate-300 p-2">PIC &amp; Deadline</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-slate-700">
+                            <tr>
+                                <td class="border border-slate-300 p-2 font-semibold">1. Man</td>
+                                <td class="border border-slate-300 p-2">Operator salah setting parameter mesin.</td>
+                                <td class="border border-slate-300 p-2">Apakah operator paham SOP &amp; terlatih?</td>
+                                <td class="border border-slate-300 p-2">Operator baru belum mendapat pembekalan SOP terbaru.</td>
+                                <td class="border border-slate-300 p-2">Berikan <em>coaching</em> &amp; pasang <em>cheat sheet</em>.</td>
+                                <td class="border border-slate-300 p-2">SPV / 04 Nov</td>
+                            </tr>
+                            <tr class="bg-slate-50/50">
+                                <td class="border border-slate-300 p-2 font-semibold">2. Machine</td>
+                                <td class="border border-slate-300 p-2">Suhu pemanas berfluktuasi tidak stabil.</td>
+                                <td class="border border-slate-300 p-2">Apakah komponen aus / kurang perawatan?</td>
+                                <td class="border border-slate-300 p-2">Sensor suhu tertutup kerak residu plastik.</td>
+                                <td class="border border-slate-300 p-2">Bersihkan sensor &amp; buat jadwal pembersihan rutin.</td>
+                                <td class="border border-slate-300 p-2">Maintenance / 03 Nov</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-slate-300 p-2 font-semibold">3. Material</td>
+                                <td class="border border-slate-300 p-2">Plastik kemasan mudah robek saat dipress.</td>
+                                <td class="border border-slate-300 p-2">Apakah bahan dari supplier sesuai spek?</td>
+                                <td class="border border-slate-300 p-2">Ketebalan bahan di bawah batas minimum standar.</td>
+                                <td class="border border-slate-300 p-2">Isolasi stok &amp; terbitkan laporan NCR ke supplier.</td>
+                                <td class="border border-slate-300 p-2">QC &amp; Purchasing / 04 Nov</td>
+                            </tr>
+                            <tr class="bg-slate-50/50">
+                                <td class="border border-slate-300 p-2 font-semibold">4. Method</td>
+                                <td class="border border-slate-300 p-2">Proses serah terima shift memakan waktu lama.</td>
+                                <td class="border border-slate-300 p-2">Apakah ada alur atau SOP yang jelas?</td>
+                                <td class="border border-slate-300 p-2">Tidak ada lembar <em>checklist</em> serah terima standar.</td>
+                                <td class="border border-slate-300 p-2">Buat form <em>checklist</em> ringkas harian.</td>
+                                <td class="border border-slate-300 p-2">Shift Leader / 05 Nov</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-slate-300 p-2 font-semibold">5. Measurement</td>
+                                <td class="border border-slate-300 p-2">Hasil uji tarik (push-pull) tidak konsisten.</td>
+                                <td class="border border-slate-300 p-2">Kapan alat ukur terakhir dikalibrasi?</td>
+                                <td class="border border-slate-300 p-2">Pegas alat uji mengalami keausan (<em>fatigue</em>).</td>
+                                <td class="border border-slate-300 p-2">Kalibrasi eksternal &amp; ganti komponen aus.</td>
+                                <td class="border border-slate-300 p-2">Tim Lab / QC / 06 Nov</td>
+                            </tr>
+                            <tr class="bg-slate-50/50">
+                                <td class="border border-slate-300 p-2 font-semibold">6. Milieu</td>
+                                <td class="border border-slate-300 p-2">Proses pendinginan segel plastik terganggu.</td>
+                                <td class="border border-slate-300 p-2">Apakah suhu/angin ruangan memengaruhi?</td>
+                                <td class="border border-slate-300 p-2">Posisi <em>exhaust fan</em> terlalu dekat jalur produk.</td>
+                                <td class="border border-slate-300 p-2">Pasang sekat pelindung (<em>baffle plate</em>) transparan.</td>
+                                <td class="border border-slate-300 p-2">Facility / 05 Nov</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Contoh Studi Kasus Nyata dalam Bentuk Tabel -->
+            <div class="space-y-4 pt-6">
+                <h3 class="text-xl font-bold text-slate-900 font-serif-book">Studi Kasus Nyata: Kasus "Cacat Seal Plastik Bocor"</h3>
+                <p class="text-slate-700 text-sm md:text-base">
+                    Berikut adalah implementasi penuh analisis Fishbone Diagram dalam bentuk tabel untuk menyelesaikan kasus spesifik cacat <em>seal</em> kemasan plastik di lini produksi:
+                </p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse border border-slate-300 text-xs md:text-sm">
+                        <thead>
+                            <tr class="bg-emerald-50 text-slate-900">
+                                <th class="border border-slate-300 p-2">Kategori (6M)</th>
+                                <th class="border border-slate-300 p-2">Temuan Masalah di Lapangan</th>
+                                <th class="border border-slate-300 p-2">Pertanyaan Verifikasi Kunci</th>
+                                <th class="border border-slate-300 p-2">Akar Penyebab (Root Cause)</th>
+                                <th class="border border-slate-300 p-2">Tindakan Perbaikan (Action Plan)</th>
+                                <th class="border border-slate-300 p-2">PIC &amp; Deadline</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-slate-700">
+                            <tr>
+                                <td class="border border-slate-300 p-2 font-semibold">1. Man</td>
+                                <td class="border border-slate-300 p-2">Operator baru menaikkan kecepatan mesin terlalu tinggi.</td>
+                                <td class="border border-slate-300 p-2">Apakah operator paham parameter standar film?</td>
+                                <td class="border border-slate-300 p-2">Operator kurang pengalaman &amp; belum paham <em>start-up setting</em>.</td>
+                                <td class="border border-slate-300 p-2">Berikan pelatihan kilat &amp; pasang panduan parameter di mesin.</td>
+                                <td class="border border-slate-300 p-2">Asisten SPV / 04 Nov</td>
+                            </tr>
+                            <tr class="bg-slate-50/50">
+                                <td class="border border-slate-300 p-2 font-semibold">2. Machine</td>
+                                <td class="border border-slate-300 p-2">Suhu <em>sealing bar</em> berfluktuasi hingga 15&deg;C.</td>
+                                <td class="border border-slate-300 p-2">Apakah sensor suhu kotor atau rusak?</td>
+                                <td class="border border-slate-300 p-2">Sensor tertutup kerak residu lelehan plastik.</td>
+                                <td class="border border-slate-300 p-2">Bersihkan sensor &amp; buat jadwal pembersihan rutin mingguan.</td>
+                                <td class="border border-slate-300 p-2">Maintenance / 03 Nov</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-slate-300 p-2 font-semibold">3. Material</td>
+                                <td class="border border-slate-300 p-2">Lapisan bahan baku dari pemasok datang terlalu tipis.</td>
+                                <td class="border border-slate-300 p-2">Apakah spesifikasi ketebalan sesuai dokumen?</td>
+                                <td class="border border-slate-300 p-2">Bahan datang berada di batas minimum toleransi kualitas supplier.</td>
+                                <td class="border border-slate-300 p-2">Isolasi rol bahan &amp; terbitkan Laporan Ketidaksesuaian (NCR).</td>
+                                <td class="border border-slate-300 p-2">QC &amp; Purchasing / 04 Nov</td>
+                            </tr>
+                            <tr class="bg-slate-50/50">
+                                <td class="border border-slate-300 p-2 font-semibold">4. Method</td>
+                                <td class="border border-slate-300 p-2">Tidak ada pengujian kekuatan segel saat mesin mulai jalan.</td>
+                                <td class="border border-slate-300 p-2">Bagaimana memastikan mesin siap sebelum produksi massal?</td>
+                                <td class="border border-slate-300 p-2">SOP <em>start-up</em> hanya tombol ON/OFF tanpa wajib uji fisik.</td>
+                                <td class="border border-slate-300 p-2">Revisi SOP <em>Start-up</em> dengan mewajibkan uji kebocoran (<em>leak test</em>).</td>
+                                <td class="border border-slate-300 p-2">Quality Assurance / 05 Nov</td>
+                            </tr>
+                            <tr>
+                                <td class="border border-slate-300 p-2 font-semibold">5. Measurement</td>
+                                <td class="border border-slate-300 p-2">Alat uji tarik (push-pull) memberikan hasil tidak konsisten.</td>
+                                <td class="border border-slate-300 p-2">Kapan alat ukur terakhir dikalibrasi?</td>
+                                <td class="border border-slate-300 p-2">Pegas alat uji mengalami keausan (<em>fatigue</em>).</td>
+                                <td class="border border-slate-300 p-2">Lakukan kalibrasi eksternal alat uji &amp; ganti komponen aus.</td>
+                                <td class="border border-slate-300 p-2">Tim Lab / QC / 06 Nov</td>
+                            </tr>
+                            <tr class="bg-slate-50/50">
+                                <td class="border border-slate-300 p-2 font-semibold">6. Milieu</td>
+                                <td class="border border-slate-300 p-2">Area jalur produk panas langsung terkena angin luar.</td>
+                                <td class="border border-slate-300 p-2">Apakah hembusan angin mendinginkan area segel terlalu cepat?</td>
+                                <td class="border border-slate-300 p-2">Posisi ventilasi/kipas terlalu dekat dengan jalur produk.</td>
+                                <td class="border border-slate-300 p-2">Pasang sekat pelindung (<em>baffle plate</em>) transparan.</td>
+                                <td class="border border-slate-300 p-2">Facility / 05 Nov</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </article>
 
@@ -91,10 +295,10 @@
 
     <!-- Footer -->
     <footer class="bg-slate-900 text-slate-300 py-4 mt-6 border-t border-slate-800 text-center text-xs">
-  <div class="max-w-xl mx-auto px-4 space-y-1">
-    <p>&copy; 2026 Otoritas Kerja. Hak Cipta Dilindungi.</p>
-    <p><a href="privacy.html" class="hover:text-white transition-colors">Kebijakan Privasi</a></p>
-  </div>
+        <div class="max-w-xl mx-auto px-4 space-y-1">
+            <p>&copy; 2026 Otoritas Kerja. Hak Cipta Dilindungi.</p>
+            <p><a href="privacy.html" class="hover:text-white transition-colors">Kebijakan Privasi</a></p>
+        </div>
     </footer>
 
     <script>
