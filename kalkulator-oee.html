@@ -31,13 +31,13 @@
         body {
             font-family: 'Inter', sans-serif;
         }
-            :root {
+        :root {
             --bg-body: #f8fafc;
             --bg-card: #ffffff;
             --border-color: #e2e8f0;
             --primary-blue: #0284c7;
             --primary-dark: #0f172a;
-            --industrial-blue: #0369a1; /* Biru pekat industrial */
+            --industrial-blue: #0369a1; 
             --accent-orange: #ea580c;
             --text-main: #1e293b;
             --text-muted: #64748b;
@@ -49,7 +49,6 @@
             box-sizing: border-box;
         }
 
-        /* Memastikan root dan body murni untuk sistem sticky header yang stabil */
         html {
             scroll-behavior: smooth;
         }
@@ -67,9 +66,6 @@
             height: auto;
         }
 
-        /* =========================================================
-           HEADER UTAMA STICKY MUTLAK (DIJAMIN TIDAK IKUT KE-SCROLL)
-           ========================================================= */
         .site-header {
             position: sticky;
             top: 0;
@@ -91,9 +87,6 @@
             align-items: center;
             justify-content: space-between;
             width: 100%;
-            max-width: 100%;
-            margin: 0;
-            padding: 0;
         }
 
         .logo-brand {
@@ -154,98 +147,59 @@
             background-color: var(--primary-blue, #0284c7);
         }
 
-        .nav-menu li a.btn-admin-nav {
-            background-color: #1e293b;
-            margin-left: auto;
-        }
-
-        /* =========================================================
-           TICKER & BADGE JAJARAN GENJANG (BIRU PEKAT INDUSTRIAL)
-           ========================================================= */
         .ticker-bar-white {
             background-color: #ffffff;
             width: 100%;
             border-top: 1px solid #cbd5e1;
             border-bottom: 2px solid var(--border-color, #e2e8f0);
-            padding: 0;
+            display: flex;
+            align-items: center;
             overflow: hidden;
             position: relative;
         }
 
-        .ticker-container {
-            display: flex;
-            align-items: center;
-            width: 100%;
-            max-width: 100%;
-            padding: 0;
-            margin: 0;
-        }
-
         .badge-skew-container {
-            background-color: var(--industrial-blue, #0369a1); /* Warna biru pekat industrial */
+            background-color: var(--industrial-blue, #0369a1);
             color: #ffffff;
-            padding: 9px 20px 9px 12px;
-            font-size: 0.82rem;
+            padding: 8px 16px;
+            font-size: 0.75rem;
             font-weight: 800;
             white-space: nowrap;
-            transform: skewX(-15deg);
-            transform-origin: left bottom;
-            margin-left: -8px;
-            border-right: 5px solid var(--accent-orange, #ea580c);
-            border-left: none !important;
             flex-shrink: 0;
-            position: relative;
             z-index: 10;
-            box-shadow: 4px 0 10px rgba(0,0,0,0.15);
-        }
-
-        .badge-text-inner {
-            display: inline-block;
-            transform: skewX(15deg);
-            padding-left: 6px;
+            border-right: 4px solid var(--accent-orange, #ea580c);
         }
 
         .ticker-marquee-box {
             flex-grow: 1;
-            font-size: 0.88rem;
+            font-size: 0.82rem;
             color: var(--primary-dark, #0f172a);
             font-weight: 600;
-            padding-left: 16px;
-            position: relative;
-            z-index: 1;
             overflow: hidden;
-        }
-
-        .ticker-marquee-box marquee {
-            display: block;
-            vertical-align: middle;
+            padding: 0 10px;
         }
 
         @media (max-width: 768px) {
             .logo-svg { height: 36px; }
             .brand-title { font-size: 1.3rem; }
             .nav-menu li a { padding: 10px 14px; font-size: 0.82rem; }
-            .badge-skew-container { padding: 7px 16px 7px 10px; font-size: 0.72rem; }
-            .ticker-marquee-box { font-size: 0.8rem; padding-left: 12px; }
+            .badge-skew-container { padding: 6px 12px; font-size: 0.7rem; }
         }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
     
-    <!-- HEADER UTAMA 3-TIER PORTAL (TERKUNCI / STICKY DI ATAS) -->
+    <!-- HEADER UTAMA 3-TIER PORTAL -->
     <header class="site-header">
-        <!-- TIER 1: LOGO HEADER PUTIH -->
         <div class="top-header-white">
             <div class="top-header-inner">
                 <a href="index.html" class="logo-brand">
-                    <!-- IMG Logo Asli Otoritas Kerja -->
                     <img src="favicon.png" alt="Otoritas Kerja" class="logo-svg">
                     <div class="brand-title">Otoritas<span>Kerja</span></div>
                 </a>
             </div>
         </div>
 
-        <!-- TIER 2: NAVBAR MENU NAVY -->
         <nav class="main-navbar-navy">
             <ul class="nav-menu">
                 <li><a href="index.html">BERANDA</a></li>
@@ -254,22 +208,19 @@
             </ul>
         </nav>
 
-        <!-- TIER 3: TICKER BAR / SUB-HEADER -->
         <div class="ticker-bar-white">
-            <div class="ticker-container">
-                <div class="badge-skew-container">
-                    <span class="badge-text-inner">STANDAR PRAKTISI</span>
-                </div>
-                <div class="ticker-marquee-box">
-                    <marquee behavior="scroll" direction="left" scrollamount="4">
-                        Alat Analisis Kinerja Mesin Pabrik, Perhitungan OEE Real-Time & Peningkatan Produktivitas Manufaktur
-                    </marquee>
-                </div>
+            <div class="badge-skew-container">
+                <span>STANDAR PRAKTISI</span>
+            </div>
+            <div class="ticker-marquee-box">
+                <marquee behavior="scroll" direction="left" scrollamount="4">
+                    Alat Analisis Kinerja Mesin Pabrik, Perhitungan OEE Real-Time & Peningkatan Produktivitas Manufaktur
+                </marquee>
             </div>
         </div>
     </header>
     
-        <!-- Konten Utama Artikel -->
+    <!-- Konten Utama Artikel -->
     <main class="max-w-3xl mx-auto px-4 sm:px-6 py-5 space-y-12 flex-grow w-full">
 
         <!-- HEADLINE ARTIKEL & AUTHOR BADGE -->
@@ -283,7 +234,6 @@
                 </p>
             </div>
 
-            <!-- Author Box Sukardi, S.T. dengan Foto -->
             <div class="flex items-center space-x-4 p-4 bg-white rounded-xl border border-slate-200 shadow-sm cursor-pointer" onclick="openModal('authorModal')">
                 <img src="foto-sukardi.jpg" alt="Sukardi, S.T." class="w-12 h-12 rounded-full object-cover flex-shrink-0 border border-slate-200 shadow-inner">
                 <div class="text-xs md:text-sm">
@@ -293,16 +243,14 @@
                 </div>
             </div>
                 
-         <!-- Banner Tampil Lepas Tanpa Bingkai -->
-<div class="rounded-xl overflow-hidden shadow-md">
-    <img src="oee-artikel.jpg" alt="Banner Artikel" class="w-full h-auto object-cover">
-</div>
+            <div class="rounded-xl overflow-hidden shadow-md">
+                <img src="oee-artikel.jpg" alt="Banner Artikel" class="w-full h-auto object-cover">
+            </div>
         </section>
 
         <!-- ISI ARTIKEL -->
         <article class="space-y-8">
             
-            <!-- Pengantar -->
             <div class="space-y-4">
                 <h2 class="text-2xl font-bold text-slate-900 font-serif-book">Mengapa Mengukur OEE Sangat Penting?</h2>
                 <p class="text-slate-700 leading-relaxed text-base md:text-lg">
@@ -313,7 +261,6 @@
                 </p>
             </div>
 
-            <!-- 3 Pilar OEE -->
             <div class="space-y-4 pt-4">
                 <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Rumus Dasar OEE</span>
                 <h3 class="text-xl font-bold text-slate-900 font-serif-book">3 Komponen Utama Perhitungan OEE</h3>
@@ -322,7 +269,7 @@
                     <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
                         <div class="font-bold text-slate-900 text-lg">1. Availability Rate (Ketersediaan Mesin)</div>
                         <p class="text-sm text-slate-600 leading-relaxed">
-                            Mengukur seberapa lama mesin benar-benar beroperasi dibandingkan waktu rencana produksi (Planned Production Time). Komponen ini tergerus oleh <i>downtime</i> seperti kerusakan mesin (breakdown) dan waktu <i>setup/changeover</i>.
+                            Mengukur seberapa lama mesin benar-benar beroperasi dibandingkan waktu rencana produksi (Planned Production Time).
                         </p>
                         <div class="bg-slate-100 p-2 rounded text-xs font-mono text-slate-700">
                             Availability = (Operating Time / Planned Production Time) × 100%
@@ -332,7 +279,7 @@
                     <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
                         <div class="font-bold text-slate-900 text-lg">2. Performance Rate (Unjuk Kerja)</div>
                         <p class="text-sm text-slate-600 leading-relaxed">
-                            Mengukur kecepatan mesin beroperasi dibandingkan dengan kecepatan ideal standar pabrik (<i>Ideal Cycle Time</i>). Komponen ini tergerus oleh penurunan kecepatan mesin dan kemacetan singkat.
+                            Mengukur kecepatan mesin beroperasi dibandingkan dengan kecepatan ideal standar pabrik (<i>Ideal Cycle Time</i>).
                         </p>
                         <div class="bg-slate-100 p-2 rounded text-xs font-mono text-slate-700">
                             Performance = ((Total Output × Ideal Cycle Time) / Operating Time) × 100%
@@ -342,7 +289,7 @@
                     <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-2">
                         <div class="font-bold text-slate-900 text-lg">3. Quality Rate (Kualitas Hasil)</div>
                         <p class="text-sm text-slate-600 leading-relaxed">
-                            Mengukur rasio produk bagus (<i>Good Product</i>) yang dihasilkan dibandingkan dengan total produk yang diproduksi (termasuk <i>reject</i>, <i>scrap</i>, dan <i>rework</i>).
+                            Mengukur rasio produk bagus (<i>Good Product</i>) yang dihasilkan dibandingkan dengan total produk yang diproduksi.
                         </p>
                         <div class="bg-slate-100 p-2 rounded text-xs font-mono text-slate-700">
                             Quality = (Good Output / Total Output) × 100%
@@ -351,69 +298,51 @@
                 </div>
             </div>
 
-            <!-- STUDI KASUS PENERAPAN OEE -->
+            <!-- STUDI KASUS PENERAPAN OEE (ALUR NARATIF) -->
             <div class="space-y-6 pt-6 border-t border-slate-200">
                 <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Aplikasi Lapangan</span>
-                <h3 class="text-xl md:text-2xl font-bold text-slate-900 font-serif-book">Studi Kasus: Simulasi Perhitungan OEE di Lantai Produksi</h3>
-                <p class="text-slate-700 leading-relaxed text-base">
-                    Mari kita membedah kondisi nyata di lantai produksi menggunakan pendekatan matematis yang transparan dan mudah dipahami pada lini mesin <em>extrusion</em>.
-                </p>
-
-                <!-- Langkah 1 -->
-                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-3">
-                    <h4 class="font-bold text-slate-900 text-lg">1. Membaca Kondisi Waktu Nyata (Availability)</h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">
-                        Bayangkan kita sedang memantau 1 shift kerja mesin berdurasi 8 jam (480 menit) yang dipotong istirahat terencana 30 menit.
+                <h3 class="text-xl md:text-2xl font-bold text-slate-900 font-serif-book">Studi Kasus: Membaca Realitas di Lantai Produksi</h3>
+                
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4 text-slate-700 leading-relaxed">
+                    <p>
+                        Mari kita bayangkan situasi nyata saat mengawasi satu shift kerja mesin <em>extrusion</em> berdurasi 8 jam. Setelah dipotong waktu istirahat terencana selama 30 menit, waktu bersih yang seharusnya dipakai untuk produksi (<em>Planned Production Time</em>) adalah 450 menit.
+                    </p>
+                    <div class="bg-slate-100 p-3 rounded text-xs font-mono text-slate-700">
+                        Planned Production Time = 480 menit − 30 menit = 450 menit
+                    </div>
+                    <p>
+                        Namun di lapangan, mesin sempat berhenti total selama 45 menit karena kendala teknis dan proses <em>setup</em>. Artinya, waktu bersih saat mesin benar-benar berputar (<em>Operating Time</em>) menjadi 405 menit. Dari sini, tingkat ketersediaan mesin (<em>Availability Rate</em>) dapat kita ketahui berada di angka 90%:
                     </p>
                     <div class="bg-slate-100 p-3 rounded text-xs font-mono text-slate-700 space-y-1">
-                        <div>\(\text{Planned Production Time} = 480\text{ menit} - 30\text{ menit} = 450\text{ menit}\)</div>
-                        <div>\(\text{Operating Time} = 450\text{ menit} - 45\text{ menit (downtime/setup)} = 405\text{ menit}\)</div>
+                        <div>Operating Time = 450 menit − 45 menit = 405 menit</div>
+                        <div class="font-semibold text-emerald-800">Availability = 405 menit / 450 menit = 90%</div>
                     </div>
-                    <div class="bg-emerald-50 p-3 rounded text-xs font-mono text-emerald-900 font-semibold">
-                        $$\text{Availability} = \frac{405\text{ menit}}{450\text{ menit}} = 90\%$$
-                    </div>
-                </div>
-
-                <!-- Langkah 2 -->
-                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-3">
-                    <h4 class="font-bold text-slate-900 text-lg">2. Menelusuri Kecepatan Mesin (Performance)</h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">
-                        Dalam waktu 405 menit, jika mesin berjalan stabil pada kecepatan idealnya (0,5 menit per roll), target output maksimal adalah <strong>810 roll</strong>. Namun aktualnya tercatat keluar <strong>720 roll</strong>.
+                    <p>
+                        Angka 90% ini terbilang cukup baik karena menunjukkan mesin jarang mengalami kerusakan berat. Namun, cerita sebenarnya baru terlihat ketika kita mengamati laju kecepatan dan hasil akhirnya.
                     </p>
-                    <div class="bg-slate-100 p-3 rounded text-xs font-mono text-slate-700">
-                        \(\text{Ideal Output} = \frac{405\text{ menit}}{0,5\text{ menit/roll}} = 810\text{ roll}\)
-                    </div>
-                    <div class="bg-emerald-50 p-3 rounded text-xs font-mono text-emerald-900 font-semibold">
-                        $$\text{Performance} = \frac{720\text{ roll}}{810\text{ roll}} \approx 88,89\%$$
-                    </div>
-                </div>
-
-                <!-- Langkah 3 -->
-                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-3">
-                    <h4 class="font-bold text-slate-900 text-lg">3. Mengukur Kualitas Produk (Quality)</h4>
-                    <p class="text-sm text-slate-600 leading-relaxed">
-                        Dari 720 roll yang diproduksi, QC menemukan 36 roll cacat (scrap). Artinya produk yang memenuhi standar berjumlah <strong>684 roll</strong>.
+                    <p>
+                        Dalam waktu 405 menit tersebut, jika mesin digeber di kecepatan idealnya (1 roll selesai dalam 0,5 menit), target output maksimal yang seharusnya tercapai adalah 810 roll. Namun pada kenyataannya, total roll yang tercatat keluar dari mesin hanya 720 roll. Penurunan kecepatan ini mencerminkan <em>Performance Rate</em> kita berada di angka 88,89%, yang biasanya disebabkan oleh kemacetan kecil (<em>micro-stoppages</em>) atau operator yang sengaja menurunkan kecepatan agar lembaran plastik tidak berkerut.
                     </p>
-                    <div class="bg-slate-100 p-3 rounded text-xs font-mono text-slate-700">
-                        \(\text{Good Output} = 720\text{ roll} - 36\text{ roll} = 684\text{ roll}\)
+                    <div class="bg-slate-100 p-3 rounded text-xs font-mono text-slate-700 space-y-1">
+                        <div>Ideal Output = 405 menit / 0,5 menit per roll = 810 roll</div>
+                        <div class="font-semibold text-emerald-800">Performance = 720 roll / 810 roll = 88,89%</div>
                     </div>
-                    <div class="bg-emerald-50 p-3 rounded text-xs font-mono text-emerald-900 font-semibold">
-                        $$\text{Quality} = \frac{684\text{ roll}}{720\text{ roll}} = 95\%$$
-                    </div>
-                </div>
-
-                <!-- Langkah 4 -->
-                <div class="bg-slate-900 text-white p-6 rounded-xl shadow-md space-y-3">
-                    <h4 class="font-bold text-lg text-emerald-400">4. Perhitungan Total Skor OEE</h4>
-                    <p class="text-sm text-slate-300">
-                        Hasil akhir diperoleh dengan mengalikan ketiga pilar efisiensi utama:
+                    <p>
+                        Belum berhenti sampai di situ. Dari 720 roll yang dicetak, bagian Quality Control menemukan 36 roll cacat yang harus masuk keranjang afkir (<em>scrap</em>). Artinya, produk bagus yang benar-benar bisa dikirim ke gudang hanya 684 roll, atau memiliki tingkat kualitas (<em>Quality Rate</em>) sebesar 95%.
                     </p>
-                    <div class="bg-slate-800 p-3 rounded text-xs font-mono text-emerald-300">
-                        $$\text{OEE} = \text{Availability} \times \text{Performance} \times \text{Quality}$$
-                        $$\text{OEE} = 90\% \times 88,89\% \times 95\% \approx 76,0\%$$
+                    <div class="bg-slate-100 p-3 rounded text-xs font-mono text-slate-700 space-y-1">
+                        <div>Good Output = 720 roll − 36 roll = 684 roll</div>
+                        <div class="font-semibold text-emerald-800">Quality = 684 roll / 720 roll = 95%</div>
                     </div>
-                    <p class="text-xs text-slate-400 italic">
-                        *Capaian 76% menunjukkan bahwa lini produksi masih memiliki celah perbaikan signifikan untuk mencapai standar World Class (&ge; 85%), terutama pada aspek Performance dan Quality.
+                    <p>
+                        Ketika ketiga elemen tersebut disatukan kedalam perkalian rumus OEE, angka efisiensi total lini produksi kita ketemu di angka <strong>76,0%</strong>:
+                    </p>
+                    <div class="bg-slate-900 text-white p-4 rounded-xl shadow-inner text-xs font-mono space-y-1">
+                        <div>OEE = Availability × Performance × Quality</div>
+                        <div class="text-emerald-400 font-bold">OEE = 90% × 88,89% × 95% = 76,0%</div>
+                    </div>
+                    <p class="text-sm italic text-slate-500 pt-2">
+                        Capaian 76% ini menyadarkan kita bahwa masih ada banyak potensi produksi yang hilang setiap harinya. Melalui pemahaman matematis yang transparan ini, fokus perbaikan selanjutnya dapat diarahkan secara tepat pada pencegahan <em>micro-stoppages</em> dan stabilisasi parameter suhu agar kecepatan mesin dapat dioptimalkan kembali.
                     </p>
                 </div>
             </div>
@@ -434,7 +363,6 @@
             <p class="text-slate-300 text-sm md:text-base max-w-xl mx-auto mb-8 leading-relaxed">
                 Dapatkan template spreadsheet Excel otomatis yang dilengkapi dengan input jam kerja harian, grafik kerugian <i>downtime</i>, serta <i>dashboard OEE</i> terintegrasi harian dan bulanan.
             </p>
-            <!-- Tautan Download Template Excel -->
             <a href="#" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition duration-200 text-base cursor-pointer">
                 Download Template Excel Kalkulator OEE
             </a>
@@ -459,10 +387,10 @@
 
     <!-- Footer -->
     <footer class="bg-slate-900 text-slate-300 py-4 mt-6 border-t border-slate-800 text-center text-xs">
-  <div class="max-w-xl mx-auto px-4 space-y-1">
-    <p>&copy; 2026 Otoritas Kerja. Hak Cipta Dilindungi.</p>
-    <p><a href="privacy.html" class="hover:text-white transition-colors">Kebijakan Privasi</a></p>
-  </div>
+        <div class="max-w-xl mx-auto px-4 space-y-1">
+            <p>&copy; 2026 Otoritas Kerja. Hak Cipta Dilindungi.</p>
+            <p><a href="privacy.html" class="hover:text-white transition-colors">Kebijakan Privasi</a></p>
+        </div>
     </footer>
 
     <!-- Skrip Modal Interaktif -->
