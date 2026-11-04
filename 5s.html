@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 1. JUDUL KHUSUS ARTIKEL -->
+    <title>Penerapan 5S untuk Kerapian & Efisiensi Lantai Pabrik - Otoritas Kerja</title>
+
+    <!-- 2. DESKRIPSI KHUSUS ARTIKEL -->
+    <meta name="description" content="Panduan praktis penerapan 5S (Seiri, Seiton, Seiso, Seiketsu, Shitsuke) di lantai produksi manufaktur untuk menciptakan lingkungan kerja yang rapi dan produktif.">
+
+    <!-- 3. PREVIEW / THUMBNAIL KHUSUS UNTUK WHATSAPP / SOSMED -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://otoritaskerja.com/penerapan-5s.html">
+    <meta property="og:title" content="Penerapan 5S untuk Kerapian & Efisiensi Lantai Pabrik - Otoritas Kerja">
+    <meta property="og:description" content="Panduan praktis penerapan 5S (Seiri, Seiton, Seiso, Seiketsu, Shitsuke) di lantai produksi manufaktur untuk menciptakan lingkungan kerja yang rapi dan produktif.">
+    <meta property="og:image" content="https://otoritaskerja.com/5s-banner.jpg">
+
+    <!-- FAVICON & APPLE TOUCH ICON -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="5s-banner.jpg">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
+        .font-serif-book {
+            font-family: 'Merriweather', serif;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        :root {
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --border-color: #e2e8f0;
+            --primary-blue: #0284c7;
+            --primary-dark: #0f172a;
+            --industrial-blue: #0369a1; 
+            --accent-orange: #ea580c;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img, picture, video, canvas, svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* HEADER UTAMA STICKY MUTLAK */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 99999;
+            width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+        }
+
+        .top-header-white {
+            background-color: #ffffff;
+            width: 100%;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color, #e2e8f0);
+        }
+
+        .top-header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .logo-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-svg {
+            height: 44px;
+            width: auto;
+        }
+
+        .brand-title {
+            font-size: 1.65rem;
+            font-weight: 800;
+            color: var(--primary-dark, #0f172a);
+        }
+
+        .brand-title span {
+            color: var(--primary-blue, #0284c7);
+        }
+
+        .main-navbar-navy {
+            background-color: var(--primary-dark, #0f172a);
+            width: 100%;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .nav-menu::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-menu li a {
+            display: block;
+            padding: 12px 20px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .nav-menu li a:hover,
+        .nav-menu li a.active {
+            background-color: var(--primary-blue, #0284c7);
+        }
+
+        /* TICKER & BADGE JAJARAN GENJANG */
+        .ticker-bar-white {
+            background-color: #ffffff;
+            width: 100%;
+            border-top: 1px solid #cbd5e1;
+            border-bottom: 2px solid var(--border-color, #e2e8f0);
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .ticker-container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .badge-skew-container {
+            background-color: var(--industrial-blue, #0369a1);
+            color: #ffffff;
+            padding: 9px 22px 9px 14px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            white-space: nowrap;
+            transform: skewX(-15deg);
+            transform-origin: left bottom;
+            margin-left: -8px;
+            border-right: 5px solid var(--accent-orange, #ea580c);
+            flex-shrink: 0;
+            position: relative;
+            z-index: 10;
+            box-shadow: 4px 0 10px rgba(0,0,0,0.15);
+        }
+
+        .badge-text-inner {
+            display: inline-block;
+            transform: skewX(15deg);
+            padding-left: 4px;
+        }
+
+        .ticker-marquee-box {
+            flex-grow: 1;
+            font-size: 0.85rem;
+            color: var(--primary-dark, #0f172a);
+            font-weight: 600;
+            padding-left: 16px;
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .logo-svg { height: 36px; }
+            .brand-title { font-size: 1.3rem; }
+            .nav-menu li a { padding: 10px 14px; font-size: 0.82rem; }
+            .badge-skew-container { padding: 7px 16px 7px 10px; font-size: 0.72rem; }
+            .ticker-marquee-box { font-size: 0.78rem; padding-left: 10px; }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+    
+    <!-- HEADER UTAMA 3-TIER PORTAL -->
+    <header class="site-header">
+        <div class="top-header-white">
+            <div class="top-header-inner">
+                <a href="index.html" class="logo-brand">
+                    <img src="favicon.png" alt="Otoritas Kerja" class="logo-svg">
+                    <div class="brand-title">Otoritas<span>Kerja</span></div>
+                </a>
+            </div>
+        </div>
+
+        <nav class="main-navbar-navy">
+            <ul class="nav-menu">
+                <li><a href="index.html">BERANDA</a></li>
+                <li><a href="about.html">TENTANG</a></li>
+                <li><a href="contact.html">KONTAK</a></li>
+            </ul>
+        </nav>
+
+        <div class="ticker-bar-white">
+            <div class="ticker-container">
+                <div class="badge-skew-container">
+                    <span class="badge-text-inner">STANDAR PRAKTISI</span>
+                </div>
+                <div class="ticker-marquee-box">
+                    <marquee behavior="scroll" direction="left" scrollamount="4">
+                        Penerapan 5S di Lantai Pabrik, Menciptakan Lingkungan Kerja yang Rapi, Bersih, dan Produktif
+                    </marquee>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Konten Utama Artikel -->
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-5 space-y-12 flex-grow w-full">
+
+        <!-- HEADLINE ARTIKEL & AUTHOR BADGE -->
+        <section class="space-y-4">
+            <div>
+                <h1 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-slate-900 mt-2 mb-3 font-serif-book leading-tight">
+                    Penerapan 5S untuk Kerapian & Efisiensi Lantai Pabrik
+                </h1>
+                <p class="text-slate-600 italic text-sm sm:text-base md:text-lg max-w-xl font-serif-book">
+                    "Fondasi dasar peningkatan produktivitas manufaktur melalui kedisiplinan menata ruang kerja dari lantai pabrik."
+                </p>
+            </div>
+
+            <div class="flex items-center space-x-4 p-4 bg-white rounded-xl border border-slate-200 shadow-sm cursor-pointer" onclick="openModal('authorModal')">
+                <img src="foto-sukardi.jpg" alt="Sukardi, S.T." class="w-12 h-12 rounded-full object-cover flex-shrink-0 border border-slate-200 shadow-inner">
+                <div class="text-xs md:text-sm">
+                    <div class="font-bold text-slate-900 text-base">Sukardi, S.T.</div>
+                    <div class="text-slate-600">Praktisi Manufaktur & Industrial Engineer</div>
+                    <div class="text-slate-400 text-xs mt-0.5">Ditinjau & Dipublikasikan: 03 Okt 2026 &bull; 8 min baca</div>
+                </div>
+            </div>
+                
+            <div class="rounded-xl overflow-hidden shadow-md">
+                <img src="5s-artikel.jpg" alt="Banner Artikel 5S" class="w-full h-auto object-cover">
+            </div>
+        </section>
+
+        <!-- ISI ARTIKEL -->
+        <article class="space-y-8">
+            <div class="space-y-4">
+                <h2 class="text-2xl font-bold text-slate-900 font-serif-book">Mengapa 5S Menjadi Titik Awal Perbaikan Pabrik?</h2>
+                <p class="text-slate-700 leading-relaxed text-base md:text-lg">
+                    Di lantai produksi manufaktur, sulit mengharapkan efisiensi tingkat tinggi jika kondisi area kerja berantakan. Peralatan berserakan, kabel melintang tanpa aturan, dan tumpukan barang yang tidak jelas statusnya adalah sumber pemborosan waktu yang nyata.
+                </p>
+            </div>
+
+            <div class="space-y-4 pt-4 border-t border-slate-200">
+                <h3 class="text-xl font-bold text-slate-900 font-serif-book">5 Langkah Penerapan Seiri hingga Shitsuke</h3>
+                <p class="text-slate-700 leading-relaxed">
+                    Penerapan 5S (Ringkas, Rapi, Resik, Rawat, Rajin) bukan sekadar kegiatan bersih-bersih biasa menjelang audit, melainkan sistem pembiasaan operasional agar setiap peralatan memiliki tempat yang pasti dan mudah diakses dalam hitungan detik.
+                </p>
+            </div>
+        </article>
+
+        <!-- Kotak Penawaran Download -->
+        <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 md:p-12 text-center text-white shadow-xl mt-16 mb-8">
+            <span class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Praktis & Siap Pakai</span>
+            <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-3 font-serif-book">Download Checklist Audit 5S Pabrik</h3>
+            <p class="text-slate-300 text-sm md:text-base max-w-xl mx-auto mb-8 leading-relaxed">
+                Dapatkan lembar penilaian audit 5S siap cetak untuk evaluasi kedisiplinan area kerja harian.
+            </p>
+            <a href="#" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition duration-200 text-base cursor-pointer">
+                Download Template 5S Checklist
+            </a>
+        </div>
+    </main>
+
+    <!-- Modal Tentang Penulis -->
+    <div id="authorModal" class="fixed inset-0 z-50 hidden bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 md:p-8 shadow-2xl relative text-center">
+            <button onclick="closeModal('authorModal')" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 font-bold text-xl cursor-pointer">&times;</button>
+            <h3 class="text-2xl font-bold text-slate-900 mb-4 font-serif-book">Tentang Penulis</h3>
+            <p class="text-slate-700 text-sm md:text-base leading-relaxed mb-4">
+                <strong>Sukardi</strong> adalah seorang praktisi manufaktur yang meniti perjalanan kariernya secara bertahap langsung dari lantai produksi. Berbekal ketekunan dan pengalaman nyata, ia memahami betul tantangan di lini depan.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-4 mt-6 border-t border-slate-800 text-center text-xs">
+        <div class="max-w-xl mx-auto px-4 space-y-1">
+            <p>&copy; 2026 Otoritas Kerja. Hak Cipta Dilindungi.</p>
+            <p><a href="privacy.html" class="hover:text-white transition-colors">Kebijakan Privasi</a></p>
+        </div>
+    </footer>
+
+    <!-- Skrip Modal Interaktif -->
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('fixed')) {
+                event.target.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
