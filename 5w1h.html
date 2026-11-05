@@ -3,100 +3,415 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Metode 5W1H untuk Investigasi Masalah Produksi - Otoritas Kerja</title>
-    <meta name="description" content="Panduan investigasi masalah operasional pabrik secara tajam dan terstruktur menggunakan pendekatan metode 5W1H.">
+    
+    <!-- 1. JUDUL KHUSUS ARTIKEL -->
+    <title>Metode 5W1H dan Studi Kasus Penerapannya di Lantai Pabrik - Otoritas Kerja</title>
+
+    <!-- 2. DESKRIPSI KHUSUS ARTIKEL -->
+    <meta name="description" content="Kupas tuntas kerangka kerja analisis 5W1H (What, Who, Where, When, Why, How) serta studi kasus nyata pemecahan masalah dan efisiensi operasional di lantai produksi manufaktur.">
+
+    <!-- 3. PREVIEW / THUMBNAIL KHUSUS UNTUK WHATSAPP / SOSMED -->
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://otoritaskerja.com/5w1h.html">
-    <meta property="og:title" content="Metode 5W1H untuk Investigasi Masalah Produksi">
-    <meta property="og:description" content="Panduan investigasi masalah operasional pabrik secara tajam dan terstruktur menggunakan metode 5W1H.">
-    <meta property="og:image" content="https://otoritaskerja.com/5w1h.jpg">
+    <meta property="og:url" content="https://otoritaskerja.com/5w1h-artikel.html">
+    <meta property="og:title" content="Metode 5W1H dan Studi Kasus Penerapannya di Lantai Pabrik - Otoritas Kerja">
+    <meta property="og:description" content="Kupas tuntas kerangka kerja analisis 5W1H (What, Who, Where, When, Why, How) serta studi kasus nyata pemecahan masalah dan efisiensi operasional di lantai produksi manufaktur.">
+    <meta property="og:image" content="https://otoritaskerja.com/5w1h-artikel.jpg">
+
+    <!-- FAVICON & APPLE TOUCH ICON -->
     <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="apple-touch-icon" href="5w1h-artikel.jpg">
+
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap');
-        .font-serif-book { font-family: 'Merriweather', serif; }
-        body { font-family: 'Inter', sans-serif; }
+        .font-serif-book {
+            font-family: 'Merriweather', serif;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        :root {
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --border-color: #e2e8f0;
+            --primary-blue: #0284c7;
+            --primary-dark: #0f172a;
+            --industrial-blue: #0369a1; 
+            --accent-orange: #ea580c;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img, picture, video, canvas, svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* HEADER UTAMA STICKY MUTLAK */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 99999;
+            width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+        }
+
+        .top-header-white {
+            background-color: #ffffff;
+            width: 100%;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color, #e2e8f0);
+        }
+
+        .top-header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .logo-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-svg {
+            height: 44px;
+            width: auto;
+        }
+
+        .brand-title {
+            font-size: 1.65rem;
+            font-weight: 800;
+            color: var(--primary-dark, #0f172a);
+        }
+
+        .brand-title span {
+            color: var(--primary-blue, #0284c7);
+        }
+
+        .main-navbar-navy {
+            background-color: var(--primary-dark, #0f172a);
+            width: 100%;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .nav-menu::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-menu li a {
+            display: block;
+            padding: 12px 20px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        .nav-menu li a:hover,
+        .nav-menu li a.active {
+            background-color: var(--primary-blue, #0284c7);
+        }
+
+        /* TICKER & BADGE JAJARAN GENJANG */
+        .ticker-bar-white {
+            background-color: #ffffff;
+            width: 100%;
+            border-top: 1px solid #cbd5e1;
+            border-bottom: 2px solid var(--border-color, #e2e8f0);
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .ticker-container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .badge-skew-container {
+            background-color: var(--industrial-blue, #0369a1);
+            color: #ffffff;
+            padding: 9px 22px 9px 14px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            white-space: nowrap;
+            transform: skewX(-15deg);
+            transform-origin: left bottom;
+            margin-left: -8px;
+            border-right: 5px solid var(--accent-orange, #ea580c);
+            flex-shrink: 0;
+            position: relative;
+            z-index: 10;
+            box-shadow: 4px 0 10px rgba(0,0,0,0.15);
+        }
+
+        .badge-text-inner {
+            display: inline-block;
+            transform: skewX(15deg);
+            padding-left: 4px;
+        }
+
+        .ticker-marquee-box {
+            flex-grow: 1;
+            font-size: 0.85rem;
+            color: var(--primary-dark, #0f172a);
+            font-weight: 600;
+            padding-left: 16px;
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .logo-svg { height: 36px; }
+            .brand-title { font-size: 1.3rem; }
+            .nav-menu li a { padding: 10px 14px; font-size: 0.82rem; }
+            .badge-skew-container { padding: 7px 16px 7px 10px; font-size: 0.72rem; }
+            .ticker-marquee-box { font-size: 0.78rem; padding-left: 10px; }
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
-        <div class="max-w-3xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="index.html" class="font-bold text-slate-900 tracking-tight text-lg hover:text-blue-600 transition">Otoritas Kerja</a>
-            <nav class="flex items-center space-x-6 text-sm font-medium">
-                <a href="index.html" class="text-slate-600 hover:text-slate-900 transition">Beranda</a>
-                <button onclick="openModal('authorModal')" class="text-slate-600 hover:text-slate-900 transition cursor-pointer">Tentang Penulis</button>
-            </nav>
+    
+    <!-- HEADER UTAMA 3-TIER PORTAL -->
+    <header class="site-header">
+        <div class="top-header-white">
+            <div class="top-header-inner">
+                <a href="index.html" class="logo-brand">
+                    <img src="favicon.png" alt="Otoritas Kerja" class="logo-svg">
+                    <div class="brand-title">Otoritas<span>Kerja</span></div>
+                </a>
+            </div>
+        </div>
+
+        <nav class="main-navbar-navy">
+            <ul class="nav-menu">
+                <li><a href="index.html">BERANDA</a></li>
+                <li><a href="about.html">TENTANG</a></li>
+                <li><a href="contact.html">KONTAK</a></li>
+            </ul>
+        </nav>
+
+        <div class="ticker-bar-white">
+            <div class="ticker-container">
+                <div class="badge-skew-container">
+                    <span class="badge-text-inner">STANDAR PRAKTISI</span>
+                </div>
+                <div class="ticker-marquee-box">
+                    <marquee behavior="scroll" direction="left" scrollamount="4">
+                        Penerapan Metode 5W1H, Kerangka Analisis Komprehensif, Studi Kasus Pemecahan Masalah, dan Peningkatan Efisiensi Lantai Pabrik
+                    </marquee>
+                </div>
+            </div>
         </div>
     </header>
+    
+    <!-- Konten Utama Artikel -->
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-5 space-y-12 flex-grow w-full">
 
-    <main class="max-w-3xl mx-auto px-6 py-12 space-y-12 flex-grow">
-        <section class="text-center pb-8 border-b border-slate-200 space-y-6">
-            <div class="max-w-lg mx-auto shadow-xl rounded-xl overflow-hidden border border-slate-200 bg-white p-2">
-                <img src="5w1h.jpg" alt="Metode 5W1H Manufaktur" class="w-full h-auto rounded-lg object-cover">
-            </div>
+        <!-- HEADLINE ARTIKEL & AUTHOR BADGE -->
+        <section class="space-y-4">
             <div>
-                <span class="bg-emerald-100 text-emerald-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Problem Solving Tools</span>
-                <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-4 mb-3 font-serif-book">
-                    Metode 5W1H untuk Investigasi Masalah Produksi
+                <h1 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-slate-900 mt-2 mb-3 font-serif-book leading-tight">
+                    Metode 5W1H dan Studi Kasus Penerapannya di Lantai Pabrik
                 </h1>
-                <p class="text-slate-600 italic text-base md:text-lg max-w-xl mx-auto font-serif-book">
-                    "Teknik investigasi berbasis pertanyaan mendasar guna mengurai akar permasalahan di lantai produksi tanpa asumsi subjektif."
+                <p class="text-slate-600 italic text-sm sm:text-base md:text-lg max-w-xl font-serif-book">
+                    "Kupas tuntas kerangka kerja analisis universal 5W1H untuk membedah masalah operasional dan menyusun prosedur kerja secara sistematis."
                 </p>
-                <div class="text-xs text-slate-400 mt-4">Oleh Sukardi &bull; 03 Okt 2026</div>
+            </div>
+
+            <div class="flex items-center space-x-4 p-4 bg-white rounded-xl border border-slate-200 shadow-sm cursor-pointer" onclick="openModal('authorModal')">
+                <img src="foto-sukardi.jpg" alt="Sukardi, S.T." class="w-12 h-12 rounded-full object-cover flex-shrink-0 border border-slate-200 shadow-inner">
+                <div class="text-xs md:text-sm">
+                    <div class="font-bold text-slate-900 text-base">Sukardi, S.T.</div>
+                    <div class="text-slate-600">Praktisi Manufaktur & Industrial Engineer</div>
+                    <div class="text-slate-400 text-xs mt-0.5">Ditinjau & Dipublikasikan: 03 Okt 2026 &bull; 10 min baca</div>
+                </div>
+            </div>
+                
+            <div class="rounded-xl overflow-hidden shadow-md">
+                <img src="5w1h-artikel.jpg" alt="Banner Artikel 5W1H" class="w-full h-auto object-cover">
             </div>
         </section>
 
+        <!-- ISI ARTIKEL -->
         <article class="space-y-8">
+            
+            <!-- Bagian 1: Pengantar 5W1H -->
             <div class="space-y-4">
-                <h2 class="text-2xl font-bold text-slate-900 font-serif-book">Pentingnya Pertanyaan Tepat dalam Analisis Masalah</h2>
+                <h2 class="text-2xl font-bold text-slate-900 font-serif-book">Mengenal Kerangka Kerja Analisis Universal 5W1H</h2>
                 <p class="text-slate-700 leading-relaxed text-base md:text-lg">
-                    Ketika terjadi kegagalan proses atau lonjakan produk *reject* di pabrik, reaksi pertama seringkali menyalahkan keadaan tanpa investigasi mendalam. Metode <em>5W1H</em> (Who, What, Where, When, Why, How) hadir sebagai instrumen standar operasional untuk memastikan setiap insiden dibedah secara obyektif berdasarkan fakta di lapangan.
+                    Dalam dunia industri dan manajemen operasional, pengambilan keputusan yang akurat tidak boleh didasarkan pada asumsi semata. Setiap kendala atau penyimpangan proses di lantai pabrik memerlukan investigasi yang terstruktur. Di sinilah metode **5W1H** (*What, Who, Where, When, Why, How*), yang juga dikenal sebagai *Methodology of Questions* atau *Kipling Method*, memegang peranan krusial.
+                </p>
+                <p class="text-slate-700 leading-relaxed text-base md:text-lg">
+                    Kerangka kerja ini memastikan bahwa pengumpulan informasi dilakukan secara komprehensif, sehingga tim teknik maupun supervisor produksi tidak melewatkan detail esensial saat melakukan investigasi kegagalan mesin ataupun penyusunan prosedur operasional standar (*SOP*).
                 </p>
             </div>
-            <div class="space-y-4 pt-4">
-                <h3 class="text-xl font-bold text-slate-900 font-serif-book">Unsur Utama 5W1H di Area Produksi</h3>
-                <ul class="list-disc list-inside space-y-3 text-slate-700 pl-4">
-                    <li><strong>What (Apa):</strong> Apa jenis penyimpangan atau masalah spesifik yang terjadi pada produk/mesin?</li>
-                    <li><strong>Where (Di mana):</strong> Di bagian stasiun kerja atau line produksi mana masalah tersebut ditemukan?</li>
-                    <li><strong>When (Kapan):</strong> Kapan tepatnya masalah itu mulai muncul (shift pagi, pergantian material, atau jam tertentu)?</li>
-                    <li><strong>Who (Siapa):</strong> Siapa yang mengoperasikan mesin atau menangani proses saat kejadian berlangsung?</li>
-                    <li><strong>Why (Mengapa):</strong> Mengapa akar masalah tersebut bisa terjadi (digabungkan dengan analisis 5 Whys)?</li>
-                    <li><strong>How (Bagaimana):</strong> Bagaimana proses atau kondisi saat kegagalan tersebut bermula?</li>
-                </ul>
+
+            <!-- Bagian 2: Elemen 5W1H -->
+            <div class="space-y-6 pt-4 border-t border-slate-200">
+                <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider">Definisi & Elemen Analisis</span>
+                <h3 class="text-xl md:text-2xl font-bold text-slate-900 font-serif-book">Enam Pilar Utama Pertanyaan 5W1H</h3>
+                <p class="text-slate-700 leading-relaxed text-base md:text-lg">
+                    Setiap elemen dalam 5W1H memiliki fokus spesifik untuk membedah akar permasalahan dari berbagai sudut pandang:
+                </p>
+
+                <div class="space-y-4 my-4">
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-1">
+                        <div class="font-bold text-slate-900 text-base">1. What (Apa)</div>
+                        <p class="text-sm text-slate-600 leading-relaxed">Apa yang terjadi? Apa masalahnya? Apa objek atau subjek yang terdampak? Digunakan untuk mengidentifikasi inti peristiwa, tindakan, produk, atau permasalahan secara faktual.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-1">
+                        <div class="font-bold text-slate-900 text-base">2. Who (Siapa)</div>
+                        <p class="text-sm text-slate-600 leading-relaxed">Siapa yang terlibat? Siapa penanggung jawabnya? Siapa operator atau audiensnya? Menentukan individu, tim, departemen, atau pihak yang berkepentingan (*stakeholders*) yang terkait langsung dengan situasi tersebut.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-1">
+                        <div class="font-bold text-slate-900 text-base">3. Where (Di mana)</div>
+                        <p class="text-sm text-slate-600 leading-relaxed">Di mana lokasinya? Di mana proses ini terjadi atau letak mesin yang bermasalah? Menentukan batas fisik, zona pabrik, geografis, atau titik spesifik pada alur kerja (*workflow*).</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-1">
+                        <div class="font-bold text-slate-900 text-base">4. When (Kapan)</div>
+                        <p class="text-sm text-slate-600 leading-relaxed">Kapan peristiwa ini terjadi? Berapa tenggat waktunya? Kapan jadwal perawatan atau shift kerjanya? Mengidentifikasi dimensi waktu, lini masa (*timeline*), durasi, atau frekuensi kemunculan masalah.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-1">
+                        <div class="font-bold text-slate-900 text-base">5. Why (Mengapa)</div>
+                        <p class="text-sm text-slate-600 leading-relaxed">Mengapa hal ini terjadi? Mengapa masalah tersebut bisa timbul? Apa akar penyebab utamanya? Menemukan latar belakang, alasan mendasar, tujuan, atau akar masalah (*root cause*) dengan mengombinasikannya bersama teknik *5 Whys*.</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm space-y-1">
+                        <div class="font-bold text-slate-900 text-base">6. How (Bagaimana)</div>
+                        <p class="text-sm text-slate-600 leading-relaxed">Bagaimana proses terjadinya? Bagaimana solusi perbaikannya? Berapa mekanisme atau prosedur operasionalnya? Menjelaskan metode, langkah kerja, mekanisme pelaksanaan, atau alur tindakan korektif.</p>
+                    </div>
+                </div>
             </div>
+
+            <!-- Bagian 3: Studi Kasus Penerapan di Lantai Pabrik -->
+            <div class="space-y-6 pt-4 border-t border-slate-200">
+                <span class="text-xs font-bold text-sky-600 uppercase tracking-wider">Aplikasi Lapangan</span>
+                <h3 class="text-xl md:text-2xl font-bold text-slate-900 font-serif-book">Studi Kasus: Investigasi Penurunan Efisiensi Lini Produksi</h3>
+                <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm space-y-4 text-slate-700 leading-relaxed">
+                    <p>
+                        Mari kita lihat penerapan praktis metode 5W1H dalam menangani kasus lonjakan tingkat kegagalan dan berhentinya mesin ekstrusi film plastik secara mendadak di lantai produksi.
+                    </p>
+                    <p class="font-semibold text-slate-900">Penerapan Analisis 5W1H pada Kasus Mesin Ekstrusi:</p>
+                    <ul class="list-disc pl-5 space-y-2 text-sm md:text-base">
+                        <li><strong>What (Apa):</strong> Terjadi robekan kontinu pada lembaran film plastik (*film tearing*) dan kemacetan material pada zona gulungan akhir.</li>
+                        <li><strong>Who (Siapa):</strong> Masalah ini teridentifikasi pada shift malam yang diawasi oleh tim operator jalur B.</li>
+                        <li><strong>Where (Di mana):</strong> Titik kegagalan spesifik terletak pada unit gulungan tarik (*take-up nip roll*) Mesin Ekstrusi #04.</li>
+                        <li><strong>When (Kapan):</strong> Gangguan berulang kali terjadi dalam kurun waktu 3 hari terakhir, khususnya menjelang pergantian shift pukul 03.00 dini hari.</li>
+                        <li><strong>Why (Mengapa):</strong> Berdasarkan penelusuran lebih lanjut, hal ini disebabkan oleh keausan mekanis pada permukaan rol penekan serta kurangnya inspeksi pembersihan sisa resin yang menumpuk.</li>
+                        <li><strong>How (Bagaimana):</strong> Masalah diatasi dengan mengganti komponen rol yang aus, memperketat jadwal pembersihan preventif, serta memperbarui lembar periksa (*check-sheet*) operator setiap awal shift.</li>
+                    </ul>
+                    <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-200 text-xs md:text-sm text-emerald-900 space-y-1">
+                        <div class="font-bold">Hasil Evaluasi Operasional:</div>
+                        <div>Penerapan investigasi berbasis 5W1H berhasil mengeliminasi waktu henti (*downtime*) berulang pada Mesin Ekstrusi #04 dan menstabilkan kembali tingkat efisiensi lini produksi hingga 98%.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kesimpulan -->
+            <div class="bg-slate-900 text-white p-6 md:p-8 rounded-2xl shadow-xl space-y-4 mt-8">
+                <h3 class="text-xl font-bold text-emerald-400 font-serif-book">Kesimpulan Praktisi</h3>
+                <p class="text-sm text-slate-300 leading-relaxed">
+                    Metode 5W1H bukan sekadar teori penulisan atau jurnalistik, melainkan alat kendali mutu operasional yang sangat ampuh di lantai pabrik. Dengan membedah setiap masalah secara terstruktur melalui keenam elemen dasar ini, tim produksi dapat menghindari spekulasi dan langsung berfokus pada akar permasalahan serta solusi yang tepat sasaran.
+                </p>
+            </div>
+
+            <blockquote class="border-l-4 border-emerald-600 pl-4 py-3 my-6 bg-emerald-50/50 italic text-slate-700">
+                <strong>Catatan Praktisi:</strong><br>
+                "Penyelesaian masalah di lantai produksi tidak ditentukan oleh seberapa cepat kita bertindak, melainkan oleh seberapa tepat kita mengajukan pertanyaan yang benar sejak awal."
+            </blockquote>
+
         </article>
 
+        <!-- Kotak Penawaran Download -->
         <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 md:p-12 text-center text-white shadow-xl mt-16 mb-8">
             <span class="bg-emerald-600 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Praktis & Siap Pakai</span>
-            <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-3 font-serif-book">Download Form Laporan Investigasi 5W1H</h3>
+            <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-3 font-serif-book">Download Lembar Kerja Analisis 5W1H</h3>
             <p class="text-slate-300 text-sm md:text-base max-w-xl mx-auto mb-8 leading-relaxed">
-                Gunakan format lembar kerja laporan insiden standar pabrik berbasis 5W1H untuk investigasi cepat dan akurat.
+                Dapatkan format lembar investigasi masalah berbasis 5W1H siap cetak untuk analisis gangguan operasional harian di pabrik Anda.
             </p>
             <a href="#" class="inline-block bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition duration-200 text-base cursor-pointer">
-                Download Format 5W1H Sekarang
+                Download Template 5W1H Worksheet
             </a>
+            <p class="text-xs text-slate-400 mt-4">Format file siap pakai untuk laporan insiden dan troubleshooting lini produksi.</p>
         </div>
+
     </main>
 
+    <!-- Modal Tentang Penulis -->
     <div id="authorModal" class="fixed inset-0 z-50 hidden bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-white rounded-2xl max-w-md w-full p-6 md:p-8 shadow-2xl relative text-center">
             <button onclick="closeModal('authorModal')" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 font-bold text-xl cursor-pointer">&times;</button>
             <h3 class="text-2xl font-bold text-slate-900 mb-4 font-serif-book">Tentang Penulis</h3>
             <p class="text-slate-700 text-sm md:text-base leading-relaxed mb-4">
-                <strong>Sukardi</strong> adalah praktisi manufaktur berpengalaman yang mendedikasikan platform <em>Otoritas Kerja</em> untuk membagikan panduan operasional praktis bagi para pemimpin dan supervisor lini depan.
+                <strong>Sukardi, S.T.</strong> adalah seorang praktisi manufaktur yang meniti perjalanan kariernya secara bertahap langsung dari lantai produksi. Berbekal ketekunan dan pengalaman nyata menghadapi dinamika operasional harian, ia memahami betul tantangan di lini depan.
+            </p>
+            <p class="text-slate-700 text-sm md:text-base leading-relaxed">
+                Melalui platform <em>Otoritas Kerja</em>, beliau mendedikasikan pengalaman praktisnya untuk berbagi perangkat kerja, SOP, dan metodologi peningkatan efisiensi manufaktur.
             </p>
         </div>
     </div>
 
-    <footer class="bg-white border-t border-slate-200 py-8 text-center text-xs text-slate-500">
-        <p>&copy; 2026 Sukardi. Hak Cipta Dilindungi.</p>
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-4 mt-6 border-t border-slate-800 text-center text-xs">
+        <div class="max-w-xl mx-auto px-4 space-y-1">
+            <p>&copy; 2026 Otoritas Kerja. Hak Cipta Dilindungi.</p>
+            <p><a href="privacy.html" class="hover:text-white transition-colors">Kebijakan Privasi</a></p>
+        </div>
     </footer>
 
+    <!-- Skrip Modal Interaktif -->
     <script>
-        function openModal(id) { document.getElementById(id).classList.remove('hidden'); }
-        function closeModal(id) { document.getElementById(id).classList.add('hidden'); }
-        window.onclick = function(e) { if (e.target.classList.contains('fixed')) e.target.classList.add('hidden'); }
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('fixed')) {
+                event.target.classList.add('hidden');
+            }
+        }
     </script>
 </body>
 </html>
