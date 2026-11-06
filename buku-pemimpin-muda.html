@@ -31,9 +31,6 @@
         body {
             font-family: 'Inter', sans-serif;
         }
-    .font-serif-book {
-            font-family: 'Merriweather', serif;
-        }
 
         :root {
             --bg-body: #f8fafc;
@@ -41,7 +38,7 @@
             --border-color: #e2e8f0;
             --primary-blue: #0284c7;
             --primary-dark: #0f172a;
-            --industrial-blue: #0369a1; /* Biru pekat industrial */
+            --industrial-blue: #0369a1;
             --accent-orange: #ea580c;
             --text-main: #1e293b;
             --text-muted: #64748b;
@@ -53,7 +50,6 @@
             box-sizing: border-box;
         }
 
-        /* Memastikan root dan body murni untuk sistem sticky header yang stabil */
         html {
             scroll-behavior: smooth;
         }
@@ -71,9 +67,6 @@
             height: auto;
         }
 
-        /* =========================================================
-            HEADER UTAMA STICKY MUTLAK (DIJAMIN TIDAK IKUT KE-SCROLL)
-            ========================================================= */
         .site-header {
             position: sticky;
             top: 0;
@@ -158,14 +151,6 @@
             background-color: var(--primary-blue, #0284c7);
         }
 
-        .nav-menu li a.btn-admin-nav {
-            background-color: #1e293b;
-            margin-left: auto;
-        }
-
-        /* =========================================================
-            TICKER & BADGE JAJARAN GENJANG (BIRU PEKAT INDUSTRIAL)
-            ========================================================= */
         .ticker-bar-white {
             background-color: #ffffff;
             width: 100%;
@@ -186,7 +171,7 @@
         }
 
         .badge-skew-container {
-            background-color: var(--industrial-blue, #0369a1); /* Warna biru pekat industrial */
+            background-color: var(--industrial-blue, #0369a1);
             color: #ffffff;
             padding: 9px 20px 9px 12px;
             font-size: 0.82rem;
@@ -236,20 +221,17 @@
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
     
-    <!-- HEADER UTAMA 3-TIER PORTAL (TERKUNCI / STICKY DI ATAS) -->
+    <!-- HEADER UTAMA 3-TIER PORTAL -->
     <header class="site-header">
-        <!-- TIER 1: LOGO HEADER PUTIH -->
         <div class="top-header-white">
             <div class="top-header-inner">
                 <a href="index.html" class="logo-brand">
-                    <!-- IMG Logo Asli Otoritas Kerja -->
                     <img src="favicon.png" alt="Otoritas Kerja" class="logo-svg">
                     <div class="brand-title">Otoritas<span>Kerja</span></div>
                 </a>
             </div>
         </div>
 
-        <!-- TIER 2: NAVBAR MENU NAVY -->
         <nav class="main-navbar-navy">
             <ul class="nav-menu">
                 <li><a href="index.html">BERANDA</a></li>
@@ -258,7 +240,6 @@
             </ul>
         </nav>
 
-        <!-- TIER 3: TICKER BAR / SUB-HEADER -->
         <div class="ticker-bar-white">
             <div class="ticker-container">
                 <div class="badge-skew-container">
@@ -273,19 +254,20 @@
         </div>
     </header>
 
-    <!-- Konten Utama: Berisi Naskah Berakhir di Kotak Pembelian -->
+    <!-- Konten Utama -->
     <main class="max-w-3xl mx-auto px-6 py-6 space-y-6 flex-grow">
-            <div>
-                <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-2 mb-3 font-serif-book">
-                    Pemimpin Muda dari Lantai Pabrik
-                </h1>
-                <p class="text-slate-600 italic text-base md:text-lg max-w-xl mx-auto font-serif-book">
-                    "Perjalanan Sederhana Menuju Kepemimpinan yang Bermakna"
-                </p>
-            </div>
-        
-                <!-- Author Box Sukardi, S.T. dengan Foto -->
-            <div class="flex items-center space-x-4 p-4 bg-white rounded-xl border border-slate-200 shadow-sm cursor-pointer" onclick="openModal('authorModal')">
+        <div>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 mt-2 mb-3 font-serif-book">
+                Pemimpin Muda dari Lantai Pabrik
+            </h1>
+            <p class="text-slate-600 italic text-base md:text-lg max-w-xl mx-auto font-serif-book">
+                "Perjalanan Sederhana Menuju Kepemimpinan yang Bermakna"
+            </p>
+        </div>
+    
+        <!-- Author Box & Tombol Pintasan Sinopsis/Kata Pengantar -->
+        <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-4 space-y-3">
+            <div class="flex items-center space-x-4 cursor-pointer" onclick="openModal('authorModal')">
                 <img src="foto-sukardi.jpg" alt="Sukardi, S.T." class="w-12 h-12 rounded-full object-cover flex-shrink-0 border border-slate-200 shadow-inner">
                 <div class="text-xs md:text-sm">
                     <div class="font-bold text-slate-900 text-base">Sukardi, S.T.</div>
@@ -293,64 +275,23 @@
                     <div class="text-slate-400 text-xs mt-0.5">Ditinjau & Dipublikasikan: 03 Okt 2026 &bull; 8 min baca</div>
                 </div>
             </div>
-
-        
-        <!-- Cover Buku & Judul Utama -->
+            <!-- Tombol Tambahan untuk Membuka Sinopsis & Kata Pengantar -->
+            <div class="pt-2 border-t border-slate-100 flex flex-wrap gap-2">
+                <button onclick="openModal('synopsisModal')" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg transition duration-200 cursor-pointer">
+                    📖 Baca Sinopsis
+                </button>
+                <button onclick="openModal('forewordModal')" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg transition duration-200 cursor-pointer">
+                    📝 Kata Pengantar
+                </button>
+            </div>
+        </div>
+    
+        <!-- Cover Buku -->
         <section class="text-center pb-2 border-b border-slate-200 space-y-3">
-          <!-- Banner Tampil Lepas Tanpa Bingkai -->
-          <div class="rounded-xl overflow-hidden shadow-md">
-              <img src="card-book.jfif" alt="Banner Artikel" class="w-full h-auto object-cover">
-          </div>
+            <div class="rounded-xl overflow-hidden shadow-md">
+                <img src="card-book.jfif" alt="Banner Artikel" class="w-full h-auto object-cover">
+            </div>
         </section>
-
-        <!-- SINOPSIS -->
-        <article class="space-y-6 bg-white p-6 md:p-8 rounded-2xl border border-slate-200 shadow-sm">
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 font-serif-book border-b pb-3">SINOPSIS</h2>
-            <p class="text-slate-700 leading-relaxed text-base md:text-lg">
-                Buku <em>Pemimpin Muda dari Lantai Pabrik</em> lahir dari sebuah perjalanan sederhana yang sarat makna. Ia bukan sekadar catatan pengalaman, melainkan cermin nyata bagaimana mimpi bisa tumbuh di ruang yang penuh keterbatasan. Dari deru mesin pabrik, kerja <em>shift</em> malam, hingga peluh yang menetes di seragam kerja, terselip pelajaran kepemimpinan yang tak diajarkan di ruang kuliah.
-            </p>
-            <p class="text-slate-700 leading-relaxed text-base md:text-lg">
-                Buku ini berakar pada kesadaran bahwa kepemimpinan bukanlah soal jabatan semata, melainkan tentang bagaimana seseorang mampu memberi teladan, menjaga integritas, dan menginspirasi orang-orang di sekitarnya. Setiap bab membuka mata bahwa proses menuju kepemimpinan bukanlah jalan lurus, melainkan penuh belokan, kerikil, bahkan jurang yang menuntut keberanian untuk melompat.
-            </p>
-            <p class="text-slate-700 leading-relaxed text-base md:text-lg">
-                Buku ini juga menekankan bahwa seorang pemimpin lahir bukan dari posisi tinggi, tetapi dari kemauan rendah hati untuk belajar, berjuang, dan bertahan. Lantai pabrik yang keras menjadi ruang latihan karakter: disiplin, konsistensi, tanggung jawab, dan kesediaan untuk tumbuh bersama tim.
-            </p>
-            <p class="text-slate-700 leading-relaxed text-base md:text-lg">
-                Bagi pembaca muda, buku ini adalah undangan untuk tidak menyerah pada keadaan. Bagi mereka yang sudah bekerja, buku ini menjadi pengingat bahwa setiap peran, sekecil apa pun, adalah kesempatan untuk mengasah jiwa kepemimpinan. Dan bagi dunia industri, buku ini menyuarakan bahwa kualitas sumber daya manusia sejatinya dibentuk dari pengalaman sehari-hari yang sederhana namun penuh arti.
-            </p>
-            <p class="text-slate-700 leading-relaxed text-base md:text-lg">
-                Akhirnya, <em>Pemimpin Muda dari Lantai Pabrik</em> bukan hanya kisah perjalanan seorang individu, melainkan sebuah pesan kolektif: bahwa siapa pun, dari mana pun, berhak bermimpi dan berhak mewujudkan mimpinya.
-            </p>
-            <p class="text-slate-700 font-semibold pt-2">
-                Salam Penulis,<br><span class="text-blue-600 font-bold">Sukardi, S.T.</span>
-            </p>
-        </article>
-
-        <!-- KATA PENGANTAR -->
-        <article class="space-y-6 bg-white p-6 md:p-8 rounded-2xl border border-slate-200 shadow-sm">
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 font-serif-book border-b pb-3">KATA PENGANTAR</h2>
-            <p class="text-slate-700 leading-relaxed text-base md:text-lg">
-                Puji syukur saya panjatkan ke hadirat Allah SWT, karena berkat rahmat dan karunia-Nya buku berjudul <em>Pemimpin Muda dari Lantai Pabrik</em> akhirnya dapat terselesaikan.
-            </p>
-            <p class="text-slate-700 leading-relaxed text-base md:text-lg">
-                Buku ini lahir dari perjalanan panjang, pengalaman nyata, serta dinamika kehidupan di dunia industri. Saya menuliskan kisah-kisah sederhana namun penuh makna yang terjadi di lantai pabrik, tempat di mana saya belajar arti kerja keras, ketekunan, serta makna kepemimpinan yang sesungguhnya.
-            </p>
-            <p class="text-slate-700 leading-relaxed text-base md:text-lg">
-                Bukan hal mudah untuk memimpin orang lain, apalagi ketika usia masih muda, pengalaman terbatas, dan fisik tidak lebih besar dibanding mereka yang dipimpin. Namun, justru dari situlah saya mendapatkan pelajaran berharga bahwa kepemimpinan tidak ditentukan oleh umur maupun postur tubuh, melainkan oleh sikap, keberanian mengambil keputusan, serta ketulusan untuk membangun tim.
-            </p>
-            <p class="text-slate-700 leading-relaxed text-base md:text-lg">
-                Harapan saya, buku ini bukan sekadar bacaan, tetapi juga menjadi sumber inspirasi bagi generasi muda, khususnya mereka yang berangkat dari posisi sederhana di pabrik atau perusahaan. Semoga kisah ini memberikan keyakinan bahwa setiap orang memiliki kesempatan untuk berkembang, naik level, dan menjadi pemimpin yang membawa perubahan positif.
-            </p>
-            <p class="text-slate-700 leading-relaxed text-base md:text-lg">
-                Saya mengucapkan terima kasih yang sebesar-besarnya kepada keluarga, sahabat, rekan kerja, serta semua pihak yang telah memberikan dukungan, semangat, dan doa dalam proses penulisan buku ini. Tanpa mereka, mungkin buku ini tidak akan pernah terwujud.
-            </p>
-            <p class="text-slate-700 leading-relaxed text-base md:text-lg">
-                Akhir kata, semoga buku ini bermanfaat dan menjadi bekal berharga bagi pembaca dalam menapaki perjalanan karier maupun kehidupan.
-            </p>
-            <p class="text-slate-700 font-semibold pt-2">
-                Salam hangat,<br><span class="text-blue-600 font-bold">Sukardi, S.T.</span>
-            </p>
-        </article>
 
         <!-- BAB 1 -->
         <article class="space-y-6">
@@ -455,7 +396,7 @@
                 Tapi jalan itu tidak mudah.
             </p>
             <p class="text-slate-700 leading-relaxed text-base md:text-lg">
-                Kuliah sambil bekerja membuat saya harus mengorbankan banyak hal. Waktu istirahat nyaris habis. Waktu dengan keluarga berkurang. Teman-teman nongkrong? Hampir tidak pernah saya ikuti. Tapi saya percaya, setiap pengorbanan ini akan kembali dalam bentuk hasil yang pantas.
+                Kuliah sambil kerja membuat saya harus mengorbankan banyak hal. Waktu istirahat nyaris habis. Waktu dengan keluarga berkurang. Teman-teman nongkrong? Hampir tidak pernah saya ikuti. Tapi saya percaya, setiap pengorbanan ini akan kembali dalam bentuk hasil yang pantas.
             </p>
             <p class="text-slate-700 leading-relaxed text-base md:text-lg">
                 Ranselku berisi dua hal yang tak biasa dibawa bersamaan: sepatu <em>safety</em> dan buku kuliah. Satu melambangkan dunia kerja keras di lantai pabrik, yang lain adalah simbol perjuangan meraih ilmu dan masa depan.
@@ -555,21 +496,53 @@
             </p>
         </article>
 
-        <!-- Kotak Penawaran / Link Pembelian Otomatis (Bagian Paling Akhir Halaman) -->
+        <!-- Kotak Penawaran / Link Pembelian Otomatis -->
         <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 md:p-12 text-center text-white shadow-xl mt-16 mb-8">
             <span class="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Akses Penuh</span>
             <h3 class="text-2xl md:text-3xl font-bold mt-4 mb-3 font-serif-book">Dapatkan Seluruh Bab Naskah Lengkap</h3>
             <p class="text-slate-300 text-sm md:text-base max-w-xl mx-auto mb-8 leading-relaxed">
                 Temukan kisah perjalanan kepemimpinan operasional, manajemen lantai produksi, hingga transisi profesional secara utuh sampai Bab 11.
             </p>
-            <!-- Link Pembelian Nanti Bisa Diarahkan ke Sistem Otomatis Otoritas Kerja -->
             <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition duration-200 text-base cursor-pointer">
                 Dapatkan Akses Buku Lengkap
             </a>
         </div>
     </main>
 
-    <!-- Modal Daftar Isi (Hanya Muncul Jika Tombol Atas Diklik) -->
+    <!-- Modal Sinopsis -->
+    <div id="synopsisModal" class="fixed inset-0 z-50 hidden bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full max-h-[85vh] overflow-y-auto p-6 md:p-8 shadow-2xl relative">
+            <button onclick="closeModal('synopsisModal')" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 font-bold text-xl cursor-pointer">&times;</button>
+            <h3 class="text-2xl font-bold text-slate-900 mb-4 font-serif-book border-b pb-3">Sinopsis</h3>
+            <div class="space-y-4 text-slate-700 text-sm md:text-base leading-relaxed">
+                <p>Buku <em>Pemimpin Muda dari Lantai Pabrik</em> lahir dari sebuah perjalanan sederhana yang sarat makna. Ia bukan sekadar catatan pengalaman, melainkan cermin nyata bagaimana mimpi bisa tumbuh di ruang yang penuh keterbatasan. Dari deru mesin pabrik, kerja <em>shift</em> malam, hingga peluh yang menetes di seragam kerja, terselip pelajaran kepemimpinan yang tak diajarkan di ruang kuliah.</p>
+                <p>Buku ini berakar pada kesadaran bahwa kepemimpinan bukanlah soal jabatan semata, melainkan tentang bagaimana seseorang mampu memberi teladan, menjaga integritas, dan menginspirasi orang-orang di sekitarnya. Setiap bab membuka mata bahwa proses menuju kepemimpinan bukanlah jalan lurus, melainkan penuh belokan, kerikil, bahkan jurang yang menuntut keberanian untuk melompat.</p>
+                <p>Buku ini juga menekankan bahwa seorang pemimpin lahir bukan dari posisi tinggi, tetapi dari kemauan rendah hati untuk belajar, berjuang, dan bertahan. Lantai pabrik yang keras menjadi ruang latihan karakter: disiplin, konsistensi, tanggung jawab, dan kesediaan untuk tumbuh bersama tim.</p>
+                <p>Bagi pembaca muda, buku ini adalah undangan untuk tidak menyerah pada keadaan. Bagi mereka yang sudah bekerja, buku ini menjadi pengingat bahwa setiap peran, sekecil apa pun, adalah kesempatan untuk mengasah jiwa kepemimpinan. Dan bagi dunia industri, buku ini menyuarakan bahwa kualitas sumber daya manusia sejatinya dibentuk dari pengalaman sehari-hari yang sederhana namun penuh arti.</p>
+                <p>Akhirnya, <em>Pemimpin Muda dari Lantai Pabrik</em> bukan hanya kisah perjalanan seorang individu, melainkan sebuah pesan kolektif: bahwa siapa pun, dari mana pun, berhak bermimpi dan berhak mewujudkan mimpinya.</p>
+                <p class="font-semibold pt-2">Salam Penulis,<br><span class="text-blue-600">Sukardi, S.T.</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Kata Pengantar -->
+    <div id="forewordModal" class="fixed inset-0 z-50 hidden bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full max-h-[85vh] overflow-y-auto p-6 md:p-8 shadow-2xl relative">
+            <button onclick="closeModal('forewordModal')" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 font-bold text-xl cursor-pointer">&times;</button>
+            <h3 class="text-2xl font-bold text-slate-900 mb-4 font-serif-book border-b pb-3">Kata Pengantar</h3>
+            <div class="space-y-4 text-slate-700 text-sm md:text-base leading-relaxed">
+                <p>Puji syukur saya panjatkan ke hadirat Allah SWT, karena berkat rahmat dan karunia-Nya buku berjudul <em>Pemimpin Muda dari Lantai Pabrik</em> akhirnya dapat terselesaikan.</p>
+                <p>Buku ini lahir dari perjalanan panjang, pengalaman nyata, serta dinamika kehidupan di dunia industri. Saya menuliskan kisah-kisah sederhana namun penuh makna yang terjadi di lantai pabrik, tempat di mana saya belajar arti kerja keras, ketekunan, serta makna kepemimpinan yang sesungguhnya.</p>
+                <p>Bukan hal mudah untuk memimpin orang lain, apalagi ketika usia masih muda, pengalaman terbatas, dan fisik tidak lebih besar dibanding mereka yang dipimpin. Namun, justru dari situlah saya mendapatkan pelajaran berharga bahwa kepemimpinan tidak ditentukan oleh umur maupun postur tubuh, melainkan oleh sikap, keberanian mengambil keputusan, serta ketulusan untuk membangun tim.</p>
+                <p>Harapan saya, buku ini bukan sekadar bacaan, tetapi juga menjadi sumber inspirasi bagi generasi muda, khususnya mereka yang berangkat dari posisi sederhana di pabrik atau perusahaan. Semoga kisah ini memberikan keyakinan bahwa setiap orang memiliki kesempatan untuk berkembang, naik level, dan menjadi pemimpin yang membawa perubahan positif.</p>
+                <p>Saya mengucapkan terima kasih yang sebesar-besarnya kepada keluarga, sahabat, rekan kerja, serta semua pihak yang telah memberikan dukungan, semangat, dan doa dalam proses penulisan buku ini. Tanpa mereka, mungkin buku ini tidak akan pernah terwujud.</p>
+                <p>Akhir kata, semoga buku ini bermanfaat dan menjadi bekal berharga bagi pembaca dalam menapaki perjalanan karier maupun kehidupan.</p>
+                <p class="font-semibold pt-2">Salam hangat,<br><span class="text-blue-600">Sukardi, S.T.</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Daftar Isi -->
     <div id="tocModal" class="fixed inset-0 z-50 hidden bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-white rounded-2xl max-w-lg w-full max-h-[85vh] overflow-y-auto p-6 md:p-8 shadow-2xl relative">
             <button onclick="closeModal('tocModal')" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 font-bold text-xl cursor-pointer">&times;</button>
@@ -606,7 +579,7 @@
         </div>
     </div>
 
-    <!-- Modal Tentang Penulis (Seragam & Responsif dengan Scroll) -->
+    <!-- Modal Tentang Penulis -->
     <div id="authorModal" class="fixed inset-0 z-[99999] hidden bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
         <div class="bg-white rounded-2xl max-w-md w-full p-6 md:p-8 shadow-2xl relative text-center max-h-[90vh] overflow-y-auto">
             <button onclick="closeModal('authorModal')" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 font-bold text-xl cursor-pointer">&times;</button>
