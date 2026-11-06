@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pemimpin Muda dari Lantai Pabrik - Sukardi</title>
-        <!-- Open Graph Meta Tags (Preview WhatsApp khusus Buku) -->
+    <!-- Open Graph Meta Tags (Preview WhatsApp khusus Buku) -->
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://otoritaskerja.com/buku-pemimpin-muda.html">
     <meta property="og:title" content="Pemimpin Muda dari Lantai Pabrik - Sukardi">
@@ -283,6 +283,9 @@
                 <button onclick="openModal('forewordModal')" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg transition duration-200 cursor-pointer">
                     📝 Kata Pengantar
                 </button>
+                <button onclick="openModal('tocModal')" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg transition duration-200 cursor-pointer">
+                    📑 Daftar Isi
+                </button>
             </div>
         </div>
     
@@ -396,7 +399,7 @@
                 Tapi jalan itu tidak mudah.
             </p>
             <p class="text-slate-700 leading-relaxed text-base md:text-lg">
-                Kuliah sambil kerja membuat saya harus mengorbankan banyak hal. Waktu istirahat nyaris habis. Waktu dengan keluarga berkurang. Teman-teman nongkrong? Hampir tidak pernah saya ikuti. Tapi saya percaya, setiap pengorbanan ini akan kembali dalam bentuk hasil yang pantas.
+                Kuliah sambil bekerja membuat saya harus mengorbankan banyak hal. Waktu istirahat nyaris habis. Waktu dengan keluarga berkurang. Teman-teman nongkrong? Hampir tidak pernah saya ikuti. Tapi saya percaya, setiap pengorbanan ini akan kembali dalam bentuk hasil yang pantas.
             </p>
             <p class="text-slate-700 leading-relaxed text-base md:text-lg">
                 Ranselku berisi dua hal yang tak biasa dibawa bersamaan: sepatu <em>safety</em> dan buku kuliah. Satu melambangkan dunia kerja keras di lantai pabrik, yang lain adalah simbol perjuangan meraih ilmu dan masa depan.
@@ -509,9 +512,9 @@
         </div>
     </main>
 
-    <!-- Modal Sinopsis -->
-    <div id="synopsisModal" class="fixed inset-0 z-50 hidden bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-lg w-full max-h-[85vh] overflow-y-auto p-6 md:p-8 shadow-2xl relative">
+    <!-- Modal Sinopsis (Z-Index diperbaiki z-[999999] & Jarak pt-20) -->
+    <div id="synopsisModal" class="fixed inset-0 z-[999999] hidden bg-slate-900/50 backdrop-blur-sm flex items-start justify-center p-4 pt-20 md:pt-24">
+        <div class="bg-white rounded-2xl max-w-lg w-full max-h-[75vh] md:max-h-[80vh] overflow-y-auto p-6 md:p-8 shadow-2xl relative">
             <button onclick="closeModal('synopsisModal')" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 font-bold text-xl cursor-pointer">&times;</button>
             <h3 class="text-2xl font-bold text-slate-900 mb-4 font-serif-book border-b pb-3">Sinopsis</h3>
             <div class="space-y-4 text-slate-700 text-sm md:text-base leading-relaxed">
@@ -525,9 +528,9 @@
         </div>
     </div>
 
-    <!-- Modal Kata Pengantar -->
-    <div id="forewordModal" class="fixed inset-0 z-50 hidden bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-lg w-full max-h-[85vh] overflow-y-auto p-6 md:p-8 shadow-2xl relative">
+    <!-- Modal Kata Pengantar (Z-Index diperbaiki z-[999999] & Jarak pt-20) -->
+    <div id="forewordModal" class="fixed inset-0 z-[999999] hidden bg-slate-900/50 backdrop-blur-sm flex items-start justify-center p-4 pt-20 md:pt-24">
+        <div class="bg-white rounded-2xl max-w-lg w-full max-h-[75vh] md:max-h-[80vh] overflow-y-auto p-6 md:p-8 shadow-2xl relative">
             <button onclick="closeModal('forewordModal')" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 font-bold text-xl cursor-pointer">&times;</button>
             <h3 class="text-2xl font-bold text-slate-900 mb-4 font-serif-book border-b pb-3">Kata Pengantar</h3>
             <div class="space-y-4 text-slate-700 text-sm md:text-base leading-relaxed">
@@ -542,11 +545,11 @@
         </div>
     </div>
 
-    <!-- Modal Daftar Isi -->
-    <div id="tocModal" class="fixed inset-0 z-50 hidden bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-lg w-full max-h-[85vh] overflow-y-auto p-6 md:p-8 shadow-2xl relative">
+    <!-- Modal Daftar Isi (Z-Index diperbaiki z-[999999] & Jarak pt-20) -->
+    <div id="tocModal" class="fixed inset-0 z-[999999] hidden bg-slate-900/50 backdrop-blur-sm flex items-start justify-center p-4 pt-20 md:pt-24">
+        <div class="bg-white rounded-2xl max-w-lg w-full max-h-[75vh] md:max-h-[80vh] overflow-y-auto p-6 md:p-8 shadow-2xl relative">
             <button onclick="closeModal('tocModal')" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 font-bold text-xl cursor-pointer">&times;</button>
-            <h3 class="text-2xl font-bold text-slate-900 mb-6 font-serif-book">Daftar Isi</h3>
+            <h3 class="text-2xl font-bold text-slate-900 mb-6 font-serif-book border-b pb-3">Daftar Isi</h3>
             <div class="space-y-4 text-sm text-slate-700">
                 <div class="border-b border-slate-100 pb-3">
                     <div class="flex justify-between font-bold text-slate-900"><span>BAB 1: LANGKAH PERTAMA DI LANTAI PRODUKSI</span><span>Hal. 6</span></div>
@@ -579,9 +582,9 @@
         </div>
     </div>
 
-    <!-- Modal Tentang Penulis -->
-    <div id="authorModal" class="fixed inset-0 z-[99999] hidden bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-md w-full p-6 md:p-8 shadow-2xl relative text-center max-h-[90vh] overflow-y-auto">
+    <!-- Modal Tentang Penulis (Z-Index diperbaiki z-[999999] & Jarak pt-20) -->
+    <div id="authorModal" class="fixed inset-0 z-[999999] hidden bg-slate-900/50 backdrop-blur-sm flex items-start justify-center p-4 pt-20 md:pt-24">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 md:p-8 shadow-2xl relative text-center max-h-[75vh] md:max-h-[80vh] overflow-y-auto">
             <button onclick="closeModal('authorModal')" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 font-bold text-xl cursor-pointer">&times;</button>
             <h3 class="text-2xl font-bold text-slate-900 mb-4 font-serif-book">Tentang Penulis</h3>
             <p class="text-slate-700 text-sm md:text-base leading-relaxed mb-4 text-left">
